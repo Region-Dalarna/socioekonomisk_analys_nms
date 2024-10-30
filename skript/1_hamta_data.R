@@ -49,7 +49,6 @@ befprogn_diagram_nms <- funktion_upprepa_forsok_om_fel( function() {
                          )
 })
 
-befprogn_diagram_nms$`befprogn_Norra Mellansverige_2020_2024_10ars_sikt_antal`$data$ar_beskr %>% unique()
 
 # diagram över befolkningsprognoser för NMS-länen var och ett för sig
 befprogn_diagram_lan <- funktion_upprepa_forsok_om_fel( function() {

@@ -101,7 +101,7 @@ En annan viktig förändring i den senaste befolkningsprognosen jämfört med f�
 Den demografiska utmaningen förväntas idag bli väsentligt större än vad prognoserna visat de senaste åren och är mindre än för bara ett år sedan, främst som en följd av en förväntad minskad invandring. Den potential att bidra till att klara den demografiska utmaningen som invandringen utgjorde tills för ett år sedan är med pandemin och dagens mer restriktiva invandringspolitik väsentligt mindre. Det återstår därmed att hitta andra lösningar på hur denna utmaning ska hanteras.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Befolkningsförändring i Norra Mellansverige år {befprogn_arsintervall} i absoluta tal uppdelat per län (Källa: SCB)")}
-befprogn_diagram_lan$`befprogn_Norra Mellansverige_2020_2024_10ars_sikt_antal`
+befprogn_diagram_lan$`befprogn_Värmland, Dalarna och Gävleborg_2020_2024_10ars_sikt_antal_fixed`
 
 ```
 
