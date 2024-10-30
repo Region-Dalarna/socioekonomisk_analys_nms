@@ -87,8 +87,9 @@ Vi kan se att pandemin påverkat flyttmönstren i stor utsträckning under 2020 
 ## En kraftigt förändrad befolkningsstruktur i Norra Mellansverige 
 Den utveckling vi ser nu i Norra Mellansverige, med en hög andel äldre i befolkningen, delar vi med övriga Sverige och med samtliga utvecklade länder i världen. När välståndet och utbildningsnivån i ett land ökar och dödstalen sjunker skaffar invånarna färre barn. Detta är en utveckling vi sett i alla länder med ett växande välstånd, och när det föds färre antal barn per kvinna och när god hälso- och sjukvård förlänger medellivslängden i ett land blir konsekvensen en ökad andel äldre. I grunden är detta naturligtvis någonting positivt men det leder till påfrestningar på välfärdssystem som är utformade för en demografisk struktur med en större andel av befolkningen i arbetsför ålder.
 
-```{r diagram4, echo=FALSE}
-# Diagram 4. Befolkningsförändring i Norra Mellansverige år 2020–2030 respektive 2021–2031 i # absoluta tal (Källa: SCB)
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Befolkningsförändring i Norra Mellansverige år {befprogn_arsintervall} i absoluta tal (Källa: SCB)")}
+befprogn_diagram_nms$`befprogn_Norra Mellansverige_2020_2024_10ars_sikt_antal`
+
 ```
 
 Enligt SCB:s befolkningsprognoser förväntas befolkningen i Norra Mellansverige minska med nästan 7 000 personer de närmaste tio åren. Den senaste befolkningsprognosen visar därutöver att 2031 kommer väsentligt fler att behöva försörjas av många färre i arbetsför ålder. I diagrammet ovan syns den sammanlagda förändringen av befolkningen för de tre länen från år 2020 till år 2030 (2020 års prognos) jämfört med förändringen från år 2021 till år 2031 (2021 års prognos).
@@ -99,8 +100,9 @@ En annan viktig förändring i den senaste befolkningsprognosen jämfört med f�
 
 Den demografiska utmaningen förväntas idag bli väsentligt större än vad prognoserna visat de senaste åren och är mindre än för bara ett år sedan, främst som en följd av en förväntad minskad invandring. Den potential att bidra till att klara den demografiska utmaningen som invandringen utgjorde tills för ett år sedan är med pandemin och dagens mer restriktiva invandringspolitik väsentligt mindre. Det återstår därmed att hitta andra lösningar på hur denna utmaning ska hanteras.
 
-```{r diagram5, echo=FALSE}
-# Diagram 5. Befolkningsförändring i Norra Mellansverige år 2020–2030 respektive 2021–2031 i # absoluta tal uppdelat per län. (Källa: SCB)
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Befolkningsförändring i Norra Mellansverige år {befprogn_arsintervall} i absoluta tal uppdelat per län (Källa: SCB)")}
+befprogn_diagram_lan$`befprogn_Norra Mellansverige_2020_2024_10ars_sikt_antal`
+
 ```
 
 När vi delar upp befolkningsprognosen per län så ser vi att det finns skillnader inom Norra Mellansverige där Värmland har det största tappet i befolkningstillväxt på 10 års sikt i 2021 års prognos jämfört med prognosen året innan. I jämförelsen 2020-2030 hade Värmland en förväntad total ökning på knappt 4 900 personer, men förändringen 2021-2031 i 2021 års prognos visar en förväntad minskning på drygt 3 000 personer. I 2021 års prognos förväntas befolkningen minska i samtliga län fram till 2031.
