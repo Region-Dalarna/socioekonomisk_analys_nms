@@ -1,21 +1,20 @@
 
 skapa_befutv_diagram <- function(region_vekt = c("17", "20", "21"),
                                  valt_ar = NA,            # om NA tas det senaste tillgängliga året
+                                 dia_titel = NULL, 
                                  diagbild_bredd = 16,
                                  diagbild_hojd = 9,
                                  spara_diagrambild = FALSE
                                  ){
-  library(pxweb)
-  library(tidyverse)
+  if (!require("pacman")) install.packages("pacman")
+  p_load(here,
+         tidyverse,
+         pxweb)
   
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R", encoding = "utf-8", echo = FALSE)
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R", encoding = "utf-8", echo = FALSE)
   
-  
-  
-  url2 <- "/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningNy"
-  url1 <- "https://api.scb.se"
-  url3 <- paste0(url1, url2)
+  url_uttag <- "https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningNy"
   
   if (is.na(valt_ar)) uttag_ar <- as.character(max(hamta_giltiga_varden_fran_tabell(url_uttag, "tid"))) else uttag_ar <- as.character(valt_ar)
   
@@ -28,7 +27,7 @@ skapa_befutv_diagram <- function(region_vekt = c("17", "20", "21"),
   # ==========================================================================
   
   
-  px_uttag <- pxweb_get(url = url3,
+  px_uttag <- pxweb_get(url = url_uttag,
                         query = varlista) 
   
   
@@ -38,24 +37,21 @@ skapa_befutv_diagram <- function(region_vekt = c("17", "20", "21"),
     cbind(regionkod = as.data.frame(px_uttag, column.name.type = "code", variable.value.type = "code") %>% 
             select(Region)) %>% rename(regionkod = Region) %>% relocate(regionkod, .before = region)
   
-  px_df$lansnamn <- skapa_kortnamn_lan(px_df$region)
-  
   bef_antal <- px_df %>% 
-    group_by(år, lansnamn) %>% 
-    summarise(antal = sum(Folkmängd)) %>% 
-    ungroup()
+    mutate(region = region %>% skapa_kortnamn_lan()) %>% 
+    group_by(år, region) %>% 
+    summarise(antal = sum(Folkmängd, na.rm = TRUE), .groups = "drop")
   
   #bef_antal$antal <- format(bef_antal$antal, big.mark = " ")
   
-  dia_titel <- ""
   dia_filnamn <- "diagram2_befutv.png"
-  
+  mapp <- here("figurer/") %>% paste0(., "/")
   
   befutv_linjediagram <- SkapaLinjeDiagram(skickad_df = bef_antal,
                     skickad_x_var = "år",
                     skickad_y_var = "antal",
-                    skickad_x_grupp = "lansnamn",
-                    diagram_titel = NULL,
+                    skickad_x_grupp = "region",
+                    diagram_titel = dia_titel,
                     filnamn_diagram = dia_filnamn,
                     diagram_capt = NULL,
                     output_mapp = mapp,

@@ -1,0 +1,6 @@
+language:
+  label:
+    fig: !expr function(x) sprintf("*Diagram %s.*", x)  # Testar med en * på varje sida för att se om det blir kursivt
+number_by_section: false  # Inaktivera kapitelnumrering för figurer
+
+

@@ -3,13 +3,27 @@ title: "Socioekonomisk analys 2024 Norra Mellansverige"
 author: "Mats Andersson, Samuel Gök och Kristoffer Sehlberg"
 date: "`r Sys.Date()`"
 output:
-  word_document:
+  bookdown::word_document2:
+    reference_docx: "mall.docx"
     fig_caption: true
+    number_sections: true     # Behåll avsnittsnumreringen
+    global_numbering: true    # Global numrering av figurer och tabeller
 always_allow_html: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.width = 8,  # Standardbredd på figurer
+  fig.height = 5  # Standardhöjd på figurer
+  )
+
+if (!require("pacman")) install.packages("pacman")
+p_load(here,
+       tidyverse,
+       glue,
+       bookdown)
+
 ```
 
 # Inledning
@@ -35,7 +49,7 @@ Demografin i ett län eller region har stor betydelse för det ekonomiska läget
 ## Befolkningssammansättning och befolkningsutveckling i Norra Mellansverige
 Det finns stora likheter i demografin i de tre länen i Norra Mellansverige, men den skiljer sig något från riket. Andelen i arbetsför ålder är lägre i Norra Mellansverige jämfört med riket medan andelen som är 65 år eller äldre är högre. Det innebär att försörjningskvoten - dvs. antalet barn och ungdomar samt pensionärer i relation till antalet i arbetsför ålder - är högre i Norra Mellansverige än i riket som helhet . Försörjningskvoten för riket 2021 var 77 vilket innebär att för varje 100 personer som arbetar är det 77 personer som inte arbetar, som måste försörjas. Kvoten är lägst i Stockholm med 67 men också låg i övriga storstadslän och län med universitet som i regel har en försörjningskvot på under 80. I Norra Mellansverige varierar försörjningskvoten från 84,9 i Värmland, 87,5 i Gävleborg till 90,6 i Dalarna. Dalarna har den högsta, Gävleborg den sjätte högsta och Värmland den tionde högsta försörjningskvoten av Sveriges 21 län. I och med det har Norra Mellansverige den högsta försörjningskvoten av Sveriges åtta NUTS2-områden.
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Befolkningen 2023 i Norra Mellansverige och riket (Källa: SCB)"}
 beftabell_flextable
 #gt_beftabell
 #kbl_beftabell
@@ -45,26 +59,28 @@ beftabell_flextable
 
 Enligt aktuella befolkningsframskrivningar från SCB förväntas en negativ folkökning i samtliga tre regioner; Gävleborg förväntas minska med 1,5 procent, Värmland med 1,2 procent och Dalarna med 0,1 procent. Samtidigt förväntas andelen av befolkningen som är i arbetsför ålder år 2040 vara två procentenheter lägre i riket som helhet, samtidigt som andelen som är 65 år och äldre ökar med tre procentenheter. Samma utveckling syns i våra tre regioner. Tack vare en hög levnadsstandard och medicinska framsteg blir vi allt äldre, och befolkningen som är 95 år eller äldre förväntas öka markant till 2040 . En sådan utveckling kommer ytterligare öka på försörjningskvoten och på så sätt förstärka Norra Mellansveriges demografiska utmaning.
 
-```{r echo=FALSE, fig.height=9, fig.width=16, message=FALSE, warning=FALSE}
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.cap = glue("Befolkningsutveckling i Norra Mellansverige år 2010–{bef_utv_slutar} (Källa: SCB)")}
 befutv_linjediagram
-# Diagram 1. Befolkningsutveckling i Norra Mellansverige 2010–2023 (Källa: SCB)
+
 ```
 
 Befolkningsutvecklingen i Norra Mellansverige var negativ eller svagt positiv efter millennieskiftet, men de senaste åren har samtliga tre län haft en positiv befolkningsutveckling. Dalarnas befolkning minskade dock med knappt 300 personer mellan 2019 och 2020 men ökar igen år 2021. Överlag ligger det utrikes flyttnettot bakom den befolkningsökning som syns. Det märks inte minst av att befolkningskurvan skjuter uppåt i samtliga tre län under 2015-2016 när invandringen var hög.
 
-```{r diagram2, echo=FALSE}
-# Diagram 2. Befolkningsförändringar i Norra Mellansverige 2021 efter kategori (Källa: SCB)
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Befolkningsförändringar i Norra Mellansverige {beffor_ar} efter kategori (Källa: SCB)")}
+befforandringar_diagram
+
 ```
 
 Det utrikes flyttnettot är särskilt intressant för analysen, inte bara för att det ensamt står för den största delen av befolkningsökningen utan också för att nyanlända personer utgör en viktig målgrupp för de insatser som initieras utifrån ESF+. Volymen på direktinvandringen till de tre länen i Norra Mellansverige är relativt likartad. Under perioden 2015–2016 var invandringen betydligt högre vilket berodde på den då stora flyktinginvandringen. SCB betraktar dock denna period som ett undantag i sitt arbete med att ta fram regionala (och nationella) befolkningsprognoser.
 
 Den utrikes inflyttningen har dock minskat stort sedan coronapandemins start. Jämfört med 2019 minskade det utrikes flyttningsnettot 2020 med 55 procent i Dalarna, 42 procent i Gävleborg och 38 procent i Värmland.
 
-```{r diagram3, echo=FALSE}
-# Diagram 3. Utrikes inflyttning till Norra Mellansverige 2000–2023 (Källa: SCB)
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Invandring till Norra Mellansverige 2000–{inv_ar} (Källa: SCB)")}
+inv_nms_linjediagram
+
 ```
 
-Invandringen till Norra Mellansverige har under 2010-talet dominerats av män. De största överskotten av män såg alla tre regionerna 2016, då det var 748 fler män än kvinnor som invandrade till Värmland, 623 fler män som invandrade till Dalarna och 615 fler män som invandrade till Gävleborg. Den här trenden har avtagit under efterföljande år, och 2021 var det 17 fler kvinnor än män som invandrade till Värmland och 18 fler kvinnor som invandrade till dalarna. Däremot var det fortfarande en övervikt av män som invandrade till Gävleborg, där 79 fler män än kvinnor invandrade 2021. Nästan 60 procent av invandringen 2021 var personer i åldrarna 25–64 år, en fjärdedel var barn under 15 år och 16 procent var i åldrarna 15–25. Ungefär fyra procent var 65 år eller äldre.
+Invandringen till Norra Mellansverige har under 2010-talet dominerats av män. De största överskotten av män såg alla tre regionerna 2016, då det var 748 fler män än kvinnor som invandrade till Värmland, 623 fler män som invandrade till Dalarna och 615 fler män som invandrade till Gävleborg. Den här trenden har avtagit under efterföljande år, och 2021 var det 17 fler kvinnor än män som invandrade till Värmland och 18 fler kvinnor som invandrade till dalarna. Däremot var det fortfarande en övervikt av män som invandrade till Gävleborg, där 79 fler män än kvinnor invandrade 2021. Nästan 60 procent av invandringen år 2021 var personer i åldrarna 25–64 år, en fjärdedel var barn under 15 år och 16 procent var i åldrarna 15–25. Ungefär fyra procent var 65 år eller äldre.
 
 Vi kan se att pandemin påverkat flyttmönstren i stor utsträckning under 2020 och 2021, då den utrikes inflyttningen sjunkit markant medan den inrikes inflyttningen ökat. Åldersspridningen för den inrikes inflyttningen är större jämfört med invandringen, där en något lägre andel är i arbetsför ålder och större andelar yngre och äldre. Hur pandemin påverkar flyktingströmmar på längre sikt återstår att se, men med stängda gränser kan flyktingars alternativ starkt begränsas. Minskad invandring och antagandet om att invandringen kommer att ligga på en lägre nivå än tidigare har påverkat befolkningsframskrivningarna väsentligt. Vi ser nu större förändringar i framskrivningarna från år till år, där våra tre regioner enligt de senaste framskrivningarna förväntas minska sin folkmängd till 2040 som en följd av den starkt begränsade invandringen. En minskad invandring får stora konsekvenser för den demografiska strukturen redan de närmaste tio åren.
 

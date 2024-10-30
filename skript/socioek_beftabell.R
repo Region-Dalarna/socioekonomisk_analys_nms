@@ -1,11 +1,10 @@
-library(pxweb)
-#library(httr)
-#library(writexl)
-#library(data.table)
-library(dplyr)
-library(tidyr)
-library(readr)
-library(gt)
+
+if (!require("pacman")) install.packages("pacman")
+p_load(here,
+       tidyverse,
+       pxweb,
+       flextable,
+       officer)
 
 source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R", encoding = "utf-8", echo = FALSE)
 options(dplyr.summarise.inform = FALSE)
