@@ -2,19 +2,24 @@
 if (!require("pacman")) install.packages("pacman")
 p_load(here)
 
+# OBS! Ska sättas till FALSE när skriptet går i produktion - men kan stängas av genom att sätta till TRUE för att se att alla skript fungerar som de ska
+# skriptet är till för att hantera rcurl-fel och inte vanliga fel som ju inte blir bättre av att man försöker flera gånger. =)
+hoppa_over_felhantering = TRUE
+
+
 source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R", encoding = "utf-8", echo = FALSE)
 
 # tabell över befolkningsutvecklingen i NMS-länen samt riket per åldersgrupp
 source(here("skript","socioek_beftabell.R"), encoding="UTF-8")
 beftabell_flextable <- funktion_upprepa_forsok_om_fel( function() {
   skapa_bef_tabell()
-})
+}, hoppa_over = hoppa_over_felhantering)
 
 # diagram över befolkningsutvecklingen
 source(here("skript","socioek_befutv_diagram.R"), encoding="UTF-8")
 befutv_linjediagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_befutv_diagram(region_vekt = c("17", "20", "21"))
-})
+}, hoppa_over = hoppa_over_felhantering)
 bef_utv_slutar <- befutv_linjediagram$data$år %>% max()
 
 
@@ -22,7 +27,7 @@ bef_utv_slutar <- befutv_linjediagram$data$år %>% max()
 source(here("skript","socioek_befforandr_diagram.R"), encoding="UTF-8")
 befforandringar_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_beffor_diagram(region_vekt = c("17", "20", "21"))
-})
+}, hoppa_over = hoppa_over_felhantering)
 beffor_ar <- beffor_df$år %>% max()
 
 
@@ -30,7 +35,7 @@ beffor_ar <- beffor_df$år %>% max()
 source(here("skript","socioek_utrinflyttning_diagram.R"), encoding="UTF-8")
 inv_nms_linjediagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_invandring_diagram(region_vekt = c("17", "20", "21"))
-})
+}, hoppa_over = hoppa_over_felhantering)
 inv_ar <- inv_nms_linjediagram$data$år %>% max
 
 # ============= diagram befolkningsprognoser 
@@ -45,9 +50,8 @@ befprogn_diagram_nms <- funktion_upprepa_forsok_om_fel( function() {
                          spara_dataframe_till_global_environment = TRUE,
                          tabeller_url = c("https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0401/BE0401A/BefProgOsiktRegN",
                                           "https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0401/BE0401B/BefProgOsiktRegN20"),
-                         skapa_fil = FALSE
-                         )
-})
+                         skapa_fil = FALSE)
+}, hoppa_over = hoppa_over_felhantering)
 
 
 # diagram över befolkningsprognoser för NMS-länen var och ett för sig
@@ -59,9 +63,8 @@ befprogn_diagram_lan <- funktion_upprepa_forsok_om_fel( function() {
                                           "https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0401/BE0401B/BefProgOsiktRegN20"),
                          facet_variabel = "region",
                          facet_scale = "fixed",
-                         skapa_fil = FALSE
-                         )
-})
+                         skapa_fil = FALSE)
+}, hoppa_over = hoppa_over_felhantering)
   
 # extrahera start- och slutår
 befprogn_startar <- bef_progn_nms_df$start_ar %>% unique()
@@ -81,7 +84,7 @@ if (length(befprogn_startar) == 1) {
 source(here("skript","socioek_andel_eftergymn_utb_diagram.R"), encoding="UTF-8")
 utbniva_eftergymn_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_utb_eftergymn_kon_diagram(region_vekt = c("00", "17", "20", "21"))
-  })
+  }, hoppa_over = hoppa_over_felhantering)
 utb_niva_eftergymn_ar <- utb_niva_eftergymn_kon_df$år %>% max()
 
 
@@ -97,21 +100,21 @@ utb_niva_hogutb_diagram <- funktion_upprepa_forsok_om_fel( function() {
                                      diag_lagutb_over_tid = FALSE,
                                      diag_andel_alla_utbnivaer = FALSE,
                                      diag_andel_utbniva_jmfr_lan = FALSE)
-  })
+  }, hoppa_over = hoppa_over_felhantering)
   
 # ============= diagram andel eftergymnasialt utbildade efter födelseregion och kön
 source(here("skript","socioek_eftergymn_utb_kon_fodelseregion.R"), encoding="UTF-8")
 
 utb_niva_eftergymn_bakgr_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_utbniva_bakgrund_kon_diagram(region_vekt = c("00", "20", "17", "21"))
-})
+}, hoppa_over = hoppa_over_felhantering)
 utbniva_eftergymn_bakgr_ar <- utbniva_eftergymn_bakgr_kon_df$år %>% max()
 
 # ============= diagram andel gymnasiebehöriga efter födelseregion och kön
 source(here("skript","socioek_gymn_behorighet_kon_inr_utr_fodda.R"), encoding="UTF-8")
 utb_niva_eftergymn_bakgr_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_gymn_behorighet_inr_utr_fodda_kon_diagram(region_vekt = c("00", "20", "17", "21"))
-})
+}, hoppa_over = hoppa_over_felhantering)
 gymn_behorighet_ar <- gymn_behorighet_bakgr_kon_df$år %>% max()
 
 # 2. om man vill knitta rapporten

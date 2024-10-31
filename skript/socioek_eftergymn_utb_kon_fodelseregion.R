@@ -31,8 +31,8 @@ skapa_utbniva_bakgrund_kon_diagram <- function(
            bakgrund = str_remove(bakgrund, "Födda i "),
            fodelseregion_radbryt = dela_upp_strang_radbryt(bakgrund, max_langd = 10),
            fodelseregion_radbryt = ifelse(fodelseregion_radbryt == "övriga\nvärlden", "Övriga\nvärlden", fodelseregion_radbryt),
-           fodelseregion_radbryt = factor(df_dia$fodelseregion_radbryt, 
-                                           levels = unique(df_dia$fodelseregion_radbryt)),
+           fodelseregion_radbryt = factor(fodelseregion_radbryt, 
+                                           levels = unique(fodelseregion_radbryt)),
            region = factor(region, levels = c("Dalarna", "Gävleborg", "Värmland", "Riket")))
   
   if(spara_dataframe_till_global_environment) {
