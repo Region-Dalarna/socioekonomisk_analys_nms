@@ -3,7 +3,7 @@ p_load(tidyverse,
        pxweb)
 
 skapa_beffor_diagram <- function(region_vekt = c("17", "20", "21"),
-            valt_ar = NA,
+            valt_ar = "9999",                 # "9999" = senaste år
             dia_titel = NULL,
             spara_diagrambildfil = FALSE,
             returnera_dataframe_global_environment = TRUE
@@ -11,10 +11,6 @@ skapa_beffor_diagram <- function(region_vekt = c("17", "20", "21"),
 
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R", encoding = "utf-8", echo = FALSE)
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R", encoding = "utf-8", echo = FALSE)
-
-  url_uttag <- "https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101G/BefforandrKvRLK"
-  if (all(is.na(valt_ar))) uttag_ar <- as.character(max(hamta_giltiga_varden_fran_tabell(url_uttag, "tid"))) else uttag_ar <- as.character(valt_ar)
-
   source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/main/hamta_bef_forandringar_region_period_kon_scb.R")
 
   repeat {
@@ -23,7 +19,7 @@ skapa_beffor_diagram <- function(region_vekt = c("17", "20", "21"),
                                                 forandringar_klartext = c("födelseöverskott", "flyttningsöverskott övriga Sverige", "invandringsöverskott"),
                                                 period_klartext = "hel",
                                                 kon_klartext = c("män", "kvinnor"),
-                                                tid_koder = uttag_ar),
+                                                tid_koder = valt_ar),
     "argument is not numeric or logical: returning NA")
     
     if (all(is.na(px_df$personer))) {

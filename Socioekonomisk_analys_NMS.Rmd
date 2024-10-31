@@ -117,8 +117,9 @@ Utbildningsnivå används ofta som en indikator på humankapitalet i samhället 
 ## Befolkning med eftergymnasial utbildning
 Statistiken för personer med eftergymnasial utbildning presenteras för män och kvinnor och har avgränsats till personer mellan 25–64 år. Dessutom har personer som är i pensionsålder (65+) uteslutits.
 
-```{r diagram6, echo=FALSE}
-# Diagram 6. Andel av befolkning år 2020 vars högsta avslutade utbildning är eftergymnasial, # per kön. (Källa: SCB)
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel av befolkningen per kön år {utb_niva_eftergymn_ar} vars högsta avslutade utbildning är eftergymnasial. (Källa: SCB)")}
+utbniva_eftergymn_diagram
+
 ```
 
 Samtliga tre län har en stor utmaning i att behålla sina unga akademiker i länet, locka tillbaka dem efter avslutade studier på annan ort eller att attrahera inflyttning av akademiker som är uppväxta i andra län. Det finns därför en risk att en stor del av länens högutbildade befolkning försvinner från regionen, vilket leder till problem för arbetsgivarna att klara sin kompetensförsörjning och i förlängningen att trygga den framtida välfärden. Det är fler av de som går ut gymnasiet i Värmland som väljer att studera vidare i samma län (cirka 30 procent) jämfört med Gävleborg och Dalarna (cirka 20 procent). Av samtliga som tagit examen vid en högskola eller universitet så har fler återvänt till det län där de gick gymnasiet i Värmland och Gävleborg (cirka 40 procent) än i Dalarna (cirka 35 procent).
@@ -129,7 +130,8 @@ Samtliga tre län har en stor utmaning i att behålla sina unga akademiker i lä
 
 De tre länen i Norra Mellansverige har betydligt lägre andel högutbildade än i riket som helhet, och skillnaden är extra tydlig när det gäller män som har en eftergymnasial utbildning som är längre än tre år. Det är en betydligt större andel högutbildade kvinnor än män i de tre länen, och skillnaden mellan könen ökar. Andelen män med eftergymnasial utbildning har ökat marginellt jämfört med den socioekonomiska analys för Norra Mellansverige som släpptes 2014 och baserades på utbildningsdata från 2012, medan andelen högutbildade kvinnor har ökat stadigt både i Norra Mellansverige och i riket som helhet.
 
-```{r diagram8, echo=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel av befolkningen 25-64 år med eftergymnasial utbildning som är tre år eller längre, över tid. (Källa: SCB)")}
+utb_niva_hogutb_diagram$hogutb_andel_ar00_20_17_21_1985_2023
 # Diagram 8. Andel av befolkningen 25-64 år med eftergymnasial utbildning som är tre år eller längre, över tid (Källa: SCB)
 ```
 
@@ -139,8 +141,9 @@ Det framgår tydligt att förflyttningen går snabbare för kvinnor än för mä
 
 Om vi tittar på förhållandet mellan utbildningsnivå och födelseland ser vi att det är en större andel av de som är födda i Sverige som har minst treårig eftergymnasial utbildning än de som är födda i ett annat nordiskt land. Men det är överlag en större andel högutbildade bland de utrikes födda än de som är födda i Sverige, och allra störst andel är det bland de som är födda inom EU men utanför Norden. Även bland de utrikes födda är det stor skillnad mellan könen, med en avsevärt större andel högutbildade kvinnor. I kategorin ”Övriga” är det främst Nordamerika och Australien som sticker ut, medan Afrika har låga utbildningsnivåer och drar ner medelvärdet.
 
-```{r diagram9, echo=FALSE}
-# Diagram 9. Andel av befolkningen med minst treårig eftergymnasial utbildning, efter födelseland, 2020 (Källa: SCB)
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel av befolkningen med minst treårig eftergymnasial utbildning, efter födelseland, år {utbniva_eftergymn_bakgr_ar}. (Källa: SCB)")}
+utb_niva_eftergymn_bakgr_diagram
+
 ```
 
 De låga utbildningsnivåerna i Värmland, Dalarna och Gävleborg kan delvis spegla de dominerande branscherna i länen, som byggverksamhet, skogs-, stål- och verkstadsindustri. För många av de här jobben räcker det med en yrkesutbildning på gymnasienivå, men de är viktiga för tillväxten i Norra Mellansverige. Det är viktigt att fler i Värmland, Dalarna och Gävleborg går längre i utbildningskedjan, men behovet av högutbildad kompetens behöver kopplas ihop med arbetsmarknaden i länen så att man möter upp kompetensbehoven hos näringsliv och offentlig sektor. Om fler invånare i Norra Mellansverige når en högre utbildningsnivå och det samtidigt inte finns ett matchande behov riskerar dessa människor istället att tvingas bort från regionen i jakt på ett passande jobb.
@@ -150,8 +153,8 @@ I Norra Mellansverige som helhet är det färre elever som går ur årskurs 9 me
 
 Om vi ser till hela den grupp som saknar gymnasiebehörighet, dit de som inte gått klart grundskolan hör, så har gruppen det sämre inom en rad olika områden. När det kommer till ersättningar från trygghetssystemen så kan vi se att den stora skiljelinjen går mellan de som har förgymnasial utbildning och de med gymnasial utbildning. De med eftergymnasial utbildning har i minst utsträckning ersättning från de sociala trygghetssystemen men skillnaden är inte lika stor mellan de som har eftergymnasial mot de som har gymnasial utbildning jämfört med skillnaden mellan de med gymnasial och de med förgymnasial utbildning. En del av arbetskraftsreserven finns i gruppen med endast förgymnasial utbildning men även om det är en del som uppbär arbetslöshetsersättning, försörjningsstöd eller etableringsersättning så har majoriteten i denna grupp någon form av sjukersättning. Ett förebyggande arbete för att förhindra att individer i denna grupp hamnar i sjukskrivning/sjukpension har stor potential för att öka antalet individer i arbetskraften.
 
-```{r diagram10, echo=FALSE}
-# Diagram 10. Gymnasiebehörighet bland avgående elever, läsåret 2020/21 (Källa: Skolverket) *Oviktat medel av andel behöriga till estetiskt program, ekonomi-, humanistiska och samhällsvetenskapsprogram samt naturvetenskapligt och tekniskt program.
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel avgångselever i grundskolan med gymnasiebehörighet, efter kön och födelseland, år {gymn_behorighet_ar}. (Källa: SCB)")}
+utb_niva_eftergymn_bakgr_diagram
 ```
 
 Av de elever i Dalarna som avslutat grundskolan på våren 2021 är det 97,1 procent som fortsätter till gymnasiet samma höst. I Gävleborg är det 97,3 procent som går direkt vidare till gymnasiet och i Värmland 97,8 procent. I riket som helhet är övergångsfrekvensen 98,0 procent.

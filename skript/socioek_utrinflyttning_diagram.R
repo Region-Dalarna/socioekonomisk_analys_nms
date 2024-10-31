@@ -1,13 +1,16 @@
-if (!require("pacman")) install.packages("pacman")
-p_load(tidyverse,
-       pxweb)
 
-skapa_invandring_diagram <- function(region_vekt = c("17", "20", "21"),
-            valt_ar = NA,
-            dia_titel = NULL,
-            spara_diagrambildfil = FALSE
-            ){
 
+skapa_invandring_diagram <- function(
+    region_vekt = c("17", "20", "21"),
+    valt_ar = NA,
+    dia_titel = NULL,
+    spara_diagrambildfil = FALSE
+    ){
+
+  if (!require("pacman")) install.packages("pacman")
+  p_load(tidyverse,
+         pxweb)
+  
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R", encoding = "utf-8", echo = FALSE)
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R", encoding = "utf-8", echo = FALSE)
 
