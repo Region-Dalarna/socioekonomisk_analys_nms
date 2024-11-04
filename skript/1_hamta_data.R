@@ -117,6 +117,32 @@ utb_niva_eftergymn_bakgr_diagram <- funktion_upprepa_forsok_om_fel( function() {
 }, hoppa_over = hoppa_over_felhantering)
 gymn_behorighet_ar <- gymn_behorighet_bakgr_kon_df$år %>% max()
 
+# ============= Sysselsättningsgrad uppdelat på län och kön - motsvarar diagram 57 (sidan 22) i den tidigare rapporten
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diagram_arbetsmarknadsstatus_senastear.R")
+sysselsattningsgrad_diagram <- funktion_upprepa_forsok_om_fel( function() {diagram_arbetsmarknadsstatus(region_vekt = hamtaAllaLan(tamedriket = TRUE),
+                                                       kon_klartext = c("kvinnor","män"),
+                                                       alder_klartext = "20-64 år",
+                                                       ta_bort_diagramtitel = TRUE,
+                                                       ta_bort_caption = TRUE,
+                                                       valda_farger = diagramfarger("kon"),
+                                                       diag_arbetskraftsdeltagande = FALSE,
+                                                       diag_arbetslosthet = FALSE,
+                                                       returnera_data = TRUE)}, hoppa_over = hoppa_over_felhantering)
+
+sysselsattningsgrad_ar <- arbetsmarknadsstatus$ar %>% max() 
+sysselsattningsgrad_manad <- arbetsmarknadsstatus$manad_long %>% max() 
+
+# ============= Ohälsotal uppdelat på region och kön - motsvarar diagram 33 (sidan 39) i den tidigare rapporten
+source(here("skript","socioek_ohalsa_diagram.R"), encoding="UTF-8")
+ohalsa_diagram <- funktion_upprepa_forsok_om_fel( function() {
+  skapa_ohalsotal_diagram(region_vekt = c("00", "20", "17", "21"))
+}, hoppa_over = hoppa_over_felhantering)
+ohalsa_ar <- ohalsa_df$ar %>% max()
+
+
+
+
+
 # 2. om man vill knitta rapporten
 #source(paste0(here("skript","/"), "2_knitta_rapport.R"))
 

@@ -1,7 +1,6 @@
 
 
 skapa_ohalsotal_diagram <- function(region_vekt = c("00","17", "20", "21"),
-                                     dia_titel = NULL,
                                      spara_diagrambildfil = FALSE,
                                      returnera_dataframe_global_environment = TRUE
 ){
@@ -43,7 +42,6 @@ skapa_ohalsotal_diagram <- function(region_vekt = c("00","17", "20", "21"),
                                filnamn_diagram = diagramfilnamn,
                                x_axis_lutning = 0,
                                stodlinjer_avrunda_fem = TRUE,
-                               manual_x_axis_title = dia_titel,
                                manual_y_axis_title = "Ohälsotal",
                                manual_color = diagramfarger("kon"),
                                skriv_till_diagramfil = spara_diagrambildfil,
