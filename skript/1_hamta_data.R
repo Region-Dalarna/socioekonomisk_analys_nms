@@ -139,9 +139,12 @@ ohalsa_diagram <- funktion_upprepa_forsok_om_fel( function() {
 }, hoppa_over = hoppa_over_felhantering)
 ohalsa_ar <- ohalsa_df$ar %>% max()
 
-
-
-
+# ============= Innovationsindex på region - motsvarar diagram 46 (sidan 52) i den tidigare rapporten
+source(here("skript","socioek_innovationsindex_diagram.R"), encoding="UTF-8")
+innovationsindex_diagram <- funktion_upprepa_forsok_om_fel( function() {
+  skapa_innovationsindex_diagram()
+}, hoppa_over = hoppa_over_felhantering)
+innovationsindex_ar <- innovationsindex_df$År %>% max()
 
 # 2. om man vill knitta rapporten
 #source(paste0(here("skript","/"), "2_knitta_rapport.R"))
