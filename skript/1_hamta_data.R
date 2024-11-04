@@ -130,7 +130,15 @@ sysselsattningsgrad_diagram <- funktion_upprepa_forsok_om_fel( function() {diagr
                                                        returnera_data = TRUE)}, hoppa_over = hoppa_over_felhantering)
 
 sysselsattningsgrad_ar <- arbetsmarknadsstatus$ar %>% max() 
-sysselsattningsgrad_manad <- arbetsmarknadsstatus$manad_long %>% max() 
+sysselsattningsgrad_manad <- arbetsmarknadsstatus$manad_long %>% unique() 
+
+# ============= Andel anställda i olika branscher uppdelat på kön (aggregerat över NMS) - motsvarar diagram 31 (sidan 36) i den tidigare rapporten
+source(here("skript","socioek_andel_syss_bransch_diagram.R"), encoding="UTF-8")
+andel_sysselsatta_kon_bransch <- funktion_upprepa_forsok_om_fel( function() {
+  skapa_andel_anstallda_bransch_diagram(region_vekt = c("20", "17", "21"))
+}, hoppa_over = hoppa_over_felhantering)
+sysselsatta_bransch_kon_ar <- syss_bransch_andel_aggr$år %>% max()
+sysselsatta_bransch_kon_manad <- syss_bransch_andel_aggr$månad_namn %>% unique()
 
 # ============= Ohälsotal uppdelat på region och kön - motsvarar diagram 33 (sidan 39) i den tidigare rapporten
 source(here("skript","socioek_ohalsa_diagram.R"), encoding="UTF-8")

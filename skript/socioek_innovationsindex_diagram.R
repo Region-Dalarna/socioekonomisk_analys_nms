@@ -21,6 +21,8 @@ skapa_innovationsindex_diagram <- function(region_vekt = c("00","17", "20", "21"
   innovationsindex_fil <- "innovationsindex.csv"
   innovationsindex_full <- paste0(input_mapp, innovationsindex_fil)
   
+  mapp <- here("figurer/") %>% paste0(., "/")
+  
   diagram_capt <- "Källa: Reglab\nBearbetning: Samhällsanalys, Region Dalarna"
   ta_med_logga <- FALSE   # FALSE
   
