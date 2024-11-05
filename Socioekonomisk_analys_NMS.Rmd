@@ -273,6 +273,7 @@ Arbetslöshets- och sysselsättningsnivåerna bland utrikes födda varierar dock
 
 ```{r diagram23, echo=FALSE}
 # Diagram 23. Andel förvärvsarbetande efter kön och födelseregion år 2020 (Källa: SCB)
+forvarvsarb_kon_fodelseregion
 ```
 
 Utbildningsnivån är en annan faktor som har stor betydelse för hur utrikes födda klarar sig på den svenska arbetsmarknaden. Högutbildade utrikes födda klarar sig generellt relativt bra. Sysselsättningen bland utrikes födda med eftergymnasial utbildning var mellan 68 och 73 procent i de tre länen år 2020, vilket visserligen är under motsvarande nivå för svenskfödda personer (87 – 90 procent) men ändå betydligt över genomsnittet för utrikes födda. Personer med gymnasieexamen har nästan lika hög sysselsättning medan andelen är betydligt lägre bland de som saknar gymnasieexamen.

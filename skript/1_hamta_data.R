@@ -133,6 +133,13 @@ sysselsattningsgrad_ar <- arbetsmarknadsstatus$ar %>% max()
 sysselsattningsgrad_alder <- arbetsmarknadsstatus$ålder %>% unique()
 sysselsattningsgrad_manad <- arbetsmarknadsstatus$manad_long %>% unique() 
 
+# ============= Andel förvärvsarbetande uppdelat på kön och födelseregion - motsvarar diagram 23 (sidan 28) i den tidigare rapporten
+source(here("skript","socioek_forvarvsarb_kon_fodelseregion.R"), encoding="UTF-8")
+forvarvsarb_kon_fodelseregion <- funktion_upprepa_forsok_om_fel( function() {
+  skapa_forvarsarb_kon_fodelseregion(region_vekt = c( "17", "20","21"))
+}, hoppa_over = hoppa_over_felhantering)
+forvarvsarbetande_kon_fodelseregion_ar <- forvarvsarbetande_kon_fodelseregion_df$år %>% max()
+
 # ============= Andel anställda i olika branscher uppdelat på kön (aggregerat över NMS) - motsvarar diagram 31 (sidan 36) i den tidigare rapporten
 source(here("skript","socioek_andel_syss_bransch_diagram.R"), encoding="UTF-8")
 andel_sysselsatta_kon_bransch <- funktion_upprepa_forsok_om_fel( function() {
