@@ -1,6 +1,6 @@
-skapa_overgang_eftergym_studier <- function(region_vekt = c("00", "17", "20", "21"),
-                                             spara_diagrambildfil = FALSE,
-                                             returnera_dataframe_global_environment = TRUE
+skapa_overgang_eftergym_studier_tidsserie <- function(region_vekt = c("00", "17", "20", "21"),
+                                            spara_diagrambildfil = FALSE,
+                                            returnera_dataframe_global_environment = TRUE
 ){
   
   # Skript som skapar 
@@ -50,7 +50,7 @@ skapa_overgang_eftergym_studier <- function(region_vekt = c("00", "17", "20", "2
   } else special_regionkoder <- paste0(uttag_regionkoder, "B")
   
   # här loopar vi igenom tabellistan och gör pxwebb-uttag
-  for (tab in 1:length(tab_list[[1]])){
+  for (tab in 1:1){
     # fyll variabellista med rätt contentcode, övrigt är samma i alla tre tabeller
     varlista <- list(
       Region = special_regionkoder,          
@@ -78,35 +78,21 @@ skapa_overgang_eftergym_studier <- function(region_vekt = c("00", "17", "20", "2
     
   }
   
-  px_alla2 <- px_alla %>% 
-    mutate(andel = round(`Antal som läst vidare inom 3 år`/`Antal gymnasieexaminerade totalt`*100,1),
-           lansnamn = skapa_kortnamn_lan(region))
-  
-  senaste_ar <- px_alla2 %>% 
+  overg_tidsserie <- px_alla %>%
     filter(!is.na(`Antal som läst vidare inom 3 år`)) %>% 
-    #mutate(vt_avgar = str_sub(avgångsår, 6,9)) %>% 
-    group_by(utbtyp) %>%
-    summarise(sen_ar = max(avgångsår)) %>% 
-    ungroup()
-  
-  senaste_ar <- min(senaste_ar$sen_ar)
-  
-  # döp om bef till antal (det blir enklare så) gör kortnamn av länsnamn (ta bort "s län") och lägg ihop forskarutbildning med övriga eftergymnasiala utbildningar mer än 3 år
-  chart_df <- px_alla2 %>%
-    filter(avgångsår == senaste_ar)   # ta bara med de som är i åldern 25-64 år
-  
-  chart_df$lansnamn <- trimws(chart_df$lansnamn)
+    mutate(andel = round(`Antal som läst vidare inom 3 år`/`Antal gymnasieexaminerade totalt`*100,1),
+           lansnamn = trimws(skapa_kortnamn_lan(region)))
   
   if(returnera_dataframe_global_environment == TRUE){
-    assign("overgang_eftergymn_studier_df", chart_df, envir = .GlobalEnv)
+    assign("overgang_eftergymn_tidserie_df", overg_tidsserie, envir = .GlobalEnv)
   }
   
-  chart_df$lansnamn <- factor(chart_df$lansnamn, levels = c("Dalarna", "Gävleborg", "Värmland", "Riket"))
+  overg_tidsserie$lansnamn <- factor(overg_tidsserie$lansnamn, levels = c("Dalarna", "Gävleborg", "Värmland", "Riket"))
   
-  dia_filnamn <- "diagram_11_övergång_eftergymn.png"
+  dia_filnamn <- "diagram_12_övergång_högsk_tidsserie.png"
   
-  gg_obj <- SkapaStapelDiagram(skickad_df = chart_df,
-                               skickad_x_var = "utbtyp",
+  gg_obj <- SkapaStapelDiagram(skickad_df = overg_tidsserie,
+                               skickad_x_var = "avgångsår",
                                skickad_y_var = "andel",
                                skickad_x_grupp = "kön",
                                facet_grp = "lansnamn",
@@ -116,12 +102,11 @@ skapa_overgang_eftergym_studier <- function(region_vekt = c("00", "17", "20", "2
                                filnamn_diagram = dia_filnamn,
                                diagram_capt = NULL,
                                output_mapp = mapp,
-                               #manual_x_axis_text_vjust = 1,
-                               #manual_x_axis_text_hjust = 1,
-                               x_axis_lutning = 0,
+                               manual_x_axis_text_vjust = 1,
+                               manual_x_axis_text_hjust = 1,
+                               x_axis_lutning = 45,
                                #y_axis_borjar_pa_noll = FALSE,
                                manual_y_axis_title = "procent",
-                               #manual_x_axis_title = "år",
                                lagg_pa_logga = FALSE,
                                #diagram_liggande = TRUE,
                                manual_color = diagramfarger("kon"),

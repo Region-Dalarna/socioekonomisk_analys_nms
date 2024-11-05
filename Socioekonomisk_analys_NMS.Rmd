@@ -180,6 +180,7 @@ I Norra Mellansverige går drygt hälften av kvinnorna och strax under 40 procen
 
 ```{r diagram13, echo=FALSE}
 # Diagram 13. Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning VT 2017 (Källa: SCB)
+socioek_overgang_eftergymn_studier
 ```
 
 Tittar vi närmare på andelen av befolkningen som inom tre år efter avslutad gymnasieutbildning börjar studera på högskola syns en ökning bland kvinnorna men minskning bland männen i alla tre länen från examensår 2014 till 2018 (påbörjat högskoleutbildning senast hösten 2021). Den största ökningen bland kvinnorna syns i Gävleborg, där andelen kvinnor som går till högskola inom tre år efter gymnasiet ökat med drygt fem procentenheter. I Dalarna är ökningen strax över och i Värmland strax under fyra procentenheter. Minskningen bland männen är också störst i Gävleborg, där det är nästan fem procentenheter färre män som inom tre år efter gymnasiet påbörjat högskolestudier. I Värmland är minskningen nästan tre procentenheter och i Dalarna en halv procentenhet.
@@ -188,7 +189,7 @@ På riksnivå har både andelen kvinnor och män som börjar högskola inom tre 
 
 ```{r diagram14, echo=FALSE}
 # Diagram 14. Förändring i övergång från gymnasieutbildning till högskola inom tre år (Källa: SCB)
-socioek_overgang_eftergymn_studier
+socioek_overgang_eftergym_studier_tidsserie
 ```
 
 På kommunnivå har det också skett stora förändringar om vi jämför andelarna kvinnor och män som gått vidare till högskola inom tre år under dessa fem år . I Värmland är Eda den kommun som ser den största ökningen bland både kvinnor och män som går till högskola inom tre år efter gymnasiet. Andelen kvinnor har ökat med nästan 35 procentenheter medan andelen män ökat med nästan elva procentenheter. Kullarna är dock små, mellan 21-36 personer, vilket innebär att varje individ får stort genomslag procentuellt. Den största minskningen bland kvinnor i Värmland syns i Hagfors, där minskningen är nästan 15 procentenheter under dessa fem år. Den största minskningen bland män har skett i Kristinehamn, med drygt 12 procentenheter färre män som gick till högskola inom tre år efter gymnasiet. I Dalarna har den största ökningen bland kvinnor skett i Malung-Sälen, med 21 procentenheter. Bland männen är ökningen störst i Vansbro, där nästan 14 procentenheter fler män gick vidare till högskola i slutet av femårsperioden. Även i dessa kommuner är kullarna ganska små, mellan 17-43 personer, så siffrorna bör tolkas med försiktighet. Den största minskningen bland kvinnor i Dalarna har skett i Leksand, där minskningen är drygt fyra procentenheter. Den största minskningen bland män syns i Säter, med nästan 26 procentenheter färre män gått till högskola inom tre år efter gymnasiet. Den största ökningen bland både kvinnor och män i Gävleborg har skett i Ljusdals kommun, där drygt 22 procentenheter fler kvinnor och nästan 14 procentenheter fler män gått vidare till högskola i slutet av femårsperioden. Den största minskningen bland kvinnor syns i Hofors, en minskning med drygt elva procentenheter. Bland männen är minskningen störst i Ovanåker, där 21 procentenheter färre män gick vidare till högskola inom tre år efter gymnasiet.
