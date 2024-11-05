@@ -1,5 +1,4 @@
-test = skapa_andel_anstallda_bransch_diagram()
-skapa_andel_anstallda_bransch_diagram <- function(region_vekt = c("17", "20", "21"),
+skapa_intakter_arbstallen_bransch_diagram <- function(region_vekt = c("17", "20", "21"),
                                                   spara_diagrambildfil = FALSE,
                                                   returnera_dataframe_global_environment = TRUE
 ){
@@ -8,7 +7,8 @@ skapa_andel_anstallda_bransch_diagram <- function(region_vekt = c("17", "20", "2
   
   if (!require("pacman")) install.packages("pacman")
   p_load(tidyverse,
-         here)
+         here,
+         readxl)
   
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R", encoding = "utf-8", echo = FALSE)
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R", encoding = "utf-8", echo = FALSE)
@@ -20,8 +20,9 @@ skapa_andel_anstallda_bransch_diagram <- function(region_vekt = c("17", "20", "2
   # ========================================== Inställningar ============================================
   
   mapp <- here("figurer/") %>% paste0(., "/")
-  nyckelmapp <- "G:/skript/nycklar/"
-  nyckel_fil <- paste0(nyckel_mapp, "Bransch_FEK.xlsx")
+  nyckelmapp <- here("Indata/") %>% paste0(., "/")
+  #nyckelmapp <- "G:/skript/nycklar/"
+  nyckel_fil <- paste0(nyckelmapp, "Bransch_FEK.xlsx")
   
   nyckel_df <- read_xlsx(nyckel_fil)
   
@@ -55,10 +56,14 @@ skapa_andel_anstallda_bransch_diagram <- function(region_vekt = c("17", "20", "2
     left_join(nyckel_df %>% select(Kod, Branschgrupp), by = c("branschkod" = "Kod"))
   
   varde_df <- px_df %>% 
-    group_by(Branschgrupp) %>% 
+    group_by(år,Branschgrupp) %>% 
     summarise(intakter = sum(`Totala Intäkter, mnkr`, na.rm = TRUE)) %>% 
     ungroup() %>% 
     filter(intakter > 0)
+  
+  if(returnera_dataframe_global_environment == TRUE){
+    assign("intakter_bransch", varde_df, envir = .GlobalEnv)
+  }
   
   diagramfilnamn <- "diagram_46_intakter.png"
   
@@ -81,10 +86,14 @@ skapa_andel_anstallda_bransch_diagram <- function(region_vekt = c("17", "20", "2
   gg_list <- c(gg_list, list(gg_obj))
   
   arbst_df <- px_df %>% 
-    group_by(Branschgrupp) %>% 
+    group_by(år,Branschgrupp) %>% 
     summarise(arbst = sum(`Antal arbetsställen`, na.rm = TRUE)) %>% 
     ungroup() %>% 
     filter(arbst > 0)
+  
+  if(returnera_dataframe_global_environment == TRUE){
+    assign("arbetsstallen_bransch", arbst_df, envir = .GlobalEnv)
+  }
   
   diagramfilnamn <- "diagram_47_arbetsstallen.png"
   

@@ -1,0 +1,2 @@
+Här läggs data som används som indata till något av skripten, exempelvis mallar eller data som laddas ned som Excel.
+Notera att det enbart får vara publik data, dvs. inte data från exempelvis Mona som inte är aggregerad.

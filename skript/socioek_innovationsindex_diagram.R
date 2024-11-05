@@ -17,7 +17,8 @@ skapa_innovationsindex_diagram <- function(region_vekt = c("00","17", "20", "21"
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R", encoding = "utf-8", echo = FALSE)
 
   
-  input_mapp <- "G:/Samhällsanalys/Projekt och uppdrag/EU/ESF/Socioekonomisk analys/data_mars2022/"
+  #input_mapp <- "G:/Samhällsanalys/Projekt och uppdrag/EU/ESF/Socioekonomisk analys/data_mars2022/"
+  input_mapp <- here("Indata/") %>% paste0(., "/")
   innovationsindex_fil <- "innovationsindex.csv"
   innovationsindex_full <- paste0(input_mapp, innovationsindex_fil)
   

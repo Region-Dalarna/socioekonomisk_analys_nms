@@ -19,7 +19,7 @@ skapa_ohalsotal_diagram <- function(region_vekt = c("00","17", "20", "21"),
   
   ohalsa_df <- hamta_kolada_df(kpi_id = kolada_id,
                                valda_kommuner = region_vekt,
-                               valda_ar = valt_ar,
+                               valda_ar = "9999",
                                konsuppdelat = TRUE,
                                dop_om_kolumner = TRUE) %>% 
     mutate(region = factor(region, levels = c("Dalarna", "Gävleborg", "Värmland", "Riket")))

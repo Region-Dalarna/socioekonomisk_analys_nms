@@ -18,7 +18,8 @@ skapa_andel_anstallda_bransch_diagram <- function(region_vekt = c("17", "20", "2
   # ========================================== Inställningar ============================================
   
   mapp <- here("figurer/") %>% paste0(., "/")
-  nyckelmapp <- "G:/skript/nycklar/"
+  nyckelmapp <- here("Indata/") %>% paste0(., "/")
+  #nyckelmapp <- "G:/skript/nycklar/"
   branschnyckelfil <- "Bransch_Gxx_farger.csv"
   
   px_df <- hamta_bas_syss_region_kon_sni2007_fodelseregion_prel_manad_scb(region_vekt = region_vekt,

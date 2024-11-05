@@ -130,6 +130,7 @@ sysselsattningsgrad_diagram <- funktion_upprepa_forsok_om_fel( function() {diagr
                                                        returnera_data = TRUE)}, hoppa_over = hoppa_over_felhantering)
 
 sysselsattningsgrad_ar <- arbetsmarknadsstatus$ar %>% max() 
+sysselsattningsgrad_alder <- arbetsmarknadsstatus$ålder %>% unique()
 sysselsattningsgrad_manad <- arbetsmarknadsstatus$manad_long %>% unique() 
 
 # ============= Andel anställda i olika branscher uppdelat på kön (aggregerat över NMS) - motsvarar diagram 31 (sidan 36) i den tidigare rapporten
@@ -153,6 +154,15 @@ innovationsindex_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_innovationsindex_diagram()
 }, hoppa_over = hoppa_over_felhantering)
 innovationsindex_ar <- innovationsindex_df$År %>% max()
+
+# ============= Omsättning och antal arbetsställen (grupperat på NMS) - motsvarar diagram 47 och 48 (sidor 54-55) i den tidigare rapporten
+source(here("skript","socioek_intakter_arbstallen_diagram.R"), encoding="UTF-8")
+intakter_arbstallen_diagram <- funktion_upprepa_forsok_om_fel( function() {
+  skapa_intakter_arbstallen_bransch_diagram(region_vekt = c("17", "20", "21"))
+}, hoppa_over = hoppa_over_felhantering)
+intakter_bransch_ar <- intakter_bransch$år %>% max()
+arbstallen_bransch_ar <- arbetsstallen_bransch$år %>% max()
+
 
 # 2. om man vill knitta rapporten
 #source(paste0(here("skript","/"), "2_knitta_rapport.R"))
