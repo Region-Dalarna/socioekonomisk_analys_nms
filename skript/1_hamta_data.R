@@ -152,7 +152,7 @@ source(here("skript","socioek_inskr_af_kon_alder_utbniva.R"), encoding="UTF-8")
 inskr_af_kon_alder_utbniva <- funktion_upprepa_forsok_om_fel( function() {
   skapa_inskr_af_kon_alder_utbniva(region_vekt = c( "17", "20","21"))
 }, hoppa_over = hoppa_over_felhantering)
-inskr_arb_kon_alder_utbniva_ar <- inskr_arb_kon_alder_utbniva_df$år %>% max()
+inskr_arb_kon_alder_utbniva_ar <- inskr_af_kon_alder_utbniva_df$år %>% max()
 
 # ============= Andel förvärvsarbetande uppdelat på kön och födelseregion - motsvarar diagram 23 (sidan 28) i den tidigare rapporten
 source(here("skript","socioek_forvarvsarb_kon_fodelseregion.R"), encoding="UTF-8")
