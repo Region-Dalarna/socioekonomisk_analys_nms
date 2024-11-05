@@ -1,4 +1,4 @@
-skapa_inskr_arb_kon_alder_utbniva <- function(region_vekt = c("17", "20", "21"),
+skapa_inskr_af_kon_alder_utbniva <- function(region_vekt = c("17", "20", "21"),
                                                spara_diagrambildfil = FALSE,
                                                returnera_dataframe_global_environment = TRUE
 ){

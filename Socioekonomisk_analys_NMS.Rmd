@@ -258,7 +258,7 @@ Ungdomsarbetslösheten är högre bland män än bland kvinnor. Det behöver doc
 
 ```{r diagram21, echo=FALSE}
 #Diagram 21. Andel som varit inskrivna hos Arbetsförmedlingen någon gång under året efter kön, ålder och utbildningsnivå, 2020 (Källa: SCB)
-inskr_arb_kon_alder_utbniva
+inskr_af_kon_alder_utbniva
 ```
 
 Skillnaderna mellan länen och könen vad gäller ungdomsarbetslöshet generellt gäller också långtidsarbetslöshet. Långtidsarbetslösheten bland unga är betydligt högre i Gävleborg jämfört med övriga län i Norra Mellansverige samt riket. Värmland är i nivå med riket medan Dalarna befinner sig något under. Långtidsarbetslöshet bland ungdomar är särskilt problematiskt eftersom det kan få stora konsekvenser för individens framtidsmöjligheter. Längre perioder av arbetslöshet i unga år gör det betydligt svårare att etablera sig på arbetsmarknaden och har också negativa effekter på den framtida löneutvecklingen.
