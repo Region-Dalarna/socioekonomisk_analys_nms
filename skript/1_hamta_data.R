@@ -133,6 +133,13 @@ sysselsattningsgrad_ar <- arbetsmarknadsstatus$ar %>% max()
 sysselsattningsgrad_alder <- arbetsmarknadsstatus$ålder %>% unique()
 sysselsattningsgrad_manad <- arbetsmarknadsstatus$manad_long %>% unique() 
 
+# ============= Andel inskrivna arbetslösa baserat på kön och ålder och utbildningsnivå - motsvarar diagram 21 (sidan 26) i den tidigare rapporten
+source(here("skript","socioek_inskr_af_kon_alder_utbniva.R"), encoding="UTF-8")
+inskr_arb_kon_alder_utbniva <- funktion_upprepa_forsok_om_fel( function() {
+  skapa_inskr_arb_kon_alder_utbniva(region_vekt = c( "17", "20","21"))
+}, hoppa_over = hoppa_over_felhantering)
+inskr_arb_kon_alder_utbniva_ar <- forvarvsarbetande_kon_fodelseregion_df$år %>% max()
+
 # ============= Andel förvärvsarbetande uppdelat på kön och födelseregion - motsvarar diagram 23 (sidan 28) i den tidigare rapporten
 source(here("skript","socioek_forvarvsarb_kon_fodelseregion.R"), encoding="UTF-8")
 forvarvsarb_kon_fodelseregion <- funktion_upprepa_forsok_om_fel( function() {
