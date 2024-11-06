@@ -284,13 +284,13 @@ Utbildningsnivån är en annan faktor som har stor betydelse för hur utrikes f�
 Även vistelsetiden i Sverige har stor betydelse. Personer med minst gymnasieexamen som har varit i Sverige länge (10 år eller mer) har en sysselsättningsnivå som närmar sig snittet för svenskfödda medan sysselsättningen är betydligt lägre bland nyanlända. Andelen förvärvsarbetande bland nyanlända som saknar gymnasieexamen är väldigt låg. I Dalarna och Värmland uppgick andelen till ca 12 procent bland kvinnorna och 32 respektive 27 procent bland männen år 2020. I Gävleborg var andelen förvärvsarbetande bland lågutbildade nyanlända kvinnor något högre, 17 procent, medan andelen bland män var i nivå med Dalarnas andel. Könsskillnaderna är också särskilt stora bland nyanlända, med betydligt högre sysselsättningsgrad bland män jämfört med bland kvinnor. Könsskillnaderna bland nyanlända finns oavsett utbildningsnivå, även om andelen förvärvsarbetande är högre för både kvinnor och män bland personer med eftergymnasial utbildning.
 
 ```{r diagram24, echo=FALSE}
-# Diagram 24. Andel förvärvsarbetande bland utrikes födda efter utbildningsnivå och vistelsetid, 2020 (Källa: SCB)
+print("Diagram 24. Andel förvärvsarbetande bland utrikes födda efter utbildningsnivå och vistelsetid, 2020 (Källa: SCB)")
 ```
 
 Matchningen på arbetsmarknaden i Norra Mellansverige är god, sett till om man har rätt utbildningsnivå för det yrke man har. 84 procent av de med svensk bakgrund och 74 procent av de med utländsk bakgrund har rätt utbildningsnivå för sitt yrke. Andelen överutbildade, som har för hög utbildningsnivå i relation till yrket, är dock betydligt högre bland personer med utländsk bakgrund, 10 procent jämfört med 3 procent bland de med svensk bakgrund. Andelen som har för låg utbildning för sitt yrke är också något högre bland personer med utländsk bakgrund men skillnaden är liten.
 
 ```{r diagram25, echo=FALSE}
-# Diagram 25. Arbetsmarknadsmatchning utifrån utbildningsnivå i Norra Mellansverige år 2019 (Källa: Regionala Supercrossdatabaserna, SCB)
+print("Diagram 25. Arbetsmarknadsmatchning utifrån utbildningsnivå i Norra Mellansverige år 2019 (Källa: Regionala Supercrossdatabaserna, SCB)")
 ```
 
 För att klara den framtida kompetensförsörjningen, med en demografisk struktur med allt färre i arbetsför ålder per pensionär, barn och ungdom, är en stor utmaning hur man ska få den stora gruppen lågutbildade utrikes födda i arbete. En del i denna grupp har inte ens fullgjort grundskolan och har således en tämligen lång väg till en gymnasieexamen. Här finns en potential i de som är överutbildade för sina yrken. Denna grupp torde vara enklare att med insatser förflytta till mer kvalificerade arbetsuppgifter och därmed frigöra mindre kvalificerade arbeten till de som saknar gymnasieexamen. Även för de som saknar gymnasieexamen kan insatser behövas, men det är sannolikt enklare för gruppen att tillgodogöra sig en konkret yrkesutbildning än att fullgöra en hel gymnasieutbildning. Det finns vissa indikationer på att vi har varit mer fokuserade på att få nyanlända i arbete än att se till kvaliteten på matchningen, ett fullt rimligt fokus då antalet nyanlända i etablering har varit högt under många år. Om invandringen fortsätter att minska och arbetskraftsbristen håller i sig – åtminstone på lite längre sikt – behöver vi möjligen titta mer på hur matchningen fungerar, och där utgör överutbildade en potential.
@@ -310,11 +310,11 @@ Uppsägningar och indragna tjänster för personer med osäkra anställningar �
 Förutom varsel ledde krisen också till att många människor korttidspermitterades, det vill säga gick ner i arbetstid under en begränsad period. Antalet anställda som beviljades korttidsarbete var många fler än antalet varslade, men det är troligt att de allra flesta återgått till att arbeta full tid efter korttidspermitteringens slut.
 
 ```{r diagram26, echo=FALSE}
-# Diagram 26. Antalet varslade personer i Sverige september 2020 till december 2021 (Källa: Arbetsförmedlingen)
+print("Diagram 26. Antalet varslade personer i Sverige september 2020 till december 2021 (Källa: Arbetsförmedlingen)")
 ```
 
 ```{r diagram27, echo=FALSE}
-# Diagram 27. Antal varslade personer i Norra Mellansverige från januari 2018 till och med december 2021 (Källa: Arbetsförmedlingen)
+print("Diagram 27. Antal varslade personer i Norra Mellansverige från januari 2018 till och med december 2021 (Källa: Arbetsförmedlingen)")
 ```
 
 ```{r diagram28, echo=FALSE}
@@ -324,19 +324,19 @@ Förutom varsel ledde krisen också till att många människor korttidspermitter
 Pandemin drabbade vissa branscher i större utsträckning än andra. Hotell- och restaurangbranschen, kultur- och nöjesbranschen och detaljhandeln är alla exempel på branscher som drabbades hårt av restriktionerna och människors förändrade beteenden. Eftersom detta är branscher som sysselsätter många ungdomar drabbades just ungdomar särskilt hårt av pandemin, framför allt i det inledande skedet. Unga har också timanställningar och andra tidsbegränsade arbetsformer i större utsträckning, vilket gjorde dem extra sårbara under pandemin. I ett något senare skede drabbades även tillverkningsindustrin, bland annat till följd av leveransproblem av insatsvaror. Att dessa branscher drabbats hårt syns i statistiken över varsel och korttidspermitteringar för Norra Mellansverige. Andra branscher som haft en hög andel varslade eller permitterade medarbetare är IT och kommunikation samt Transport.
 
 ```{r diagram29, echo=FALSE} 
-# Diagram 29. Antalet anställda i korttidsarbete respektive antalet varslade i Norra Mellansverige som andel av sysselsatta per bransch tom augusti 2020 (Källa: Tillväxtverket och Arbetsförmedlingen)
+print("Diagram 29. Antalet anställda i korttidsarbete respektive antalet varslade i Norra Mellansverige som andel av sysselsatta per bransch tom augusti 2020 (Källa: Tillväxtverket och Arbetsförmedlingen)")
 ```
 
 Pandemin drabbade också vissa kommuner mer än andra. Noterbart är att utvecklingen av arbetslösheten under pandemin inte var mest negativ i de kommuner som hade hög arbetslöshet sedan tidigare, utan mönstret är snarare det omvända. Det förklaras av att branschsammansättningen varierar mellan kommunerna, där de kommuner som drabbats hårdast har fler sysselsatta inom särskilt utsatta branscher. Till de värst drabbade kommunerna i länet hör till exempel Värmlands gränskommuner, där handeln med Norge står för en stor del av arbetstillfällena. Även vissa kommuner i Dalarna har drabbats hårt. Samtidigt finns kommuner i både Dalarna och Värmland som klarat sig betydligt bättre. Även i Gävleborg finns tydliga kommunala skillnader men länet har som helhet klarat sig bättre än Dalarna och Värmland.
 
 ```{r karta1, echo=FALSE}
-# Karta 1. Andel arbetslösa i Norra Mellansveriges kommuner år 2019 till vänster och förändring av arbetslösheten i samma kommuner under pandemin år 2020 jämfört med tidigare år till vänster. (Källa: Arbetsförmedlingen)
+print("Karta 1. Andel arbetslösa i Norra Mellansveriges kommuner år 2019 till vänster och förändring av arbetslösheten i samma kommuner under pandemin år 2020 jämfört med tidigare år till vänster. (Källa: Arbetsförmedlingen)")
 ```
 
 Även om pandemin alltså drabbade vissa branscher och kommuner hårt tyder mycket på att ekonomin håller på att återhämta sig. Det syns bland annat i statistiken över arbetslöshetsnivåer över tid, där nivåerna är tillbaka på samma nivåer som innan pandemin. Erfarenheter från tidigare kriser och varsel visar också att de flesta personer som förlorar sina jobb i samband med en kris hittar ett nytt arbete, alternativt väljer att vidareutbilda sig, inom en relativt snar framtid. Utmaningen brukar istället vara de personer som redan innan krisen stod utanför arbetsmarknaden, som i samband med att personer med bättre meriter förlorar sina jobb får ännu svårare att ta sig in. Även om arbetslösheten totalt sett har återgått till ungefär samma nivåer som innan pandemin har andelen långtidsarbetslösa ökat, sett i relation till det totala antalet arbetslösa. Innan pandemin, och även under 2021, utgjorde personer som varit utan arbete i mer än 12 månader ca 30 – 40 procent av de arbetslösa, i alla tre län. I februari 2022 var andelen ca tio procentenheter högre.
 
 ```{r diagram30, echo=FALSE}
-# Diagram 30. Arbetslösa > 12 månader som andel av det totala antalet arbetslösa (Källa: Arbetsförmedlingen)
+print("Diagram 30. Arbetslösa > 12 månader som andel av det totala antalet arbetslösa (Källa: Arbetsförmedlingen)")
 ```
 
 Pandemin kan också ha fått andra effekter på arbetsmarknaden. En tydlig konsekvens är att många arbeten till viss del har ändrat karaktär i samband med att arbetsmarknaden har ställt om mot ökad digitalisering. Behov av arbetskraft med kunskaper inom digitala verktyg kan ha ökat inom många branscher. Samtidigt har distansarbete blivit allt vanligare vilket gör att människors möjliga arbetsmarknad har utvidgats geografiskt. Det betyder att arbetsgivare i Norra Mellansverige kan söka arbetskraft i hela landet, samtidigt som människor i Norra Mellansverige har större möjlighet att bo här men arbeta för arbetsgivare lokaliserade till andra regioner. Vilka konsekvenser det får för sysselsättning, arbetslöshet och matchning i Norra Mellansverige återstår att se.
@@ -345,7 +345,7 @@ Pandemin kan också ha fått andra effekter på arbetsmarknaden. En tydlig konse
 Arbetsmarknaderna i Norra Mellansverige är tydligt könssegregerade och de tre länen har en nästan identisk könsfördelning mellan sektorerna. Fördelningen är typiskt traditionell med en stor andel av kvinnorna i omsorgsyrken inom den offentliga sektorn medan männen i högre grad arbetar i den privata sektorn. Vård- och omsorgssektorn är den överlägset vanligaste arbetsplatsen för kvinnor i regionen. Ungefär en tredjedel av alla kvinnor i Norra Mellansverige arbetar inom sektorn. Utbildningssektorn är näst vanligast, här arbetar cirka 17 procent av kvinnorna. Männen har en något större spridning mellan sektorerna men fortfarande återfinns ungefär hälften av alla män inom branscherna tillverkning och utvinning, byggverksamhet och handel. Eftersom kvinnor i större utsträckning arbetar inom offentlig sektor brukar sysselsättningen bland kvinnor inte påverkas av lågkonjunktur och kris i samma utsträckning som män. Å andra sidan finns en stor risk för att jämställdheten tar ett kliv bakåt under kriser, såsom under finanskrisen.
 
 ```{r diagram31, echo=FALSE}
-# Diagram 31. Andelen förvärvsarbetande i Norra Mellansverige efter bransch (SNI 2007) och kön, 2020 (Källa: SCB)
+print("Diagram 31. Andelen förvärvsarbetande i Norra Mellansverige efter bransch (SNI 2007) och kön, 2020 (Källa: SCB)")
 andel_sysselsatta_kon_bransch
 ```
 
@@ -356,7 +356,7 @@ På yrkesnivå är kvinnorna överrepresenterade inom yrken som kräver en läng
 Män arbetar som chefer inom samtliga branscher men andelen är högst i de branscher som domineras av män, framför allt bygg samt tillverkning och utvinning. Samtidigt som andelen manliga chefer är hög inom dessa branscher är den dock proportionerlig sett till andelen manliga anställda. Inom flera andra branscher, däribland de stora branscherna handel, företagstjänster, samt utbildning, är däremot manliga chefer överrepresenterade, sett till könsfördelningen bland anställda inom branschen. Samtidigt finns det en mycket tydlig trend mot en ökad andel kvinnliga chefer. I Den manliga överrepresentationen på chefsnivå har minskat inom samtliga branscher mellan 2008 och 2020. Inom vård och omsorgsbranschen har en tydlig manlig överrepresentation bytts mot en underrepresentation.
 
 ```{r diagram32, echo=FALSE}
-# Diagram 32. Över-/underrepresentation för andel män i ledningsyrken i relation till andelen män inom branschen, Norra Mellansverige 2020 och 2008. Ett värde på 0 innebär att andelen manliga chefer är proportionerlig gentemot andelen manliga anställda. Ett värde över 0 innebär att män är överrepresenterade i ledande positioner medan ett värde under 0 innebär en underrepresentation. (Källa: SCB, egna bearbetningar).
+print("Diagram 32. Över-/underrepresentation för andel män i ledningsyrken i relation till andelen män inom branschen, Norra Mellansverige 2020 och 2008. Ett värde på 0 innebär att andelen manliga chefer är proportionerlig gentemot andelen manliga anställda. Ett värde över 0 innebär att män är överrepresenterade i ledande positioner medan ett värde under 0 innebär en underrepresentation. (Källa: SCB, egna bearbetningar).")
 ```
 
 En könssegregerad arbetsmarknad motverkar dynamik och tillväxt. Rörligheten på arbetsmarknaden hindras när män och kvinnor är låsta inom rådande könsstrukturer. Människor begränsas också i sina yrkesval vilket innebär att många kanske arbetar inom yrken där de inte når sin fulla potential, eller att utbildningsvalen inte motsvarar arbetsmarknadens behov i den utsträckning som hade kunnat vara fallet om könsnormerna varit mindre starka. Många potentiellt duktiga kvinnliga ledare kanske avstår från att söka ledarutbildningar eller ledaryrken på grund av bristen på förebilder och motverkande normer. I slutändan kan en könssegregerad arbetsmarknad minska länens attraktionskraft för både nuvarande invånare och potentiella inflyttare. 
@@ -382,13 +382,13 @@ ohalsa_diagram
 Könsskillnaden återfinns även i sjukpenningtalet, som mäter antalet (netto-)dagar med sjukpenning och/eller rehabiliteringspenning per försäkrad individ. Kvinnor tar ut betydligt fler sjukdagar än män. I Värmland uppgår kvinnornas sjukdagar till det dubbla jämfört med männen (14,6 respektive 7,4 i januari 2022) och även i Dalarna och Gävleborg är könsskillnaderna mycket stora.
 
 ```{r diagram34, echo=FALSE}
-# Diagram 34. Sjukpenningtalet efter kön i de tre länen samt riket, januari 2022 (Källa: Försäkringskassan)
+print("Diagram 34. Sjukpenningtalet efter kön i de tre länen samt riket, januari 2022 (Källa: Försäkringskassan)")
 ```
 
 Könsskillnaderna kan troligtvis förklaras av en kombination av att kvinnor och män arbetar inom olika branscher och yrken samt att kvinnor tar ett större ansvar för det obetalda hushållsarbetet. Den senare hypotesen stöds av att könsskillnaderna i sjukfrånvaro är som störst i de åldrar där det vanligtvis finns minderåriga barn i hushållet (30–39 och 40–49). Efter 50 år ålder börjar könsskillnaderna minska för att vara relativt små vid 60 års ålder. Statistiska centralbyråns senaste tidsanvändningsstudie från 2010 visar att kvinnor och män lägger ungefär lika mycket tid på arbete per dygn, men att en större del av kvinnans arbetsdag består av obetalt hushållsarbete . Männen lägger istället något mer tid på förvärvsarbete. En pilotstudie från 2020 bekräftar resultaten , men på grund av olika mätmetoder går det inte att säga något om utvecklingen över tid. En jämförelse mellan tidigare år tyder dock på att jämställdheten har ökat över tid. 
 
 ```{r diagram35, echo=FALSE}
-# Diagram 35. Sjukpenningtalet efter ålder och kön för samtliga tre län i Norra Mellansverige samt riket, januari 2022 (Källa: Försäkringskassan)
+print("Diagram 35. Sjukpenningtalet efter ålder och kön för samtliga tre län i Norra Mellansverige samt riket, januari 2022 (Källa: Försäkringskassan)")
 ```
 
 Psykisk ohälsa står för över hälften av all sjukfrånvaro bland kvinnor. Bland män är andelen något lägre, runt 40 procent. Åter är skillnader i branscher och yrkesval en viktig förklaring. Sjukfrånvaro på grund psykisk ohälsa är extra vanligt bland personer som arbetar inom kontaktyrken inom offentlig sektor, där kvinnor är överrepresenterade. Den andra stora orsaksgruppen till sjukfrånvaro är muskuloskeletala diagnoser där ledsjukdomar, ryggsjukdomar och sjukdomar i mjukvävnader ingår. Sjukskrivning för muskuloskeletala diagnoser är vanligare bland män.
@@ -396,25 +396,26 @@ Psykisk ohälsa står för över hälften av all sjukfrånvaro bland kvinnor. Bl
 En bidragande orsak till kvinnors högre psykiska ohälsa är den ojämställda fördelningen av hemarbetet. Forskning har visat att kvinnors självrapporterade psykiska stress är högre bland de som lägger mer tid på både betalt arbete och obetalt hushållsarbete. I studien kunde man inte se samma mönster hos män. Resultaten innebär att könsskillnaden i stressrelaterad psykisk ohälsa skulle kunna minska om männen tog mer ansvar för det obetalda hemarbetet.
 
 ```{r diagram36, echo=FALSE}
-# Diagram 36. Huvudorsaker till sjukfrånvaro för de tre länen samt riket, december 2021 (Källa: Försäkringskassan)
+print("Diagram 36. Huvudorsaker till sjukfrånvaro för de tre länen samt riket, december 2021 (Källa: Försäkringskassan)")
 ```
 ## Självskattad hälsa
 Som komplement till ohälsotal och sjukpenningtal, som mäter ohälsa bland den del av befolkningen med anknytning till arbetsmarknaden, finns enkätuppgifter som mäter subjektiv hälsa utifrån hela befolkningen. En vanlig källa är den Nationella Folkhälsoenkäten som genomförs av Folkhälsomyndigheten. Självskattad hälsa är ett vanligt och sammanfattande mått på subjektiv hälsa. Till skillnad från ohälso- och sjukpenningtalen, där Norra Mellansverige sticker ut negativt, finns det ingen signifikant skillnad mot vare sig riket eller mellan de tre länen (de skillnader som finns är inom ramen för konfidensintervallen). 68-71 procent av kvinnorna och 71-75 procent bland männen uppger att de har en bra eller mycket bra hälsa. Cirka sex procent av kvinnorna och männen uppger att de har en dålig eller mycket dålig hälsa.
 
 ```{r diagram37, echo=FALSE}
-# Diagram 37. Andel med bra eller mycket bra självskattad hälsa i de tre länen samt riket, 2018-2021 (Källa: Nationella Folkhälsoenkäten/Folkhälsomyndigheten)
+print("Diagram 37. Andel med bra eller mycket bra självskattad hälsa i de tre länen samt riket, 2018-2021 (Källa: Nationella Folkhälsoenkäten/Folkhälsomyndigheten)")
 ```
 ## Hälsan under pandemin
 Det är oklart i vilken utsträckning folkhälsan har påverkats av pandemin. Ett stort antal människor har haft Covid-19. Totalt uppgick antalet bekräftade fall till ca 2,5 miljoner i Sverige, i mars 2022. Länen i Norra Mellansverige tillhör varken de minst drabbade eller de som drabbats hårdast, sett till antalet fall per 100 000 invånare. Hur hårt länen drabbats beror på en rad olika faktorer, däribland befolkningssammansättningen och folkhälsoläget men också förekomst av tillfälliga klusterutbrott. Antalet intensivvårdade och avlidna i Covid-19 har i perioder varit relativt högt. I Norra Mellansverige har totalt 1 424 personer avlidit till följd av Covid-19 och 692 personer intensivvårdats, till och med mars 2022. 
 
 ```{r diagram38, echo=FALSE}
-# Diagram 38. Antalet laboratoriebekräftade fall av Covid-19 per 100 000 invånare. Vecka 11 2022 (Källa: Folkhälsomyndigheten)
+print("Diagram 38. Antalet laboratoriebekräftade fall av Covid-19 per 100 000 invånare. Vecka 11 2022 (Källa: Folkhälsomyndigheten)")
+print("TA BORT AVSNITT?")
 ```
 
 Trots att Covid-19 är en allvarlig sjukdom är sjukdomstillståndet dock övergående för de allra flesta som drabbats. För vissa har dock Covid-sjukdomen inneburit mer långvarig besvär. Ca 30 000 svenskar har diagnosticerats med postcovid , långvariga symptom som uppstått till följd av tidigare Covid-sjukdom och som i vissa fall har stor inverkan på livskvalitén hos den enskilde. Postcovid är vanligare bland de som drabbades av allvarlig sjukdom, men sett i relation till alla som haft Covid-infektion  är det fortfarande en relativt ovanlig diagnos. Det är därmed oklart i vilken utsträckning Covid-19 påverkar den allmänna folkhälsan i ett längre perspektiv. Oklarheten gäller också befolkningens psykiska hälsa. Symptom som sömnsvårigheter, trötthet, oro och ångest ökade under pandemin. Om ökningen håller i sig på sikt, efter att restriktionerna har släppt, återstår att se.
 
 ```{r diagram39, echo=FALSE}
-# Diagram 39. Symptom på psykisk ohälsa, 2015-2018 samt 2018-2021 (Källa: Nationella folkhälsoenkäten, Folkhälsomyndigheten)
+print("Diagram 39. Symptom på psykisk ohälsa, 2015-2018 samt 2018-2021 (Källa: Nationella folkhälsoenkäten, Folkhälsomyndigheten)")
 ```
 ## Ekonomiskt utanförskap
 Ohälsa och sjukfrånvaro är inte bara negativt ur en hälsomässig synvinkel utan också ur en ekonomisk. Ekonomi har i sin tur betydelse för hälsa och livskvalitet då en god ekonomi innebär bättre möjlighet att delta i samhället och olika sociala aktiviteter på samma nivå som alla andra och dessutom minskar risken för ekonomisk stress.
@@ -424,7 +425,7 @@ Det finns ett tydligt samband mellan ekonomi och position på arbetsmarknaden. E
 Andelen som har en låg ekonomisk standard är högre i Norra Mellansverige än i riket som helhet. År 2020 uppgick andelen med låg ekonomisk standard till 14,1 procent i Dalarna och drygt 15 procent i Gävleborg och Värmland, att jämföra med 13,3 procent i riket. Mönstret är detsamma för både förvärvsarbetande och icke förvärvsarbetande, men skillnaden mot riket är större bland personer som står utanför arbetsmarknaden. Sammantaget finns med andra ord fler som står utanför arbetsmarknaden på grund av arbetslöshet eller sjukdom i Norra Mellansverige, och en större andel av dessa människor upplever ett ekonomiskt utanförskap.
 
 ```{r diagram40, echo=FALSE}
-# Diagram 40. Andel med låg ekonomisk standard efter sysselsättning, Norra Mellansverige och riket, ålder 20–64 år, 2020 (Källa: SCB)
+print("Diagram 40. Andel med låg ekonomisk standard efter sysselsättning, Norra Mellansverige och riket, ålder 20–64 år, 2020 (Källa: SCB)")
 ```
 
 Ett annat vedertaget sätt att mäta ekonomiskt utanförskap är att se till antalet helårsekvivalenter i befolkningen i arbetsför ålder (20–64 år) som försörjs av sociala ersättningar och bidrag. Med ersättningar och bidrag menas sjuk- och aktivitetsersättning, a-kassa, sjukpenning, arbetsmarknadsåtgärder och ekonomiskt bistånd. Helårsekvivalenter tar hänsyn till att många personer får ersättning för en begränsad tid. Två personer som får ersättning under sex månader vardera räknas som en helårsekvivalent.
@@ -434,13 +435,13 @@ I statistiken sticker Gävleborg ut som det län som har den högsta andelen av 
 Ekonomiskt bistånd utgör samhällets yttersta ekonomiska skyddsnät för de som inte har möjlighet att försörja sig på annat sätt. Andelen hushåll som får ekonomiskt bistånd uppgick år 2020 till 5,6 procent i Gävleborgs län. I Dalarna och Värmland var andelen något lägre, 5,0 respektive 4,6 procent, men i båda fallen betydligt över riksgenomsnittet på 3,6 procent.
 
 ```{r diagram41, echo=FALSE}
-# Diagram 41. Andel helårsekvivalenter som försörjs med sociala ersättningar och bidrag per län, befolkningen 20–64 år, genomsnitt perioden 2020-07 – 2021-06 (Källa: SCB)
+print("Diagram 41. Andel helårsekvivalenter som försörjs med sociala ersättningar och bidrag per län, befolkningen 20–64 år, genomsnitt perioden 2020-07 – 2021-06 (Källa: SCB)")
 ```
 
 Det ekonomiska utanförskapet varierar tydligt med ålder och etnisk bakgrund, vilket i sin tur beror på skillnaderna i sysselsättning inom dessa grupper. Andelen unga som lever i hushåll med låg ekonomisk standard är relativt hög jämfört med andra åldersgrupper. Den är också betydligt högre i samtliga tre län inom Norra Mellansverige än i riket, vilket kan förklaras av den höga ungdomsarbetslösheten. Andelen med låg ekonomisk standard minskar sedan med ålder, för att öka igen efter pensionsåldern. Den grupp som sticker ut mest är dock de allra äldsta, de som är 80 år eller mer. Där uppgick andelen med låg ekonomisk standard till 23 procent i Värmland och Dalarna, och 22 procent i Gävleborg år 2020. Framför allt är det äldre ensamstående kvinnor med låga pensioner som tillhör denna ekonomiskt utsatta grupp.
 
 ```{r diagram42, echo=FALSE}
-# Diagram 42. Andel personer i hushåll med låg ekonomisk standard (inkomst <60 procent av medianen) efter ålder, 2020 (Källa: SCB)
+print("Diagram 42. Andel personer i hushåll med låg ekonomisk standard (inkomst <60 procent av medianen) efter ålder, 2020 (Källa: SCB)")
 ```
 
 Det finns också stora skillnader mellan personer med svensk respektive utländsk bakgrund. Över en tredjedel av alla personer med utländsk bakgrund i Norra Mellansverige lever i hushåll med låg ekonomisk standard. Det är betydligt fler än i riket som helhet där andelen uppgår till 25 procent. Bland svenskfödda är andelen som lever i hushåll med låg ekonomisk standard ca 10 procent i Norra Mellansverige och 9 procent i riket.
@@ -448,7 +449,7 @@ Det finns också stora skillnader mellan personer med svensk respektive utländs
 Även skillnaderna mellan inrikes och utrikes födda kan till viss del förklaras av skillnader i sysselsättning. Stora skillnader kvarstår visserligen även om grupperna delas upp i förvärvsarbetande respektive icke förvärvsarbetande men en viktig orsak är att sysselsättning mäts på individnivå medan ekonomisk standard mäts på hushållsnivå. Eftersom sysselsättningsnivåerna är lägre bland utrikes födda är det vanligare att de lever tillsammans med en partner som inte förvärvsarbetar, vilket påverkar hushållets ekonomiska situation. På motsvarande sätt är det vanligare att personer med utländsk bakgrund som saknar förvärvsarbete lever i hushåll där samtliga vuxna står utanför arbetsmarknaden vilket även det kan förklaras av skillnader i sysselsättning. Andelen är högst bland nyanlända som står utanför arbetsmarknaden i betydligt högre grad än personer med längre vistelsetid.
 
 ```{r diagram43, echo=FALSE}
-# Diagram 43. Andel personer i hushåll med låg ekonomisk standard (inkomst <60 procent av medianen) efter svensk/utländsk bakgrund samt sysselsättningsstatus, ålder 20-64 år, 2020 (Källa: SCB)
+print("Diagram 43. Andel personer i hushåll med låg ekonomisk standard (inkomst <60 procent av medianen) efter svensk/utländsk bakgrund samt sysselsättningsstatus, ålder 20-64 år, 2020 (Källa: SCB)")
 ```
 
 Även bland personer med funktionsnedsättning är det ekonomiska utanförskapet stort i relation till befolkningen i helhet. Även här beror det till stor del på gruppens lägre arbetsmarknadsdeltagande. I Nationella Folkhälsoenkäten ställs frågor kring ekonomi. Sex av tio personer med funktionsnedsättning har svårt att få ekonomin att gå ihop och två tredjedelar oroar sig för sin framtida ekonomiska situation, visar analyser baserade på Myndigheten för Delaktighets nationella undersökningspanel.
@@ -464,7 +465,7 @@ Vi kommer i framtiden inte att kunna organisera samhället som vi har gjort hitt
 Det står bortom allt rimligt tvivel att den globala uppvärmningen är en följd av mänskliga aktiviteter. Klimatet är ett komplext system och det är svårt att göra exakta förutsägelser av framtida effekter av den globala uppvärmningen, men decennier av klimatforskning har ändå resulterat i klimatmodeller som visar stor precision. Det står därmed klart att om inget görs för att minska utsläppen av koldioxid, och andra gaser som driver den globala uppvärmningen, kommer konsekvenserna att bli stora och i förlängningen kunna göra jorden obeboelig för människan. Redan vid 1,5 graders global uppvärmning blir konsekvenserna stora och vid 2 graders uppvärmning än större. Vid 2 graders global uppvärmning istället för 1,5 grad förväntas 100-tals miljoner fler människor drabbas genom ökad fattigdom, värmeböljor och vattenbrist . För att uppnå 1,5- eller ens 2-gradersmålet krävs en dramatisk omställning då vi ännu inte påbörjat minskningen av CO2-utsläppen och inte heller uppfyller Parisavtalet. Samtidigt har pandemin visat att stora förändringar ger relativt snabba resultat. Enligt Forskning och framsteg  föll de globala koldioxidutsläppen med 17 procent tidigt i april 2020, och skulle kunna minska med omkring 7 procent för helåret. Även om denna minskning är tillfällig och koldioxidutsläppen kommer öka i takt med att det globala resandet återupptas så visar det på att en förändring är möjlig.
 
 ```{r diagram44, echo=FALSE}
-# Diagram 44. CO2 utsläppskurvor för att uppnå 2⁰C-målet (Källa: Robbie Andrew, Center for International Climate Research, egen bearbetning)
+print("Diagram 44. CO2 utsläppskurvor för att uppnå 2⁰C-målet (Källa: Robbie Andrew, Center for International Climate Research, egen bearbetning)")
 ```
 
 Tillverkningsindustrin står för en stor andel av utsläppen och för att klara klimatomställningen krävs att de i snabb takt ställer om till en fossilfri produktion. Livsmedel och transporter är två andra områden som kommer att behöva ställas om för att uppnå målet om ett fossilfritt Sverige.
@@ -477,7 +478,7 @@ Här bör särskilt nämnas den stora grupp invandrare som anlänt till Sverige 
 Vid en analys av sysselsättningsförändringen per bransch i Norra Mellansverige syns att den industriella omvandling med ett minskat antal sysselsätta som pågått sedan mitten av 1900-talet alltjämt fortsätter. Nu bör nämnas att förändringar i företagens organisering bidrar till att nedgången ser större ut i statistiken än vad den verkligen är. Detta då industriföretagen i allt större utsträckning har valt att outsourca verksamhet, antingen till externa bolag eller till bolag inom samma koncern, men som har det gemensamt att de innehåller anställda som tidigare registrerades inom tillverkningsindustri men som nu registreras i annan bransch, och då främst inom företagstjänster. Därutöver har flera industriföretag genomfört effektiviseringar av sin produktion med följden att de sysselsätter färre personer. Detta har varit avgörande för dem för att de fortsatt ska kunna vara konkurrenskraftiga på en global marknad. Nedgången i industrin är därför reell om än inte så stor som statistiken visar vilket fångas i studier av industrins multiplikatoreffekt på sysselsättningen som visar att varje anställd inom industrin leder till ett antal sysselsatta inom andra branscher.
 
 ```{r diagram45, echo=FALSE}
-# Diagram 45. Förändring sysselsättning i Norra Mellansverige 2008–2020 (Källa: SCB)
+print("Diagram 45. Förändring sysselsättning i Norra Mellansverige 2008–2020 (Källa: SCB)")
 ```
 
 Det finns en geografisk dimension av denna strukturomvandling där sysselsatta i branschen tillverkningsindustri i större utsträckning är lokaliserade i glesare områden medan sysselsatta i branschen företagstjänster i större utsträckning är lokaliserade i täta områden, antingen i regioncentra eller i en storstadsregion. Nedgången i antal sysselsatta inom tillverkningsindustri kan leda till en uppgång i företagstjänster, men i en annan kommun eller till och med utanför Norra Mellansverige. Denna risk ökar om utbudet av högutbildad arbetskraft inte utvecklas i samma takt i Norra Mellansverige som i storstadsregionerna, en trend som vi ser i Norra Mellansverige (se avsnittet om utbildning ovan).
