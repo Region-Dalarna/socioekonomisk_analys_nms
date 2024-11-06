@@ -178,7 +178,7 @@ När vi ser på genomströmningen på gymnasiet och andelen elever som avslutar 
 ## Övergång till högskola inom tre år från avslutad gymnasieutbildning
 I Norra Mellansverige går drygt hälften av kvinnorna och strax under 40 procent av männen vidare från gymnasiet till en eftergymnasial utbildning inom tre år. Majoriteten går till högskolestudier, vilket gäller för både kvinnor och män. Det är vanligare för kvinnor än män att påbörja studier vid folkhögskola, och det är vanligare för män än kvinnor att istället gå till en yrkeshögskoleutbildning. På riksnivå är det cirka 57 procent av kvinnorna och 45 procent av männen som inom tre år efter gymnasiet går vidare till någon form av eftergymnasial utbildning.
 
-```{r diagram13, echo=FALSE,fig.cap = glue("Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning {socioek_overgang_eftergymn_studier}. (Källa: SCB)")}
+```{r diagram13, echo=FALSE,fig.cap = glue("Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning {overgang_eftergymn_studier_avgangsar}. (Källa: SCB)")}
 # Diagram 13. Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning VT 2017 (Källa: SCB)
 socioek_overgang_eftergymn_studier
 ```
@@ -258,7 +258,7 @@ print("Diagram 20. Andel öppet arbetslösa samt sökande i program med aktivite
 
 Ungdomsarbetslösheten är högre bland män än bland kvinnor. Det behöver dock inte betyda att kvinnor har lättare att hitta arbete utan kan förklaras av att unga kvinnor vidareutbildar sig i högre grad än unga män. Just utbildningsnivån är en bidragande orsak till den höga ungdomsarbetslösheten i Norra Mellansverige, och i Gävleborg i synnerhet. En lägre andel av ungdomarna i Norra Mellansverige väljer att läsa vidare efter gymnasiet vilket påverkar deras möjligheter att få jobb. Ungdomar med eftergymnasial utbildning eller med examen från gymnasieskolans yrkesprogram har betydligt bättre framtidsutsikter än ungdomar som saknar gymnasieexamen. SCB:s arbetsmarknadsprognoser tyder på att efterfrågan på personer utan gymnasieutbildning kommer att sjunka ytterligare i framtiden . Antalet jobb för personer som saknar utbildning minskar när yrken försvinner, arbetsuppgifter förändras och utbildningskraven till många yrken skärps.
 
-```{r diagram21, echo=FALSE}
+```{r diagram21, echo=FALSE, fig.cap = glue("Andel som varit inskrivna hos Arbetsförmedlingen någon gång under året efter kön, ålder och utbildningsnivå, {inskr_arb_kon_alder_utbniva_ar} (Källa: SCB)")}
 #Diagram 21. Andel som varit inskrivna hos Arbetsförmedlingen någon gång under året efter kön, ålder och utbildningsnivå, 2020 (Källa: SCB)
 inskr_af_kon_alder_utbniva
 ```
@@ -274,7 +274,7 @@ print("Diagram 22. Andel öppet arbetslösa samt sökande i program med aktivite
 
 Arbetslöshets- och sysselsättningsnivåerna bland utrikes födda varierar dock stort mellan olika grupper. Kön och födelseland är två faktorer som har stor betydelse. Personer från länder utanför EU/EFTA har det betydligt svårare på arbetsmarknaden än personer från Norden eller övriga EU/EFTA. Undantaget är Värmland som har en låg sysselsättningsgrad bland personer (framför allt män) från Norden. Förklaringen är troligtvis att en stor del av dessa personer är födda i och arbetar i Norge och därför inte registreras som sysselsatta i statistiken. Kvinnor har överlag en något lägre sysselsättningsgrad än män men könsskillnaderna gäller framför allt gruppen personer födda utanför EU/EFTA. Inom den gruppen uppgick könsskillnaderna i sysselsättning till ca 6-7 procentenheter i Gävleborg och Värmland och till elva procentenheter i Dalarna år 2020.
 
-```{r diagram23, echo=FALSE}
+```{r diagram23, echo=FALSE, fig.cap = glue("Andel förvärvsarbetande efter kön och födelseregion år {forvarvsarbetande_kon_fodelseregion_ar} (Källa: SCB)")}
 # Diagram 23. Andel förvärvsarbetande efter kön och födelseregion år 2020 (Källa: SCB)
 forvarvsarb_kon_fodelseregion
 ```
@@ -318,7 +318,7 @@ print("Diagram 27. Antal varslade personer i Norra Mellansverige från januari 2
 ```
 
 ```{r diagram28, echo=FALSE}
-# Diagram 28. Antalet nyinskrivna arbetssökande per vecka, 2020 till 2022 (Källa: Arbetsförmedlingen)
+print("Diagram 28. Antalet nyinskrivna arbetssökande per vecka, 2020 till 2022 (Källa: Arbetsförmedlingen)")
 ```
 
 Pandemin drabbade vissa branscher i större utsträckning än andra. Hotell- och restaurangbranschen, kultur- och nöjesbranschen och detaljhandeln är alla exempel på branscher som drabbades hårt av restriktionerna och människors förändrade beteenden. Eftersom detta är branscher som sysselsätter många ungdomar drabbades just ungdomar särskilt hårt av pandemin, framför allt i det inledande skedet. Unga har också timanställningar och andra tidsbegränsade arbetsformer i större utsträckning, vilket gjorde dem extra sårbara under pandemin. I ett något senare skede drabbades även tillverkningsindustrin, bland annat till följd av leveransproblem av insatsvaror. Att dessa branscher drabbats hårt syns i statistiken över varsel och korttidspermitteringar för Norra Mellansverige. Andra branscher som haft en hög andel varslade eller permitterade medarbetare är IT och kommunikation samt Transport.
@@ -344,7 +344,7 @@ Pandemin kan också ha fått andra effekter på arbetsmarknaden. En tydlig konse
 ## En könssegregerad arbetsmarknad
 Arbetsmarknaderna i Norra Mellansverige är tydligt könssegregerade och de tre länen har en nästan identisk könsfördelning mellan sektorerna. Fördelningen är typiskt traditionell med en stor andel av kvinnorna i omsorgsyrken inom den offentliga sektorn medan männen i högre grad arbetar i den privata sektorn. Vård- och omsorgssektorn är den överlägset vanligaste arbetsplatsen för kvinnor i regionen. Ungefär en tredjedel av alla kvinnor i Norra Mellansverige arbetar inom sektorn. Utbildningssektorn är näst vanligast, här arbetar cirka 17 procent av kvinnorna. Männen har en något större spridning mellan sektorerna men fortfarande återfinns ungefär hälften av alla män inom branscherna tillverkning och utvinning, byggverksamhet och handel. Eftersom kvinnor i större utsträckning arbetar inom offentlig sektor brukar sysselsättningen bland kvinnor inte påverkas av lågkonjunktur och kris i samma utsträckning som män. Å andra sidan finns en stor risk för att jämställdheten tar ett kliv bakåt under kriser, såsom under finanskrisen.
 
-```{r diagram31, echo=FALSE}
+```{r diagram31, echo=FALSE, fig.cap = glue(" Andelen förvärvsarbetande i Norra Mellansverige efter bransch (SNI 2007) och kön, {sysselsatta_bransch_kon_manad} {sysselsatta_bransch_kon_ar}. (Källa: SCB)")}
 print("Diagram 31. Andelen förvärvsarbetande i Norra Mellansverige efter bransch (SNI 2007) och kön, 2020 (Källa: SCB)")
 andel_sysselsatta_kon_bransch
 ```
@@ -373,7 +373,7 @@ Antalet ohälsodagar är högre jämfört med riket för samtliga tre län i Nor
 
 Ohälsotalet är något högre i Värmland och Gävleborg jämfört med Dalarna. Den största skillnaden är dock den mellan könen. Både i Norra Mellansverige och i riket har kvinnor betydligt fler ohälsodagar jämfört med män.
 
-```{r diagram33, echo=FALSE}
+```{r diagram33, echo=FALSE, fig.cap = glue("Ohälsotalet efter kön i de tre länen samt riket år {ohalsa_ar}. (Källa: Försäkringskassan)")}
 # Diagram 33. Ohälsotalet efter kön i de tre länen samt riket, januari 2022 (Källa: Försäkringskassan)
 ohalsa_diagram
 
@@ -464,8 +464,8 @@ Vi kommer i framtiden inte att kunna organisera samhället som vi har gjort hitt
 ### Klimatförändringarna
 Det står bortom allt rimligt tvivel att den globala uppvärmningen är en följd av mänskliga aktiviteter. Klimatet är ett komplext system och det är svårt att göra exakta förutsägelser av framtida effekter av den globala uppvärmningen, men decennier av klimatforskning har ändå resulterat i klimatmodeller som visar stor precision. Det står därmed klart att om inget görs för att minska utsläppen av koldioxid, och andra gaser som driver den globala uppvärmningen, kommer konsekvenserna att bli stora och i förlängningen kunna göra jorden obeboelig för människan. Redan vid 1,5 graders global uppvärmning blir konsekvenserna stora och vid 2 graders uppvärmning än större. Vid 2 graders global uppvärmning istället för 1,5 grad förväntas 100-tals miljoner fler människor drabbas genom ökad fattigdom, värmeböljor och vattenbrist . För att uppnå 1,5- eller ens 2-gradersmålet krävs en dramatisk omställning då vi ännu inte påbörjat minskningen av CO2-utsläppen och inte heller uppfyller Parisavtalet. Samtidigt har pandemin visat att stora förändringar ger relativt snabba resultat. Enligt Forskning och framsteg  föll de globala koldioxidutsläppen med 17 procent tidigt i april 2020, och skulle kunna minska med omkring 7 procent för helåret. Även om denna minskning är tillfällig och koldioxidutsläppen kommer öka i takt med att det globala resandet återupptas så visar det på att en förändring är möjlig.
 
-```{r diagram44, echo=FALSE}
-"Diagram 44. CO2 utsläppskurvor för att uppnå 2⁰C-målet (Källa: Robbie Andrew, Center for International Climate Research, egen bearbetning)"
+```{r diagram44, echo=FALSE,fig.cap="CO2 utsläppskurvor för att uppnå 2⁰C-målet (Källa: Robbie Andrew, Center for International Climate Research, egen bearbetning)"}
+#"Diagram 44. CO2 utsläppskurvor för att uppnå 2⁰C-målet (Källa: Robbie Andrew, Center for International Climate Research, egen bearbetning)"
 knitr::include_graphics(here("Indata","utslapp.png"))
 ```
 
@@ -489,7 +489,7 @@ Behovet av omställning i Norra Mellansveriges näringsliv är stort, både för
 
 Innovationsförmågan är sannolikt en viktig del av denna omställning. Om man tittar på riket som helhet så ligger Sverige mycket högt i olika mätningar av innovation i länder. I FN-organet WIPO:s (Global forum for intellectual property) innovations-index är Sverige det tredje mest innovativa landet. I EU:s mätning av hur innovativa medlemsländerna är hamnar Sverige i topp, men det höjs ett varningens finger för att det finns en växande klyfta mellan de minst innovativa regionerna och övriga regioner i EU. Att mäta regional innovationsförmåga är svårt men inom ramen för Reglabs verksamhet har ett innovationsindex tagits fram. Givet svårigheten att mäta innovationsförmåga och förutsättningar för innovation kan Innovationsindex ses som ett bidrag till bilden av innovationsförmågan i Sveriges regioner, om än inte hela bilden.
 
-```{r diagram46, echo=FALSE}
+```{r diagram46, echo=FALSE, fig.cap="Innovationsindex år 2021 (Källa: Reglab)"}
 # Diagram 46. Innovationsindex år 2021 (Källa: Reglab)
 innovationsindex_diagram
 ```
@@ -511,14 +511,14 @@ Det största glappet mellan den stad i länet som har störst branschbredd och d
 ## Omsättning och antal arbetsställen
 Vissa branscher är viktiga för Norra Mellansverige tack vare sin ekonomiska betydelse, medan andra är viktiga för att de sysselsätter en stor del av befolkningen. Andra branscher har helt andra värden, som till exempel kulturen som både har en låg omsättning och ett relativt litet antal arbetsställen men bidrar till städernas attraktivitet och invånarnas livskvalitet. 
 
-```{r diagram47, echo=FALSE}
+```{r diagram47, echo=FALSE,fig.cap = glue("Branschernas totala intäkter i mnkr, {intakter_bransch_ar}, Norra Mellansverige (Källa: SCB)")}
 # Diagram 47. Branschernas totala intäkter i mnkr, 2019, Norra Mellansverige (Källa: SCB)
 intakter_arbstallen_diagram$intakter
 ```
 
 Tillverkning och utvinning är den bransch som i alla tre länen omsätter mest och sysselsätter flest. I Norra Mellansverige var strax över 54 000 personer anställda inom tillverkning och utvinning 2020, men dessa arbetar vid några få – men stora – arbetsställen. Tillverkning och utvinning stod för en tredjedel av den totala omsättningen i Norra Mellansverige 2020, men enbart 5 procent av antalet arbetsställen.
 
-```{r diagram48, echo=FALSE}
+```{r diagram48, echo=FALSE,fig.cap = glue("Antal arbetsställen {arbstallen_bransch_ar}, Norra Mellansverige (Källa: SCB)")}
 # Diagram 48. Antal arbetsställen 2019, Norra Mellansverige (Källa: SCB)
 intakter_arbstallen_diagram$arbetsstallen
 ```
