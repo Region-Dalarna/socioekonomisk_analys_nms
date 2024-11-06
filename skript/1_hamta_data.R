@@ -184,7 +184,17 @@ ohalsa_diagram <- funktion_upprepa_forsok_om_fel( function() {
 }, hoppa_over = hoppa_over_felhantering)
 ohalsa_ar <- ohalsa_df$ar %>% max()
 
+# ============= Sjukpenningtal uppdelat på region och kön och ålder (diagram 2) motsvarar diagram 34 och 35 (sidan 39-40) i den tidigare rapporten
+# Uppdateras ej automatiskt utan kräver nedladdning av Excel-fil (se viktig info under Indata)
+source(here("skript","socioek_sjukpenningtal_diagram.R"), encoding="UTF-8")
+sjukpenningtal_diagram <- funktion_upprepa_forsok_om_fel( function() {
+  skapa_sjukpenningtal_lan()
+}, hoppa_over = hoppa_over_felhantering)
+sjukpenningtal_ar <- sjukpenningtal_totalt_df$År %>% max()
+sjukpenningtal_manad <- sjukpenningtal_totalt_df$månad_namn %>% max()
+
 # ============= Innovationsindex på region - motsvarar diagram 46 (sidan 52) i den tidigare rapporten
+# Uppdateras ej automatiskt utan kräver nedladdning av Excel-fil
 source(here("skript","socioek_innovationsindex_diagram.R"), encoding="UTF-8")
 innovationsindex_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_innovationsindex_diagram()
