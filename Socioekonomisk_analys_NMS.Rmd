@@ -125,7 +125,7 @@ utbniva_eftergymn_diagram
 Samtliga tre län har en stor utmaning i att behålla sina unga akademiker i länet, locka tillbaka dem efter avslutade studier på annan ort eller att attrahera inflyttning av akademiker som är uppväxta i andra län. Det finns därför en risk att en stor del av länens högutbildade befolkning försvinner från regionen, vilket leder till problem för arbetsgivarna att klara sin kompetensförsörjning och i förlängningen att trygga den framtida välfärden. Det är fler av de som går ut gymnasiet i Värmland som väljer att studera vidare i samma län (cirka 30 procent) jämfört med Gävleborg och Dalarna (cirka 20 procent). Av samtliga som tagit examen vid en högskola eller universitet så har fler återvänt till det län där de gick gymnasiet i Värmland och Gävleborg (cirka 40 procent) än i Dalarna (cirka 35 procent).
 
 ```{r diagram7, echo=FALSE}
-# Diagram 7. Andel av de som gått ut gymnasiet i de tre länen i Norra Mellansverige som har tagit examen på högskola eller universitet under åren 2004–2015 i samma län respektive andel av de som tre år efter att de tagit examen på högskola eller universitet har sin arbetsplats i samma län som man gick ut gymnasiet (Källa: Databasen Bak- och Framgrund, SCB)
+print("Diagram 7. Andel av de som gått ut gymnasiet i de tre länen i Norra Mellansverige som har tagit examen på högskola eller universitet under åren 2004–2015 i samma län respektive andel av de som tre år efter att de tagit examen på högskola eller universitet har sin arbetsplats i samma län som man gick ut gymnasiet (Källa: Databasen Bak- och Framgrund, SCB")
 ```
 
 De tre länen i Norra Mellansverige har betydligt lägre andel högutbildade än i riket som helhet, och skillnaden är extra tydlig när det gäller män som har en eftergymnasial utbildning som är längre än tre år. Det är en betydligt större andel högutbildade kvinnor än män i de tre länen, och skillnaden mellan könen ökar. Andelen män med eftergymnasial utbildning har ökat marginellt jämfört med den socioekonomiska analys för Norra Mellansverige som släpptes 2014 och baserades på utbildningsdata från 2012, medan andelen högutbildade kvinnor har ökat stadigt både i Norra Mellansverige och i riket som helhet.
@@ -160,7 +160,7 @@ utb_niva_eftergymn_bakgr_diagram
 Av de elever i Dalarna som avslutat grundskolan på våren 2021 är det 97,1 procent som fortsätter till gymnasiet samma höst. I Gävleborg är det 97,3 procent som går direkt vidare till gymnasiet och i Värmland 97,8 procent. I riket som helhet är övergångsfrekvensen 98,0 procent.
 
 ```{r diagram11, echo=FALSE}
-#Diagram 11. Fördelning gymnasieprogram per kön, HT 2018 (Källa: Skolverket)
+print("Diagram 11. Fördelning gymnasieprogram per kön, HT 2018 (Källa: Skolverket)")
 ```
 
 Variationen mellan elever som går till högskoleförberedande program, yrkesprogram och introduktionsprogram varierar mellan olika delar av landet. I Norra Mellansverige är det en mindre andel än riket som går till högskoleförberedande program och en större andel som går till yrkesprogram. Ser man till Sverige som helhet så går drygt 66 procent av flickorna och knappt 55 procent av pojkarna till högskoleförberedande program, vilket är det överlägsna förstahandsvalet för båda könen. Knappt en fjärdedel av flickorna och en tredjedel av pojkarna på riksnivå går till yrkesprogram. I Gävleborg, där skillnaderna mot rikssnittet är tydligast, går drygt 56 procent av flickorna och knappt 42 procent av pojkarna till högskoleförberedande program. Däremot går 33,1 procent av flickorna och 46 procent av pojkarna till olika yrkesprogram. Det är också en något större andel av flickorna i Gävleborg som går till ett introduktionsprogram jämfört med riket och övriga regioner i Norra Mellansverige.
@@ -170,7 +170,7 @@ Grunden till den könsuppdelade arbetsmarknad vi ser idag läggs tidigt. Redan m
 När fler elever väljer yrkesprogram minskar sannolikheten för en övergång till högskola eller universitet senare i livet. Om en högre utbildningsnivå är målet bör man fokusera på att inspirera fler – framför allt fler unga män – att välja högskoleförberedande program. Men om yrkesprogrammen i Norra Mellansverige spelar en viktig roll i regionens kompetensförsörjning kanske man också ska utveckla dessa utbildningar så att de elever som kommer ut från yrkesprogrammen har den kompetens som arbetsgivarna efterfrågar samt möjlighet att läsa vidare på högskola eller universitet. Det finns redan idag möjlighet för de som valt ett yrkesprogram att välja till kurser och därigenom få högskolebehörighet.
 
 ```{r diagram12, echo=FALSE}
-#Diagram 12. Genomströmning; examen inom 3 och 4 år, startläsår 2017/18 (Källa: Skolverket)
+print("Diagram 12. Genomströmning; examen inom 3 och 4 år, startläsår 2017/18 (Källa: Skolverket)")
 ```
 
 När vi ser på genomströmningen på gymnasiet och andelen elever som avslutar studierna med examen inom tre eller fyra år så ligger Värmland och Gävleborg över riket för både yrkesprogram och högskoleförberedande program. I Dalarna är det på båda programmen en lägre andel av eleverna som kommer igenom på tre år, men fler som sedan går klart högskoleförberedande program på fyra år jämfört med rikssnittet.
@@ -178,8 +178,7 @@ När vi ser på genomströmningen på gymnasiet och andelen elever som avslutar 
 ## Övergång till högskola inom tre år från avslutad gymnasieutbildning
 I Norra Mellansverige går drygt hälften av kvinnorna och strax under 40 procent av männen vidare från gymnasiet till en eftergymnasial utbildning inom tre år. Majoriteten går till högskolestudier, vilket gäller för både kvinnor och män. Det är vanligare för kvinnor än män att påbörja studier vid folkhögskola, och det är vanligare för män än kvinnor att istället gå till en yrkeshögskoleutbildning. På riksnivå är det cirka 57 procent av kvinnorna och 45 procent av männen som inom tre år efter gymnasiet går vidare till någon form av eftergymnasial utbildning.
 
-```{r diagram13, echo=FALSE}
-# Diagram 13. Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning VT 2017 (Källa: SCB)
+```{r diagram13, echo=FALSE,fig.cap = glue("Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning VT {overgang_eftergymn_studier_avgangsar}  (Källa: SCB))}
 socioek_overgang_eftergymn_studier
 ```
 
@@ -187,8 +186,7 @@ Tittar vi närmare på andelen av befolkningen som inom tre år efter avslutad g
 
 På riksnivå har både andelen kvinnor och män som börjar högskola inom tre år efter gymnasiet ökat under samma period. Andelen kvinnor ökar med drygt fem procentenheter, medan andelen män ökar med en procentenhet.
 
-```{r diagram14, echo=FALSE}
-# Diagram 14. Förändring i övergång från gymnasieutbildning till högskola inom tre år (Källa: SCB)
+```{r diagram14, echo=FALSE,fig.cap = "Förändring i övergång från gymnasieutbildning till högskola inom tre år (Källa: SCB)"}
 socioek_overgang_eftergym_studier_tidsserie
 ```
 
@@ -200,13 +198,13 @@ Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF tar fram statistik om
 Fram till och med 2014 var de svenska invånare som arbetspendlade över landgräns borträknade, men på grund av att Norge inte längre lämnar ut dessa uppgifter kan inte dessa gränspendlare identifieras och lyftas ur statistiken. Det påverkar inte Gävleborg i någon stor utsträckning, men har viss påverkan på statistiken för Dalarna och framför allt för Värmland som har störst andel invånare som pendlar till arbete i Norge av samtliga 21 regioner. Andelen UVAS kan alltså anses något överskattade i Dalarna och Värmland. För att kunna göra en bedömning av hur stor överskattningen blir har MUCF undersökt andelen gränspendlare i tidigare års siffror, och såg att Värmland hade den största påverkan med en överskattning 2014 på tre procent . Även på kommunnivå var det värmländskt i topp, med störst påverkan i Årjäng (+11 procent) och Eda (+9 procent). Den senaste gränspendlingsstatistiken som finns tillgänglig är från 2017, och då såg vi en minskning av andelen invånare i Värmland som arbetspendlade över gränsen. Att gränsen mellan Norge och Sverige varit stängd under större delen av de senaste två åren tros ha bidragit till en ännu större minskning, vilket innebär att det är svårt att i nuläget säga exakt hur stor överskattningen av andelen UVAS är.
 
 ```{r diagram15, echo=FALSE}
-# Diagram 15. Andel unga som varken arbetar eller studerar, 2019 (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)
+print("Diagram 15. Andel unga som varken arbetar eller studerar, 2019 (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")
 ```
 
 Totalt sett är bilden ganska likartad i de tre regionerna, och skillnaderna kan räknas i decimaler. Ser vi däremot på inrikes födda och utrikes födda unga separat ser vi större skillnader, framför allt bland de utrikes unga som varken arbetar eller studerar. Dalarna har något fler kvinnor i båda åldersgrupperna som varken arbetar eller studerar, medan Värmland sticker ut i gruppen män 25-29 år. Värt att komma ihåg är att en person född i Norge som bor på den svenska sidan landsgränsen men arbetar i Norge registreras som en utrikes född person som varken arbetar eller studerar.
 
 ```{r diagram16, echo=FALSE}
-# Diagram 16. Andel INRIKES (vänster) och UTRIKES födda (höger) unga som varken arbetar eller studerar, 2019 (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)
+print("Diagram 16. Andel INRIKES (vänster) och UTRIKES födda (höger) unga som varken arbetar eller studerar, 2019 (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")
 ```
 
 Vikten av en gymnasieutbildning kan inte nog understrykas. Med en komplett gymnasieutbildning öppnas möjligheter till jobb eller fortsatt utbildning, och utan en gymnasieutbildning är många av dessa dörrar stängda. Det måste vara högsta prioritet att öka andelen av befolkningen som slutför gymnasiet. Länen i Norra Mellansverige har en lägre utbildningsnivå än riket för såväl kvinnor som män, och genom att se på andelen elever som går ut grundskolan med gymnasiebehörighet och sedan titta på övergången till gymnasiet och vilken inriktning flickor och pojkar väljer så kan vi slå fast att skillnader mellan kvinnor och män etableras tidigt i skolgången. Dessa skillnader följer med ut i arbetslivet och leder till en arbetsmarknad med skev könsfördelning. Av den anledningen är det viktigt att stötta unga i att se olika framtida utvecklingsmöjligheter.
@@ -223,7 +221,7 @@ Redan innan Covid-19-pandemin bröt ut började de senaste årens högkonjunktur
 ## Sysselsättningsgrad och arbetslöshet
 Sysselsättningsgraden i riket låg på 78 procent för kvinnor och 79 procent för män 2020. Siffrorna för Norra Mellansverige var i princip identiska. Överlag är sysselsättningen relativt jämn mellan länen. Den totala sysselsättningen varierade mellan 74 och 82 procent. I Norra Mellansverige varierade sysselsättningsgraden mellan 77 (Värmland) och 80 procent (Dalarna). En förklaring till den låga sysselsättningsgraden i Värmland är dock att de som arbetar i Norge inte räknas med i statistiken (en liknande förklaring gäller Skåne, det län som har lägst sysselsättning). Sysselsättningsgraden är generellt något lägre för kvinnor än för män. Det beror bland annat på att kvinnor studerar i högre utsträckning än män och på att kvinnor tar ut en högre andel av föräldraledighetsdagarna.
 
-```{r diagram17, echo=FALSE}
+```{r diagram17, echo=FALSE,fig.cap = glue("Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning VT {overgang_eftergymn_studier_avgangsar}  (Källa: SCB)) }
 # Diagram 17. Andel sysselsatta av befolkningen i arbetsför ålder (20–64) efter län, 2020 (Källa: SCB/RAMS)
 sysselsattningsgrad_diagram$sysselsattningsgrad_senastear
 ```
