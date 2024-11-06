@@ -7,7 +7,8 @@ skapa_sjukpenningtal_lan <- function(spara_diagrambildfil = FALSE,
   if (!require("pacman")) install.packages("pacman")
   p_load(tidyverse,
          here,
-         readxl)
+         readxl,
+         rio)
   
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R", encoding = "utf-8", echo = FALSE)
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R", encoding = "utf-8", echo = FALSE)
