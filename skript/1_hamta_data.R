@@ -162,6 +162,13 @@ forvarvsarb_kon_fodelseregion <- funktion_upprepa_forsok_om_fel( function() {
 }, hoppa_over = hoppa_over_felhantering)
 forvarvsarbetande_kon_fodelseregion_ar <- forvarvsarbetande_kon_fodelseregion_df$år %>% max()
 
+# ============= Andel förvärvsarbetande uppdelat på vistelsetid och utbildning - motsvarar diagram 24 (sidan 29) i den tidigare rapporten
+source(here("skript","socioek_vistelsetid_utb_diagram.R"), encoding="UTF-8")
+vistelsetid_utbildning_lan <- funktion_upprepa_forsok_om_fel( function() {
+  skapa_vistelsetid_utbildning_lan(region_vekt = c( "17", "20","21"))
+}, hoppa_over = hoppa_over_felhantering)
+vistelsetid_utb_ar <- vistelsetid_utb_df$år %>% max()
+
 # ============= Andel anställda i olika branscher uppdelat på kön (aggregerat över NMS) - motsvarar diagram 31 (sidan 36) i den tidigare rapporten
 source(here("skript","socioek_andel_syss_bransch_diagram.R"), encoding="UTF-8")
 andel_sysselsatta_kon_bransch <- funktion_upprepa_forsok_om_fel( function() {
