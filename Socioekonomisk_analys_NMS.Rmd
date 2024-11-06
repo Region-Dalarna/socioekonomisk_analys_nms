@@ -178,7 +178,7 @@ När vi ser på genomströmningen på gymnasiet och andelen elever som avslutar 
 ## Övergång till högskola inom tre år från avslutad gymnasieutbildning
 I Norra Mellansverige går drygt hälften av kvinnorna och strax under 40 procent av männen vidare från gymnasiet till en eftergymnasial utbildning inom tre år. Majoriteten går till högskolestudier, vilket gäller för både kvinnor och män. Det är vanligare för kvinnor än män att påbörja studier vid folkhögskola, och det är vanligare för män än kvinnor att istället gå till en yrkeshögskoleutbildning. På riksnivå är det cirka 57 procent av kvinnorna och 45 procent av männen som inom tre år efter gymnasiet går vidare till någon form av eftergymnasial utbildning.
 
-```{r diagram13, echo=FALSE}
+```{r diagram13, echo=FALSE,fig.cap = glue("Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning {socioek_overgang_eftergymn_studier}. (Källa: SCB)")}
 # Diagram 13. Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning VT 2017 (Källa: SCB)
 socioek_overgang_eftergymn_studier
 ```
@@ -187,7 +187,7 @@ Tittar vi närmare på andelen av befolkningen som inom tre år efter avslutad g
 
 På riksnivå har både andelen kvinnor och män som börjar högskola inom tre år efter gymnasiet ökat under samma period. Andelen kvinnor ökar med drygt fem procentenheter, medan andelen män ökar med en procentenhet.
 
-```{r diagram14, echo=FALSE}
+```{r diagram14, echo=FALSE, fig.cap = "Förändring i övergång från gymnasieutbildning till högskola inom tre år (Källa: SCB)"}
 # Diagram 14. Förändring i övergång från gymnasieutbildning till högskola inom tre år (Källa: SCB)
 socioek_overgang_eftergym_studier_tidsserie
 ```
@@ -223,7 +223,7 @@ Redan innan Covid-19-pandemin bröt ut började de senaste årens högkonjunktur
 ## Sysselsättningsgrad och arbetslöshet
 Sysselsättningsgraden i riket låg på 78 procent för kvinnor och 79 procent för män 2020. Siffrorna för Norra Mellansverige var i princip identiska. Överlag är sysselsättningen relativt jämn mellan länen. Den totala sysselsättningen varierade mellan 74 och 82 procent. I Norra Mellansverige varierade sysselsättningsgraden mellan 77 (Värmland) och 80 procent (Dalarna). En förklaring till den låga sysselsättningsgraden i Värmland är dock att de som arbetar i Norge inte räknas med i statistiken (en liknande förklaring gäller Skåne, det län som har lägst sysselsättning). Sysselsättningsgraden är generellt något lägre för kvinnor än för män. Det beror bland annat på att kvinnor studerar i högre utsträckning än män och på att kvinnor tar ut en högre andel av föräldraledighetsdagarna.
 
-```{r diagram17, echo=FALSE}
+```{r diagram17, echo=FALSE, fig.cap = glue("Andel sysselsatta av befolkningen i arbetsför ålder (20–64) efter län, {sysselsattningsgrad_manad} {sysselsattningsgrad_ar}. (Källa: SCB/BAS)")}
 # Diagram 17. Andel sysselsatta av befolkningen i arbetsför ålder (20–64) efter län, 2020 (Källa: SCB/RAMS)
 sysselsattningsgrad_diagram$sysselsattningsgrad_senastear
 ```
@@ -465,7 +465,8 @@ Vi kommer i framtiden inte att kunna organisera samhället som vi har gjort hitt
 Det står bortom allt rimligt tvivel att den globala uppvärmningen är en följd av mänskliga aktiviteter. Klimatet är ett komplext system och det är svårt att göra exakta förutsägelser av framtida effekter av den globala uppvärmningen, men decennier av klimatforskning har ändå resulterat i klimatmodeller som visar stor precision. Det står därmed klart att om inget görs för att minska utsläppen av koldioxid, och andra gaser som driver den globala uppvärmningen, kommer konsekvenserna att bli stora och i förlängningen kunna göra jorden obeboelig för människan. Redan vid 1,5 graders global uppvärmning blir konsekvenserna stora och vid 2 graders uppvärmning än större. Vid 2 graders global uppvärmning istället för 1,5 grad förväntas 100-tals miljoner fler människor drabbas genom ökad fattigdom, värmeböljor och vattenbrist . För att uppnå 1,5- eller ens 2-gradersmålet krävs en dramatisk omställning då vi ännu inte påbörjat minskningen av CO2-utsläppen och inte heller uppfyller Parisavtalet. Samtidigt har pandemin visat att stora förändringar ger relativt snabba resultat. Enligt Forskning och framsteg  föll de globala koldioxidutsläppen med 17 procent tidigt i april 2020, och skulle kunna minska med omkring 7 procent för helåret. Även om denna minskning är tillfällig och koldioxidutsläppen kommer öka i takt med att det globala resandet återupptas så visar det på att en förändring är möjlig.
 
 ```{r diagram44, echo=FALSE}
-print("Diagram 44. CO2 utsläppskurvor för att uppnå 2⁰C-målet (Källa: Robbie Andrew, Center for International Climate Research, egen bearbetning)")
+"Diagram 44. CO2 utsläppskurvor för att uppnå 2⁰C-målet (Källa: Robbie Andrew, Center for International Climate Research, egen bearbetning)"
+knitr::include_graphics(here("Indata","utslapp.png"))
 ```
 
 Tillverkningsindustrin står för en stor andel av utsläppen och för att klara klimatomställningen krävs att de i snabb takt ställer om till en fossilfri produktion. Livsmedel och transporter är två andra områden som kommer att behöva ställas om för att uppnå målet om ett fossilfritt Sverige.
