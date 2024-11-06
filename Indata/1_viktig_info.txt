@@ -4,4 +4,8 @@ Notera att det enbart får vara publik data, dvs. inte data från exempelvis Mon
 Källor:
 Sjukpenning:
 https://www.forsakringskassan.se/statistik-och-analys/statistikdatabas#!/sjuk/ohm-sjptal
-Välj samtliga månader för senaste år och riket + NMS. Uppdelat på samtliga åldersgrupper och kön. 
+Välj samtliga månader för senaste år och riket + NMS. Uppdelat på samtliga åldersgrupper och kön.
+
+Ohälsotalet:
+https://www.forsakringskassan.se/statistik-och-analys/statistikdatabas#!/sjuk/ohm-ohalsotal
+Välj samtliga månader för senaste år och riket + NMS. Räcker med att välja samtliga 16-64 år under ålder. Annars indentiskt med Sjukpenningtalet ovan

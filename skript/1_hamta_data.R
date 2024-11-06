@@ -177,10 +177,19 @@ andel_sysselsatta_kon_bransch <- funktion_upprepa_forsok_om_fel( function() {
 sysselsatta_bransch_kon_ar <- syss_bransch_andel_aggr$år %>% max()
 sysselsatta_bransch_kon_manad <- syss_bransch_andel_aggr$månad_namn %>% unique()
 
+# # ============= Ohälsotal uppdelat på region och kön - motsvarar diagram 33 (sidan 39) i den tidigare rapporten
+# Gammalt, baserat på Kolada
+# source(here("skript","socioek_ohalsa_diagram.R"), encoding="UTF-8")
+# ohalsa_diagram <- funktion_upprepa_forsok_om_fel( function() {
+#   skapa_ohalsotal_diagram(region_vekt = c("00", "20", "17", "21"))
+# }, hoppa_over = hoppa_over_felhantering)
+# ohalsa_ar <- ohalsa_df$ar %>% max()
+
 # ============= Ohälsotal uppdelat på region och kön - motsvarar diagram 33 (sidan 39) i den tidigare rapporten
-source(here("skript","socioek_ohalsa_diagram.R"), encoding="UTF-8")
+# Uppdateras ej automatiskt utan kräver nedladdning av Excel-fil (se viktig info under Indata)
+source(here("skript","socioek_ohalsa_diagram_korrekt.R"), encoding="UTF-8")
 ohalsa_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_ohalsotal_diagram(region_vekt = c("00", "20", "17", "21"))
+  skapa_ohalsotal_lan()
 }, hoppa_over = hoppa_over_felhantering)
 ohalsa_ar <- ohalsa_df$ar %>% max()
 
