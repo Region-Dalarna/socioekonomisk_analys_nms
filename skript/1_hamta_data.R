@@ -191,7 +191,8 @@ source(here("skript","socioek_ohalsa_diagram_korrekt.R"), encoding="UTF-8")
 ohalsa_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_ohalsotal_lan()
 }, hoppa_over = hoppa_over_felhantering)
-ohalsa_ar <- ohalsa_df$ar %>% max()
+ohalsa_ar <- ohalsotal_df$År %>% max()
+ohalsa_manad <- ohalsotal_df$månad_namn %>% unique()
 
 # ============= Sjukpenningtal uppdelat på region och kön och ålder (diagram 2) motsvarar diagram 34 och 35 (sidan 39-40) i den tidigare rapporten
 # Uppdateras ej automatiskt utan kräver nedladdning av Excel-fil (se viktig info under Indata)
