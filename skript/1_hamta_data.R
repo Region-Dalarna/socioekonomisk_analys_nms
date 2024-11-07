@@ -212,6 +212,16 @@ pagaende_sjukfall_diagnos_diagram <- funktion_upprepa_forsok_om_fel( function() 
 pagaende_sjukfall_ar <- sjukfall_diagnos_df$År %>% max()
 pagaende_sjukfall_manad <- sjukfall_diagnos_df$månad_namn %>% unique()
 
+# ============= Låg ekonomisk standard uppdelat på sysselsatta, ålder och bakgrund - 3 diagram motsvarar diagram 40, 42 och 43 (sidor 45 - 48) i den tidigare rapporten
+# Ej i markdown-fil ännu
+source(here("skript","socioek_lag_ek_standard_diagram.R"), encoding="UTF-8")
+lag_ek_standard_diagram <- funktion_upprepa_forsok_om_fel( function() {
+  skapa_ekonomiskstandard_lan()
+}, hoppa_over = hoppa_over_felhantering)
+lag_ek_standard_20_64_ar <- lag_ek_standard_20_64_df$år %>% max()
+lag_ek_standard_alder_ar <- lag_ek_standard_alder_df$år %>% max()
+lag_ek_standard_bakgrund_ar <- lag_ek_standard_bakgrund_df$år %>% max()
+
 # ============= Innovationsindex på region - motsvarar diagram 46 (sidan 52) i den tidigare rapporten
 # Uppdateras ej automatiskt utan kräver nedladdning av Excel-fil
 source(here("skript","socioek_innovationsindex_diagram.R"), encoding="UTF-8")
