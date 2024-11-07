@@ -222,6 +222,15 @@ lag_ek_standard_20_64_ar <- lag_ek_standard_20_64_df$år %>% max()
 lag_ek_standard_alder_ar <- lag_ek_standard_alder_df$år %>% max()
 lag_ek_standard_bakgrund_ar <- lag_ek_standard_bakgrund_df$år %>% max()
 
+# ============= Andel med ersättning av helårsekvivalenter - 3 diagram motsvarar diagram 41 (sidor 46) i den tidigare rapporten
+# Ej i markdown-fil ännu
+source(here("skript","socioek_andel_helarsekvivalenter_diagram.R"), encoding="UTF-8")
+helarsekvivalenter_andel_diagram <- funktion_upprepa_forsok_om_fel( function() {
+  skapa_helarsekvivalenter_andel_lan()
+}, hoppa_over = hoppa_over_felhantering)
+ersattning_helarsakvivalenter_ar <- ersattning_helarsakvivalenter_df$år %>% max()
+ersattning_helarsakvivalenter_manad <- ersattning_helarsakvivalenter_df$manad_namn %>% unique()S
+
 # ============= Innovationsindex på region - motsvarar diagram 46 (sidan 52) i den tidigare rapporten
 # Uppdateras ej automatiskt utan kräver nedladdning av Excel-fil
 source(here("skript","socioek_innovationsindex_diagram.R"), encoding="UTF-8")
