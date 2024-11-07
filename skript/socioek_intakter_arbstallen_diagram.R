@@ -24,7 +24,8 @@ skapa_intakter_arbstallen_bransch_diagram <- function(region_vekt = c("17", "20"
   #nyckelmapp <- "G:/skript/nycklar/"
   nyckel_fil <- paste0(nyckelmapp, "Bransch_FEK.xlsx")
   
-  nyckel_df <- read_xlsx(nyckel_fil)
+  #nyckel_df <- read_xlsx(nyckel_fil)
+  nyckel_df <- readxl::read_xlsx(nyckel_fil)
   
   px_df <- NULL
   url_uttag <- "https://api.scb.se/OV0104/v1/doris/sv/ssd/NV/NV0109/NV0109L/RegionalBasf07"

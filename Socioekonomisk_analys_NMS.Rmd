@@ -283,8 +283,9 @@ Utbildningsnivån är en annan faktor som har stor betydelse för hur utrikes f�
 
 Även vistelsetiden i Sverige har stor betydelse. Personer med minst gymnasieexamen som har varit i Sverige länge (10 år eller mer) har en sysselsättningsnivå som närmar sig snittet för svenskfödda medan sysselsättningen är betydligt lägre bland nyanlända. Andelen förvärvsarbetande bland nyanlända som saknar gymnasieexamen är väldigt låg. I Dalarna och Värmland uppgick andelen till ca 12 procent bland kvinnorna och 32 respektive 27 procent bland männen år 2020. I Gävleborg var andelen förvärvsarbetande bland lågutbildade nyanlända kvinnor något högre, 17 procent, medan andelen bland män var i nivå med Dalarnas andel. Könsskillnaderna är också särskilt stora bland nyanlända, med betydligt högre sysselsättningsgrad bland män jämfört med bland kvinnor. Könsskillnaderna bland nyanlända finns oavsett utbildningsnivå, även om andelen förvärvsarbetande är högre för både kvinnor och män bland personer med eftergymnasial utbildning.
 
-```{r diagram24, echo=FALSE}
-print("Diagram 24. Andel förvärvsarbetande bland utrikes födda efter utbildningsnivå och vistelsetid, 2020 (Källa: SCB)")
+```{r diagram24, echo=FALSE,fig.cap = glue("Andel förvärvsarbetande bland utrikes födda efter utbildningsnivå och vistelsetid, {vistelsetid_utb_ar} (Källa: SCB)")}
+#"Diagram 24. Andel förvärvsarbetande bland utrikes födda efter utbildningsnivå och vistelsetid, 2020 (Källa: SCB)")
+vistelsetid_utbildning_lan
 ```
 
 Matchningen på arbetsmarknaden i Norra Mellansverige är god, sett till om man har rätt utbildningsnivå för det yrke man har. 84 procent av de med svensk bakgrund och 74 procent av de med utländsk bakgrund har rätt utbildningsnivå för sitt yrke. Andelen överutbildade, som har för hög utbildningsnivå i relation till yrket, är dock betydligt högre bland personer med utländsk bakgrund, 10 procent jämfört med 3 procent bland de med svensk bakgrund. Andelen som har för låg utbildning för sitt yrke är också något högre bland personer med utländsk bakgrund men skillnaden är liten.
@@ -345,7 +346,7 @@ Pandemin kan också ha fått andra effekter på arbetsmarknaden. En tydlig konse
 Arbetsmarknaderna i Norra Mellansverige är tydligt könssegregerade och de tre länen har en nästan identisk könsfördelning mellan sektorerna. Fördelningen är typiskt traditionell med en stor andel av kvinnorna i omsorgsyrken inom den offentliga sektorn medan männen i högre grad arbetar i den privata sektorn. Vård- och omsorgssektorn är den överlägset vanligaste arbetsplatsen för kvinnor i regionen. Ungefär en tredjedel av alla kvinnor i Norra Mellansverige arbetar inom sektorn. Utbildningssektorn är näst vanligast, här arbetar cirka 17 procent av kvinnorna. Männen har en något större spridning mellan sektorerna men fortfarande återfinns ungefär hälften av alla män inom branscherna tillverkning och utvinning, byggverksamhet och handel. Eftersom kvinnor i större utsträckning arbetar inom offentlig sektor brukar sysselsättningen bland kvinnor inte påverkas av lågkonjunktur och kris i samma utsträckning som män. Å andra sidan finns en stor risk för att jämställdheten tar ett kliv bakåt under kriser, såsom under finanskrisen.
 
 ```{r diagram31, echo=FALSE, fig.cap = glue(" Andelen förvärvsarbetande i Norra Mellansverige efter bransch (SNI 2007) och kön, {sysselsatta_bransch_kon_manad} {sysselsatta_bransch_kon_ar}. (Källa: SCB)")}
-print("Diagram 31. Andelen förvärvsarbetande i Norra Mellansverige efter bransch (SNI 2007) och kön, 2020 (Källa: SCB)")
+#"Diagram 31. Andelen förvärvsarbetande i Norra Mellansverige efter bransch (SNI 2007) och kön, 2020 (Källa: SCB)")
 andel_sysselsatta_kon_bransch
 ```
 
@@ -373,7 +374,7 @@ Antalet ohälsodagar är högre jämfört med riket för samtliga tre län i Nor
 
 Ohälsotalet är något högre i Värmland och Gävleborg jämfört med Dalarna. Den största skillnaden är dock den mellan könen. Både i Norra Mellansverige och i riket har kvinnor betydligt fler ohälsodagar jämfört med män.
 
-```{r diagram33, echo=FALSE, fig.cap = glue("Ohälsotalet efter kön i de tre länen samt riket år {ohalsa_ar}. (Källa: Försäkringskassan)")}
+```{r diagram33, echo=FALSE, fig.cap = glue("Ohälsotalet efter kön i de tre länen samt riket, {ohalsa_manad} {ohalsa_ar}. (Källa: Försäkringskassan)")}
 # Diagram 33. Ohälsotalet efter kön i de tre länen samt riket, januari 2022 (Källa: Försäkringskassan)
 ohalsa_diagram
 
@@ -381,23 +382,28 @@ ohalsa_diagram
 
 Könsskillnaden återfinns även i sjukpenningtalet, som mäter antalet (netto-)dagar med sjukpenning och/eller rehabiliteringspenning per försäkrad individ. Kvinnor tar ut betydligt fler sjukdagar än män. I Värmland uppgår kvinnornas sjukdagar till det dubbla jämfört med männen (14,6 respektive 7,4 i januari 2022) och även i Dalarna och Gävleborg är könsskillnaderna mycket stora.
 
-```{r diagram34, echo=FALSE}
-print("Diagram 34. Sjukpenningtalet efter kön i de tre länen samt riket, januari 2022 (Källa: Försäkringskassan)")
+```{r diagram34, echo=FALSE, fig.cap = glue("Sjukpenningtalet efter kön i de tre länen samt riket, {sjukpenningtal_manad} {sjukpenningtal_ar}. (Källa: Försäkringskassan)")}
+# "Diagram 34. Sjukpenningtalet efter kön i de tre länen samt riket, januari 2022 (Källa: Försäkringskassan)"
+sjukpenningtal_diagram$sjukpenningtal
 ```
 
 Könsskillnaderna kan troligtvis förklaras av en kombination av att kvinnor och män arbetar inom olika branscher och yrken samt att kvinnor tar ett större ansvar för det obetalda hushållsarbetet. Den senare hypotesen stöds av att könsskillnaderna i sjukfrånvaro är som störst i de åldrar där det vanligtvis finns minderåriga barn i hushållet (30–39 och 40–49). Efter 50 år ålder börjar könsskillnaderna minska för att vara relativt små vid 60 års ålder. Statistiska centralbyråns senaste tidsanvändningsstudie från 2010 visar att kvinnor och män lägger ungefär lika mycket tid på arbete per dygn, men att en större del av kvinnans arbetsdag består av obetalt hushållsarbete . Männen lägger istället något mer tid på förvärvsarbete. En pilotstudie från 2020 bekräftar resultaten , men på grund av olika mätmetoder går det inte att säga något om utvecklingen över tid. En jämförelse mellan tidigare år tyder dock på att jämställdheten har ökat över tid. 
 
-```{r diagram35, echo=FALSE}
-print("Diagram 35. Sjukpenningtalet efter ålder och kön för samtliga tre län i Norra Mellansverige samt riket, januari 2022 (Källa: Försäkringskassan)")
+```{r diagram35, echo=FALSE, fig.cap = glue("Sjukpenningtalet efter ålder och kön för samtliga tre län i Norra Mellansverige samt riket, {sjukpenningtal_manad} {sjukpenningtal_ar}. (Källa: Försäkringskassan)")}
+#"Diagram 35. Sjukpenningtalet efter ålder och kön för samtliga tre län i Norra Mellansverige samt riket, januari 2022 (Källa: Försäkringskassan)"
+sjukpenningtal_diagram$sjukpenningtal_alder
 ```
 
 Psykisk ohälsa står för över hälften av all sjukfrånvaro bland kvinnor. Bland män är andelen något lägre, runt 40 procent. Åter är skillnader i branscher och yrkesval en viktig förklaring. Sjukfrånvaro på grund psykisk ohälsa är extra vanligt bland personer som arbetar inom kontaktyrken inom offentlig sektor, där kvinnor är överrepresenterade. Den andra stora orsaksgruppen till sjukfrånvaro är muskuloskeletala diagnoser där ledsjukdomar, ryggsjukdomar och sjukdomar i mjukvävnader ingår. Sjukskrivning för muskuloskeletala diagnoser är vanligare bland män.
 
 En bidragande orsak till kvinnors högre psykiska ohälsa är den ojämställda fördelningen av hemarbetet. Forskning har visat att kvinnors självrapporterade psykiska stress är högre bland de som lägger mer tid på både betalt arbete och obetalt hushållsarbete. I studien kunde man inte se samma mönster hos män. Resultaten innebär att könsskillnaden i stressrelaterad psykisk ohälsa skulle kunna minska om männen tog mer ansvar för det obetalda hemarbetet.
 
-```{r diagram36, echo=FALSE}
-print("Diagram 36. Huvudorsaker till sjukfrånvaro för de tre länen samt riket, december 2021 (Källa: Försäkringskassan)")
+```{r diagram36, echo=FALSE, fig.cap = glue("Antal pågående sjukfall efter diagnoskapitel och kön för samtliga tre län i Norra Mellansverige samt riket, {pagaende_sjukfall_manad} {pagaende_sjukfall_ar} (Källa: Försäkringskassan)")}
+# Tidigare diagramtext "Diagram 36. Huvudorsaker till sjukfrånvaro för de tre länen samt riket, december 2021 (Källa: Försäkringskassan)")
+pagaende_sjukfall_diagnos_diagram
+
 ```
+
 ## Självskattad hälsa
 Som komplement till ohälsotal och sjukpenningtal, som mäter ohälsa bland den del av befolkningen med anknytning till arbetsmarknaden, finns enkätuppgifter som mäter subjektiv hälsa utifrån hela befolkningen. En vanlig källa är den Nationella Folkhälsoenkäten som genomförs av Folkhälsomyndigheten. Självskattad hälsa är ett vanligt och sammanfattande mått på subjektiv hälsa. Till skillnad från ohälso- och sjukpenningtalen, där Norra Mellansverige sticker ut negativt, finns det ingen signifikant skillnad mot vare sig riket eller mellan de tre länen (de skillnader som finns är inom ramen för konfidensintervallen). 68-71 procent av kvinnorna och 71-75 procent bland männen uppger att de har en bra eller mycket bra hälsa. Cirka sex procent av kvinnorna och männen uppger att de har en dålig eller mycket dålig hälsa.
 
