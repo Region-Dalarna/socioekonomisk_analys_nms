@@ -13,3 +13,8 @@ Välj samtliga månader för senaste år och riket + NMS. Räcker med att välja
 Pågående sjukfall uppdelat på diagnos:
 https://www.forsakringskassan.se/statistik-och-analys/statistikdatabas#!/sjuk/sjp-pagaende-sjukfall-diagnos
 Välj samtliga månader för senaste år och riket + NMS. Klicka i samtliga diagnoskapitel, F00-F99 och M00-M99. Välj uppdelat på län.
+
+MUCF
+https://www.mucf.se/verktyg/statistik-om-unga-som-varken-arbetar-eller-studerar. 
+Tyvärr måste data laddas hem för hand
+
