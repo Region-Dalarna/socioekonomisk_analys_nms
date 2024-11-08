@@ -1,4 +1,3 @@
-test <- skapa_UVAS_diagram()
 skapa_UVAS_diagram <- function(spara_diagrambildfil = FALSE,
                                returnera_dataframe_global_environment = TRUE
 ){
@@ -64,7 +63,7 @@ skapa_UVAS_diagram <- function(spara_diagrambildfil = FALSE,
   
   skapa_diagram <- function(df,bakgrund){
   
-    gg_obj <- SkapaStapelDiagram(skickad_df = UVAS_df %>% 
+    gg_obj <- SkapaStapelDiagram(skickad_df = df %>% 
                                    filter(Bakgrund == bakgrund,
                                           Kön != "Totalt"),
                                  skickad_x_var = "Ålder",
@@ -94,27 +93,9 @@ skapa_UVAS_diagram <- function(spara_diagrambildfil = FALSE,
   diag <- map(bakgrund, ~ skapa_diagram(UVAS_df, .x)) %>% flatten()
   # Diagram för utrikes födda uppdelat på kön
   
-  # gg_obj <- SkapaStapelDiagram(skickad_df = UVAS_df %>% 
-  #                                filter(Bakgrund == "Utrikes födda",
-  #                                       Kön != "Totalt"),
-  #                              skickad_x_var = "Ålder",
-  #                              skickad_y_var = "Andel",
-  #                              skickad_x_grupp = "Kön",
-  #                              output_mapp = mapp,
-  #                              filnamn_diagram = diagramfilnamn,
-  #                              diagram_facet = TRUE,
-  #                              facet_grp = "Län",
-  #                              facet_scale = "fixed",
-  #                              facet_kolumner = 2,
-  #                              manual_x_axis_text_vjust = 1,
-  #                              manual_x_axis_text_hjust = 1,
-  #                              manual_y_axis_title = "procent",
-  #                              x_axis_sort_value = FALSE,
-  #                              manual_color = diagramfarger("kon"),
-  #                              skriv_till_diagramfil = spara_diagrambildfil,
-  #                              lagg_pa_logga = ta_med_logga)
-  
   gg_list <- c(gg_list, diag)
+  
+  names(gg_list) <- c("UVAS_alder", "UVAS_inrikes_födda", "UVAS_utrikes_födda")
   
   return(gg_list)
   
