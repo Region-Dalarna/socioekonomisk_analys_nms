@@ -229,7 +229,7 @@ helarsekvivalenter_andel_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_helarsekvivalenter_andel_lan()
 }, hoppa_over = hoppa_over_felhantering)
 ersattning_helarsakvivalenter_ar <- ersattning_helarsakvivalenter_df$år %>% max()
-ersattning_helarsakvivalenter_manad <- ersattning_helarsakvivalenter_df$manad_namn %>% unique()S
+ersattning_helarsakvivalenter_manad <- ersattning_helarsakvivalenter_df$manad_namn %>% unique()
 
 # ============= Innovationsindex på region - motsvarar diagram 46 (sidan 52) i den tidigare rapporten
 # Uppdateras ej automatiskt utan kräver nedladdning av Excel-fil

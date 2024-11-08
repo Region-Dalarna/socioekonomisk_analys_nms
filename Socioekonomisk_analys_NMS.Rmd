@@ -430,8 +430,9 @@ Det finns ett tydligt samband mellan ekonomi och position på arbetsmarknaden. E
 
 Andelen som har en låg ekonomisk standard är högre i Norra Mellansverige än i riket som helhet. År 2020 uppgick andelen med låg ekonomisk standard till 14,1 procent i Dalarna och drygt 15 procent i Gävleborg och Värmland, att jämföra med 13,3 procent i riket. Mönstret är detsamma för både förvärvsarbetande och icke förvärvsarbetande, men skillnaden mot riket är större bland personer som står utanför arbetsmarknaden. Sammantaget finns med andra ord fler som står utanför arbetsmarknaden på grund av arbetslöshet eller sjukdom i Norra Mellansverige, och en större andel av dessa människor upplever ett ekonomiskt utanförskap.
 
-```{r diagram40, echo=FALSE}
-print("Diagram 40. Andel med låg ekonomisk standard efter sysselsättning, Norra Mellansverige och riket, ålder 20–64 år, 2020 (Källa: SCB)")
+```{r diagram40, echo=FALSE, fig.cap = glue("Andel med låg ekonomisk standard efter sysselsättning, Norra Mellansverige och riket, ålder 20–64 år, {lag_ek_standard_20_64_ar} (Källa: SCB)")}
+#"Diagram 40. Andel med låg ekonomisk standard efter sysselsättning, Norra Mellansverige och riket, ålder 20–64 år, 2020 (Källa: SCB)")
+lag_ek_standard_diagram$ek_standard_20_64
 ```
 
 Ett annat vedertaget sätt att mäta ekonomiskt utanförskap är att se till antalet helårsekvivalenter i befolkningen i arbetsför ålder (20–64 år) som försörjs av sociala ersättningar och bidrag. Med ersättningar och bidrag menas sjuk- och aktivitetsersättning, a-kassa, sjukpenning, arbetsmarknadsåtgärder och ekonomiskt bistånd. Helårsekvivalenter tar hänsyn till att många personer får ersättning för en begränsad tid. Två personer som får ersättning under sex månader vardera räknas som en helårsekvivalent.
@@ -440,22 +441,25 @@ I statistiken sticker Gävleborg ut som det län som har den högsta andelen av 
 
 Ekonomiskt bistånd utgör samhällets yttersta ekonomiska skyddsnät för de som inte har möjlighet att försörja sig på annat sätt. Andelen hushåll som får ekonomiskt bistånd uppgick år 2020 till 5,6 procent i Gävleborgs län. I Dalarna och Värmland var andelen något lägre, 5,0 respektive 4,6 procent, men i båda fallen betydligt över riksgenomsnittet på 3,6 procent.
 
-```{r diagram41, echo=FALSE}
-print("Diagram 41. Andel helårsekvivalenter som försörjs med sociala ersättningar och bidrag per län, befolkningen 20–64 år, genomsnitt perioden 2020-07 – 2021-06 (Källa: SCB)")
+```{r diagram41, echo=FALSE, fig.cap = glue("Andel helårsekvivalenter som försörjs med sociala ersättningar och bidrag per län, befolkningen 20–64 år, {ersattning_helarsakvivalenter_manad} {ersattning_helarsakvivalenter_ar}  (Källa: SCB)")}
+#"Diagram 41. Andel helårsekvivalenter som försörjs med sociala ersättningar och bidrag per län, befolkningen 20–64 år, genomsnitt perioden 2020-07 – 2021-06 (Källa: SCB)")
+helarsekvivalenter_andel_diagram
 ```
 
 Det ekonomiska utanförskapet varierar tydligt med ålder och etnisk bakgrund, vilket i sin tur beror på skillnaderna i sysselsättning inom dessa grupper. Andelen unga som lever i hushåll med låg ekonomisk standard är relativt hög jämfört med andra åldersgrupper. Den är också betydligt högre i samtliga tre län inom Norra Mellansverige än i riket, vilket kan förklaras av den höga ungdomsarbetslösheten. Andelen med låg ekonomisk standard minskar sedan med ålder, för att öka igen efter pensionsåldern. Den grupp som sticker ut mest är dock de allra äldsta, de som är 80 år eller mer. Där uppgick andelen med låg ekonomisk standard till 23 procent i Värmland och Dalarna, och 22 procent i Gävleborg år 2020. Framför allt är det äldre ensamstående kvinnor med låga pensioner som tillhör denna ekonomiskt utsatta grupp.
 
-```{r diagram42, echo=FALSE}
-print("Diagram 42. Andel personer i hushåll med låg ekonomisk standard (inkomst <60 procent av medianen) efter ålder, 2020 (Källa: SCB)")
+```{r diagram42, echo=FALSE, fig.cap = glue("Andel personer i hushåll med låg ekonomisk standard (inkomst <60 procent av medianen) efter ålder, {lag_ek_standard_alder_ar} (Källa: SCB)")}
+#"Diagram 42. Andel personer i hushåll med låg ekonomisk standard (inkomst <60 procent av medianen) efter ålder, 2020 (Källa: SCB)"
+lag_ek_standard_diagram$ek_standard_alder
 ```
 
 Det finns också stora skillnader mellan personer med svensk respektive utländsk bakgrund. Över en tredjedel av alla personer med utländsk bakgrund i Norra Mellansverige lever i hushåll med låg ekonomisk standard. Det är betydligt fler än i riket som helhet där andelen uppgår till 25 procent. Bland svenskfödda är andelen som lever i hushåll med låg ekonomisk standard ca 10 procent i Norra Mellansverige och 9 procent i riket.
 
 Även skillnaderna mellan inrikes och utrikes födda kan till viss del förklaras av skillnader i sysselsättning. Stora skillnader kvarstår visserligen även om grupperna delas upp i förvärvsarbetande respektive icke förvärvsarbetande men en viktig orsak är att sysselsättning mäts på individnivå medan ekonomisk standard mäts på hushållsnivå. Eftersom sysselsättningsnivåerna är lägre bland utrikes födda är det vanligare att de lever tillsammans med en partner som inte förvärvsarbetar, vilket påverkar hushållets ekonomiska situation. På motsvarande sätt är det vanligare att personer med utländsk bakgrund som saknar förvärvsarbete lever i hushåll där samtliga vuxna står utanför arbetsmarknaden vilket även det kan förklaras av skillnader i sysselsättning. Andelen är högst bland nyanlända som står utanför arbetsmarknaden i betydligt högre grad än personer med längre vistelsetid.
 
-```{r diagram43, echo=FALSE}
-print("Diagram 43. Andel personer i hushåll med låg ekonomisk standard (inkomst <60 procent av medianen) efter svensk/utländsk bakgrund samt sysselsättningsstatus, ålder 20-64 år, 2020 (Källa: SCB)")
+```{r diagram43, echo=FALSE, fig.cap = glue("Andel personer i hushåll med låg ekonomisk standard (inkomst <60 procent av medianen) efter svensk/utländsk bakgrund samt sysselsättningsstatus, ålder 20-64 år, {lag_ek_standard_bakgrund_ar} (Källa: SCB)")}
+#"Diagram 43. Andel personer i hushåll med låg ekonomisk standard (inkomst <60 procent av medianen) efter svensk/utländsk bakgrund samt sysselsättningsstatus, ålder 20-64 år, 2020 (Källa: SCB)")
+lag_ek_standard_diagram$ek_standard_bakgrund
 ```
 
 Även bland personer med funktionsnedsättning är det ekonomiska utanförskapet stort i relation till befolkningen i helhet. Även här beror det till stor del på gruppens lägre arbetsmarknadsdeltagande. I Nationella Folkhälsoenkäten ställs frågor kring ekonomi. Sex av tio personer med funktionsnedsättning har svårt att få ekonomin att gå ihop och två tredjedelar oroar sig för sin framtida ekonomiska situation, visar analyser baserade på Myndigheten för Delaktighets nationella undersökningspanel.
