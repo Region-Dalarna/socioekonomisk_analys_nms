@@ -1,5 +1,6 @@
-skapa_innovationsindex_diagram <- function(spara_diagrambildfil = FALSE,
-                                           returnera_dataframe_global_environment = TRUE
+test <- skapa_UVAS_diagram()
+skapa_UVAS_diagram <- function(spara_diagrambildfil = FALSE,
+                               returnera_dataframe_global_environment = TRUE
 ){
   
   # Skript som skapar diagram för innovationsindex uppdelat på län.
@@ -24,6 +25,7 @@ skapa_innovationsindex_diagram <- function(spara_diagrambildfil = FALSE,
   ta_med_logga <- FALSE   # FALSE
   
   gg_list <- list()
+  gg_list_map <- list()
   
   # ============================= diagram 14 ====================================
   UVAS_df <- read.xlsx(UVAS_full, sheet= 4) %>% 
@@ -60,52 +62,60 @@ skapa_innovationsindex_diagram <- function(spara_diagrambildfil = FALSE,
   
   # Diagram för inrikes födda uppdelat på kön
   
-  gg_obj <- SkapaStapelDiagram(skickad_df = UVAS_df %>% 
-                                 filter(Bakgrund == "Inrikes födda",
-                                        Kön != "Totalt"),
-                               skickad_x_var = "Ålder",
-                               skickad_y_var = "Andel",
-                               skickad_x_grupp = "Kön",
-                               output_mapp = mapp,
-                               filnamn_diagram = diagramfilnamn,
-                               diagram_facet = TRUE,
-                               facet_grp = "Län",
-                               facet_scale = "fixed",
-                               facet_kolumner = 2,
-                               facet_legend_bottom = TRUE,
-                               manual_x_axis_text_vjust = 1,
-                               manual_x_axis_text_hjust = 1,
-                               manual_y_axis_title = "procent",
-                               x_axis_sort_value = FALSE,
-                               manual_color = diagramfarger("kon"),
-                               skriv_till_diagramfil = spara_diagrambildfil,
-                               lagg_pa_logga = ta_med_logga)
+  skapa_diagram <- function(df,bakgrund){
   
+    gg_obj <- SkapaStapelDiagram(skickad_df = UVAS_df %>% 
+                                   filter(Bakgrund == bakgrund,
+                                          Kön != "Totalt"),
+                                 skickad_x_var = "Ålder",
+                                 skickad_y_var = "Andel",
+                                 skickad_x_grupp = "Kön",
+                                 output_mapp = mapp,
+                                 filnamn_diagram = diagramfilnamn,
+                                 diagram_facet = TRUE,
+                                 facet_grp = "Län",
+                                 facet_scale = "fixed",
+                                 facet_kolumner = 2,
+                                 facet_legend_bottom = TRUE,
+                                 manual_x_axis_text_vjust = 1,
+                                 manual_x_axis_text_hjust = 1,
+                                 manual_y_axis_title = "procent",
+                                 x_axis_sort_value = FALSE,
+                                 manual_color = diagramfarger("kon"),
+                                 skriv_till_diagramfil = spara_diagrambildfil,
+                                 lagg_pa_logga = ta_med_logga)
+    
+    gg_list_map <- c(gg_list_map, list(gg_obj))
+  
+  return(gg_list_map)}
+  
+  bakgrund <- c("Inrikes födda", "Utrikes födda")
+  
+  diag <- map(bakgrund, ~ skapa_diagram(UVAS_df, .x)) %>% flatten()
   # Diagram för utrikes födda uppdelat på kön
   
-  gg_obj <- SkapaStapelDiagram(skickad_df = UVAS_df %>% 
-                                 filter(Bakgrund == "Utrikes födda",
-                                        Kön != "Totalt"),
-                               skickad_x_var = "Ålder",
-                               skickad_y_var = "Andel",
-                               skickad_x_grupp = "Kön",
-                               output_mapp = mapp,
-                               filnamn_diagram = diagramfilnamn,
-                               diagram_facet = TRUE,
-                               facet_grp = "Län",
-                               facet_scale = "fixed",
-                               facet_kolumner = 2,
-                               manual_x_axis_text_vjust = 1,
-                               manual_x_axis_text_hjust = 1,
-                               manual_y_axis_title = "procent",
-                               x_axis_sort_value = FALSE,
-                               manual_color = diagramfarger("kon"),
-                               skriv_till_diagramfil = spara_diagrambildfil,
-                               lagg_pa_logga = ta_med_logga)
+  # gg_obj <- SkapaStapelDiagram(skickad_df = UVAS_df %>% 
+  #                                filter(Bakgrund == "Utrikes födda",
+  #                                       Kön != "Totalt"),
+  #                              skickad_x_var = "Ålder",
+  #                              skickad_y_var = "Andel",
+  #                              skickad_x_grupp = "Kön",
+  #                              output_mapp = mapp,
+  #                              filnamn_diagram = diagramfilnamn,
+  #                              diagram_facet = TRUE,
+  #                              facet_grp = "Län",
+  #                              facet_scale = "fixed",
+  #                              facet_kolumner = 2,
+  #                              manual_x_axis_text_vjust = 1,
+  #                              manual_x_axis_text_hjust = 1,
+  #                              manual_y_axis_title = "procent",
+  #                              x_axis_sort_value = FALSE,
+  #                              manual_color = diagramfarger("kon"),
+  #                              skriv_till_diagramfil = spara_diagrambildfil,
+  #                              lagg_pa_logga = ta_med_logga)
   
-  gg_list <- c(gg_list, list(gg_obj))
+  gg_list <- c(gg_list, diag)
   
-  
-  
+  return(gg_list)
   
 }
