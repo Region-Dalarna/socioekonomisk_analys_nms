@@ -12,6 +12,12 @@ af_full <- paste0(input_mapp, af_fil)
 # ============================= diagram 14 ====================================
 af_dia14 <- read.xlsx(af_full, sheet = "diagram14", startRow = 3)
 
+source("G:/skript/peter/hamta_inskrivna_arbetslosa_tid_utan_arbete_af.R")
+af_dia14 <- hamta_inskrivna_arbetslosa_tid_utan_arbete_af(region_vekt = c("20", "21", "17", "00"),
+                                                          tid_koder = "9999",
+                                                          jmfr_manader = c(-12, -24, -36, -48, -60))
+
+
 af_dia14 <- af_dia14 %>%
   mutate(Kön = tolower(Kön)) %>% 
   unite("grupp", c(Län, Kön), remove = FALSE, sep = "\n")
