@@ -178,9 +178,11 @@ När vi ser på genomströmningen på gymnasiet och andelen elever som avslutar 
 ## Övergång till högskola inom tre år från avslutad gymnasieutbildning
 I Norra Mellansverige går drygt hälften av kvinnorna och strax under 40 procent av männen vidare från gymnasiet till en eftergymnasial utbildning inom tre år. Majoriteten går till högskolestudier, vilket gäller för både kvinnor och män. Det är vanligare för kvinnor än män att påbörja studier vid folkhögskola, och det är vanligare för män än kvinnor att istället gå till en yrkeshögskoleutbildning. På riksnivå är det cirka 57 procent av kvinnorna och 45 procent av männen som inom tre år efter gymnasiet går vidare till någon form av eftergymnasial utbildning.
 
-```{r diagram13, echo=FALSE,fig.cap = glue("Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning {overgang_eftergymn_studier_avgangsar}. (Källa: SCB)")}
-# Diagram 13. Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning VT 2017 (Källa: SCB)
-socioek_overgang_eftergymn_studier
+```{r diagram13, echo=FALSE}
+# ,fig.cap = glue("Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning {overgang_eftergymn_studier_avgangsar}. (Källa: SCB)")
+print("Diagram 13. Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning VT 2017 (Källa: SCB)")
+print("Finns diagramskript men funkar för tillfället inte")
+#socioek_overgang_eftergymn_studier
 ```
 
 Tittar vi närmare på andelen av befolkningen som inom tre år efter avslutad gymnasieutbildning börjar studera på högskola syns en ökning bland kvinnorna men minskning bland männen i alla tre länen från examensår 2014 till 2018 (påbörjat högskoleutbildning senast hösten 2021). Den största ökningen bland kvinnorna syns i Gävleborg, där andelen kvinnor som går till högskola inom tre år efter gymnasiet ökat med drygt fem procentenheter. I Dalarna är ökningen strax över och i Värmland strax under fyra procentenheter. Minskningen bland männen är också störst i Gävleborg, där det är nästan fem procentenheter färre män som inom tre år efter gymnasiet påbörjat högskolestudier. I Värmland är minskningen nästan tre procentenheter och i Dalarna en halv procentenhet.
@@ -199,14 +201,22 @@ Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF tar fram statistik om
 
 Fram till och med 2014 var de svenska invånare som arbetspendlade över landgräns borträknade, men på grund av att Norge inte längre lämnar ut dessa uppgifter kan inte dessa gränspendlare identifieras och lyftas ur statistiken. Det påverkar inte Gävleborg i någon stor utsträckning, men har viss påverkan på statistiken för Dalarna och framför allt för Värmland som har störst andel invånare som pendlar till arbete i Norge av samtliga 21 regioner. Andelen UVAS kan alltså anses något överskattade i Dalarna och Värmland. För att kunna göra en bedömning av hur stor överskattningen blir har MUCF undersökt andelen gränspendlare i tidigare års siffror, och såg att Värmland hade den största påverkan med en överskattning 2014 på tre procent . Även på kommunnivå var det värmländskt i topp, med störst påverkan i Årjäng (+11 procent) och Eda (+9 procent). Den senaste gränspendlingsstatistiken som finns tillgänglig är från 2017, och då såg vi en minskning av andelen invånare i Värmland som arbetspendlade över gränsen. Att gränsen mellan Norge och Sverige varit stängd under större delen av de senaste två åren tros ha bidragit till en ännu större minskning, vilket innebär att det är svårt att i nuläget säga exakt hur stor överskattningen av andelen UVAS är.
 
-```{r diagram15, echo=FALSE}
-print("Diagram 15. Andel unga som varken arbetar eller studerar, 2019 (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")
+```{r diagram15, echo=FALSE,fig.cap = glue("Andel unga som varken arbetar eller studerar, {UVAS_ar} (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")}
+#"Diagram 15. Andel unga som varken arbetar eller studerar, 2019 (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")
+UVAS$UVAS_alder
+
 ```
 
 Totalt sett är bilden ganska likartad i de tre regionerna, och skillnaderna kan räknas i decimaler. Ser vi däremot på inrikes födda och utrikes födda unga separat ser vi större skillnader, framför allt bland de utrikes unga som varken arbetar eller studerar. Dalarna har något fler kvinnor i båda åldersgrupperna som varken arbetar eller studerar, medan Värmland sticker ut i gruppen män 25-29 år. Värt att komma ihåg är att en person född i Norge som bor på den svenska sidan landsgränsen men arbetar i Norge registreras som en utrikes född person som varken arbetar eller studerar.
 
-```{r diagram16, echo=FALSE}
-print("Diagram 16. Andel INRIKES (vänster) och UTRIKES födda (höger) unga som varken arbetar eller studerar, 2019 (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")
+```{r diagram16, echo=FALSE,fig.cap = glue("Andel inrikes födda unga som varken arbetar eller studerar, {UVAS_ar} (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")}
+#"Diagram 16. Andel INRIKES (vänster) och UTRIKES födda (höger) unga som varken arbetar eller studerar, 2019 (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)"
+UVAS$UVAS_inrikes_födda
+```
+
+```{r diagram9999, echo=FALSE,fig.cap = glue("Andel utrikes födda unga som varken arbetar eller studerar, {UVAS_ar} (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")}
+#"Diagram 16. Andel INRIKES (vänster) och UTRIKES födda (höger) unga som varken arbetar eller studerar, 2019 (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")
+UVAS$UVAS_utrikes_födda
 ```
 
 Vikten av en gymnasieutbildning kan inte nog understrykas. Med en komplett gymnasieutbildning öppnas möjligheter till jobb eller fortsatt utbildning, och utan en gymnasieutbildning är många av dessa dörrar stängda. Det måste vara högsta prioritet att öka andelen av befolkningen som slutför gymnasiet. Länen i Norra Mellansverige har en lägre utbildningsnivå än riket för såväl kvinnor som män, och genom att se på andelen elever som går ut grundskolan med gymnasiebehörighet och sedan titta på övergången till gymnasiet och vilken inriktning flickor och pojkar väljer så kan vi slå fast att skillnader mellan kvinnor och män etableras tidigt i skolgången. Dessa skillnader följer med ut i arbetslivet och leder till en arbetsmarknad med skev könsfördelning. Av den anledningen är det viktigt att stötta unga i att se olika framtida utvecklingsmöjligheter.

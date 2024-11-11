@@ -118,19 +118,26 @@ utb_niva_eftergymn_bakgr_diagram <- funktion_upprepa_forsok_om_fel( function() {
 gymn_behorighet_ar <- gymn_behorighet_bakgr_kon_df$år %>% max()
 
 # ============= Övergång till högskola, folkhögskola och yrkeshögskola - motsvarar diagram 33 och 4 (sidor 17-18) i den tidigare rapporten
-source(here("skript","socioek_övergång_eftergymn_studier_diagram.R"), encoding="UTF-8")
-socioek_overgang_eftergymn_studier <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_overgang_eftergym_studier(region_vekt = c("00", "17", "20", "21"))
-}, hoppa_over = hoppa_over_felhantering)
-overgang_eftergymn_studier_lasar <- overgang_eftergymn_studier_df$avgångsår %>% unique()
-overgang_eftergymn_studier_avgangsar <- substr(overgang_eftergymn_studier_lasar, nchar(overgang_eftergymn_studier_lasar)-3, nchar(overgang_eftergymn_studier_lasar)) 
+# Tillfälligt borttaget då SCB gjort ändringar i API:et
+# source(here("skript","socioek_övergång_eftergymn_studier_diagram.R"), encoding="UTF-8")
+# socioek_overgang_eftergymn_studier <- funktion_upprepa_forsok_om_fel( function() {
+#   skapa_overgang_eftergym_studier(region_vekt = c("00", "17", "20", "21"))
+# }, hoppa_over = hoppa_over_felhantering)
+# overgang_eftergymn_studier_lasar <- overgang_eftergymn_studier_df$avgångsår %>% unique()
+# overgang_eftergymn_studier_avgangsar <- substr(overgang_eftergymn_studier_lasar, nchar(overgang_eftergymn_studier_lasar)-3, nchar(overgang_eftergymn_studier_lasar)) 
 
 source(here("skript","socioek_övergång_eftergymn_tidsserie_diagram.R"), encoding="UTF-8")
 socioek_overgang_eftergym_studier_tidsserie <- funktion_upprepa_forsok_om_fel( function() {
   skapa_overgang_eftergym_studier_tidsserie(region_vekt = c("00", "17", "20", "21"))
 }, hoppa_over = hoppa_over_felhantering)
 
-
+# ============= UVAS - 3 diagram. Motsvarar sidor 18-20 i den gamla rapporten (diagram 15-16)
+# OBS - uppdateras inte automatiskt utan kräver nedladdning av Excel-fil (se viktig info under Indata)
+source(here("skript","socioek_UVAS_diagram.R"), encoding="UTF-8")
+UVAS <- funktion_upprepa_forsok_om_fel( function() {
+  skapa_UVAS_diagram(spara_diagrambildfil = FALSE)
+}, hoppa_over = hoppa_over_felhantering)
+UVAS_ar <- UVAS_df$År %>% max()
 
 # ============= Sysselsättningsgrad uppdelat på län och kön - motsvarar diagram 57 (sidan 22) i den tidigare rapporten
 source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diagram_arbetsmarknadsstatus_senastear.R")
