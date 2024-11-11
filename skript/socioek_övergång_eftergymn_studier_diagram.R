@@ -3,7 +3,7 @@ skapa_overgang_eftergym_studier <- function(region_vekt = c("00", "17", "20", "2
                                              returnera_dataframe_global_environment = TRUE
 ){
   
-  # Skript som skapar 
+  # Skript som skapar diagram för övergång från gymnasiet till olika typer av eftergymnasiala studier
   
   if (!require("pacman")) install.packages("pacman")
   p_load(tidyverse)
@@ -24,13 +24,27 @@ skapa_overgang_eftergym_studier <- function(region_vekt = c("00", "17", "20", "2
   
   # fyll lista som vi loopar igenom
   
+  # tab_list <- list(
+  #   url = list(
+  #     "https://api.scb.se/OV0104/v1/doris/sv/ssd/UF/UF0542/UF0542B/UF0542T2A",
+  #     "https://api.scb.se/OV0104/v1/doris/sv/ssd/UF/UF0542/UF0542C/UF0542T3A",
+  #     "https://api.scb.se/OV0104/v1/doris/sv/ssd/UF/UF0542/UF0542D/UF0542T4A"),
+  #   
+  #   contcode = list(c("000004GD", "000004GG"),
+  #                   c("000004H4", "000004H7"),
+  #                   c("000004FR", "000004I0")),
+  #   
+  #   kolumnnamn = list("Högskola", "Yrkeshögskola", "Folkhögskola")
+  # )
+  
+  # Nytt, förändring eftera att SCB ändrat adress (för övergång till högskola)
   tab_list <- list(
     url = list(
-      "https://api.scb.se/OV0104/v1/doris/sv/ssd/UF/UF0542/UF0542B/UF0542T2A",
+      "https://api.scb.se/OV0104/v1/doris/sv/ssd/UF/UF0542/UF0542B/UF0542T2AN",
       "https://api.scb.se/OV0104/v1/doris/sv/ssd/UF/UF0542/UF0542C/UF0542T3A",
       "https://api.scb.se/OV0104/v1/doris/sv/ssd/UF/UF0542/UF0542D/UF0542T4A"),
     
-    contcode = list(c("000004GD", "000004GG"),
+    contcode = list(c("000007NR", "000007NT"),
                     c("000004H4", "000004H7"),
                     c("000004FR", "000004I0")),
     
@@ -112,6 +126,7 @@ skapa_overgang_eftergym_studier <- function(region_vekt = c("00", "17", "20", "2
                                facet_grp = "lansnamn",
                                diagram_facet = TRUE,
                                facet_legend_bottom = TRUE,
+                               facet_scale = "fixed",
                                diagram_titel = NULL,
                                filnamn_diagram = dia_filnamn,
                                diagram_capt = NULL,

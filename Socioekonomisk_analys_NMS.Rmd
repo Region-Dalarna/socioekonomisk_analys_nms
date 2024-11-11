@@ -178,11 +178,11 @@ När vi ser på genomströmningen på gymnasiet och andelen elever som avslutar 
 ## Övergång till högskola inom tre år från avslutad gymnasieutbildning
 I Norra Mellansverige går drygt hälften av kvinnorna och strax under 40 procent av männen vidare från gymnasiet till en eftergymnasial utbildning inom tre år. Majoriteten går till högskolestudier, vilket gäller för både kvinnor och män. Det är vanligare för kvinnor än män att påbörja studier vid folkhögskola, och det är vanligare för män än kvinnor att istället gå till en yrkeshögskoleutbildning. På riksnivå är det cirka 57 procent av kvinnorna och 45 procent av männen som inom tre år efter gymnasiet går vidare till någon form av eftergymnasial utbildning.
 
-```{r diagram13, echo=FALSE}
-# ,fig.cap = glue("Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning {overgang_eftergymn_studier_avgangsar}. (Källa: SCB)")
-print("Diagram 13. Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning VT 2017 (Källa: SCB)")
-print("Finns diagramskript men funkar för tillfället inte")
-#socioek_overgang_eftergymn_studier
+```{r diagram13, echo=FALSE,fig.cap = glue("Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning {overgang_eftergymn_studier_avgangsar}. (Källa: SCB)")}
+
+#"Diagram 13. Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning VT 2017 (Källa: SCB)")
+
+socioek_overgang_eftergymn_studier
 ```
 
 Tittar vi närmare på andelen av befolkningen som inom tre år efter avslutad gymnasieutbildning börjar studera på högskola syns en ökning bland kvinnorna men minskning bland männen i alla tre länen från examensår 2014 till 2018 (påbörjat högskoleutbildning senast hösten 2021). Den största ökningen bland kvinnorna syns i Gävleborg, där andelen kvinnor som går till högskola inom tre år efter gymnasiet ökat med drygt fem procentenheter. I Dalarna är ökningen strax över och i Värmland strax under fyra procentenheter. Minskningen bland männen är också störst i Gävleborg, där det är nästan fem procentenheter färre män som inom tre år efter gymnasiet påbörjat högskolestudier. I Värmland är minskningen nästan tre procentenheter och i Dalarna en halv procentenhet.
