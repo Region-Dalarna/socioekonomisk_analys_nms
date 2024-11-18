@@ -309,6 +309,14 @@ arblos_arblosa_utrikes_over_tid <- af_lista_diagram$linjediagram_andel_utr_arblo
 arblos_utr_min_ar <- arblosa_utr_over_tid$Månad_år %>% first()
 arblos_utr_max_ar <- arblosa_utr_over_tid$Månad_år %>% last()
 
+# ================== Diagram över matchad utbildningsnivå och bakgrund ============
+source(here("skript","socioek_matchning_bakgr_utbniva.R"), encoding="UTF-8")
+matchning_utbildningsniva_diagram <- funktion_upprepa_forsok_om_fel( function() {
+  skapa_matcning_utbniva_bakgrund_diagram()
+}, hoppa_over = hoppa_over_felhantering) %>% .[[1]]
+matchning_utbniva_min_ar <- matchning_utbildningsniva_diagram$data$Ar %>% min()
+matchning_utbniva_max_ar <- matchning_utbildningsniva_diagram$data$Ar %>% max()
+
 # 2. om man vill knitta rapporten
 #source(paste0(here("skript","/"), "2_knitta_rapport.R"))
 
