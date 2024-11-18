@@ -1,262 +1,282 @@
-library(tidyverse)
-library(openxlsx)
 
-source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R", encoding = "utf-8", echo = FALSE)
+skapa_af_diagram_lista <- function(
+    region_vekt = "20",
+    logga_path = NA,
+    logga_i_diagram = FALSE,
+    ta_bort_diagram_titel = FALSE,
+    skriv_diagramfil = FALSE,
+    output_mapp = NA,
+    returnera_dataframe_global_environment = TRUE
+  ) {
 
-output_mapp <- "G:/Samhällsanalys/Projekt och uppdrag/EU/ESF/Socioekonomisk analys/auto_diagram/"
-
-input_mapp <- "G:/Samhällsanalys/Projekt och uppdrag/EU/ESF/Socioekonomisk analys/data_mars2022/"
-af_fil <- "underlag uppdatering AF 2022.xlsx"
-af_full <- paste0(input_mapp, af_fil)
-
-# ============================= diagram 14 ====================================
-af_dia14 <- read.xlsx(af_full, sheet = "diagram14", startRow = 3)
-
-source("G:/skript/peter/hamta_inskrivna_arbetslosa_tid_utan_arbete_af.R")
-af_dia14 <- hamta_inskrivna_arbetslosa_tid_utan_arbete_af(region_vekt = c("20", "21", "17", "00"),
-                                                          tid_koder = "9999",
-                                                          jmfr_manader = c(-12, -24, -36, -48, -60))
-
-
-af_dia14 <- af_dia14 %>%
-  mutate(Kön = tolower(Kön)) %>% 
-  unite("grupp", c(Län, Kön), remove = FALSE, sep = "\n")
-
-af_dia14$grupp <- factor(af_dia14$grupp, levels = c("Dalarna\nkvinnor", "Dalarna\nmän",
-                                                    "Gävleborg\nkvinnor", "Gävleborg\nmän",
-                                                    "Värmland\nkvinnor", "Värmland\nmän",
-                                                    "Norra Mellansverige\nkvinnor", "Norra Mellansverige\nmän", 
-                                                    "Riket\nkvinnor", "Riket\nmän")) 
-
-af_dia14$Längd <- factor(af_dia14$Längd, levels = c("< 6 månader", "6-12 månader", "> 12 månader"))
-af_dia14$proc <- af_dia14$Andel * 100
-
-
-diagramfilnamn <- "diagram_14_andel_arblosa_arbtid.png"
-                                                            
-SkapaStapelDiagram(skickad_df = af_dia14,
-                   skickad_x_var = "grupp",
-                   skickad_y_var = "proc",
-                   skickad_x_grupp = "Längd",
-                   output_mapp = output_mapp,
-                   filnamn_diagram = diagramfilnamn,
-                   manual_x_axis_text_vjust = 1,
-                   manual_x_axis_text_hjust = 1,
-                   geom_position_stack = TRUE,
-                   manual_y_axis_title = "procent",
-                   manual_color = diagramfarger("gron_sex")[c(3,4,5)],
-                   lagg_pa_logga = FALSE)
-
-# ============================= diagram 15 ====================================
-
-af_nr <- "15"
-af_dia_df <- read_xlsx(af_full, sheet = paste0("diagram", af_nr) , skip = 2)
-
-af_dia_df <- af_dia_df %>%
-  mutate(tid = format(as.Date(paste(År, Månad, "1", sep = "-")), format = "%b - %y"))
-
-af_dia_df <- af_dia_df %>%
-  arrange(År, Månad) %>% 
-  mutate(sortvar = row_number())
-
-af_dia_df$tid <- reorder(af_dia_df$tid, af_dia_df$sortvar)
-
-
-diagramfilnamn <- paste0("diagram_", af_nr, "_varslade_Sverige.png")
-
-SkapaStapelDiagram(skickad_df = af_dia_df,
-                   skickad_x_var = "tid",
-                   skickad_y_var = "Antal varslade",
-                   skickad_x_grupp = NA,
-                   output_mapp = output_mapp,
-                   filnamn_diagram = diagramfilnamn,
-                   x_axis_lutning = 90,
-                   manual_x_axis_text_vjust = 1,
-                   manual_x_axis_text_hjust = 1,
-                   #manual_color = diagramfarger("gron_sex")[c(3,4,5)],
-                   lagg_pa_logga = FALSE)
+  library(tidyverse)
+  #library(openxlsx)
+  
+  source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R", encoding = "utf-8", echo = FALSE)
+  
+  # hantering av output mapp
+  if (all(is.na(output_mapp)) & skriv_diagramfil) {
+    if (exists("utskriftsmapp", mode = "function")) {
+      output_mapp <- utskriftsmapp()
+    } else {
+      stop("Ingen output-mapp angiven, kör funktionen igen och ge parametern output-mapp ett värde om du vill skriva en diagrambildfil.")
+    }
+  }
+  
+  gg_list <- list()
+  
+  # ============================= hämta alla arbetslöshetsdata ====================================
+  
+  source("G:/skript/peter/hamta_inskrivna_arbetslosa_tid_utan_arbete_af.R")
+  source("G:/skript/peter/hamta_arbetskraft_bas_af.R")
+  
+  alla_arblos_af <- hamta_inskrivna_arbetslosa_tid_utan_arbete_af(region_vekt = c("20", "21", "17", "00"),
+                                                                  dataset = "*")
+  
+  alla_arbkraft_af <- hamta_arbetskraft_bas_af(region_vekt = c("20", "21", "17", "00"),
+                                               dataset = "*")
+  
+  arblos_kon <- alla_arblos_af$Kön
+  tid_vekt <- period_jmfr_filter(period_kolumn = arblos_kon$Tid, max(arblos_kon$Tid), period_vekt = c(-12, -24, -36))
+  arblos_kon <- arblos_kon %>% 
+    filter(Tid %in% tid_vekt)
+  
+  arbkraft_kon <- alla_arbkraft_af$Kön
+  tid_vekt <- period_jmfr_filter(period_kolumn = arbkraft_kon$Tid, max(arbkraft_kon$Tid), period_vekt = c(-12, -24, -36))
+  
+  arbkraft_kon <- arbkraft_kon %>% 
+    filter(Tid %in% tid_vekt) %>% 
+    mutate(Kön = Kön %>% tolower())
+  
+  # ============================= diagram arbetslösa utifrån arbetslöshetstid ====================================
+  
+  af_dia14 <- arblos_kon %>% 
+    left_join(arbkraft_kon, by = c("Tid", "År", "Månad", "År_månad", "Månad_år", "Regionkod", "Region", "Kön"))
+  
+  af_dia14_2 <- af_dia14 %>%
+    mutate(Kön = tolower(Kön),
+           Region = Region %>% skapa_kortnamn_lan(F)) %>% 
+     mutate(`totalt månader` = Arbetslösa / Antal,
+           `< 6 månader` = ((Arbetslösa - `Utan arbete mer än 6 månader`)) / Antal,
+           `6-12 månader` = (`Utan arbete mer än 6 månader` - `Utan arbete mer än 12 månader`) / Antal,
+           `12-24 månader` = (`Utan arbete mer än 12 månader` - `Utan arbete mer än 24 månader`) / Antal,
+           `> 24 månader` = (`Utan arbete mer än 24 månader`) / Antal) %>% 
+    select(-c(contains("Utan arbete mer än"))) %>% 
+    pivot_longer(cols = contains("månader"), names_to = "Längd", values_to = "Andel") %>% 
+    mutate(Längd = ifelse(Längd == "totalt månader", "totalt", Längd), 
+           Längd = factor(Längd, levels = c("totalt", "< 6 månader", "6-12 månader", "12-24 månader", 
+                                            "> 24 månader")),
+           Region = factor(Region, levels = c("Dalarna", "Gävleborg", "Värmland", "Riket")),
+           proc = Andel * 100) %>% 
+    filter(Tid == max(Tid))
+  
+  if(returnera_dataframe_global_environment == TRUE){
+    assign("arblosa_kon_arbloshetstid", af_dia14_2, envir = .GlobalEnv)
+  }
+  
+  diagramfilnamn <- "andel_arblosa_arbloshetstid.png"
+  
+  gg_obj <- SkapaStapelDiagram(skickad_df = af_dia14_2 %>% 
+                       filter(Längd != "totalt"),
+                     skickad_x_var = "Region",
+                     skickad_y_var = "proc",
+                     skickad_x_grupp = "Kön",
+                     output_mapp = output_mapp,
+                     filnamn_diagram = diagramfilnamn,
+                     stodlinjer_avrunda_fem = TRUE,
+                     # manual_x_axis_text_vjust = 1,
+                     # manual_x_axis_text_hjust = 1,
+                     x_axis_lutning = 0,
+                     geom_position_stack = FALSE,
+                     manual_y_axis_title = "procent",
+                     manual_color = diagramfarger("kon"),
+                     skriv_till_diagramfil = skriv_diagramfil,
+                     utan_diagramtitel = ta_bort_diagram_titel,
+                     diagram_facet = TRUE,
+                     facet_grp = "Längd",
+                     facet_scale = "fixed",
+                     facet_legend_bottom = TRUE,
+                     legend_vand_ordning = TRUE,
+                     lagg_pa_logga = logga_i_diagram,
+                     logga_path = logga_path
+                     )
+  
+  gg_list <- c(gg_list, list(gg_obj))
+  names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+  
+  # ============================= Andel arbetslösa över tid per län ====================================
+  
+  #source("G:/skript/peter/hamta_inskrivna_arbetslosa_tid_utan_arbete_af.R")
+  af_arblos_tid <- alla_arblos_af$Total
+  
+  
+  #source("G:/skript/peter/hamta_arbetskraft_bas_af.R")
+  af_arbkraft_tid <- alla_arbkraft_af$Total
+  
+  af_arblos_tid_2 <- af_arblos_tid %>% 
+    filter(Tid %in% unique(af_arbkraft_tid$Tid))
+  
+  arblos_andel_df <- af_arblos_tid_2 %>% 
+    left_join(af_arbkraft_tid, by = c("Tid", "År", "Månad", "År_månad", "Månad_år", "Regionkod", "Region"))
+  
+  arblos_andel_df <- arblos_andel_df %>%
+    mutate(Region = Region %>% skapa_kortnamn_lan(F)) %>% 
+    mutate(`totalt månader` = Arbetslösa / Antal,
+           `< 6 månader` = ((Arbetslösa - `Utan arbete mer än 6 månader`)) / Antal,
+           `6-12 månader` = (`Utan arbete mer än 6 månader` - `Utan arbete mer än 12 månader`) / Antal,
+           `12-24 månader` = (`Utan arbete mer än 12 månader` - `Utan arbete mer än 24 månader`) / Antal,
+           `> 24 månader` = (`Utan arbete mer än 24 månader`) / Antal) %>% 
+    select(-c(contains("Utan arbete mer än"))) %>% 
+    pivot_longer(cols = contains("månader"), names_to = "Längd", values_to = "Andel") %>% 
+    mutate(Längd = ifelse(Längd == "totalt månader", "totalt", Längd), 
+           Längd = factor(Längd, levels = c("totalt", "< 6 månader", "6-12 månader", "12-24 månader", 
+                                            "> 24 månader") %>% rev()),
+           proc = Andel * 100) %>% 
+    mutate(Region = factor(Region, levels = c("Dalarna", "Gävleborg", "Värmland", "Riket")))
+  
+  if(returnera_dataframe_global_environment == TRUE){
+    assign("arblosa_over_tid", arblos_andel_df, envir = .GlobalEnv)
+  }
+  
+  diagramfilnamn <- "linjediagram_andel_arblosa_over_tid.png"
+  
+  gg_obj <- SkapaLinjeDiagram(skickad_df = arblos_andel_df %>% 
+                      filter(Längd == "totalt"),
+                    skickad_x_var = "Månad_år",
+                    skickad_y_var = "proc",
+                    skickad_x_grupp = "Region",
+                    output_mapp = output_mapp,
+                    filnamn_diagram = diagramfilnamn,
+                    stodlinjer_avrunda_fem = TRUE,
+                    manual_y_axis_title = "procent",
+                    manual_color = diagramfarger("rus_sex"),
+                    facet_legend_bottom = TRUE,
+                    skriv_till_diagramfil = skriv_diagramfil,
+                    utan_diagramtitel = ta_bort_diagram_titel,
+                    lagg_pa_logga = logga_i_diagram,
+                    logga_path = logga_path
+                    )
+  
+  gg_list <- c(gg_list, list(gg_obj))
+  names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+  
+  
+  
+  # ============================= Andel arbetslösa unga över tid per län ====================================
+  
+  af_arblos_df <- alla_arblos_af$Ålder %>% 
+    filter(Ålder == "18-24") %>% 
+    select(-Ålder)
+  
+  af_arbkraft_df <- alla_arbkraft_af$Ålder %>% 
+    filter(Ålder == "18-24 år")
+    
+  
+  af_arblos_df<- af_arblos_df %>% 
+    filter(Tid %in% unique(af_arbkraft_df$Tid))
+  
+  arblos_andel_df <- af_arblos_df %>% 
+    left_join(af_arbkraft_df, by = c("Tid", "År", "Månad", "År_månad", "Månad_år", "Regionkod", "Region"))
+  
+  arblos_andel_df <- arblos_andel_df %>%
+    mutate(Region = Region %>% skapa_kortnamn_lan(F)) %>% 
+    mutate(`totalt månader` = Arbetslösa / Antal,
+           `< 6 månader` = ((Arbetslösa - `Utan arbete mer än 6 månader`)) / Antal,
+           `6-12 månader` = (`Utan arbete mer än 6 månader` - `Utan arbete mer än 12 månader`) / Antal,
+           `12-24 månader` = (`Utan arbete mer än 12 månader` - `Utan arbete mer än 24 månader`) / Antal,
+           `> 24 månader` = (`Utan arbete mer än 24 månader`) / Antal) %>% 
+    select(-c(contains("Utan arbete mer än"))) %>% 
+    pivot_longer(cols = contains("månader"), names_to = "Längd", values_to = "Andel") %>% 
+    mutate(Längd = ifelse(Längd == "totalt månader", "totalt", Längd), 
+           Längd = factor(Längd, levels = c("totalt", "< 6 månader", "6-12 månader", "12-24 månader", 
+                                            "> 24 månader") %>% rev()),
+           proc = Andel * 100) %>% 
+    mutate(Region = factor(Region, levels = c("Dalarna", "Gävleborg", "Värmland", "Riket")))
+  
+  if(returnera_dataframe_global_environment == TRUE){
+    assign("arblosa_unga_over_tid", arblos_andel_df, envir = .GlobalEnv)
+  }
+  
+  diagramfilnamn <- "linjediagram_andel_unga_arblosa_over_tid.png"
+  
+  gg_obj <- SkapaLinjeDiagram(skickad_df = arblos_andel_df %>% 
+                                filter(Längd == "totalt"),
+                              skickad_x_var = "Månad_år",
+                              skickad_y_var = "proc",
+                              skickad_x_grupp = "Region",
+                              output_mapp = output_mapp,
+                              filnamn_diagram = diagramfilnamn,
+                              stodlinjer_avrunda_fem = TRUE,
+                              manual_y_axis_title = "procent",
+                              manual_color = diagramfarger("rus_sex"),
+                              facet_legend_bottom = TRUE,
+                              skriv_till_diagramfil = skriv_diagramfil,
+                              utan_diagramtitel = ta_bort_diagram_titel,
+                              lagg_pa_logga = logga_i_diagram,
+                              logga_path = logga_path
+                              )
+  
+  gg_list <- c(gg_list, list(gg_obj))
+  names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
  
-# af_dia_df <- af_dia_df %>%
-#   mutate(tid_txt = format(as.Date(paste(År, Månad, "1", sep = "-")), format = "%b - %y")) %>% 
-#   arrange(sortvar)
+# ============================= Andel arbetslösa utrikes födda över tid per län ====================================
 
-# filnamntest <- "test.png"
-# SkapaLinjeDiagram(skickad_df = af_dia_df,
-#                    skickad_x_var = "tid_txt",
-#                    skickad_y_var = "Antal varslade",
-#                    output_mapp = output_mapp,
-#                    filnamn_diagram = filnamntest,
-#                    x_axis_lutning = 90,
-#                    #manual_x_axis_text_vjust = 1,
-#                    #manual_x_axis_text_hjust = 1,
-#                    #manual_color = diagramfarger("gron_sex")[c(3,4,5)],
-#                    lagg_pa_logga = FALSE)
+af_arblos_utr_df <- alla_arblos_af$Födelseland %>% 
+  filter(Födelseland != "Sverige") %>% 
+  group_by(Tid, År, Månad, År_månad, Månad_år, Regionkod, Region) %>%
+  summarise(across(where(is.numeric), \(x) sum(x, na.rm = TRUE)), .groups = "drop")
 
+af_arbkraft_utr_df <- alla_arbkraft_af$Födelseland %>% 
+  filter(Födelseland == "utrikes")
 
-# ============================= diagram 16 ====================================
+af_arblos_utr_df<- af_arblos_utr_df %>% 
+  filter(Tid %in% unique(af_arbkraft_utr_df$Tid))
 
-af_nr <- "16"
-af_dia_df <- read_xlsx(af_full, sheet = paste0("diagram", af_nr) , skip = 2)
+arblos_andel_utr_df <- af_arblos_utr_df %>% 
+  left_join(af_arbkraft_utr_df, by = c("Tid", "År", "Månad", "År_månad", "Månad_år", "Regionkod", "Region"))
 
-af_dia_df <- af_dia_df %>%
-  mutate(tid = format(as.Date(paste(År, Månad, "1", sep = "-")), format = "%b - %y"))
+arblos_andel_utr_df <- arblos_andel_utr_df %>%
+  mutate(Region = Region %>% skapa_kortnamn_lan(F)) %>% 
+  mutate(`totalt månader` = Arbetslösa / Antal,
+         `< 6 månader` = ((Arbetslösa - `Utan arbete mer än 6 månader`)) / Antal,
+         `6-12 månader` = (`Utan arbete mer än 6 månader` - `Utan arbete mer än 12 månader`) / Antal,
+         `12-24 månader` = (`Utan arbete mer än 12 månader` - `Utan arbete mer än 24 månader`) / Antal,
+         `> 24 månader` = (`Utan arbete mer än 24 månader`) / Antal) %>% 
+  select(-c(contains("Utan arbete mer än"))) %>% 
+  pivot_longer(cols = contains("månader"), names_to = "Längd", values_to = "Andel") %>% 
+  mutate(Längd = ifelse(Längd == "totalt månader", "totalt", Längd), 
+         Längd = factor(Längd, levels = c("totalt", "< 6 månader", "6-12 månader", "12-24 månader", 
+                                          "> 24 månader") %>% rev()),
+         proc = Andel * 100) %>% 
+  mutate(Region = factor(Region, levels = c("Dalarna", "Gävleborg", "Värmland", "Riket")))
 
-af_dia_df <- af_dia_df %>%
-  arrange(År, Månad) %>% 
-  mutate(sortvar = row_number())
+if(returnera_dataframe_global_environment == TRUE){
+  assign("arblosa_utr_over_tid", arblos_andel_utr_df, envir = .GlobalEnv)
+}
 
-af_dia_df$tid <- reorder(af_dia_df$tid, af_dia_df$sortvar)
+diagramfilnamn <- "linjediagram_andel_utr_arblosa_over_tid.png"
 
-diagramfilnamn <- paste0("diagram_", af_nr, "_varslade_NMS.png")
+gg_obj <- SkapaLinjeDiagram(skickad_df = arblos_andel_utr_df %>% 
+                              filter(Längd == "totalt"),
+                            skickad_x_var = "Månad_år",
+                            skickad_y_var = "proc",
+                            skickad_x_grupp = "Region",
+                            output_mapp = output_mapp,
+                            filnamn_diagram = diagramfilnamn,
+                            stodlinjer_avrunda_fem = TRUE,
+                            manual_y_axis_title = "procent",
+                            manual_color = diagramfarger("rus_sex"),
+                            facet_legend_bottom = TRUE,
+                            skriv_till_diagramfil = skriv_diagramfil,
+                            utan_diagramtitel = ta_bort_diagram_titel,
+                            lagg_pa_logga = logga_i_diagram,
+                            logga_path = logga_path
+)
 
-SkapaStapelDiagram(skickad_df = af_dia_df,
-                   skickad_x_var = "tid",
-                   skickad_y_var = "Antal varslade",
-                   skickad_x_grupp = "Län",
-                   output_mapp = output_mapp,
-                   filnamn_diagram = diagramfilnamn,
-                   x_axis_lutning = 90,
-                   manual_x_axis_text_vjust = 1,
-                   manual_x_axis_text_hjust = 1,
-                   manual_color = diagramfarger("bla_gra_tre"),
-                   lagg_pa_logga = FALSE)
+gg_list <- c(gg_list, list(gg_obj))
+names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
 
-# ============================= diagram 19 ====================================
+return(gg_list) 
 
-af_nr <- "19"
-af_dia_df <- read_xlsx(af_full, sheet = paste0("diagram", af_nr) , skip = 2)
+} # slut diagram-funktion
 
-af_dia_df$År_txt <- as.character(af_dia_df$År)
-af_dia_df$Vecka_factor <- factor(af_dia_df$Vecka)
-
-diagramfilnamn <- paste0("diagram_", af_nr, "_nyinskrivna_arbsok_NMS.png")
-
-SkapaLinjeDiagram(skickad_df = af_dia_df,
-                   skickad_x_var = "Vecka_factor",
-                   skickad_y_var = "Antal",
-                   skickad_x_grupp = "År_txt",
-                   diagram_facet = TRUE,
-                   facet_grp = "Region",
-                   facet_legend_bottom = TRUE,
-                   output_mapp = output_mapp,
-                   filnamn_diagram = diagramfilnamn,
-                   x_axis_lutning = 90,
-                   visa_var_x_xlabel = 6,
-                   x_axis_storlek = 6,
-                   manual_x_axis_title = "vecka",
-                   manual_y_axis_title = "antal arbetssökande",
-                   #manual_x_axis_text_vjust = 1,
-                   #manual_x_axis_text_hjust = 1,
-                   #manual_color = diagramfarger("bla_gra_tre"),
-                   lagg_pa_logga = FALSE)
-
-# ============================= diagram 21 ====================================
-
-af_nr <- "21"
-af_dia_df <- read_xlsx(af_full, sheet = paste0("diagram", af_nr) , skip = 2)
-
-af_dia_df <- af_dia_df %>%
-  mutate(tid = format(as.Date(paste(År, Månad, "1", sep = "-")), format = "%b - %y"))
-
-af_dia_df <- af_dia_df %>%
-  arrange(År, Månad) %>% 
-  mutate(sortvar = row_number())
-
-af_dia_df$tid <- reorder(af_dia_df$tid, af_dia_df$sortvar)
-
-af_dia_df$Region <- factor(af_dia_df$Region, 
-                           levels = c("Dalarna", "Gävleborg", "Värmland", "Riket")) 
-
-af_dia_df$proc <- af_dia_df$`Andel arbetslösa` * 100
-
-diagramfilnamn <- paste0("diagram_", af_nr, "_arblosa_NMS_riket.png")
-
-SkapaLinjeDiagram(skickad_df = af_dia_df,
-                  skickad_x_var = "tid",
-                  skickad_y_var = "proc",
-                  skickad_x_grupp = "Region",
-                  output_mapp = output_mapp,
-                  filnamn_diagram = diagramfilnamn,
-                  x_axis_lutning = 90,
-                  #visa_var_x_xlabel = 6,
-                  #x_axis_storlek = 8,
-                  #manual_x_axis_title = "vecka",
-                  manual_y_axis_title = "procent",
-                  #manual_x_axis_text_vjust = 1,
-                  #manual_x_axis_text_hjust = 1,
-                  manual_color = c(diagramfarger("bla_gra_tre"), "black"),
-                  lagg_pa_logga = FALSE)
-
-# ============================= diagram 22 ====================================
-
-af_nr <- "22"
-af_dia_df <- read_xlsx(af_full, sheet = paste0("diagram", af_nr) , skip = 2)
-
-af_dia_df <- af_dia_df %>%
-  mutate(tid = format(as.Date(paste(År, Månad, "1", sep = "-")), format = "%b - %y"))
-
-af_dia_df <- af_dia_df %>%
-  arrange(År, Månad) %>% 
-  mutate(sortvar = row_number())
-
-af_dia_df$tid <- reorder(af_dia_df$tid, af_dia_df$sortvar)
-
-af_dia_df$Region <- factor(af_dia_df$Region, 
-                           levels = c("Dalarna", "Gävleborg", "Värmland", "Riket")) 
-
-af_dia_df$proc <- af_dia_df$`Andel arbetslösa` * 100
-
-diagramfilnamn <- paste0("diagram_", af_nr, "_arblosa_unga_NMS_riket.png")
-
-SkapaLinjeDiagram(skickad_df = af_dia_df,
-                  skickad_x_var = "tid",
-                  skickad_y_var = "proc",
-                  skickad_x_grupp = "Region",
-                  output_mapp = output_mapp,
-                  filnamn_diagram = diagramfilnamn,
-                  x_axis_lutning = 90,
-                  #visa_var_x_xlabel = 6,
-                  #x_axis_storlek = 8,
-                  #manual_x_axis_title = "vecka",
-                  manual_y_axis_title = "procent",
-                  #manual_x_axis_text_vjust = 1,
-                  #manual_x_axis_text_hjust = 1,
-                  manual_color = c(diagramfarger("bla_gra_tre"), "black"),
-                  lagg_pa_logga = FALSE)
-
-# ============================= diagram 24 ====================================
-
-af_nr <- "24"
-af_dia_df <- read_xlsx(af_full, sheet = paste0("diagram", af_nr) , skip = 2)
-
-af_dia_df <- af_dia_df %>%
-  mutate(tid = format(as.Date(paste(År, Månad, "1", sep = "-")), format = "%b - %y"))
-
-af_dia_df <- af_dia_df %>%
-  arrange(År, Månad) %>% 
-  mutate(sortvar = row_number())
-
-af_dia_df$tid <- reorder(af_dia_df$tid, af_dia_df$sortvar)
-
-af_dia_df$Region <- factor(af_dia_df$Region, 
-                           levels = c("Dalarna", "Gävleborg", "Värmland", "Riket")) 
-
-af_dia_df$proc <- af_dia_df$`Andel arbetslösa` * 100
-
-diagramfilnamn <- paste0("diagram_", af_nr, "_arblosa_utrfodda_NMS_riket.png")
-
-SkapaLinjeDiagram(skickad_df = af_dia_df,
-                  skickad_x_var = "tid",
-                  skickad_y_var = "proc",
-                  skickad_x_grupp = "Region",
-                  output_mapp = output_mapp,
-                  filnamn_diagram = diagramfilnamn,
-                  x_axis_lutning = 90,
-                  #visa_var_x_xlabel = 6,
-                  #x_axis_storlek = 8,
-                  #manual_x_axis_title = "vecka",
-                  manual_y_axis_title = "procent",
-                  #manual_x_axis_text_vjust = 1,
-                  #manual_x_axis_text_hjust = 1,
-                  manual_color = c(diagramfarger("bla_gra_tre"), "black"),
-                  lagg_pa_logga = FALSE)

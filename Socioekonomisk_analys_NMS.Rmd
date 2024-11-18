@@ -55,9 +55,6 @@ Det finns stora likheter i demografin i de tre länen i Norra Mellansverige, men
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Befolkningen 2023 i Norra Mellansverige och riket (Källa: SCB)"}
 beftabell_flextable
-#gt_beftabell
-#kbl_beftabell
-# Tabell 1. Befolkningen 2021 i Norra Mellansverige och riket (Källa: SCB)
 
 ```
   
@@ -135,8 +132,7 @@ print("Diagram 7. Andel av de som gått ut gymnasiet i de tre länen i Norra Mel
 De tre länen i Norra Mellansverige har betydligt lägre andel högutbildade än i riket som helhet, och skillnaden är extra tydlig när det gäller män som har en eftergymnasial utbildning som är längre än tre år. Det är en betydligt större andel högutbildade kvinnor än män i de tre länen, och skillnaden mellan könen ökar. Andelen män med eftergymnasial utbildning har ökat marginellt jämfört med den socioekonomiska analys för Norra Mellansverige som släpptes 2014 och baserades på utbildningsdata från 2012, medan andelen högutbildade kvinnor har ökat stadigt både i Norra Mellansverige och i riket som helhet.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel av befolkningen 25-64 år med eftergymnasial utbildning som är tre år eller längre, över tid. (Källa: SCB)")}
-utb_niva_hogutb_diagram$hogutb_andel_ar00_20_17_21_1985_2023
-# Diagram 8. Andel av befolkningen 25-64 år med eftergymnasial utbildning som är tre år eller längre, över tid (Källa: SCB)
+utb_niva_hogutb_diagram
 ```
 
 Trots att andelen högutbildade i länen är låg i jämförelse med riket så har det skett en liten men stadig ökning över tid. Den generella ökningen av högutbildade speglar en strukturell förändring på arbetsmarknaden som idag i större utsträckning efterfrågar högutbildad kompetens. Eftersom kompetenskraven höjts inom de flesta branscher är det idag svårare att både få ett arbete och göra karriär utan utbildning än det var för bara 20–30 år sedan.
@@ -158,13 +154,14 @@ I Norra Mellansverige som helhet är det färre elever som går ur årskurs 9 me
 Om vi ser till hela den grupp som saknar gymnasiebehörighet, dit de som inte gått klart grundskolan hör, så har gruppen det sämre inom en rad olika områden. När det kommer till ersättningar från trygghetssystemen så kan vi se att den stora skiljelinjen går mellan de som har förgymnasial utbildning och de med gymnasial utbildning. De med eftergymnasial utbildning har i minst utsträckning ersättning från de sociala trygghetssystemen men skillnaden är inte lika stor mellan de som har eftergymnasial mot de som har gymnasial utbildning jämfört med skillnaden mellan de med gymnasial och de med förgymnasial utbildning. En del av arbetskraftsreserven finns i gruppen med endast förgymnasial utbildning men även om det är en del som uppbär arbetslöshetsersättning, försörjningsstöd eller etableringsersättning så har majoriteten i denna grupp någon form av sjukersättning. Ett förebyggande arbete för att förhindra att individer i denna grupp hamnar i sjukskrivning/sjukpension har stor potential för att öka antalet individer i arbetskraften.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel avgångselever i grundskolan med gymnasiebehörighet, efter kön och födelseland, år {gymn_behorighet_ar}. (Källa: SCB)")}
-utb_niva_eftergymn_bakgr_diagram
+gymn_behorighet_kon_diagram
 ```
 
 Av de elever i Dalarna som avslutat grundskolan på våren 2021 är det 97,1 procent som fortsätter till gymnasiet samma höst. I Gävleborg är det 97,3 procent som går direkt vidare till gymnasiet och i Värmland 97,8 procent. I riket som helhet är övergångsfrekvensen 98,0 procent.
 
-```{r diagram11, echo=FALSE}
-print("Diagram 11. Fördelning gymnasieprogram per kön, HT 2018 (Källa: Skolverket)")
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Könsbalans per gymnasieprogram alla årskurser läsåret {gymnasieprogram_konsbalans_ar} (Källa: Skolverket)")}
+gymnasieprogram_konsbalans_diagram
+
 ```
 
 Variationen mellan elever som går till högskoleförberedande program, yrkesprogram och introduktionsprogram varierar mellan olika delar av landet. I Norra Mellansverige är det en mindre andel än riket som går till högskoleförberedande program och en större andel som går till yrkesprogram. Ser man till Sverige som helhet så går drygt 66 procent av flickorna och knappt 55 procent av pojkarna till högskoleförberedande program, vilket är det överlägsna förstahandsvalet för båda könen. Knappt en fjärdedel av flickorna och en tredjedel av pojkarna på riksnivå går till yrkesprogram. I Gävleborg, där skillnaderna mot rikssnittet är tydligast, går drygt 56 procent av flickorna och knappt 42 procent av pojkarna till högskoleförberedande program. Däremot går 33,1 procent av flickorna och 46 procent av pojkarna till olika yrkesprogram. Det är också en något större andel av flickorna i Gävleborg som går till ett introduktionsprogram jämfört med riket och övriga regioner i Norra Mellansverige.
@@ -173,8 +170,8 @@ Grunden till den könsuppdelade arbetsmarknad vi ser idag läggs tidigt. Redan m
 
 När fler elever väljer yrkesprogram minskar sannolikheten för en övergång till högskola eller universitet senare i livet. Om en högre utbildningsnivå är målet bör man fokusera på att inspirera fler – framför allt fler unga män – att välja högskoleförberedande program. Men om yrkesprogrammen i Norra Mellansverige spelar en viktig roll i regionens kompetensförsörjning kanske man också ska utveckla dessa utbildningar så att de elever som kommer ut från yrkesprogrammen har den kompetens som arbetsgivarna efterfrågar samt möjlighet att läsa vidare på högskola eller universitet. Det finns redan idag möjlighet för de som valt ett yrkesprogram att välja till kurser och därigenom få högskolebehörighet.
 
-```{r diagram12, echo=FALSE}
-print("Diagram 12. Genomströmning; examen inom 3 och 4 år, startläsår 2017/18 (Källa: Skolverket)")
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Genomströmning; examen inom 4 år, startläsår {genomstromning_startlasar} (Källa: Skolverket)")}
+gymnasieprogram_genomstromning_diagram
 ```
 
 När vi ser på genomströmningen på gymnasiet och andelen elever som avslutar studierna med examen inom tre eller fyra år så ligger Värmland och Gävleborg över riket för både yrkesprogram och högskoleförberedande program. I Dalarna är det på båda programmen en lägre andel av eleverna som kommer igenom på tre år, men fler som sedan går klart högskoleförberedande program på fyra år jämfört med rikssnittet.
@@ -184,8 +181,6 @@ I Norra Mellansverige går drygt hälften av kvinnorna och strax under 40 procen
 
 ```{r diagram13, echo=FALSE,fig.cap = glue("Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning {overgang_eftergymn_studier_avgangsar}. (Källa: SCB)")}
 
-#"Diagram 13. Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning VT 2017 (Källa: SCB)")
-
 socioek_overgang_eftergymn_studier
 ```
 
@@ -194,7 +189,6 @@ Tittar vi närmare på andelen av befolkningen som inom tre år efter avslutad g
 På riksnivå har både andelen kvinnor och män som börjar högskola inom tre år efter gymnasiet ökat under samma period. Andelen kvinnor ökar med drygt fem procentenheter, medan andelen män ökar med en procentenhet.
 
 ```{r diagram14, echo=FALSE, fig.cap = "Förändring i övergång från gymnasieutbildning till högskola inom tre år (Källa: SCB)"}
-# Diagram 14. Förändring i övergång från gymnasieutbildning till högskola inom tre år (Källa: SCB)
 socioek_overgang_eftergym_studier_tidsserie
 ```
 
@@ -206,7 +200,6 @@ Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF tar fram statistik om
 Fram till och med 2014 var de svenska invånare som arbetspendlade över landgräns borträknade, men på grund av att Norge inte längre lämnar ut dessa uppgifter kan inte dessa gränspendlare identifieras och lyftas ur statistiken. Det påverkar inte Gävleborg i någon stor utsträckning, men har viss påverkan på statistiken för Dalarna och framför allt för Värmland som har störst andel invånare som pendlar till arbete i Norge av samtliga 21 regioner. Andelen UVAS kan alltså anses något överskattade i Dalarna och Värmland. För att kunna göra en bedömning av hur stor överskattningen blir har MUCF undersökt andelen gränspendlare i tidigare års siffror, och såg att Värmland hade den största påverkan med en överskattning 2014 på tre procent . Även på kommunnivå var det värmländskt i topp, med störst påverkan i Årjäng (+11 procent) och Eda (+9 procent). Den senaste gränspendlingsstatistiken som finns tillgänglig är från 2017, och då såg vi en minskning av andelen invånare i Värmland som arbetspendlade över gränsen. Att gränsen mellan Norge och Sverige varit stängd under större delen av de senaste två åren tros ha bidragit till en ännu större minskning, vilket innebär att det är svårt att i nuläget säga exakt hur stor överskattningen av andelen UVAS är.
 
 ```{r diagram15, echo=FALSE,fig.cap = glue("Andel unga som varken arbetar eller studerar, {UVAS_ar} (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")}
-#"Diagram 15. Andel unga som varken arbetar eller studerar, 2019 (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")
 UVAS$UVAS_alder
 
 ```
@@ -214,12 +207,11 @@ UVAS$UVAS_alder
 Totalt sett är bilden ganska likartad i de tre regionerna, och skillnaderna kan räknas i decimaler. Ser vi däremot på inrikes födda och utrikes födda unga separat ser vi större skillnader, framför allt bland de utrikes unga som varken arbetar eller studerar. Dalarna har något fler kvinnor i båda åldersgrupperna som varken arbetar eller studerar, medan Värmland sticker ut i gruppen män 25-29 år. Värt att komma ihåg är att en person född i Norge som bor på den svenska sidan landsgränsen men arbetar i Norge registreras som en utrikes född person som varken arbetar eller studerar.
 
 ```{r diagram16, echo=FALSE,fig.cap = glue("Andel inrikes födda unga som varken arbetar eller studerar, {UVAS_ar} (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")}
-#"Diagram 16. Andel INRIKES (vänster) och UTRIKES födda (höger) unga som varken arbetar eller studerar, 2019 (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)"
 UVAS$UVAS_inrikes_födda
 ```
 
 ```{r diagram9999, echo=FALSE,fig.cap = glue("Andel utrikes födda unga som varken arbetar eller studerar, {UVAS_ar} (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")}
-#"Diagram 16. Andel INRIKES (vänster) och UTRIKES födda (höger) unga som varken arbetar eller studerar, 2019 (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")
+
 UVAS$UVAS_utrikes_födda
 ```
 
@@ -238,7 +230,6 @@ Redan innan Covid-19-pandemin bröt ut började de senaste årens högkonjunktur
 Sysselsättningsgraden i riket låg på 78 procent för kvinnor och 79 procent för män 2020. Siffrorna för Norra Mellansverige var i princip identiska. Överlag är sysselsättningen relativt jämn mellan länen. Den totala sysselsättningen varierade mellan 74 och 82 procent. I Norra Mellansverige varierade sysselsättningsgraden mellan 77 (Värmland) och 80 procent (Dalarna). En förklaring till den låga sysselsättningsgraden i Värmland är dock att de som arbetar i Norge inte räknas med i statistiken (en liknande förklaring gäller Skåne, det län som har lägst sysselsättning). Sysselsättningsgraden är generellt något lägre för kvinnor än för män. Det beror bland annat på att kvinnor studerar i högre utsträckning än män och på att kvinnor tar ut en högre andel av föräldraledighetsdagarna.
 
 ```{r diagram17, echo=FALSE, fig.cap = glue("Andel sysselsatta av befolkningen i arbetsför ålder (20–64) efter län, {sysselsattningsgrad_manad} {sysselsattningsgrad_ar}. (Källa: SCB/BAS)")}
-# Diagram 17. Andel sysselsatta av befolkningen i arbetsför ålder (20–64) efter län, 2020 (Källa: SCB/RAMS)
 sysselsattningsgrad_diagram$sysselsattningsgrad_senastear
 ```
 
@@ -246,14 +237,16 @@ Arbetslösheten är högre i Norra Mellansverige jämfört med riket som helhet.
 
 Över tid har arbetslöshetsnivåerna utvecklats på ungefär samma sätt som i riket som helhet: de ökade under andra halvan av 2019, var höga under 2020 för att sedan börja sjunka under inledningen av 2021. Under inledningen av 2022 var arbetslösheten tillbaka på liknande nivåer som innan pandemin. Utvecklingen har likartad i alla tre län. Skillnaden mellan Gävleborg och de övriga länen har dock minskat något över tid.
 
-```{r diagram18, echo=FALSE}
-print("Diagram 18. Andel öppet arbetslösa samt sökande i program med aktivitetsstöd, januari 2019 – februari 2022 (Källa: Arbetsförmedlingen)") 
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel öppet arbetslösa samt sökande i program med aktivitetsstöd, {arblos_totalt_over_tid_min_ar} – {arblos_totalt_over_tid_max_ar} (Källa: Arbetsförmedlingen)")}
+arblos_arblosa_over_tid
+
 ```
 
 Arbetslöshet delas ofta upp i kort- och långtidsarbetslöshet. Kortare arbetslöshetsperioder är vanligt i transitionen mellan skola och arbete eller mellan olika arbeten, till exempel till följd av varsel. De får sällan några större konsekvenser för vare sig individ eller samhälle. Långtidsarbetslöshet är mer allvarligt. Långa perioder utanför arbetsmarknaden riskerar att leda till lägre anställningsbarhet. Utbildningar och erfarenheter föråldras, kontakter in på arbetsmarknaden blir inaktuella, vilket gör att det blir svårare för individen att hitta nytt arbete. Långtidsarbetslöshet kan också få stora konsekvenser för privatekonomin, särskilt om arbetslösheten varar längre än de 300 dagarna som täcks av a-kassan . Långtidsarbetslöshetsnivåerna – arbetslöshet som varat mer än sex månader – i Norra Mellansverige följer mönstret för arbetslösheten generellt. Den är lägre i Dalarna, i nivå med riket i Värmland, och hög i Gävleborg. Det finns inga större skillnader mellan könen vad gäller långtidsarbetslöshet i vare sig Dalarna eller Värmland. I Gävleborg är andelen betydligt högre bland män, men det gäller främst arbetslöshetsperioder på 6-12 månader. Vad gäller arbetslöshet på mer än 12 månader är andelen högre bland kvinnor.
 
-```{r diagram19, echo=FALSE}
-print("Diagram 19. Andel arbetslösa (öppet arbetslösa samt personer i arbetsmarknadspolitiska åtgärder) efter kön och tid i arbetslöshet, befolkningen 16–64 år, februari 2022 (Källor: Arbetsförmedlingen och SCB)")
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel arbetslösa (öppet arbetslösa samt personer i arbetsmarknadspolitiska åtgärder) efter kön och tid i arbetslöshet, befolkningen 16–64 år, {arblos_arbloshetstid_ar} (Källa: Arbetsförmedlingen och SCB)")}
+arblos_arbloshetstid_diagram
+
 ```
 
 Det finns stora inomregionala skillnader i andel arbetslösa. Skillnaderna inom län är i regel större än de mellan länen. I vissa kommuner i Norra Mellansverige är andelen arbetslösa mycket hög, över elva procent. Det gäller framför allt kommuner i Gävleborg och Värmland. I andra kommuner, i framför allt Dalarna men också i Värmland, är andelen arbetslösa under fyra procent.
@@ -266,14 +259,14 @@ Ungdomsarbetslösheten är hög i Norra Mellansverige, och framför allt i Gävl
 
 Ungdomsarbetslösheten ökade kraftigt under pandemin och låg fortsatt högt under resten av 2020 och inledningen av 2021. Ökningen i arbetslöshet bland unga var betydligt högre jämfört med äldre åldersgrupper, vilket berodde på dels att pandemin främst slog till mot branscher som sysselsatte många ungdomar, dels på att ungdomar generellt är mer sårbara på arbetsmarknaden med fler tidsbegränsade arbeten. I februari 2022 var dock ungdomsarbetslösheten tillbaka på ungefär samma nivå som innan pandemin.
 
-```{r diagram20, echo=FALSE}
-print("Diagram 20. Andel öppet arbetslösa samt sökande i program med aktivitetsstöd, ungdomar 18-24 år. Januari 2019 – februari 2022 (Källa: Arbetsförmedlingen)")
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel öppet arbetslösa samt sökande i program med aktivitetsstöd, ungdomar 18-24 år {arblos_unga_min_ar} – {arblos_unga_max_ar} (Källa: Arbetsförmedlingen)")}
+arblos_arblosa_unga_over_tid
+
 ```
 
 Ungdomsarbetslösheten är högre bland män än bland kvinnor. Det behöver dock inte betyda att kvinnor har lättare att hitta arbete utan kan förklaras av att unga kvinnor vidareutbildar sig i högre grad än unga män. Just utbildningsnivån är en bidragande orsak till den höga ungdomsarbetslösheten i Norra Mellansverige, och i Gävleborg i synnerhet. En lägre andel av ungdomarna i Norra Mellansverige väljer att läsa vidare efter gymnasiet vilket påverkar deras möjligheter att få jobb. Ungdomar med eftergymnasial utbildning eller med examen från gymnasieskolans yrkesprogram har betydligt bättre framtidsutsikter än ungdomar som saknar gymnasieexamen. SCB:s arbetsmarknadsprognoser tyder på att efterfrågan på personer utan gymnasieutbildning kommer att sjunka ytterligare i framtiden . Antalet jobb för personer som saknar utbildning minskar när yrken försvinner, arbetsuppgifter förändras och utbildningskraven till många yrken skärps.
 
 ```{r diagram21, echo=FALSE, fig.cap = glue("Andel som varit inskrivna hos Arbetsförmedlingen någon gång under året efter kön, ålder och utbildningsnivå, {inskr_arb_kon_alder_utbniva_ar} (Källa: SCB)")}
-#Diagram 21. Andel som varit inskrivna hos Arbetsförmedlingen någon gång under året efter kön, ålder och utbildningsnivå, 2020 (Källa: SCB)
 inskr_af_kon_alder_utbniva
 ```
 
@@ -282,7 +275,8 @@ Skillnaderna mellan länen och könen vad gäller ungdomsarbetslöshet generellt
 ### Utrikes födda
 En annan grupp med en svag ställning på arbetsmarknaden är utrikes födda. Sysselsättningen bland utrikes födda är generellt lägre än bland svenskfödda personer och arbetslösheten, inklusive långtidsarbetslösheten, är högre. Den öppna arbetslösheten bland utrikes födda uppgick i februari 2022 till ca 21 procent i Värmland och Dalarna och 27 procent i Gävleborg. Det är långt över riksgenomsnittet, på 17,5 procent. Arbetslösheten bland utrikes födda i Norra Mellansverige har legat över riksgenomsnittet över lång tid och är alltså inte ett utslag av pandemin. Inte heller bland utrikes födda ungdomar har arbetslöshetsnivåerna påverkats särskilt av pandemin. Faktum är arbetslösheten bland utrikes födda i Norra Mellansverige inte påverkades särskilt mycket av pandemin och är betydligt lägre idag än innan pandemins utbrott. Möjliga förklaringar är att den utrikes födda befolkningen blir mer etablerad (till följd av ökande vistelsetid för de som anlände under 2015/2016 tillsammans med en minskad nyinvandring) samt att den utrikes födda befolkningen var underrepresenterad i de branscher som drabbades hårdast av pandemin.
 
-```{r diagram22, echo=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel öppet arbetslösa samt sökande i program med aktivitetsstöd, utrikes födda. {arblos_utr_min_ar} – {arblos_utr_max_ar} (Källa: Arbetsförmedlingen)")}
+arblos_arblosa_utrikes_over_tid
 print("Diagram 22. Andel öppet arbetslösa samt sökande i program med aktivitetsstöd, utrikes födda. Januari 2019 – februari 2022 (Källa: Arbetsförmedlingen)")
 ```
 

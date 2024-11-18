@@ -1,6 +1,7 @@
 
 if (!require("pacman")) install.packages("pacman")
-p_load(here)
+p_load(tidyverse,
+       here)
 
 # OBS! Ska sättas till FALSE när skriptet går i produktion - men kan stängas av genom att sätta till TRUE för att se att alla skript fungerar som de ska
 # skriptet är till för att hantera rcurl-fel och inte vanliga fel som ju inte blir bättre av att man försöker flera gånger. =)
@@ -97,10 +98,11 @@ utb_niva_hogutb_diagram <- funktion_upprepa_forsok_om_fel( function() {
                                      sverige_istallet_for_riket = FALSE,
                                      diag_hogutb_over_tid = TRUE,
                                      facet_x_axis_stlk = 6,
+                                     diagramtitel_tabort = TRUE,
                                      diag_lagutb_over_tid = FALSE,
                                      diag_andel_alla_utbnivaer = FALSE,
                                      diag_andel_utbniva_jmfr_lan = FALSE)
-  }, hoppa_over = hoppa_over_felhantering)
+  }, hoppa_over = hoppa_over_felhantering) %>% .[[1]]
   
 # ============= diagram andel eftergymnasialt utbildade efter födelseregion och kön
 source(here("skript","socioek_eftergymn_utb_kon_fodelseregion.R"), encoding="UTF-8")
@@ -112,7 +114,7 @@ utbniva_eftergymn_bakgr_ar <- utbniva_eftergymn_bakgr_kon_df$år %>% max()
 
 # ============= diagram andel gymnasiebehöriga efter födelseregion och kön
 source(here("skript","socioek_gymn_behorighet_kon_inr_utr_fodda.R"), encoding="UTF-8")
-utb_niva_eftergymn_bakgr_diagram <- funktion_upprepa_forsok_om_fel( function() {
+gymn_behorighet_kon_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_gymn_behorighet_inr_utr_fodda_kon_diagram(region_vekt = c("00", "20", "17", "21"))
 }, hoppa_over = hoppa_over_felhantering)
 gymn_behorighet_ar <- gymn_behorighet_bakgr_kon_df$år %>% max()
@@ -220,7 +222,6 @@ pagaende_sjukfall_ar <- sjukfall_diagnos_df$År %>% max()
 pagaende_sjukfall_manad <- sjukfall_diagnos_df$månad_namn %>% unique()
 
 # ============= Låg ekonomisk standard uppdelat på sysselsatta, ålder och bakgrund - 3 diagram motsvarar diagram 40, 42 och 43 (sidor 45 - 48) i den tidigare rapporten
-# Ej i markdown-fil ännu
 source(here("skript","socioek_lag_ek_standard_diagram.R"), encoding="UTF-8")
 lag_ek_standard_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_ekonomiskstandard_lan()
@@ -230,7 +231,6 @@ lag_ek_standard_alder_ar <- lag_ek_standard_alder_df$år %>% max()
 lag_ek_standard_bakgrund_ar <- lag_ek_standard_bakgrund_df$år %>% max()
 
 # ============= Andel med ersättning av helårsekvivalenter - 3 diagram motsvarar diagram 41 (sidor 46) i den tidigare rapporten
-# Ej i markdown-fil ännu
 source(here("skript","socioek_andel_helarsekvivalenter_diagram.R"), encoding="UTF-8")
 helarsekvivalenter_andel_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_helarsekvivalenter_andel_lan()
@@ -254,6 +254,60 @@ intakter_arbstallen_diagram <- funktion_upprepa_forsok_om_fel( function() {
 intakter_bransch_ar <- intakter_bransch$år %>% max()
 arbstallen_bransch_ar <- arbetsstallen_bransch$år %>% max()
 
+# ============= Könsbalans per gymnasieprogram och län ===========================
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diag_gymn_elever_kon_prg_alla_arskurser_skolverket.R")
+gymnasieprogram_konsbalans_diagram <- funktion_upprepa_forsok_om_fel( function() {
+  diag_gymn_elever_kon_prg_skolverket(region_vekt = c("17", "20", "21", "00"),
+                                      gymnasieprogram = c("Högskoleförberedande program", "Yrkesprogram", "Introduktionsprogrammen"),
+                                      ta_med_logga = FALSE,
+                                      diagramrubrik_tabort = TRUE,
+                                      returnera_data_rmarkdown = TRUE,
+                                      skriv_diagramfil = FALSE)
+}, hoppa_over = hoppa_over_felhantering)
+gymnasieprogram_konsbalans_ar <- gymn_elever_kon_prg_df$lasar %>% unique()
+
+# ============= Genomoströmning i gymnasieskolan efter 4 år =======================================
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diag_gymn_genomstromning_4ar_prg_skolverket.R")
+gymnasieprogram_genomstromning_diagram <- funktion_upprepa_forsok_om_fel( function() {
+  diag_gymn_genomstromning_4ar_prg_skolverket(region_vekt = c("17", "20", "21", "00"),
+                                      gymnasieprogram = c("Högskoleförberedande program", "Yrkesprogram", "Introduktionsprogrammen"),
+                                      tid_koder = "9999",
+                                      x_variabel = "region",
+                                      y_variabel = "andel",
+                                      x_grupp = "Gymnasieprogram",
+                                      ta_med_logga = FALSE,
+                                      diagramrubrik_tabort = TRUE,
+                                      returnera_data_rmarkdown = TRUE,
+                                      skriv_diagramfil = FALSE)
+}, hoppa_over = hoppa_over_felhantering)
+genomstromning_startlasar <- gymn_genomstromning_4ar_prg_df$läsår %>% unique()
+
+
+
+# ============= Diagram från arbetsförmdelingen - lista med alla diagram som ska skapas =============
+source(here("skript","socioek_af_diagram.R"), encoding="UTF-8")
+af_lista_diagram <- funktion_upprepa_forsok_om_fel( function() {
+  skapa_af_diagram_lista(region_vekt = c("17", "20", "21"))
+}, hoppa_over = hoppa_over_felhantering)
+
+# diagram över total andel arbetslösa över tid
+arblos_arblosa_over_tid <- af_lista_diagram$linjediagram_andel_arblosa_over_tid
+arblos_totalt_over_tid_min_ar <- arblosa_over_tid$Månad_år %>% first()
+arblos_totalt_over_tid_max_ar <- arblosa_over_tid$Månad_år %>% last()
+
+# diagram över andel arbetslösa utifrån tid i arbetslöshet, för senaste tillgängliga månad
+arblos_arbloshetstid_diagram <- af_lista_diagram$andel_arblosa_arbloshetstid
+arblos_arbloshetstid_ar <- arblosa_kon_arbloshetstid$Månad_år %>% unique()
+
+# diagram över andel arbetslösa unga (18-24 år) över tid
+arblos_arblosa_unga_over_tid <- af_lista_diagram$linjediagram_andel_unga_arblosa_over_tid
+arblos_unga_min_ar <- arblosa_unga_over_tid$Månad_år %>% first()
+arblos_unga_max_ar <- arblosa_unga_over_tid$Månad_år %>% last()
+
+# diagram över andel arbetslösa utrikes födda över tid
+arblos_arblosa_utrikes_over_tid <- af_lista_diagram$linjediagram_andel_utr_arblosa_over_tid
+arblos_utr_min_ar <- arblosa_utr_over_tid$Månad_år %>% first()
+arblos_utr_max_ar <- arblosa_utr_over_tid$Månad_år %>% last()
 
 # 2. om man vill knitta rapporten
 #source(paste0(here("skript","/"), "2_knitta_rapport.R"))
