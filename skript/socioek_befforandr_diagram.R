@@ -6,6 +6,8 @@ skapa_beffor_diagram <- function(region_vekt = c("17", "20", "21"),
             valt_ar = "9999",                 # "9999" = senaste år
             dia_titel = NULL,
             spara_diagrambildfil = FALSE,
+            diag_fargvekt = NA,
+            output_mapp = NA,
             returnera_dataframe_global_environment = TRUE
             ){
 
@@ -13,6 +15,23 @@ skapa_beffor_diagram <- function(region_vekt = c("17", "20", "21"),
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R", encoding = "utf-8", echo = FALSE)
   source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/main/hamta_bef_forandringar_region_period_kon_scb.R")
 
+  # om ingen färgvektor är medskickad, kolla om funktionen diagramfärger finns, annars använd r:s defaultfärger
+  if (all(is.na(diag_fargvekt))) {
+    if (exists("diagramfarger", mode = "function")) {
+      diag_fargvekt <- diagramfarger("bla_gra_fyra")
+    } else {
+      diag_fargvekt <- hue_pal()(9)
+    }
+  }
+  
+  if (all(is.na(output_mapp)) & spara_diagrambildfil == TRUE) {
+    if (exists("utskriftsmapp", mode = "function")) {
+      output_mapp <- utskriftsmapp()
+    } else {
+      stop("Ingen output-mapp angiven, kör funktionen igen och ge parametern output-mapp ett värde.")
+    }
+  }
+  
   url_uttag <- "https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101G/BefforandrKvRLK"
 
   giltiga_ar <- hamta_giltiga_varden_fran_tabell(url_uttag, "tid")
@@ -67,7 +86,7 @@ skapa_beffor_diagram <- function(region_vekt = c("17", "20", "21"),
                     lagg_pa_logga = FALSE,
                     diagram_liggande = TRUE,
                     x_axis_lutning = 0,
-                    manual_color = diagramfarger("bla_gra_tre"),
+                    manual_color = diag_fargvekt,
                     skriv_till_diagramfil = spara_diagrambildfil
                     ),"argument is not numeric or logical: returning NA")
   

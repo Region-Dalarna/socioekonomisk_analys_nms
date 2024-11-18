@@ -5,6 +5,8 @@ skapa_af_diagram_lista <- function(
     logga_i_diagram = FALSE,
     ta_bort_diagram_titel = FALSE,
     skriv_diagramfil = FALSE,
+    diag_fargvekt = NA,
+    diag_fargvekt_kon = NA,
     output_mapp = NA,
     returnera_dataframe_global_environment = TRUE
   ) {
@@ -20,6 +22,24 @@ skapa_af_diagram_lista <- function(
       output_mapp <- utskriftsmapp()
     } else {
       stop("Ingen output-mapp angiven, kör funktionen igen och ge parametern output-mapp ett värde om du vill skriva en diagrambildfil.")
+    }
+  }
+  
+  # om ingen färgvektor är medskickad, kolla om funktionen diagramfärger finns, annars använd r:s defaultfärger
+  if (all(is.na(diag_fargvekt))) {
+    if (exists("diagramfarger", mode = "function")) {
+      diag_fargvekt <- diagramfarger("bla_gra_fyra")
+    } else {
+      diag_fargvekt <- hue_pal()(9)
+    }
+  }
+  
+  # om ingen färgvektor är medskickad, kolla om funktionen diagramfärger finns, annars använd r:s defaultfärger
+  if (all(is.na(diag_fargvekt_kon))) {
+    if (exists("diagramfarger", mode = "function")) {
+      diag_fargvekt_kon <- diagramfarger("kon")
+    } else {
+      diag_fargvekt_kon <- hue_pal()(9)
     }
   }
   
@@ -89,7 +109,7 @@ skapa_af_diagram_lista <- function(
                      x_axis_lutning = 0,
                      geom_position_stack = FALSE,
                      manual_y_axis_title = "procent",
-                     manual_color = diagramfarger("kon"),
+                     manual_color = diag_fargvekt_kon,
                      skriv_till_diagramfil = skriv_diagramfil,
                      utan_diagramtitel = ta_bort_diagram_titel,
                      diagram_facet = TRUE,
@@ -149,7 +169,7 @@ skapa_af_diagram_lista <- function(
                     filnamn_diagram = diagramfilnamn,
                     stodlinjer_avrunda_fem = TRUE,
                     manual_y_axis_title = "procent",
-                    manual_color = diagramfarger("rus_sex"),
+                    manual_color = diag_fargvekt,
                     facet_legend_bottom = TRUE,
                     skriv_till_diagramfil = skriv_diagramfil,
                     utan_diagramtitel = ta_bort_diagram_titel,
@@ -208,7 +228,7 @@ skapa_af_diagram_lista <- function(
                               filnamn_diagram = diagramfilnamn,
                               stodlinjer_avrunda_fem = TRUE,
                               manual_y_axis_title = "procent",
-                              manual_color = diagramfarger("rus_sex"),
+                              manual_color = diag_fargvekt,
                               facet_legend_bottom = TRUE,
                               skriv_till_diagramfil = skriv_diagramfil,
                               utan_diagramtitel = ta_bort_diagram_titel,
@@ -265,7 +285,7 @@ gg_obj <- SkapaLinjeDiagram(skickad_df = arblos_andel_utr_df %>%
                             filnamn_diagram = diagramfilnamn,
                             stodlinjer_avrunda_fem = TRUE,
                             manual_y_axis_title = "procent",
-                            manual_color = diagramfarger("rus_sex"),
+                            manual_color = diag_fargvekt,
                             facet_legend_bottom = TRUE,
                             skriv_till_diagramfil = skriv_diagramfil,
                             utan_diagramtitel = ta_bort_diagram_titel,
