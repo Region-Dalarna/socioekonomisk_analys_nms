@@ -57,8 +57,21 @@ Det finns stora likheter i demografin i de tre länen i Norra Mellansverige, men
 beftabell_flextable
 
 ```
-  
-Enligt aktuella befolkningsframskrivningar från SCB förväntas en negativ folkökning i samtliga tre regioner; Gävleborg förväntas minska med 1,5 procent, Värmland med 1,2 procent och Dalarna med 0,1 procent. Samtidigt förväntas andelen av befolkningen som är i arbetsför ålder år 2040 vara två procentenheter lägre i riket som helhet, samtidigt som andelen som är 65 år och äldre ökar med tre procentenheter. Samma utveckling syns i våra tre regioner. Tack vare en hög levnadsstandard och medicinska framsteg blir vi allt äldre, och befolkningen som är 95 år eller äldre förväntas öka markant till 2040. En sådan utveckling kommer ytterligare öka på försörjningskvoten och på så sätt förstärka Norra Mellansveriges demografiska utmaning.
+<br>
+
+Enligt aktuella befolkningsframskrivningar från SCB förväntas en negativ befolkningsutveckling i samtliga tre regioner under perioden 2023 till 2040. Gävleborg förväntas minska med 3,8 procent, Dalarna med 3,5 procent och Värmland med 1,1 procent. Under samma period förväntas befolkningen i riket stiga med 4,3 procent. 
+
+Det sker en förskjutning i åldersfördelningen under perioden till 2040. Gruppen barn och unga (0-19 år) minskar i riket som helhet och i samtliga län i Norra Mellansverige. Samtidigt förväntas andelarna av befolkningen som är i arbetsför ålder (20-64 år) samt äldre (65-79 år) år 2040 vara i stort sett oförändrade i riket som helhet. Samma mönster observeras i alla län i Norra Mellansverige. 
+
+I Dalarna förväntas gruppen 80 år och äldre öka med 3,4 procentenheter, Gävleborg med 3,1 procentenheter samt Värmland med 2,8 procentenheter. I riket som helhet förväntas gruppen öka från 5,9 procent till 8,2 procent som andel av den totala populationen, en ökning med knappt 180 000 personer.
+
+Trots en oförändrad andel av befolkningen i arbetsför ålder år 2040, är det viktigt att notera att gruppen i antal kommer att minska i samtliga län i Norra Mellansverige. Minskningen i Gävleborg är knappt 7 700 personer, Dalarna drygt 5 800 personer och Värmland cirka 3 300 personer.
+
+Den stora förskjutningen sker med andra ord i gruppen barn och unga (minskar) och 80 år och äldre (ökar). Tack vare en hög levnadsstandard och medicinska framsteg blir vi allt äldre, och den förväntade befolkningsutvecklingen kommer ytterligare öka på försörjningskvoten och på så sätt förstärka Norra Mellansveriges demografiska utmaning.
+
+<br>
+Redigerat text hit!
+<br>
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE, fig.cap = glue("Befolkningsutveckling i Norra Mellansverige år 2010–{bef_utv_slutar} (Källa: SCB)")}
 befutv_linjediagram
