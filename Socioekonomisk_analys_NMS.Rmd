@@ -144,15 +144,9 @@ Den största skillnaden mellan framskrivningarna när det gäller den arbetsför
 Avslutningsvis är det noterbart att prognoserna för de äldsta grupperna är relativt stabila över tid. Gruppen 65-79 år minskar i alla län i Norra Mellansverige, medan gruppen 80 år och äldre ökar kraftigt de kommande tio åren.
 
 # Utbildning
-
-<br>
-Mats har redigerat text hit!
-<br>
-
-
 Utbildning är grundläggande för människors förmåga att klara sin egen försörjning. De val vi gör tidigt i livet kan komma att få stor betydelse för resten av livet. Regioner med låg utbildningsnivå har sämre förutsättningar att klara sig i det växande kunskapssamhället. Samtidigt har utbildningsnivån en stor påverkan på individen. Personer som saknar gymnasieutbildning löper bland annat högre risk för arbetslöshet och ohälsa. Det är därför viktigt att ge kvinnor och män samma möjligheter att lära och utvecklas.
 
-Utbildningsnivå används ofta som en indikator på humankapitalet i samhället och är en viktig förutsättning för regional attraktivitet, utveckling och tillväxt. Ett vanligt förekommande humankapitalmått är andelen av befolkningen med högre utbildning, vilket oftast definieras som minst treårig eftergymnasial utbildning. Vi har i denna analys valt att inkludera all eftergymnasial utbildning för att fånga in samtlig eftergymnasial utbildning, såsom de viktiga yrkeshögskoleutbildningar som sker i samverkan med det lokala arbetslivet och där studenterna i mycket hög grad går direkt till jobb.
+Utbildningsnivå används ofta som en indikator på humankapitalet i samhället och är en viktig förutsättning för regional attraktivitet, utveckling och tillväxt. Ett vanligt förekommande humankapitalmått är andelen av befolkningen med högre utbildning, vilket oftast definieras som minst treårig eftergymnasial utbildning. Vi har i denna analys valt att inkludera all eftergymnasial utbildning för att fånga in även de viktiga yrkeshögskoleutbildningar som sker i samverkan med det lokala arbetslivet och där studenterna i mycket hög grad går direkt till jobb.
 
 ## Befolkning med eftergymnasial utbildning
 Statistiken för personer med eftergymnasial utbildning presenteras för män och kvinnor och har avgränsats till personer mellan 25–64 år. Dessutom har personer som är i pensionsålder (65+) uteslutits.
@@ -162,21 +156,32 @@ utbniva_eftergymn_diagram
 
 ```
 
-Samtliga tre län har en stor utmaning i att behålla sina unga akademiker i länet, locka tillbaka dem efter avslutade studier på annan ort eller att attrahera inflyttning av akademiker som är uppväxta i andra län. Det finns därför en risk att en stor del av länens högutbildade befolkning försvinner från regionen, vilket leder till problem för arbetsgivarna att klara sin kompetensförsörjning och i förlängningen att trygga den framtida välfärden. Det är fler av de som går ut gymnasiet i Värmland som väljer att studera vidare i samma län (cirka 30 procent) jämfört med Gävleborg och Dalarna (cirka 20 procent). Av samtliga som tagit examen vid en högskola eller universitet så har fler återvänt till det län där de gick gymnasiet i Värmland och Gävleborg (cirka 40 procent) än i Dalarna (cirka 35 procent).
+Det finns ett tydligt mönster när vi jämför eftergymnasial utbildning i länen i Norra Mellansverige. De tre länen har betydligt lägre andel högutbildade än i riket som helhet, och skillnaden är extra tydlig när det gäller män som har en eftergymnasial utbildning som är längre än tre år. Dessutom är andelen högutildade som högst bland kvinnor i gruppen med en eftergymnasial utbildning som är tre år eller längre.
+
 
 ```{r diagram7, echo=FALSE}
 print("Diagram 7. Andel av de som gått ut gymnasiet i de tre länen i Norra Mellansverige som har tagit examen på högskola eller universitet under åren 2004–2015 i samma län respektive andel av de som tre år efter att de tagit examen på högskola eller universitet har sin arbetsplats i samma län som man gick ut gymnasiet (Källa: Databasen Bak- och Framgrund, SCB)")
 ```
 
-De tre länen i Norra Mellansverige har betydligt lägre andel högutbildade än i riket som helhet, och skillnaden är extra tydlig när det gäller män som har en eftergymnasial utbildning som är längre än tre år. Det är en betydligt större andel högutbildade kvinnor än män i de tre länen, och skillnaden mellan könen ökar. Andelen män med eftergymnasial utbildning har ökat marginellt jämfört med den socioekonomiska analys för Norra Mellansverige som släpptes 2014 och baserades på utbildningsdata från 2012, medan andelen högutbildade kvinnor har ökat stadigt både i Norra Mellansverige och i riket som helhet.
+Eventuellt ta bort följande stycke! Diagram saknas ännu!
+
+Samtliga tre län har en stor utmaning i att behålla sina unga akademiker i länet, locka tillbaka dem efter avslutade studier på annan ort eller att attrahera inflyttning av akademiker som är uppväxta i andra län. Det finns därför en risk att en stor del av länens högutbildade befolkning försvinner från regionen, vilket leder till problem för arbetsgivarna att klara sin kompetensförsörjning och i förlängningen att trygga den framtida välfärden. Det är fler av de som går ut gymnasiet i Värmland som väljer att studera vidare i samma län (cirka 30 procent) jämfört med Gävleborg och Dalarna (cirka 20 procent). Av samtliga som tagit examen vid en högskola eller universitet så har fler återvänt till det län där de gick gymnasiet i Värmland och Gävleborg (cirka 40 procent) än i Dalarna (cirka 35 procent).
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel av befolkningen 25-64 år med eftergymnasial utbildning som är tre år eller längre, över tid. (Källa: SCB)")}
 utb_niva_hogutb_diagram
 ```
 
-Trots att andelen högutbildade i länen är låg i jämförelse med riket så har det skett en liten men stadig ökning över tid. Den generella ökningen av högutbildade speglar en strukturell förändring på arbetsmarknaden som idag i större utsträckning efterfrågar högutbildad kompetens. Eftersom kompetenskraven höjts inom de flesta branscher är det idag svårare att både få ett arbete och göra karriär utan utbildning än det var för bara 20–30 år sedan.
+Trots att andelen högutbildade i länen är låg i jämförelse med riket så har det skett en liten, men stadig ökning över tid.  Utvecklingen visar en betydligt större andel högutbildade kvinnor än män i de tre länen, och skillnaden mellan könen har ökat successivt sedan år 2000. 2023 är det omkring dubbelt så hög andel högutbildade kvinnor som män i Norra Mellansverige.
 
-Det framgår tydligt att förflyttningen går snabbare för kvinnor än för män. Andelen högutbildade kvinnor i Norra Mellansverige har ökat med 2,6 procentenheter mellan 2016 och 2020, medan andelen högutbildade män endast ökat med 0,9 procentenheter. Motsvarande ökning för riket är 3,1 procentenheter för kvinnorna och 1,4 procentenheter för männen. Det innebär att trots att andelen högutbildade ökar i Norra Mellansverige halkar regionen ändå efter då ökningen är ännu snabbare i riket som helhet.
+Den generella ökningen av högutbildade speglar en strukturell förändring på arbetsmarknaden som idag i större utsträckning efterfrågar högutbildad kompetens. Eftersom kompetenskraven höjts inom de flesta branscher är det idag svårare att både få ett arbete och göra karriär utan utbildning än det var för bara 20–30 år sedan.
+
+<br>
+Mats har redigerat text hit!
+<br>
+
+Det framgår tydligt att förflyttningen går snabbare för kvinnor än för män. Andelen högutbildade kvinnor i Norra Mellansverige har ökat med 2,6 procentenheter mellan 2016 och 2020, medan andelen högutbildade män endast ökat med 0,9 procentenheter. Motsvarande ökning för riket är 3,1 procentenheter för kvinnorna och 1,4 procentenheter för männen. 
+
+Det innebär att trots att andelen högutbildade ökar i Norra Mellansverige halkar regionen ändå efter då ökningen är ännu snabbare i riket som helhet.
 
 Om vi tittar på förhållandet mellan utbildningsnivå och födelseland ser vi att det är en större andel av de som är födda i Sverige som har minst treårig eftergymnasial utbildning än de som är födda i ett annat nordiskt land. Men det är överlag en större andel högutbildade bland de utrikes födda än de som är födda i Sverige, och allra störst andel är det bland de som är födda inom EU men utanför Norden. Även bland de utrikes födda är det stor skillnad mellan könen, med en avsevärt större andel högutbildade kvinnor. I kategorin ”Övriga” är det främst Nordamerika och Australien som sticker ut, medan Afrika har låga utbildningsnivåer och drar ner medelvärdet.
 
