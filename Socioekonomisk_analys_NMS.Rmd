@@ -109,36 +109,47 @@ Vi kan se att pandemin påverkade flyttmönstren i stor utsträckning under 2020
 
 Minskad invandring och antagandet om att invandringen kommer att ligga på en lägre nivå än tidigare har påverkat befolkningsframskrivningarna väsentligt de senaste åren. Därutöver har även födelsetalen minskat, vilket också får genomslag i befolkningsframskrivningarna framöver. Vi ser nu större förändringar i framskrivningarna från år till år, där våra tre län enligt de senaste framskrivningarna förväntas minska sin folkmängd till 2040 som en följd av både minskad invandring och lägre födelsetal. Detta får stora konsekvenser för den demografiska strukturen redan de närmaste tio åren.
 
-<br>
-Mats har redigerat text hit!
-<br>
-
 ## En kraftigt förändrad befolkningsstruktur i Norra Mellansverige 
-Den utveckling vi ser nu i Norra Mellansverige, med en hög andel äldre i befolkningen, delar vi med övriga Sverige och med samtliga utvecklade länder i världen. När välståndet och utbildningsnivån i ett land ökar och dödstalen sjunker skaffar invånarna färre barn. Detta är en utveckling vi sett i alla länder med ett växande välstånd, och när det föds färre antal barn per kvinna och när god hälso- och sjukvård förlänger medellivslängden i ett land blir konsekvensen en ökad andel äldre. I grunden är detta naturligtvis någonting positivt men det leder till påfrestningar på välfärdssystem som är utformade för en demografisk struktur med en större andel av befolkningen i arbetsför ålder.
+Den utveckling vi nu ser i Norra Mellansverige, med en ökad andel äldre i befolkningen, delar vi med övriga Sverige och med samtliga utvecklade länder i världen. När välståndet och utbildningsnivån i ett land ökar och dödstalen sjunker skaffar invånarna färre barn. Detta är en utveckling vi sett i alla länder med ett växande välstånd, och när det föds färre antal barn per kvinna och när god hälso- och sjukvård förlänger medellivslängden i ett land, blir konsekvensen en ökad andel äldre. I grunden är detta naturligtvis någonting positivt, men det leder till påfrestningar på välfärdssystem som är utformade för en demografisk struktur med en större andel av befolkningen i arbetsför ålder.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Befolkningsförändring i Norra Mellansverige år {befprogn_arsintervall} i absoluta tal (Källa: SCB)")}
 befprogn_diagram_nms$`befprogn_Norra Mellansverige_2020_2024_10ars_sikt_antal`
 
 ```
 
-Enligt SCB:s befolkningsprognoser förväntas befolkningen i Norra Mellansverige minska med nästan 7 000 personer de närmaste tio åren. Den senaste befolkningsprognosen visar därutöver att 2031 kommer väsentligt fler att behöva försörjas av många färre i arbetsför ålder. I diagrammet ovan syns den sammanlagda förändringen av befolkningen för de tre länen från år 2020 till år 2030 (2020 års prognos) jämfört med förändringen från år 2021 till år 2031 (2021 års prognos).
+Enligt SCB:s befolkningsprognoser förväntas befolkningen i Norra Mellansverige minska med nästan 16 000 personer de närmaste tio åren, vilket är en väsentlig minskning jämfört med 2020 års prognos som visade på en ökning med nästan 13 000 personer.
 
-Befolkningen i Norra Mellansverige som helhet förväntas minska med nästan 6 900 personer, vilket är en väsentlig minskning jämfört med 2020 års prognos som visade på en ökning med nästan 13 000 personer. Det är viktigt att notera att denna befolkningsförändring ser olika ut i olika åldersgrupper. Den största ökningen, nästan 25 000 personer, förväntas ske i gruppen äldre pensionärer (80+ år). Gruppen barn och ungdomar förväntas minska med nästan 7 000 personer. Gruppen yngre pensionärer förväntas vara mindre år 2031 än år 2021, detta som en följd av att den stora efterkrigsgenerationen, de så kallade 40-talisterna, då har lämnat denna åldersgrupp för den äldsta åldersgruppen som ökar stort.
+Den senaste befolkningsprognosen visar att 2033 kommer väsentligt fler att behöva försörjas av många färre i arbetsför ålder. I diagrammet ovan syns den sammanlagda förändringen av befolkningen för de tre länen från år 2019 till år 2029 (2020 års prognos) jämfört med förändringen från år 2023 till år 2033 (2024 års prognos).
 
-En annan viktig förändring i den senaste befolkningsprognosen jämfört med föregående års prognos har skett i åldersgruppen 20–64 år, alltså de i arbetsför ålder. I 2020 års prognos förväntades antalet i arbetsför ålder vara nästan 12 000 personer färre år 2030 än år 2020. I 2021 års prognos har denna bild försämrats ytterligare och nu förväntas antalet i arbetsför ålder vara drygt 17 000 färre år 2031 än år 2021.
+Det är viktigt att notera att befolkningsförändringen ser olika ut i olika åldersgrupper. Den största ökningen, drygt 22 000 personer, förväntas ske i gruppen äldre pensionärer (80+ år). Gruppen yngre pensionärer förväntas vara mindre år 2033 än år 2023, detta som en följd av att den stora efterkrigsgenerationen, de så kallade 40-talisterna, då har lämnat denna åldersgrupp för den äldsta åldersgruppen som ökar stort.
 
-Den demografiska utmaningen förväntas idag bli väsentligt större än vad prognoserna visat de senaste åren och är mindre än för bara ett år sedan, främst som en följd av en förväntad minskad invandring. Den potential att bidra till att klara den demografiska utmaningen som invandringen utgjorde tills för ett år sedan är med pandemin och dagens mer restriktiva invandringspolitik väsentligt mindre. Det återstår därmed att hitta andra lösningar på hur denna utmaning ska hanteras.
+En annan viktig förändring i den senaste befolkningsprognosen jämfört med föregående års prognos har skett i åldersgruppen 20–64 år, alltså de i arbetsför ålder. I 2020 års prognos förväntades antalet i arbetsför ålder vara nästan 12 000 personer färre år 2030 än år 2020. I 2024 års prognos har denna bild försämrats ytterligare och nu förväntas antalet i arbetsför ålder vara cirka 15 000 färre år 2033 än år 2023.
+
+Den största förändringen sker dock i gruppen barn och ungdomar (0-19 år) som förväntas minska med nästan 19 000 personer. Det ska jämföras med att det i 2020 års prognos förväntades en ökning med över 4 000 personer.
+
+Den demografiska utmaningen förväntas idag bli väsentligt större än vad prognoserna visat de senaste åren, främst som en följd av en förväntad minskad invandring i kombination med ett minskat barnafödande. Den potential att bidra till att klara den demografiska utmaningen som invandringen utgjorde tills för några år sedan är med dagens mer restriktiva invandringspolitik väsentligt mindre. Det återstår därmed att hitta andra lösningar på hur denna utmaning ska hanteras.
+
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Befolkningsförändring i Norra Mellansverige år {befprogn_arsintervall} i absoluta tal uppdelat per län (Källa: SCB)")}
 befprogn_diagram_lan$`befprogn_Värmland, Dalarna och Gävleborg_2020_2024_10ars_sikt_antal_fixed`
 
 ```
 
-När vi delar upp befolkningsprognosen per län så ser vi att det finns skillnader inom Norra Mellansverige där Värmland har det största tappet i befolkningstillväxt på 10 års sikt i 2021 års prognos jämfört med prognosen året innan. I jämförelsen 2020-2030 hade Värmland en förväntad total ökning på knappt 4 900 personer, men förändringen 2021-2031 i 2021 års prognos visar en förväntad minskning på drygt 3 000 personer. I 2021 års prognos förväntas befolkningen minska i samtliga län fram till 2031.
+När vi delar upp befolkningsprognosen per län så ser vi att det finns skillnader inom Norra Mellansverige där Dalarna har det största tappet i befolkningstillväxt på 10 års sikt i 2024 års prognos jämfört med prognosen från 2020. I jämförelsen 2019-2029 hade Dalarna en förväntad total ökning på drygt 5 000 personer, men förändringen 2023-2033 i 2024 års prognos visar en förväntad minskning på cirka 6 500 personer. I 2024 års prognos förväntas befolkningen minska i samtliga län fram till 2033.
 
-De största förändringarna sett till åldersgrupper är bland barn och unga, där man i föregående framskrivning såg en ökning. I 2021 års framskrivning förväntas även befolkningen 0-19 år minska. Den största skillnaden mellan framskrivningarna när det gäller den arbetsföra befolkningen syns i Värmland, där den tidigare förväntade minskningen med 3 800 personer nu ökat till en förväntad minskning med 6 800 personer till 2031.
+De största förändringarna sett till åldersgrupper är bland barn och unga, där man i 2020 års prognos såg en ökning. I 2024 års framskrivning förväntas även befolkningen 0-19 år minska. I såväl Dalarna som Gävleborg är minskningen närmare 7 000 personer, medan minskningen i Värmland förväntas bli cirka 5 000 personer. 
+
+Den största skillnaden mellan framskrivningarna när det gäller den arbetsföra befolkningen syns i Dalarna, där den tidigare förväntade minskningen med 3 000 personer nu ökat till en förväntad minskning med 5 200 personer till 2033.
+
+Avslutningsvis är det noterbart att prognoserna för de äldsta grupperna är relativt stabila över tid. Gruppen 65-79 år minskar i alla län i Norra Mellansverige, medan gruppen 80 år och äldre ökar kraftigt de kommande tio åren.
 
 # Utbildning
+
+<br>
+Mats har redigerat text hit!
+<br>
+
+
 Utbildning är grundläggande för människors förmåga att klara sin egen försörjning. De val vi gör tidigt i livet kan komma att få stor betydelse för resten av livet. Regioner med låg utbildningsnivå har sämre förutsättningar att klara sig i det växande kunskapssamhället. Samtidigt har utbildningsnivån en stor påverkan på individen. Personer som saknar gymnasieutbildning löper bland annat högre risk för arbetslöshet och ohälsa. Det är därför viktigt att ge kvinnor och män samma möjligheter att lära och utvecklas.
 
 Utbildningsnivå används ofta som en indikator på humankapitalet i samhället och är en viktig förutsättning för regional attraktivitet, utveckling och tillväxt. Ett vanligt förekommande humankapitalmått är andelen av befolkningen med högre utbildning, vilket oftast definieras som minst treårig eftergymnasial utbildning. Vi har i denna analys valt att inkludera all eftergymnasial utbildning för att fånga in samtlig eftergymnasial utbildning, såsom de viktiga yrkeshögskoleutbildningar som sker i samverkan med det lokala arbetslivet och där studenterna i mycket hög grad går direkt till jobb.
