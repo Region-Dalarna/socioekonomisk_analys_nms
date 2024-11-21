@@ -91,18 +91,27 @@ Invandringen till Norra Mellansverige har under 2010-talet dominerats av män. D
 
 Värmland har under 2023 det högsta utrikes flyttnettot av de tre länen i Norra Mellansverige följt av Dalarna. I båda dessa fall är fördelningen mellan kvinnor och män relativt jämn. I Gävleborg var det utrikes flyttnettot lågt, med knappt 60 kvinnor och färre än 10 män.
 
-<br>
-Mats har redigerat text hit!
-<br>
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Invandring till Norra Mellansverige 2000–{inv_ar} (Källa: SCB)")}
 inv_nms_linjediagram
 
 ```
 
-Nästan 60 procent av invandringen år 2021 var personer i åldrarna 25–64 år, en fjärdedel var barn under 15 år och 16 procent var i åldrarna 15–25. Ungefär fyra procent var 65 år eller äldre.
+I Värmland var 58 procent av invandringen år 2023 personer i åldrarna 25–64 år, 20 procent var barn under 15 år och 16 procent var i åldrarna 15–25. Ungefär sex procent var 65 år eller äldre. 
 
-Vi kan se att pandemin påverkat flyttmönstren i stor utsträckning under 2020 och 2021, då den utrikes inflyttningen sjunkit markant medan den inrikes inflyttningen ökat. Åldersspridningen för den inrikes inflyttningen är större jämfört med invandringen, där en något lägre andel är i arbetsför ålder och större andelar yngre och äldre. Hur pandemin påverkar flyktingströmmar på längre sikt återstår att se, men med stängda gränser kan flyktingars alternativ starkt begränsas. Minskad invandring och antagandet om att invandringen kommer att ligga på en lägre nivå än tidigare har påverkat befolkningsframskrivningarna väsentligt. Vi ser nu större förändringar i framskrivningarna från år till år, där våra tre regioner enligt de senaste framskrivningarna förväntas minska sin folkmängd till 2040 som en följd av den starkt begränsade invandringen. En minskad invandring får stora konsekvenser för den demografiska strukturen redan de närmaste tio åren.
+I Dalarna var 61 procent av invandringen år 2023 personer i åldrarna 25–64 år, 20 procent var barn under 15 år och 16 procent var i åldrarna 15–25. Ungefär tre procent var 65 år eller äldre.
+
+I Gävleborg var 61 procent av invandringen år 2023 personer i åldrarna 25–64 år, 17 procent var barn under 15 år och 18 procent var i åldrarna 15–25. Ungefär fyra procent var 65 år eller äldre.
+
+Vi kan se att pandemin påverkade flyttmönstren i stor utsträckning under 2020 och 2021, då den utrikes inflyttningen sjönk markant medan den inrikes inflyttningen ökade. 2023 var invandringen till NMS-länen drygt 4 500 personer, vilket är en minskning med knappt 10 procent jämfört med 2022, men i paritet med nivån 2021.
+
+Åldersspridningen för den inrikes inflyttningen är större jämfört med invandringen, där en något lägre andel är i arbetsför ålder och större andelar yngre och äldre. Det totala antalet inflyttningar till Norra Mellansverige har minskat med 9 procent mellan 2021 och 2023. 
+
+Minskad invandring och antagandet om att invandringen kommer att ligga på en lägre nivå än tidigare har påverkat befolkningsframskrivningarna väsentligt de senaste åren. Därutöver har även födelsetalen minskat, vilket också får genomslag i befolkningsframskrivningarna framöver. Vi ser nu större förändringar i framskrivningarna från år till år, där våra tre län enligt de senaste framskrivningarna förväntas minska sin folkmängd till 2040 som en följd av både minskad invandring och lägre födelsetal. Detta får stora konsekvenser för den demografiska strukturen redan de närmaste tio åren.
+
+<br>
+Mats har redigerat text hit!
+<br>
 
 ## En kraftigt förändrad befolkningsstruktur i Norra Mellansverige 
 Den utveckling vi ser nu i Norra Mellansverige, med en hög andel äldre i befolkningen, delar vi med övriga Sverige och med samtliga utvecklade länder i världen. När välståndet och utbildningsnivån i ett land ökar och dödstalen sjunker skaffar invånarna färre barn. Detta är en utveckling vi sett i alla länder med ett växande välstånd, och när det föds färre antal barn per kvinna och när god hälso- och sjukvård förlänger medellivslängden i ett land blir konsekvensen en ökad andel äldre. I grunden är detta naturligtvis någonting positivt men det leder till påfrestningar på välfärdssystem som är utformade för en demografisk struktur med en större andel av befolkningen i arbetsför ålder.
