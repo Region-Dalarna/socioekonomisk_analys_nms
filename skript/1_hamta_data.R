@@ -128,6 +128,22 @@ socioek_overgang_eftergymn_studier <- funktion_upprepa_forsok_om_fel( function()
 overgang_eftergymn_studier_lasar <- overgang_eftergymn_studier_df$avgångsår %>% unique()
 overgang_eftergymn_studier_avgangsar <- substr(overgang_eftergymn_studier_lasar, nchar(overgang_eftergymn_studier_lasar)-3, nchar(overgang_eftergymn_studier_lasar))
 
+#inte klart - Mats och Peter
+overgang_nms <- overgang_eftergymn_studier_df %>% 
+  group_by(avgångsår, gymnasieprogram, kön, utbtyp) %>% 
+  summarise(antal_3ar = sum(`Antal som läst vidare inom 3 år`, na.rm = TRUE), 
+            antal_tot = sum(`Antal gymnasieexaminerade totalt`, na.rm = TRUE)) %>% 
+  mutate(andel = antal_3ar/antal_tot) %>% 
+  ungroup()
+
+overgang_nms <- overgang_eftergymn_studier_df %>% 
+  group_by(avgångsår, gymnasieprogram, kön) %>% 
+  summarise(antal_3ar = sum(`Antal som läst vidare inom 3 år`, na.rm = TRUE), 
+            antal_tot = sum(`Antal gymnasieexaminerade totalt`, na.rm = TRUE)) %>% 
+  mutate(andel = antal_3ar/antal_tot) %>% 
+  ungroup()
+
+
 source(here("skript","socioek_övergång_eftergymn_tidsserie_diagram.R"), encoding="UTF-8")
 socioek_overgang_eftergym_studier_tidsserie <- funktion_upprepa_forsok_om_fel( function() {
   skapa_overgang_eftergym_studier_tidsserie(region_vekt = c("00", "17", "20", "21"))
