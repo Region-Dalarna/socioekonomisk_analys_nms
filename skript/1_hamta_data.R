@@ -263,7 +263,7 @@ gymnasieprogram_konsbalans_diagram <- funktion_upprepa_forsok_om_fel( function()
                                       diagramrubrik_tabort = TRUE,
                                       returnera_data_rmarkdown = TRUE,
                                       skriv_diagramfil = FALSE)
-}, hoppa_over = hoppa_over_felhantering)
+}, hoppa_over = hoppa_over_felhantering) %>% .[[1]]
 gymnasieprogram_konsbalans_ar <- gymn_elever_kon_prg_df$lasar %>% unique()
 
 # ============= Genomoströmning i gymnasieskolan efter 4 år =======================================
