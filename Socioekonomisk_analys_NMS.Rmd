@@ -175,22 +175,22 @@ Trots att andelen högutbildade i länen är låg i jämförelse med riket så h
 
 Den generella ökningen av högutbildade speglar en strukturell förändring på arbetsmarknaden som idag i större utsträckning efterfrågar högutbildad kompetens. Eftersom kompetenskraven höjts inom de flesta branscher är det idag svårare att både få ett arbete och göra karriär utan utbildning än det var för bara 20–30 år sedan.
 
-<br>
-Mats har redigerat text hit!
-<br>
+Det framgår tydligt att förflyttningen går snabbare för kvinnor än för män. Andelen högutbildade kvinnor i Norra Mellansverige har ökat med 3,6 procentenheter mellan 2019 och 2023, medan andelen högutbildade män endast ökat med 1,3 procentenheter. Motsvarande ökning för riket är 3,5 procentenheter för kvinnorna och 1,7 procentenheter för männen. 
 
-Det framgår tydligt att förflyttningen går snabbare för kvinnor än för män. Andelen högutbildade kvinnor i Norra Mellansverige har ökat med 2,6 procentenheter mellan 2016 och 2020, medan andelen högutbildade män endast ökat med 0,9 procentenheter. Motsvarande ökning för riket är 3,1 procentenheter för kvinnorna och 1,4 procentenheter för männen. 
+Det innebär att trots att andelen högutbildade män ökar i Norra Mellansverige halkar regionen ändå efter då ökningen är ännu snabbare i riket som helhet. För kvinnor är utvecklingen i Norra Mellansverige i paritet med riket som helhet. Vi kan även notera att utvecklingen av andelen högutbildade i Norra Mellansverige har ökat under pandemin. Under perioden 2015-2019 ökade andelen högutbildade män med 0,7 procentenheter medan andelen kvinnor ökade med 2,4 procentenheter.
 
-Det innebär att trots att andelen högutbildade ökar i Norra Mellansverige halkar regionen ändå efter då ökningen är ännu snabbare i riket som helhet.
-
-Om vi tittar på förhållandet mellan utbildningsnivå och födelseland ser vi att det är en större andel av de som är födda i Sverige som har minst treårig eftergymnasial utbildning än de som är födda i ett annat nordiskt land. Men det är överlag en större andel högutbildade bland de utrikes födda än de som är födda i Sverige, och allra störst andel är det bland de som är födda inom EU men utanför Norden. Även bland de utrikes födda är det stor skillnad mellan könen, med en avsevärt större andel högutbildade kvinnor. I kategorin ”Övriga” är det främst Nordamerika och Australien som sticker ut, medan Afrika har låga utbildningsnivåer och drar ner medelvärdet.
+Om vi tittar på förhållandet mellan utbildningsnivå och födelseland ser vi att det är en större andel av de som är födda i Sverige som har minst treårig eftergymnasial utbildning än de som är födda i ett annat nordiskt land. Det är överlag en större andel högutbildade bland de utrikes födda än de som är födda i Sverige, och allra störst andel är det bland de som är födda inom EU men utanför Norden. Även bland de utrikes födda är det stor skillnad mellan könen, med en avsevärt större andel högutbildade kvinnor. I kategorin ”Övriga” är det främst Nordamerika och Australien som sticker ut, medan Afrika har låga utbildningsnivåer och drar ner medelvärdet.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel av befolkningen med minst treårig eftergymnasial utbildning, efter födelseland, år {utbniva_eftergymn_bakgr_ar}. (Källa: SCB)")}
 utb_niva_eftergymn_bakgr_diagram
 
 ```
 
-De låga utbildningsnivåerna i Värmland, Dalarna och Gävleborg kan delvis spegla de dominerande branscherna i länen, som byggverksamhet, skogs-, stål- och verkstadsindustri. För många av de här jobben räcker det med en yrkesutbildning på gymnasienivå, men de är viktiga för tillväxten i Norra Mellansverige. Det är viktigt att fler i Värmland, Dalarna och Gävleborg går längre i utbildningskedjan, men behovet av högutbildad kompetens behöver kopplas ihop med arbetsmarknaden i länen så att man möter upp kompetensbehoven hos näringsliv och offentlig sektor. Om fler invånare i Norra Mellansverige når en högre utbildningsnivå och det samtidigt inte finns ett matchande behov riskerar dessa människor istället att tvingas bort från regionen i jakt på ett passande jobb.
+De låga utbildningsnivåerna i Värmland, Dalarna och Gävleborg kan delvis spegla de dominerande branscherna i länen, som byggverksamhet, skogs-, stål- och verkstadsindustri. För många av de här jobben räcker det med en yrkesutbildning på gymnasienivå, men de är viktiga för tillväxten i Norra Mellansverige. Det är viktigt att fler i Värmland, Dalarna och Gävleborg går längre i utbildningskedjan, men behovet av högutbildad kompetens behöver kopplas ihop med arbetsmarknaden i länen och matchar kompetensbehoven hos näringsliv och offentlig sektor. Om fler invånare i Norra Mellansverige når en högre utbildningsnivå och det samtidigt inte finns ett matchande behov riskerar dessa människor istället att tvingas bort från regionen i jakt på ett passande jobb.
+
+<br>
+Mats har redigerat text hit!
+<br>
 
 ## Övergång från grundskolan till gymnasiet
 I Norra Mellansverige som helhet är det färre elever som går ur årskurs 9 med gymnasiebehörighet jämfört med riket, men det skiljer sig något åt mellan regionerna. Värmland har en lägre andel elever som går ur grundskolan utan att vara behöriga till gymnasiet än rikssnittet.
