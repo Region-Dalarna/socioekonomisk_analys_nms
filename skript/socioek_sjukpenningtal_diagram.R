@@ -1,4 +1,4 @@
-skapa_sjukpenningtal_lan <- function(uppdatera_data = FALSE,
+skapa_sjukpenningtal_lan <- function(uppdatera_data = TRUE,
                                      spara_diagrambildfil = FALSE,
                                      returnera_dataframe_global_environment = TRUE
 ){

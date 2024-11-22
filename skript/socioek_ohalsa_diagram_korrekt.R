@@ -1,4 +1,5 @@
-skapa_ohalsotal_lan <- function(spara_diagrambildfil = FALSE,
+skapa_ohalsotal_lan <- function(uppdatera_data = TRUE,
+                                spara_diagrambildfil = FALSE,
                                 returnera_dataframe_global_environment = TRUE
 ){
   
