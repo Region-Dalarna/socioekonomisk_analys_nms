@@ -90,7 +90,7 @@ skapa_UVAS_diagram <- function(spara_diagrambildfil = FALSE,
   
   bakgrund <- c("Inrikes födda", "Utrikes födda")
   
-  diag <- map(bakgrund, ~ skapa_diagram(UVAS_df, .x)) %>% flatten()
+  diag <- map(bakgrund, ~ skapa_diagram(UVAS_df, .x)) %>% purrr::flatten()
   # Diagram för utrikes födda uppdelat på kön
   
   gg_list <- c(gg_list, diag)
