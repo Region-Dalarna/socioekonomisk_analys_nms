@@ -13,4 +13,3 @@ rmarkdown::render(
     output_file = renderad_fil,
     envir = parent.frame()
 )
-
