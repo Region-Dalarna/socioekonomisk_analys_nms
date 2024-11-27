@@ -38,12 +38,7 @@ skapa_helarsekvivalenter_andel_lan <- function(region_vekt = c("17","20","21"),
           summarise(varde = sum(varde)) %>%
             pivot_wider(names_from = variabel, values_from = varde) %>% 
               mutate(Andel_ersattning = 100*(`Summa helårsekvivalenter`/Folkmängd),
-                     region = case_when(
-                       lanskod == "00" ~ "Riket",
-                       lanskod == "17" ~ "Gävleborg",
-                       lanskod == "20" ~ "Dalarna",
-                       lanskod == "21" ~ "Värmland"
-                     )) %>% 
+                     region = skapa_kortnamn_lan(hamtaregion_kod_namn(lanskod)[[2]])) %>% 
                 ungroup() %>% 
                   select(-lanskod)
   
