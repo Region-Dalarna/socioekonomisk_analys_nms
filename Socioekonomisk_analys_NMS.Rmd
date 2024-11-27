@@ -79,7 +79,6 @@ Befolkningsutvecklingen i Norra Mellansverige var negativ eller svagt positiv ef
 
 Mellan 2022 och 2023 har dock befolkningen minskat i Norra Mellansverige. Den största minskningen observeras i Gävleborg med cirka 1 400 personer. 
 
-
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Befolkningsförändringar i Norra Mellansverige {beffor_ar} efter kategori (Källa: SCB)")}
 befforandringar_diagram
 
@@ -90,7 +89,6 @@ Det utrikes flyttnettot är särskilt intressant för analysen, inte bara för a
 Invandringen till Norra Mellansverige har under 2010-talet dominerats av män. De största överskotten av män såg alla tre regionerna 2016, då det var 748 fler män än kvinnor som invandrade till Värmland, 623 fler män som invandrade till Dalarna och 615 fler män som invandrade till Gävleborg. Den här trenden har avtagit under efterföljande år. 
 
 Värmland har under 2023 det högsta utrikes flyttnettot av de tre länen i Norra Mellansverige följt av Dalarna. I båda dessa fall är fördelningen mellan kvinnor och män relativt jämn. I Gävleborg var det utrikes flyttnettot lågt, med knappt 60 kvinnor och färre än 10 män.
-
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Invandring till Norra Mellansverige 2000–{inv_ar} (Källa: SCB)")}
 inv_nms_linjediagram
@@ -203,11 +201,13 @@ Om vi ser till hela den grupp som saknar gymnasiebehörighet, dit de som inte g�
 gymn_behorighet_kon_diagram
 ```
 
+I riket som helhet är andelen elever som avslutat grundskolan på våren 2023 och som fortsätter till gymnasiet samma höst 97,7 procent.
+
 <br>
-*Oredigerat nedan*
+*Oredigerat nedan - hittar inte källor med länsindelad information*
 <br>
 
-Av de elever i Dalarna som avslutat grundskolan på våren 2021 är det 97,1 procent som fortsätter till gymnasiet samma höst. I Gävleborg är det 97,3 procent som går direkt vidare till gymnasiet och i Värmland 97,8 procent. I riket som helhet är övergångsfrekvensen 98,0 procent.
+Av de elever i Dalarna som avslutat grundskolan på våren 2023 är det 97,1 procent som fortsätter till gymnasiet samma höst. I Gävleborg är det 97,3 procent som går direkt vidare till gymnasiet och i Värmland 97,8 procent. 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Könsbalans per gymnasieprogram alla årskurser läsåret {gymnasieprogram_konsbalans_ar} (Källa: Skolverket)")}
 gymnasieprogram_konsbalans_diagram
@@ -222,7 +222,7 @@ I Gävleborg, där skillnaderna mot rikssnittet är tydligast, går drygt 56 pro
 *Oredigerat ovan*
 <br>
 
-*Inkludera stycke om introduktionsprogrammets storlek och utveckling över tid?*
+*Inkludera stycke om introduktionsprogrammets storlek och utveckling över tid? Var finns data för Riket respektive NMS som helhet och per län?*
 
 Grunden till den könsuppdelade arbetsmarknad vi ser idag läggs tidigt. Redan mycket unga barn lär sig vad som anses vara lämpliga jobb för flickor respektive pojkar, och när detta manifesteras i gymnasieval så cementeras även de traditionella könsrollerna på arbetsmarknaden. Eftersom flickor i större utsträckning väljer högskoleförberedande program på gymnasiet är det också logiskt att en större andel kvinnor än män har en eftergymnasial utbildning. För att bättre nyttja hela befolkningens utvecklingspotential så krävs att man tidigt lär barn att alla yrken kan utföras av alla människor.
 
@@ -236,15 +236,13 @@ När vi ser på genomströmningen på gymnasiet och andelen elever som avslutar 
 
 ## Övergång till högskola inom tre år från avslutad gymnasieutbildning
 
+På riksnivå är det drygt 62 procent av kvinnorna och knappt 48 procent av männen som inom tre år efter gymnasiet går vidare till någon form av eftergymnasial utbildning. Majoriteten går till högskolestudier, vilket gäller för både kvinnor och män. Det är vanligare för kvinnor än män att påbörja studier vid folkhögskola, och det är vanligare för män än kvinnor att istället gå till en yrkeshögskoleutbildning. 
+
 <br>
-*Oredigerat nedan*
+*Oredigerat nedan - hittar inte källinformation för NMS*
 <br>
 
 I Norra Mellansverige går drygt hälften av kvinnorna och strax under 40 procent av männen vidare från gymnasiet till en eftergymnasial utbildning inom tre år. 
-
-Majoriteten går till högskolestudier, vilket gäller för både kvinnor och män. Det är vanligare för kvinnor än män att påbörja studier vid folkhögskola, och det är vanligare för män än kvinnor att istället gå till en yrkeshögskoleutbildning. 
-
-På riksnivå är det cirka 57 procent av kvinnorna och 45 procent av männen som inom tre år efter gymnasiet går vidare till någon form av eftergymnasial utbildning.
 
 <br>
 *Oredigerat ovan*
@@ -263,27 +261,29 @@ Andelen av befolkningen som inom tre år efter avslutad gymnasieutbildning börj
 socioek_overgang_eftergym_studier_tidsserie
 ```
 
-<br>
-*Oredigerat nedan*
-<br>
+På kommunnivå har det också skett stora förändringar om vi jämför andelarna kvinnor och män som gått vidare till högskola inom tre år när vi jämför avgångsåren 2020 och 2016. 
 
-På kommunnivå har det också skett stora förändringar om vi jämför andelarna kvinnor och män som gått vidare till högskola inom tre år under dessa fem år. 
+I det här sammanhanget behöver det nämnas att många kommuner har relativt små ålderskullar, vilket gör siffrorna känsliga för små förändringar i antal individer. Inom parentes anges ålderskullens storlek, år 2020. 
 
-I Värmland är Eda den kommun som ser den största ökningen bland både kvinnor och män som går till högskola inom tre år efter gymnasiet. Andelen kvinnor har ökat med nästan 35 procentenheter medan andelen män ökat med nästan elva procentenheter. Kullarna är dock små, mellan 21-36 personer, vilket innebär att varje individ får stort genomslag procentuellt. Den största minskningen bland kvinnor i Värmland syns i Hagfors, där minskningen är nästan 15 procentenheter under dessa fem år. Den största minskningen bland män har skett i Kristinehamn, med drygt 12 procentenheter färre män som gick till högskola inom tre år efter gymnasiet. 
+I Värmland är Munkfors (9) den kommun som ser den största ökningen bland kvinnor och Storfors (14) bland män som går till högskola inom tre år efter gymnasiet. Andelen kvinnor har ökat med 31,6 procentenheter medan andelen män ökat med 21,4 procentenheter. Den kommun som har den största totala ökningen är i Eda (62) med 17,1 procentenheter mellan 2016 och 2020. Storfors har dessutom 0 som referensvärde 2016, vilket skapar ytterligare osäkerhet. Filipstad (35) är som jämförelse den kommun i Värmland med näst största ökningen bland män med 12,4 procentenheter.
 
-I Dalarna har den största ökningen bland kvinnor skett i Malung-Sälen, med 21 procentenheter. Bland männen är ökningen störst i Vansbro, där nästan 14 procentenheter fler män gick vidare till högskola i slutet av femårsperioden. Även i dessa kommuner är kullarna ganska små, mellan 17-43 personer, så siffrorna bör tolkas med försiktighet. Den största minskningen bland kvinnor i Dalarna har skett i Leksand, där minskningen är drygt fyra procentenheter. Den största minskningen bland män syns i Säter, med nästan 26 procentenheter färre män gått till högskola inom tre år efter gymnasiet. 
+Den största minskningen totalt och bland kvinnor i Värmland syns i Forshaga (76 totalt, 29 kvinnor), där minskningen är 16,6 procentenheter totalt respektive 20 procentenheter för kvinnor under dessa fem år. Den största minskningen bland män har skett i Grums (38), med 13,7 procentenheter färre män som gick till högskola inom tre år efter gymnasiet.
 
-Den största ökningen bland både kvinnor och män i Gävleborg har skett i Ljusdals kommun, där drygt 22 procentenheter fler kvinnor och nästan 14 procentenheter fler män gått vidare till högskola i slutet av femårsperioden. Den största minskningen bland kvinnor syns i Hofors, en minskning med drygt elva procentenheter. Bland männen är minskningen störst i Ovanåker, där 21 procentenheter färre män gick vidare till högskola inom tre år efter gymnasiet.
+I Dalarna har den största ökningen bland kvinnor skett i Leksand (60) med 18,3 procentenheter. Bland männen är ökningen störst i Vansbro (32), där 25 procentenheter fler män gick vidare till högskola i slutet av femårsperioden. Vansbro (58) har även den högsta totala ökningen med 14,8 procentenheter under perioden.
 
-<br>
-*Oredigerat ovan*
-<br>
+Den största minskningen bland kvinnor i Dalarna har skett i Avesta (70) med 10,4 procentenheter. Den största minskningen bland män syns i Hedemora (53), med 21,6 procentenheter färre män gått till högskola inom tre år efter gymnasiet. Störst minskning totalt har skett i Smedjebacken (72). Där är den totala minskningen 6,2 procentenheter 2020 jämfört med 2016. 
+
+Gävleborg skiljer sig från Dalarna och Värmland på sådant sätt att där är den största ökningen och minskningen koncentrerad till två kommuner, Ockelbo respektive Nordanstig. Ockelbo (38 totalt, 22 män) är dock problematiskt i det att även där är referensvärdet 0 för män 2016. Ockelbos (16) ökning jämfört med 2016 är 25 procentenheter för kvinnor. Den kommun som har den högsta ökningen totalt är annars Sandviken (131) med 6,7 procentenheter. Bland män noteras Bollnäs (39) för en ökning med 10 procentenheter.
+
+För Nordanstig (27) gäller det omvända. Där är den totala minskningen 27,2 procentenheter. Där svarar kvinnorna (16) för en markant nedgång, 33,4 procentenheter, medan männen (11) har minskat med 21 procentenheter. 
+
+Ovanstående ger en fingervisning om förändringar som noteras sedan 2016, men också känsligheten i att analysera förändringar för kommuner med små årskullar. 
 
 ## Unga som varken arbetar eller studerar (UVAS) 
 Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF tar fram statistik om unga som varken arbetar eller studerar (UVAS) för att öka kunskapen om gruppen och ge underlag till de som arbetar för att stötta unga till jobb eller studier. Statistiken är unik i det att den bygger på registerdata över hela befolkningen i åldern 16-29 år. Statistiken är hämtad från olika register hos till exempel Statistiska centralbyrån (SCB) och Försäkringskassan.
 
 <br>
-*Kontrollera felkälla för UVAS Värmland*
+*Kontrollera felkälla för UVAS i Värmland - stämmer detta fortfarande?*
 <br>
 
 Fram till och med 2014 var de svenska invånare som arbetspendlade över landgräns borträknade, men på grund av att Norge inte längre lämnar ut dessa uppgifter kan inte dessa gränspendlare identifieras och lyftas ur statistiken. Det påverkar inte Gävleborg i någon stor utsträckning, men har viss påverkan på statistiken för Dalarna och framför allt för Värmland som har störst andel invånare som pendlar till arbete i Norge av samtliga 21 regioner. Andelen UVAS kan alltså anses något överskattade i Dalarna och Värmland. För att kunna göra en bedömning av hur stor överskattningen blir har MUCF undersökt andelen gränspendlare i tidigare års siffror, och såg att Värmland hade den största påverkan med en överskattning 2014 på tre procent. Även på kommunnivå var det värmländskt i topp, med störst påverkan i Årjäng (+11 procent) och Eda (+9 procent). Den senaste gränspendlingsstatistiken som finns tillgänglig är från 2017, och då såg vi en minskning av andelen invånare i Värmland som arbetspendlade över gränsen. Därefter var gränsen mellan Norge och Sverige stängd under större delen av Coronapandemin för att återigen öppna. Som helhet innebär det att det är svårt att i nuläget säga exakt hur stor överskattningen av andelen UVAS i Värmland är.
@@ -293,11 +293,13 @@ UVAS$UVAS_alder
 
 ```
 
-Genomsnittet i riket är 5,5 procent i gruppen 16-24 år och 11 procent i gruppen 25-29 år år 2022. Det finns skillnader mellan män och kvinnor, respektive utrikes och inrikes födda i båda ålderskategorierna. De största skillnaderna finns mellan inrikes och utrikes födda. I den yngsta gruppen är andelen kvinnor 6,6 procentenheter högre för utrikes födda (andel: 10,2 procent). Motsvarande skillnad för utrikes födda män är 4,7 procentenheter (andel: 9,7 procent). I gruppen 25-29 år är skillnaderna ännu högre, nämligen 13,4 procentenheter för utrikes födda kvinnor (andel: 20,8 procent) respektive 8,9 procentenheter för utrikes födda män (andel: 17,7 procent).
+Genomsnittet i riket är 5,5 procent i gruppen 16-24 år och 11 procent i gruppen 25-29 år år 2022. Det finns skillnader mellan män och kvinnor, respektive utrikes och inrikes födda i båda ålderskategorierna. De största skillnaderna finns mellan inrikes och utrikes födda. I gruppen 16-24 år är andelen 10,2 procent av utrikes födda kvinnor, vilket är 6,6 procentenheter högre än för inrikes födda kvinnor i samma åldersgrupp. Motsvarande andel för utrikes födda män i gruppen 16-24 år är 9,7 procent, vilket är 4,7 procentenheter högre än för inrikes födda män i samma ålsdersgrupp. 
+
+I gruppen 25-29 år är skillnaderna ännu högre, med en andel på 20,8 procent för utrikes födda kvinnor, vilket är 13,4 procentenheter högre än för inrikes födda kvinnor i samma åldersgrupp. Andelen utrikes födda män är 17,7 procent, vilket är 8,9 procentenheter högre än för inrikes födda män.
 
 För NMS-länen är bilden ganska likartad år 2022. Dalarna och Värmland har 5,6 procent UVAS i gruppen 16-24 år medan andelen i Gävleborg är något högre, 6,4 procent. Gävleborg har även högst andel i gruppen 25-29 år med 12,2 procent, jämfört med Värmlands 11,5 procent och Dalarnas 11,1 procent.
 
-Gävleborg har högre andelar UVAS i gruppen inrikes födda jämfört med Dalarna och Värmland. Det gäller både kvinnor och män, och i båda ålderskategorierna. I likhet med riket som helhet ser vi däremot större skillnader mellan inrikes och utrikes födda. Värmland har de högsta andelarna för utrikesfödda för kvinnor och män, och båda ålderskategorierna. Värt att komma ihåg är att en person född i Norge som bor på den svenska sidan landsgränsen, men arbetar i Norge registreras som en utrikes född person som varken arbetar eller studerar. 
+Gävleborg har högre andelar UVAS i gruppen inrikes födda jämfört med Dalarna och Värmland. Det gäller både kvinnor och män, och i båda ålderskategorierna. I likhet med riket som helhet ser vi däremot större skillnader mellan inrikes och utrikes födda. Värmland har de högsta andelarna för utrikesfödda för kvinnor och män, och båda ålderskategorierna. Värt att komma ihåg då är att en person född i Norge som bor på den svenska sidan landsgränsen, men arbetar i Norge registreras som en utrikes född person som varken arbetar eller studerar. 
 
 
 ```{r diagram16, echo=FALSE,fig.cap = glue("Andel inrikes födda unga som varken arbetar eller studerar, {UVAS_ar} (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")}
