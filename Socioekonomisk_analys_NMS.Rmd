@@ -207,7 +207,7 @@ I riket som helhet är andelen elever som avslutat grundskolan på våren 2023 o
 *Oredigerat nedan - hittar inte källor med länsindelad information*
 <br>
 
-Av de elever i Dalarna som avslutat grundskolan på våren 2023 är det 97,1 procent som fortsätter till gymnasiet samma höst. I Gävleborg är det 97,3 procent som går direkt vidare till gymnasiet och i Värmland 97,8 procent. 
+I Dalarna (2021) är det 97,1 procent som fortsätter till gymnasiet samma höst. I Gävleborg är det 97,3 procent som går direkt vidare till gymnasiet och i Värmland 97,8 procent. 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Könsbalans per gymnasieprogram alla årskurser läsåret {gymnasieprogram_konsbalans_ar} (Källa: Skolverket)")}
 gymnasieprogram_konsbalans_diagram
