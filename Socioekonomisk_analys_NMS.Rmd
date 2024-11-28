@@ -41,9 +41,9 @@ Analysen bygger på befintliga data. Tillgången till data släpar ofta efter n�
 
 2022 års analys innehöll flera avsnitt kopplade till effekter av Covid-19-pandemin. Dessa inslag har i nuvarande analys tonats ner då pandemins påverkan inte längre är en central del i samhällsutvecklingen. Det kan dock finnas långsiktiga effekter som inte helt kan överblickas.  
 
-Vi ser till exempel att fler är långtidsarbetslösa nu jämfört med innan pandemin, och med det digitala skutt som många branscher tagit under de senaste två åren kan det nu finnas ytterligare kompetenser som behövs för att komma in på arbetsmarknaden. Lärdomen från tidigare ekonomiska kriser är att de som drabbas hårdast av en kris är personer som redan tidigare var utsatta och stod långt från arbetsmarknaden. För dessa individer riskerar tröskeln in på arbetsmarknaden att bli ännu högre när konkurrensen om jobb ökar till följd av ökad arbetslöshet.
+Vi ser till exempel att fler är långtidsarbetslösa nu jämfört med innan pandemin, och med det digitala förflyttningar som många branscher tagit under de senaste åren kan det nu finnas ytterligare kompetenser som behövs för att komma in på arbetsmarknaden. Lärdomen från tidigare ekonomiska kriser är att de som drabbas hårdast av en kris är personer som redan tidigare var utsatta och stod långt från arbetsmarknaden. För dessa individer riskerar tröskeln in på arbetsmarknaden att bli ännu högre när konkurrensen om jobb ökar till följd av ökad arbetslöshet.
 
-Samtidigt har de senaste två åren innehållit annan extern påverkan i form av Rysslands anfallskrig mot Ukraina, konflikten mellan Israel och Hamas, hög inflation och kraftigt höjda räntor. I skrivande stund har valet i USA avgjorts med seger för Republikanerna. Vad detta innebär för utvecklingen i Europa, Sverige och Norra Mellansverige återstår att se. Det är möjligt att utvecklingen kommer att variera inom regionen, beroende på det lokala näringslivets struktur och andra förutsättningar. 
+Samtidigt har de senaste två åren innehållit annan extern påverkan i form av Rysslands anfallskrig mot Ukraina, konflikten mellan Israel och Hamas, hög inflation och kraftigt höjda räntor. Det finns en tydligare restriktivitet inom EU och Sverige kring migration och nyligen har valet i USA avgjorts med seger för Republikanerna, vilket innebär ett maktskifte i amerikansk politik 2025. Vad detta innebär för utvecklingen i Europa, Sverige och Norra Mellansverige återstår att se. Det är möjligt att utvecklingen kommer att variera inom regionen, beroende på det lokala näringslivets struktur och andra förutsättningar. 
 
 Analysen är framtagen och sammanställd av Mats Andersson (Region Dalarna), Samuel Gök (Region Värmland), Emma Schütt (Region Värmland) och Kristoffer Sehlberg (Region Gävleborg).
 
@@ -236,32 +236,23 @@ När vi ser på genomströmningen på gymnasiet och andelen elever som avslutar 
 
 ## Övergång till högskola inom tre år från avslutad gymnasieutbildning
 
-På riksnivå är det drygt 62 procent av kvinnorna och knappt 48 procent av männen som inom tre år efter gymnasiet går vidare till någon form av eftergymnasial utbildning. Majoriteten går till högskolestudier, vilket gäller för både kvinnor och män. Det är vanligare för kvinnor än män att påbörja studier vid folkhögskola, och det är vanligare för män än kvinnor att istället gå till en yrkeshögskoleutbildning. 
+På riksnivå är det drygt 62 procent av kvinnorna och knappt 48 procent av männen som inom tre år efter gymnasiet går vidare till någon form av eftergymnasial utbildning. Majoriteten går till högskolestudier, vilket gäller för både kvinnor och män. Det är vanligare för kvinnor än män att påbörja studier vid folkhögskola, och det är vanligare för män än kvinnor att istället gå till en yrkeshögskoleutbildning. I Norra Mellansverige går knappt 54 procent av kvinnorna och drygt 38 procent av männen vidare från gymnasiet till en eftergymnasial utbildning inom tre år. 
 
-<br>
-*Oredigerat nedan - hittar inte källinformation för NMS*
-<br>
-
-I Norra Mellansverige går drygt hälften av kvinnorna och strax under 40 procent av männen vidare från gymnasiet till en eftergymnasial utbildning inom tre år. 
-
-<br>
-*Oredigerat ovan*
-<br>
 
 ```{r diagram13, echo=FALSE,fig.cap = glue("Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning {overgang_eftergymn_studier_avgangsar}. (Källa: SCB)")}
 
 socioek_overgang_eftergymn_studier
 ```
 
-Andelen av befolkningen som inom tre år efter avslutad gymnasieutbildning börjar studera på högskola har ökat bland kvinnorna, men minskat bland männen i alla tre länen från examensår 2014 till 2021 (påbörjat högskoleutbildning senast hösten 2024). Den största ökningen bland kvinnorna syns i Dalarna, där andelen kvinnor som går till högskola inom tre år efter gymnasiet ökat med drygt sex procentenheter. I Gävleborg och Värmland är ökningen cirka tre procentenheter. Minskningen bland männen är också störst i Gävleborg, där det är nästan fem procentenheter färre män som inom tre år efter gymnasiet påbörjat högskolestudier. I Värmland är minskningen nästan fyra procentenheter och i Dalarna en procentenhet.
+Andelen av befolkningen som inom tre år efter avslutad gymnasieutbildning börjar studera på eftergymnasial nivå har ökat bland kvinnorna, men minskat bland männen i alla tre länen från gymnaisieexamensår 2014 till 2021 (påbörjat påbörjat eftergymnasiala studier senast hösten 2024). Den största ökningen bland kvinnorna syns i Dalarna, där andelen kvinnor som studerar vidare inom tre år efter gymnasiet ökat med drygt sex procentenheter. I Gävleborg och Värmland är ökningen cirka tre procentenheter. Minskningen bland männen är också störst i Gävleborg, där det är nästan fem procentenheter färre män som inom tre år efter gymnasiet påbörjat eftergymnasiala studier. I Värmland är minskningen nästan fyra procentenheter och i Dalarna en procentenhet.
 
-Även på riksnivå har andelen kvinnor som börjar högskola inom tre år efter gymnasiet ökat under samma period, medan männens andel i stort sett är oförändrad. Andelen kvinnor ökar med cirka sex procentenheter. Noterbart är att både NMS-länen och riket har lägre andelar 2024 än 2023 för både kvinnor och män. Sannolikt är det en effekt av en försämrad arbetsmarknad i samband med Coronapandemin som höjde övergången till högskola för avgångsåret 2020.
+Även på riksnivå har andelen kvinnor som studerar vidare på eftergymnasialnivå inom tre år ökat under samma period, medan männens andel i stort sett är oförändrad. Andelen kvinnor ökar med cirka sex procentenheter. Noterbart är att både NMS-länen och riket har lägre andelar 2024 än 2023 för både kvinnor och män. Sannolikt är det en effekt av en försämrad arbetsmarknad i samband med Covid-19-pandemin som höjde övergången till högre studier för avgångsåret 2020.
 
 ```{r diagram14, echo=FALSE, fig.cap = "Förändring i övergång från gymnasieutbildning till högskola inom tre år (Källa: SCB)"}
 socioek_overgang_eftergym_studier_tidsserie
 ```
 
-På kommunnivå har det också skett stora förändringar om vi jämför andelarna kvinnor och män som gått vidare till högskola inom tre år när vi jämför avgångsåren 2020 och 2016. 
+På kommunnivå har det också skett stora förändringar om vi jämför andelarna kvinnor och män som gått vidare till eftergymnasial utbildning inom tre år när vi jämför avgångsåren 2020 och 2016. 
 
 I det här sammanhanget behöver det nämnas att många kommuner har relativt små ålderskullar, vilket gör siffrorna känsliga för små förändringar i antal individer. Inom parentes anges ålderskullens storlek, år 2020. 
 
@@ -277,7 +268,7 @@ Gävleborg skiljer sig från Dalarna och Värmland på sådant sätt att där ä
 
 För Nordanstig (27) gäller det omvända. Där är den totala minskningen 27,2 procentenheter. Där svarar kvinnorna (16) för en markant nedgång, 33,4 procentenheter, medan männen (11) har minskat med 21 procentenheter. 
 
-Ovanstående ger en fingervisning om förändringar som noteras sedan 2016, men också känsligheten i att analysera förändringar för kommuner med små årskullar. 
+Ovanstående ger en fingervisning om förändringar som noteras sedan 2016, men också känsligheten i att analysera förändringar över tid för kommuner med små årskullar. 
 
 ## Unga som varken arbetar eller studerar (UVAS) 
 Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF tar fram statistik om unga som varken arbetar eller studerar (UVAS) för att öka kunskapen om gruppen och ge underlag till de som arbetar för att stötta unga till jobb eller studier. Statistiken är unik i det att den bygger på registerdata över hela befolkningen i åldern 16-29 år. Statistiken är hämtad från olika register hos till exempel Statistiska centralbyrån (SCB) och Försäkringskassan.
