@@ -92,6 +92,7 @@ skapa_inskr_af_kon_alder_utbniva <- function(region_vekt = c("17", "20", "21"),
                                x_axis_lutning = 0,
                                brew_palett = "Paired",
                                procent_0_100_10intervaller = TRUE,
+                               legend_kolumner = 2,
                                #manual_color = diagramfarger("gron_sex")[c(3,4,5,6)],
                                lagg_pa_logga = FALSE,
                                skriv_till_diagramfil = spara_diagrambildfil)
