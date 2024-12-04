@@ -236,8 +236,13 @@ När vi ser på genomströmningen på gymnasiet och andelen elever som avslutar 
 
 ## Övergång till högskola inom tre år från avslutad gymnasieutbildning
 
-På riksnivå är det drygt 62 procent av kvinnorna och knappt 48 procent av männen som inom tre år efter gymnasiet går vidare till någon form av eftergymnasial utbildning. Majoriteten går till högskolestudier, vilket gäller för både kvinnor och män. Det är vanligare för kvinnor än män att påbörja studier vid folkhögskola, och det är vanligare för män än kvinnor att istället gå till en yrkeshögskoleutbildning. I Norra Mellansverige går knappt 54 procent av kvinnorna och drygt 38 procent av männen vidare från gymnasiet till en eftergymnasial utbildning inom tre år. 
+<br>
+*Oklart var siffrorna nedan kommer ifrån. Oredigerat?*
+*Jag får `r overgang_eftergymn_studier_riket_varde_kvinnor` och `r overgang_eftergymn_studier_riket_varde_män` för riket*
+*För NMS får jag `r overgang_eftergymn_studier_NMS_varde_kvinnor` respektive `r overgang_eftergymn_studier_NMS_varde_man`*
+<br>
 
+På riksnivå är det drygt 62 procent av kvinnorna och knappt 48 procent av männen som inom tre år efter gymnasiet går vidare till någon form av eftergymnasial utbildning. Majoriteten går till högskolestudier, vilket gäller för både kvinnor och män. Det är vanligare för kvinnor än män att påbörja studier vid folkhögskola, och det är vanligare för män än kvinnor att istället gå till en yrkeshögskoleutbildning. I Norra Mellansverige går knappt 54 procent av kvinnorna och drygt 38 procent av männen vidare från gymnasiet till en eftergymnasial utbildning inom tre år. 
 
 ```{r diagram13, echo=FALSE,fig.cap = glue("Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning {overgang_eftergymn_studier_avgangsar}. (Källa: SCB)")}
 
@@ -315,7 +320,7 @@ Redan innan Covid-19-pandemin bröt ut började de senaste årens högkonjunktur
 
 
 ## Sysselsättningsgrad och arbetslöshet
-Sysselsättningsgraden i riket låg på 80,6 procent för kvinnor och 81,3 procent för män augusti 2024. Överlag är sysselsättningen relativt jämn mellan länen. Den totala sysselsättningen varierade mellan 77,7 och 85,0 procent. I Norra Mellansverige varierade sysselsättningsgraden mellan 81,0 procent (Gävleborg) och 83,3 procent (Dalarna). Sysselsättningsgraden är generellt något lägre för kvinnor än för män. Det beror bland annat på att kvinnor studerar i högre utsträckning än män och på att kvinnor tar ut en högre andel av föräldraledighetsdagarna.
+Sysselsättningsgraden i riket låg på `r sysselsattningsgrad_kvinnor_riket` procent för kvinnor och `r sysselsattningsgrad_man_riket` procent för män i `r sysselsattningsgrad_manad` `r sysselsattningsgrad_ar`. Överlag är sysselsättningen relativt jämn mellan länen. I Norra Mellansverige varierade sysselsättningsgraden för män mellan `r sysselsattningsgrad_man_min_varde` procent (`r sysselsattningsgrad_man_min_region`) och `r sysselsattningsgrad_man_max_varde` procent (`r sysselsattningsgrad_man_max_region`), medan den varierade för kvinnor mellan `r sysselsattningsgrad_kvinnor_min_varde` procent (`r sysselsattningsgrad_kvinnor_min_region`) och `r sysselsattningsgrad_kvinnor_max_varde` procent (`r sysselsattningsgrad_kvinnor_max_region`) . Sysselsättningsgraden är generellt något lägre för kvinnor än för män. Det beror bland annat på att kvinnor studerar i högre utsträckning än män och på att kvinnor tar ut en högre andel av föräldraledighetsdagarna.
 
 ```{r diagram17, echo=FALSE, fig.cap = glue("Andel sysselsatta av befolkningen i arbetsför ålder (20–64) efter län, {sysselsattningsgrad_manad} {sysselsattningsgrad_ar}. (Källa: SCB/BAS)")}
 sysselsattningsgrad_diagram$sysselsattningsgrad_senastear

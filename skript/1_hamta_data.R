@@ -128,6 +128,12 @@ socioek_overgang_eftergymn_studier <- funktion_upprepa_forsok_om_fel( function()
 overgang_eftergymn_studier_lasar <- overgang_eftergymn_studier_df$avgångsår %>% unique()
 overgang_eftergymn_studier_avgangsar <- substr(overgang_eftergymn_studier_lasar, nchar(overgang_eftergymn_studier_lasar)-3, nchar(overgang_eftergymn_studier_lasar))
 
+overgang_eftergymn_studier_riket_varde_kvinnor <- gsub("\\.",",",sum(overgang_eftergymn_studier_df %>% filter(region == "Riket",kön == "kvinnor") %>% .$ andel))
+overgang_eftergymn_studier_riket_varde_män <- gsub("\\.",",",sum(overgang_eftergymn_studier_df %>% filter(region == "Riket",kön == "män") %>% .$ andel))
+
+overgang_eftergymn_studier_NMS_varde_kvinnor <- gsub("\\.",",",round((sum(overgang_eftergymn_studier_df %>% filter(region != "Riket",kön == "kvinnor") %>% .$`Antal som läst vidare inom 3 år`)/sum(overgang_eftergymn_studier_df %>% filter(region != "Riket",kön == "kvinnor",utbtyp == "Högskola") %>% .$`Antal gymnasieexaminerade totalt`))*100,1))
+overgang_eftergymn_studier_NMS_varde_man <- gsub("\\.",",",round((sum(overgang_eftergymn_studier_df %>% filter(region != "Riket",kön == "män") %>% .$`Antal som läst vidare inom 3 år`)/sum(overgang_eftergymn_studier_df %>% filter(region != "Riket",kön == "män",utbtyp == "Högskola") %>% .$`Antal gymnasieexaminerade totalt`))*100,1))
+
 #inte klart - Mats och Peter
 overgang_nms <- overgang_eftergymn_studier_df %>% 
   group_by(avgångsår, gymnasieprogram, kön, utbtyp) %>% 
@@ -169,9 +175,26 @@ sysselsattningsgrad_diagram <- funktion_upprepa_forsok_om_fel( function() {diagr
                                                        diag_arbetslosthet = FALSE,
                                                        returnera_data = TRUE)}, hoppa_over = hoppa_over_felhantering)
 
+# År, månad och åldersgrupp
 sysselsattningsgrad_ar <- arbetsmarknadsstatus$ar %>% max() 
 sysselsattningsgrad_alder <- arbetsmarknadsstatus$ålder %>% unique()
-sysselsattningsgrad_manad <- arbetsmarknadsstatus$manad_long %>% unique() 
+sysselsattningsgrad_manad <- arbetsmarknadsstatus$manad_long %>% unique()
+
+# Lägsta sysselsättningsgrad NMS
+sysselsattningsgrad_man_min_varde <- gsub("\\.",",",min(arbetsmarknadsstatus %>% filter(region%in% c("Dalarna","Gävleborg","Värmland"),kön == "män") %>% .$varde))
+sysselsattningsgrad_man_min_region <- gsub("\\.",",",arbetsmarknadsstatus %>% filter(region%in% c("Dalarna","Gävleborg","Värmland"),kön == "män") %>% filter(varde==min(varde)) %>% .$region)
+sysselsattningsgrad_kvinnor_min_varde <- gsub("\\.",",",min(arbetsmarknadsstatus %>% filter(region%in% c("Dalarna","Gävleborg","Värmland"),kön == "kvinnor") %>% .$varde))
+sysselsattningsgrad_kvinnor_min_region <- gsub("\\.",",",arbetsmarknadsstatus %>% filter(region%in% c("Dalarna","Gävleborg","Värmland"),kön == "kvinnor") %>% filter(varde==min(varde)) %>% .$region)
+
+# Högsta sysselsättningsgrad NMS
+sysselsattningsgrad_man_max_varde <- gsub("\\.",",",max(arbetsmarknadsstatus %>% filter(region%in% c("Dalarna","Gävleborg","Värmland"),kön == "män") %>% .$varde))
+sysselsattningsgrad_man_max_region <- gsub("\\.",",",arbetsmarknadsstatus %>% filter(region%in% c("Dalarna","Gävleborg","Värmland"),kön == "män") %>% filter(varde==max(varde)) %>% .$region)
+sysselsattningsgrad_kvinnor_max_varde <- gsub("\\.",",",max(arbetsmarknadsstatus %>% filter(region%in% c("Dalarna","Gävleborg","Värmland"),kön == "kvinnor") %>% .$varde))
+sysselsattningsgrad_kvinnor_max_region <- gsub("\\.",",",arbetsmarknadsstatus %>% filter(region%in% c("Dalarna","Gävleborg","Värmland"),kön == "kvinnor") %>% filter(varde==max(varde)) %>% .$region)
+
+# Riket
+sysselsattningsgrad_man_riket <- gsub("\\.",",",arbetsmarknadsstatus %>% filter(region == "Sverige",kön == "män") %>% .$varde)
+sysselsattningsgrad_kvinnor_riket <- gsub("\\.",",",arbetsmarknadsstatus %>% filter(region == "Sverige",kön == "kvinnor") %>% .$varde)
 
 # ============= Andel inskrivna arbetslösa baserat på kön och ålder och utbildningsnivå - motsvarar diagram 21 (sidan 26) i den tidigare rapporten
 source(here("skript","socioek_inskr_af_kon_alder_utbniva.R"), encoding="UTF-8")
@@ -213,7 +236,7 @@ sysselsatta_bransch_kon_manad <- syss_bransch_andel_aggr$månad_namn %>% unique(
 # ============= Ohälsotal uppdelat på region och kön - motsvarar diagram 33 (sidan 39) i den tidigare rapporten
 source(here("skript","socioek_ohalsa_diagram_korrekt.R"), encoding="UTF-8")
 ohalsa_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_ohalsotal_lan(uppdatera_data = TRUE)
+  skapa_ohalsotal_lan(uppdatera_data = FALSE)
 }, hoppa_over = hoppa_over_felhantering)
 ohalsa_ar <- ohalsotal_df$År %>% max()
 ohalsa_manad <- ohalsotal_df$månad_namn %>% unique()
@@ -221,7 +244,7 @@ ohalsa_manad <- ohalsotal_df$månad_namn %>% unique()
 # ============= Sjukpenningtal uppdelat på region och kön och ålder (2 diagram) motsvarar diagram 34 och 35 (sidan 39-40) i den tidigare rapporten
 source(here("skript","socioek_sjukpenningtal_diagram.R"), encoding="UTF-8")
 sjukpenningtal_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_sjukpenningtal_lan(uppdatera_data = TRUE)
+  skapa_sjukpenningtal_lan(uppdatera_data = FALSE)
 }, hoppa_over = hoppa_over_felhantering)
 sjukpenningtal_ar <- sjukpenningtal_totalt_df$År %>% max()
 sjukpenningtal_manad <- sjukpenningtal_totalt_df$månad_namn %>% unique()
@@ -229,7 +252,7 @@ sjukpenningtal_manad <- sjukpenningtal_totalt_df$månad_namn %>% unique()
 # =============  Pågående sjukfall uppdelat på diagnoskapitel motsvarar diagram 36 (sidan 40) i den tidigare rapporten
 source(here("skript","socioek_pagaende_sjukfall_diagnos_diagram.R"), encoding="UTF-8")
 pagaende_sjukfall_diagnos_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_pagaende_diagnos_lan(uppdatera_data = TRUE)
+  skapa_pagaende_diagnos_lan(uppdatera_data = FALSE)
 }, hoppa_over = hoppa_over_felhantering)
 pagaende_sjukfall_ar <- sjukfall_diagnos_df$År %>% max()
 pagaende_sjukfall_manad <- sjukfall_diagnos_df$månad_namn %>% unique()
