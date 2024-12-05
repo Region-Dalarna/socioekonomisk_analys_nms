@@ -236,26 +236,39 @@ sysselsatta_bransch_kon_manad <- syss_bransch_andel_aggr$månad_namn %>% unique(
 # ============= Ohälsotal uppdelat på region och kön - motsvarar diagram 33 (sidan 39) i den tidigare rapporten
 source(here("skript","socioek_ohalsa_diagram_korrekt.R"), encoding="UTF-8")
 ohalsa_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_ohalsotal_lan(uppdatera_data = FALSE)
+  skapa_ohalsotal_lan(uppdatera_data = TRUE)
 }, hoppa_over = hoppa_over_felhantering)
 ohalsa_ar <- ohalsotal_df$År %>% max()
 ohalsa_manad <- ohalsotal_df$månad_namn %>% unique()
 
+ohalsotal_diff_man_max <- gsub("\\.",",",round(ohalsotal_df %>% filter(region != "Riket",Kön == "Män") %>% .$Ohalsotalet %>% max() - ohalsotal_df %>% filter(region == "Riket",Kön == "Män") %>% .$Ohalsotalet,0))
+ohalsotal_diff_man_min <- gsub("\\.",",",round(ohalsotal_df %>% filter(region != "Riket",Kön == "Män") %>% .$Ohalsotalet %>% min() - ohalsotal_df %>% filter(region == "Riket",Kön == "Män") %>% .$Ohalsotalet,0))
+
+ohalsotal_diff_kvinnor_max <- gsub("\\.",",",round(ohalsotal_df %>% filter(region != "Riket",Kön == "Kvinnor") %>% .$Ohalsotalet %>% max() - ohalsotal_df %>% filter(region == "Riket",Kön == "Kvinnor") %>% .$Ohalsotalet,0))
+ohalsotal_diff_kvinnor_min <- gsub("\\.",",",round(ohalsotal_df %>% filter(region != "Riket",Kön == "Kvinnor") %>% .$Ohalsotalet %>% min() - ohalsotal_df %>% filter(region == "Riket",Kön == "Kvinnor") %>% .$Ohalsotalet,0))
+
+  
 # ============= Sjukpenningtal uppdelat på region och kön och ålder (2 diagram) motsvarar diagram 34 och 35 (sidan 39-40) i den tidigare rapporten
 source(here("skript","socioek_sjukpenningtal_diagram.R"), encoding="UTF-8")
 sjukpenningtal_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_sjukpenningtal_lan(uppdatera_data = FALSE)
+  skapa_sjukpenningtal_lan(uppdatera_data = TRUE)
 }, hoppa_over = hoppa_over_felhantering)
 sjukpenningtal_ar <- sjukpenningtal_totalt_df$År %>% max()
 sjukpenningtal_manad <- sjukpenningtal_totalt_df$månad_namn %>% unique()
 
+sjukpenningtal_varmland_man <- gsub("\\.",",",sjukpenningtal_totalt_df %>% filter(region == "Värmland", Kön == "Män") %>% .$sjukpenningtal)
+sjukpenningtal_varmland_kvinnor <- gsub("\\.",",",sjukpenningtal_totalt_df %>% filter(region == "Värmland", Kön == "Kvinnor") %>% .$sjukpenningtal)
+
 # =============  Pågående sjukfall uppdelat på diagnoskapitel motsvarar diagram 36 (sidan 40) i den tidigare rapporten
 source(here("skript","socioek_pagaende_sjukfall_diagnos_diagram.R"), encoding="UTF-8")
 pagaende_sjukfall_diagnos_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_pagaende_diagnos_lan(uppdatera_data = FALSE)
+  skapa_pagaende_diagnos_lan(uppdatera_data = TRUE)
 }, hoppa_over = hoppa_over_felhantering)
 pagaende_sjukfall_ar <- sjukfall_diagnos_df$År %>% max()
 pagaende_sjukfall_manad <- sjukfall_diagnos_df$månad_namn %>% unique()
+
+pagaende_sjukfall_diagnos_kvinnor_riket <- round(sjukfall_diagnos_df %>% filter(region == "Riket", Kön == "Kvinnor",Diagnoskapitel == "Psykisk ohälsa") %>% .$`Andel`,0)
+pagaende_sjukfall_diagnos_man_riket <- round(sjukfall_diagnos_df %>% filter(region == "Riket", Kön == "Män",Diagnoskapitel == "Psykisk ohälsa") %>% .$`Andel`,0)
 
 # ============= Låg ekonomisk standard uppdelat på sysselsatta, ålder och bakgrund - 3 diagram motsvarar diagram 40, 42 och 43 (sidor 45 - 48) i den tidigare rapporten
 source(here("skript","socioek_lag_ek_standard_diagram.R"), encoding="UTF-8")
