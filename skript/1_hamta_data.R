@@ -236,7 +236,7 @@ sysselsatta_bransch_kon_manad <- syss_bransch_andel_aggr$månad_namn %>% unique(
 # ============= Ohälsotal uppdelat på region och kön - motsvarar diagram 33 (sidan 39) i den tidigare rapporten
 source(here("skript","socioek_ohalsa_diagram_korrekt.R"), encoding="UTF-8")
 ohalsa_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_ohalsotal_lan(uppdatera_data = TRUE)
+  skapa_ohalsotal_lan(uppdatera_data = FALSE)
 }, hoppa_over = hoppa_over_felhantering)
 ohalsa_ar <- ohalsotal_df$År %>% max()
 ohalsa_manad <- ohalsotal_df$månad_namn %>% unique()
@@ -251,7 +251,7 @@ ohalsotal_diff_kvinnor_min <- gsub("\\.",",",round(ohalsotal_df %>% filter(regio
 # ============= Sjukpenningtal uppdelat på region och kön och ålder (2 diagram) motsvarar diagram 34 och 35 (sidan 39-40) i den tidigare rapporten
 source(here("skript","socioek_sjukpenningtal_diagram.R"), encoding="UTF-8")
 sjukpenningtal_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_sjukpenningtal_lan(uppdatera_data = TRUE)
+  skapa_sjukpenningtal_lan(uppdatera_data = FALSE)
 }, hoppa_over = hoppa_over_felhantering)
 sjukpenningtal_ar <- sjukpenningtal_totalt_df$År %>% max()
 sjukpenningtal_manad <- sjukpenningtal_totalt_df$månad_namn %>% unique()
@@ -262,7 +262,7 @@ sjukpenningtal_varmland_kvinnor <- gsub("\\.",",",sjukpenningtal_totalt_df %>% f
 # =============  Pågående sjukfall uppdelat på diagnoskapitel motsvarar diagram 36 (sidan 40) i den tidigare rapporten
 source(here("skript","socioek_pagaende_sjukfall_diagnos_diagram.R"), encoding="UTF-8")
 pagaende_sjukfall_diagnos_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_pagaende_diagnos_lan(uppdatera_data = TRUE)
+  skapa_pagaende_diagnos_lan(uppdatera_data = FALSE)
 }, hoppa_over = hoppa_over_felhantering)
 pagaende_sjukfall_ar <- sjukfall_diagnos_df$År %>% max()
 pagaende_sjukfall_manad <- sjukfall_diagnos_df$månad_namn %>% unique()
@@ -286,6 +286,10 @@ helarsekvivalenter_andel_diagram <- funktion_upprepa_forsok_om_fel( function() {
 }, hoppa_over = hoppa_over_felhantering)
 ersattning_helarsakvivalenter_ar <- ersattning_helarsakvivalenter_df$år %>% max()
 ersattning_helarsakvivalenter_manad <- ersattning_helarsakvivalenter_df$manad_namn %>% unique()
+helarsekvivalenter_gavleborg <- gsub("\\.",",",round(ersattning_helarsakvivalenter_df %>% filter(region == "Gävleborg") %>% .$Andel_ersattning,1))
+helarsekvivalenter_varmland <- gsub("\\.",",",round(ersattning_helarsakvivalenter_df %>% filter(region == "Värmland") %>% .$Andel_ersattning,1))
+helarsekvivalenter_dalarna <- gsub("\\.",",",round(ersattning_helarsakvivalenter_df %>% filter(region == "Dalarna") %>% .$Andel_ersattning,1))
+helarsekvivalenter_riket <- gsub("\\.",",",round(ersattning_helarsakvivalenter_df %>% filter(region == "Riket") %>% .$Andel_ersattning,1))
 
 # ============= Innovationsindex på region - motsvarar diagram 46 (sidan 52) i den tidigare rapporten
 # Uppdateras ej automatiskt utan kräver nedladdning av Excel-fil
