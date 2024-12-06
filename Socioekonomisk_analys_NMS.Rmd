@@ -236,12 +236,6 @@ När vi ser på genomströmningen på gymnasiet och andelen elever som avslutar 
 
 ## Övergång till högskola inom tre år från avslutad gymnasieutbildning
 
-<br>
-*Oklart var siffrorna nedan kommer ifrån. Oredigerat?*
-*Jag får `r overgang_eftergymn_studier_riket_varde_kvinnor` och `r overgang_eftergymn_studier_riket_varde_män` för riket*
-*För NMS får jag `r overgang_eftergymn_studier_NMS_varde_kvinnor` respektive `r overgang_eftergymn_studier_NMS_varde_man`*
-<br>
-
 På riksnivå är det drygt 62 procent av kvinnorna och knappt 48 procent av männen som inom tre år efter gymnasiet går vidare till någon form av eftergymnasial utbildning. Majoriteten går till högskolestudier, vilket gäller för både kvinnor och män. Det är vanligare för kvinnor än män att påbörja studier vid folkhögskola, och det är vanligare för män än kvinnor att istället gå till en yrkeshögskoleutbildning. I Norra Mellansverige går knappt 54 procent av kvinnorna och drygt 38 procent av männen vidare från gymnasiet till en eftergymnasial utbildning inom tre år. 
 
 ```{r diagram13, echo=FALSE,fig.cap = glue("Övergång till högskola, folkhögskola och yrkeshögskola inom tre år från avslutad gymnasieutbildning {overgang_eftergymn_studier_avgangsar}. (Källa: SCB)")}
