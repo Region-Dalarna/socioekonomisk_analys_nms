@@ -21,6 +21,7 @@ skapa_ohalsotal_lan <- function(uppdatera_data = TRUE,
   
   # ========================================== Inställningar ============================================
   
+  # Datakälla: https://www.dataportal.se/datasets/547_12408
   mapp <- here("figurer/") %>% paste0(., "/")
   # För källa till data, se viktig info under Indata
   input_mapp <- here("Indata/") %>% paste0(., "/")
