@@ -1,3 +1,4 @@
+test <- skapa_ekonomiskstandard_lan()
 skapa_ekonomiskstandard_lan <- function(region_vekt = c("00","17","20","21"),
                                         spara_diagrambildfil = FALSE,
                                         returnera_dataframe_global_environment = TRUE
@@ -129,6 +130,7 @@ skapa_ekonomiskstandard_lan <- function(region_vekt = c("00","17","20","21"),
                                diagram_facet = TRUE,
                                facet_grp = "region",
                                facet_scale = "fixed",
+                               facet_legend_bottom = TRUE,
                                #vand_sortering = TRUE,
                                #legend_vand_ordning = TRUE,
                                x_axis_lutning = 0,

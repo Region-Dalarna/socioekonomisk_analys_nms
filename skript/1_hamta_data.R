@@ -300,7 +300,7 @@ lag_ek_standar_max_varde_region_inrikes <- gsub("\\.",",",lag_ek_standard_bakgru
 lag_ek_standar_min_varde_inrikes <- gsub("\\.",",",min(lag_ek_standard_bakgrund_df %>% filter(region%in% c("Dalarna","Gävleborg","Värmland"), `utländsk/svensk bakgrund` == "svensk bakgrund",sysselsättning == "Samtliga personer") %>% .$`Inkomst < 60 procent`))
 lag_ek_standar_min_varde_region_inrikes <- gsub("\\.",",",lag_ek_standard_bakgrund_df %>% filter(region%in% c("Dalarna","Gävleborg","Värmland"), `utländsk/svensk bakgrund` == "svensk bakgrund",sysselsättning == "Samtliga personer") %>% filter(`Inkomst < 60 procent`==min(`Inkomst < 60 procent`)) %>%.$region)
 
-lag_ek_standar_riket_varde_utrikes <- gsub("\\.",",",min(lag_ek_standard_bakgrund_df %>% filter(region=="Riket", `utländsk/svensk bakgrund` == "svensk bakgrund",sysselsättning == "Samtliga personer") %>% .$`Inkomst < 60 procent`))
+lag_ek_standar_riket_varde_inrikes <- gsub("\\.",",",min(lag_ek_standard_bakgrund_df %>% filter(region=="Riket", `utländsk/svensk bakgrund` == "svensk bakgrund",sysselsättning == "Samtliga personer") %>% .$`Inkomst < 60 procent`))
 
 
 # ============= Andel med ersättning av helårsekvivalenter - 3 diagram motsvarar diagram 41 (sidor 46) i den tidigare rapporten
