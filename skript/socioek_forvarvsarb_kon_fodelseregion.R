@@ -1,5 +1,6 @@
 skapa_forvarsarb_kon_fodelseregion <- function(region_vekt = c("17", "20", "21"),
                                                       spara_diagrambildfil = FALSE,
+                                                      diag_fargvekt = NA,
                                                       returnera_dataframe_global_environment = TRUE
 ){
   
@@ -12,6 +13,15 @@ skapa_forvarsarb_kon_fodelseregion <- function(region_vekt = c("17", "20", "21")
   
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R", encoding = "utf-8", echo = FALSE)
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R", encoding = "utf-8", echo = FALSE)
+  
+  # om ingen färgvektor är medskickad, kolla om funktionen diagramfärger finns, annars använd r:s defaultfärger
+  if (all(is.na(diag_fargvekt))) {
+    if (exists("diagramfarger", mode = "function")) {
+      diag_fargvekt <- diagramfarger("bla_gra_fyra")
+    } else {
+      diag_fargvekt <- hue_pal()(9)
+    }
+  }
   
   # ========================================== Inställningar ============================================
   
@@ -111,7 +121,8 @@ skapa_forvarsarb_kon_fodelseregion <- function(region_vekt = c("17", "20", "21")
                                manual_y_axis_title = "procent",
                                x_axis_lutning = 0,
                                procent_0_100_10intervaller = TRUE,
-                               manual_color = rev(diagramfarger("gron_sex")),
+                               #manual_color = rev(diagramfarger("gron_sex")),
+                               manual_color = diag_fargvekt,
                                lagg_pa_logga = FALSE,
                                skriv_till_diagramfil = spara_diagrambildfil)
   

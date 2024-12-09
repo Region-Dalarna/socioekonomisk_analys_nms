@@ -25,7 +25,8 @@ skapa_andel_anstallda_bransch_diagram <- function(region_vekt = c("17", "20", "2
   px_df <- hamta_bas_syss_region_kon_sni2007_fodelseregion_prel_manad_scb(region_vekt = region_vekt,
                                                                           kon_klartext = c("män","kvinnor"),
                                                                           cont_klartext = "sysselsatta efter arbetsställets belägenhet",
-                                                                          tid_koder = "9999") %>%
+                                                                          tid_koder = "9999",
+                                                                          fodelseregion_klartext = "totalt") %>%
     filter(`näringsgren SNI 2007`!="Total") %>% 
     separate(månad,into = c("år","månad"),sep="M") %>% 
     mutate(månad_namn = case_when(månad == "01" ~ "januari",
@@ -47,8 +48,8 @@ skapa_andel_anstallda_bransch_diagram <- function(region_vekt = c("17", "20", "2
   
   bransch_aggr <- bransch_df %>% 
     group_by(år,månad_namn, kön, Bransch) %>% 
-    summarise(syss = sum(`sysselsatta efter arbetsställets belägenhet`, na.rm = TRUE)) %>% 
-    mutate(andel = round((syss / sum(syss))*100,1))
+      summarise(syss = sum(`sysselsatta efter arbetsställets belägenhet`, na.rm = TRUE)) %>% 
+        mutate(andel = round((syss / sum(syss))*100,1))
   
   if(returnera_dataframe_global_environment == TRUE){
     assign("syss_bransch_andel_aggr", bransch_aggr, envir = .GlobalEnv)

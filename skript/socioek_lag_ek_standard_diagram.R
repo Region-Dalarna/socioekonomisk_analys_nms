@@ -1,6 +1,6 @@
-test <- skapa_ekonomiskstandard_lan()
 skapa_ekonomiskstandard_lan <- function(region_vekt = c("00","17","20","21"),
                                         spara_diagrambildfil = FALSE,
+                                        diag_fargvekt = NA,
                                         returnera_dataframe_global_environment = TRUE
 ){
   
@@ -18,6 +18,15 @@ skapa_ekonomiskstandard_lan <- function(region_vekt = c("00","17","20","21"),
   options(dplyr.summarise.inform = FALSE)
   
   gg_list <- list()
+  
+  # om ingen färgvektor är medskickad, kolla om funktionen diagramfärger finns, annars använd r:s defaultfärger
+  if (all(is.na(diag_fargvekt))) {
+    if (exists("diagramfarger", mode = "function")) {
+      diag_fargvekt <- diagramfarger("bla_gra_fyra")
+    } else {
+      diag_fargvekt <- hue_pal()(9)
+    }
+  }
   
   # ========================================== Inställningar ============================================
   
@@ -62,7 +71,8 @@ skapa_ekonomiskstandard_lan <- function(region_vekt = c("00","17","20","21"),
                                vand_sortering = TRUE,
                                legend_vand_ordning = TRUE,
                                x_axis_lutning = 0,
-                               manual_color =rev(diagramfarger("gron_sex")),
+                               #manual_color =rev(diagramfarger("gron_sex")),
+                               manual_color = diag_fargvekt,
                                manual_y_axis_title = "procent",
                                lagg_pa_logga = FALSE,
                                skriv_till_diagramfil = spara_diagrambildfil)
@@ -94,7 +104,8 @@ skapa_ekonomiskstandard_lan <- function(region_vekt = c("00","17","20","21"),
                                #vand_sortering = TRUE,
                                #legend_vand_ordning = TRUE,
                                x_axis_lutning = 0,
-                               manual_color = diagramfarger("gron_sex")[c(1:4,6)],
+                               #manual_color = diagramfarger("gron_sex")[c(1:4,6)],
+                               manual_color = c(diag_fargvekt,"#666666"),
                                manual_y_axis_title = "procent",
                                lagg_pa_logga = FALSE,
                                skriv_till_diagramfil = spara_diagrambildfil)
@@ -134,7 +145,8 @@ skapa_ekonomiskstandard_lan <- function(region_vekt = c("00","17","20","21"),
                                #vand_sortering = TRUE,
                                #legend_vand_ordning = TRUE,
                                x_axis_lutning = 0,
-                               manual_color = diagramfarger("gron_sex")[c(3,6)],
+                               #manual_color = diagramfarger("gron_sex")[c(3,6)],
+                               manual_color = diag_fargvekt,
                                manual_y_axis_title = "procent",
                                lagg_pa_logga = FALSE,
                                skriv_till_diagramfil = spara_diagrambildfil)

@@ -2,6 +2,7 @@ skapa_innovationsindex_diagram <- function(region_vekt = c("00","17", "20", "21"
                                           ta_bort_titel = TRUE,
                                           ta_bort_caption = TRUE,
                                           spara_diagrambildfil = FALSE,
+                                          diag_fargvekt = NA,
                                           returnera_dataframe_global_environment = TRUE
 ){
   
@@ -16,6 +17,14 @@ skapa_innovationsindex_diagram <- function(region_vekt = c("00","17", "20", "21"
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R", encoding = "utf-8", echo = FALSE)
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R", encoding = "utf-8", echo = FALSE)
 
+  # om ingen färgvektor är medskickad, kolla om funktionen diagramfärger finns, annars använd r:s defaultfärger
+  if (all(is.na(diag_fargvekt))) {
+    if (exists("diagramfarger", mode = "function")) {
+      diag_fargvekt <- diagramfarger("bla_gra_fyra")
+    } else {
+      diag_fargvekt <- hue_pal()(9)
+    }
+  }
   
   #input_mapp <- "G:/Samhällsanalys/Projekt och uppdrag/EU/ESF/Socioekonomisk analys/data_mars2022/"
   input_mapp <- here("Indata/") %>% paste0(., "/")
@@ -59,7 +68,8 @@ skapa_innovationsindex_diagram <- function(region_vekt = c("00","17", "20", "21"
                                x_var_fokus = "fokus",
                                diagram_capt = diagram_capt,
                                diagram_titel = diagramtitel,
-                               manual_color = diagramfarger("gron_tva_fokus_morkgron"),
+                               #manual_color = diagramfarger("gron_tva_fokus_morkgron"),
+                               manual_color = c(diag_fargvekt[1],diag_fargvekt[3]),
                                skriv_till_diagramfil = spara_diagrambildfil,
                                lagg_pa_logga = ta_med_logga)
 }

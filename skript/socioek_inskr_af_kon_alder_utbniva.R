@@ -1,5 +1,6 @@
 skapa_inskr_af_kon_alder_utbniva <- function(region_vekt = c("17", "20", "21"),
                                                spara_diagrambildfil = FALSE,
+                                               diag_fargvekt = NA,
                                                returnera_dataframe_global_environment = TRUE
 ){
   
@@ -10,6 +11,15 @@ skapa_inskr_af_kon_alder_utbniva <- function(region_vekt = c("17", "20", "21"),
   
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R", encoding = "utf-8", echo = FALSE)
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R", encoding = "utf-8", echo = FALSE)
+  
+  # om ingen färgvektor är medskickad, kolla om funktionen diagramfärger finns, annars använd r:s defaultfärger
+  if (all(is.na(diag_fargvekt))) {
+    if (exists("diagramfarger", mode = "function")) {
+      diag_fargvekt <- diagramfarger("bla_gra_fyra")
+    } else {
+      diag_fargvekt <- hue_pal()(9)
+    }
+  }
   
   # ========================================== Inställningar ============================================
   
@@ -94,6 +104,7 @@ skapa_inskr_af_kon_alder_utbniva <- function(region_vekt = c("17", "20", "21"),
                                procent_0_100_10intervaller = TRUE,
                                legend_kolumner = 2,
                                #manual_color = diagramfarger("gron_sex")[c(3,4,5,6)],
+                               manual_color = diag_fargvekt,
                                lagg_pa_logga = FALSE,
                                skriv_till_diagramfil = spara_diagrambildfil)
   

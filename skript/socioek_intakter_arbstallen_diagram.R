@@ -1,5 +1,6 @@
 skapa_intakter_arbstallen_bransch_diagram <- function(region_vekt = c("17", "20", "21"),
                                                   spara_diagrambildfil = FALSE,
+                                                  diag_fargvekt = NA,
                                                   returnera_dataframe_global_environment = TRUE
 ){
   
@@ -16,6 +17,15 @@ skapa_intakter_arbstallen_bransch_diagram <- function(region_vekt = c("17", "20"
   options(dplyr.summarise.inform = FALSE)
   
   gg_list <- list()
+  
+  # om ingen färgvektor är medskickad, kolla om funktionen diagramfärger finns, annars använd r:s defaultfärger
+  if (all(is.na(diag_fargvekt))) {
+    if (exists("diagramfarger", mode = "function")) {
+      diag_fargvekt <- diagramfarger("bla_gra_fyra")
+    } else {
+      diag_fargvekt <- hue_pal()(9)
+    }
+  }
   
   # ========================================== Inställningar ============================================
   
@@ -81,6 +91,7 @@ skapa_intakter_arbstallen_bransch_diagram <- function(region_vekt = c("17", "20"
                                x_axis_lutning = 45,
                                #brew_palett = "Paired",
                                #manual_color = rev(diagramfarger("gron_sex")[c(3,5)]),
+                               manual_color = diag_fargvekt,
                                lagg_pa_logga = FALSE,
                                skriv_till_diagramfil = spara_diagrambildfil)
   
@@ -111,6 +122,7 @@ skapa_intakter_arbstallen_bransch_diagram <- function(region_vekt = c("17", "20"
                                x_axis_lutning = 45,
                                #brew_palett = "Paired",
                                #manual_color = rev(diagramfarger("gron_sex")[c(3,5)]),
+                               manual_color = diag_fargvekt,
                                lagg_pa_logga = FALSE,
                                skriv_till_diagramfil = spara_diagrambildfil)
   

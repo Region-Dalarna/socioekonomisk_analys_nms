@@ -1,5 +1,6 @@
 skapa_pagaende_diagnos_lan <- function(uppdatera_data = TRUE,
                                        spara_diagrambildfil = FALSE,
+                                       diag_fargvekt = NA,
                                        returnera_dataframe_global_environment = TRUE
 ){
   
@@ -18,6 +19,15 @@ skapa_pagaende_diagnos_lan <- function(uppdatera_data = TRUE,
   options(dplyr.summarise.inform = FALSE)
   
   gg_list <- list()
+  
+  # om ingen färgvektor är medskickad, kolla om funktionen diagramfärger finns, annars använd r:s defaultfärger
+  if (all(is.na(diag_fargvekt))) {
+    if (exists("diagramfarger", mode = "function")) {
+      diag_fargvekt <- diagramfarger("bla_gra_fyra")
+    } else {
+      diag_fargvekt <- hue_pal()(9)
+    }
+  }
   
   # ========================================== Inställningar ============================================
   
@@ -92,7 +102,7 @@ skapa_pagaende_diagnos_lan <- function(uppdatera_data = TRUE,
                                facet_scale = "free",
                                manual_x_axis_title = "kön",
                                manual_y_axis_title = "procent",
-                               #manual_color = diagramfarger("kon"),
+                               manual_color = diag_fargvekt,
                                y_axis_100proc = TRUE,
                                geom_position_stack = TRUE,
                                lagg_pa_logga = FALSE,

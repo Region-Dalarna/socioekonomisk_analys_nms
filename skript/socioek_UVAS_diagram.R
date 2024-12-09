@@ -1,4 +1,5 @@
 skapa_UVAS_diagram <- function(spara_diagrambildfil = FALSE,
+                              diag_fargvekt = NA, # För diagrammet som inte är könsuppdelat
                                returnera_dataframe_global_environment = TRUE
 ){
   
@@ -12,6 +13,15 @@ skapa_UVAS_diagram <- function(spara_diagrambildfil = FALSE,
   
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R", encoding = "utf-8", echo = FALSE)
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R", encoding = "utf-8", echo = FALSE)
+  
+  # om ingen färgvektor är medskickad, kolla om funktionen diagramfärger finns, annars använd r:s defaultfärger
+  if (all(is.na(diag_fargvekt))) {
+    if (exists("diagramfarger", mode = "function")) {
+      diag_fargvekt <- diagramfarger("bla_gra_fyra")
+    } else {
+      diag_fargvekt <- hue_pal()(9)
+    }
+  }
   
   
   #input_mapp <- "G:/Samhällsanalys/Projekt och uppdrag/EU/ESF/Socioekonomisk analys/data_mars2022/"
@@ -53,7 +63,8 @@ skapa_UVAS_diagram <- function(spara_diagrambildfil = FALSE,
                                manual_x_axis_text_hjust = 1,
                                manual_y_axis_title = "procent",
                                x_axis_sort_value = FALSE,
-                               manual_color = diagramfarger("gron_sex")[c(3,4)],
+                               #manual_color = diagramfarger("gron_sex")[c(3,4)],
+                               manual_color = diag_fargvekt,
                                skriv_till_diagramfil = spara_diagrambildfil,
                                lagg_pa_logga = ta_med_logga)
   
