@@ -3,9 +3,7 @@ skapa_UVAS_diagram <- function(spara_diagrambildfil = FALSE,
                                returnera_dataframe_global_environment = TRUE
 ){
   
-  # Skript som skapar diagram för innovationsindex uppdelat på län.
-  # Verkar inte ha uppdaterats sedan 2021, varför jag använder samma källa för data som då. Bör uppdateras
-  # så att data istället läggs i en mapp i projektet.
+  # Skript som skapar diagram för UVAS. Data måste tyvärr hämtas manuellt, se 1_viktig_info.txt under foldern Indata
   
   if (!require("pacman")) install.packages("pacman")
   p_load(tidyverse,
