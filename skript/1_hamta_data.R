@@ -239,7 +239,7 @@ sysselsatta_utbildning_kvinnor <- round(syss_bransch_andel_aggr %>% filter(Brans
 # ============= Ohälsotal uppdelat på region och kön - motsvarar diagram 33 (sidan 39) i den tidigare rapporten
 source(here("skript","socioek_ohalsa_diagram_korrekt.R"), encoding="UTF-8")
 ohalsa_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_ohalsotal_lan(uppdatera_data = FALSE)
+  skapa_ohalsotal_lan(uppdatera_data = TRUE)
 }, hoppa_over = hoppa_over_felhantering)
 ohalsa_ar <- ohalsotal_df$År %>% max()
 ohalsa_manad <- ohalsotal_df$månad_namn %>% unique()
@@ -254,7 +254,7 @@ ohalsotal_diff_kvinnor_min <- gsub("\\.",",",round(ohalsotal_df %>% filter(regio
 # ============= Sjukpenningtal uppdelat på region och kön och ålder (2 diagram) motsvarar diagram 34 och 35 (sidan 39-40) i den tidigare rapporten
 source(here("skript","socioek_sjukpenningtal_diagram.R"), encoding="UTF-8")
 sjukpenningtal_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_sjukpenningtal_lan(uppdatera_data = FALSE)
+  skapa_sjukpenningtal_lan(uppdatera_data = TRUE)
 }, hoppa_over = hoppa_over_felhantering)
 sjukpenningtal_ar <- sjukpenningtal_totalt_df$År %>% max()
 sjukpenningtal_manad <- sjukpenningtal_totalt_df$månad_namn %>% unique()
@@ -265,7 +265,7 @@ sjukpenningtal_varmland_kvinnor <- gsub("\\.",",",sjukpenningtal_totalt_df %>% f
 # =============  Pågående sjukfall uppdelat på diagnoskapitel motsvarar diagram 36 (sidan 40) i den tidigare rapporten
 source(here("skript","socioek_pagaende_sjukfall_diagnos_diagram.R"), encoding="UTF-8")
 pagaende_sjukfall_diagnos_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_pagaende_diagnos_lan(uppdatera_data = FALSE)
+  skapa_pagaende_diagnos_lan(uppdatera_data = TRUE)
 }, hoppa_over = hoppa_over_felhantering)
 pagaende_sjukfall_ar <- sjukfall_diagnos_df$År %>% max()
 pagaende_sjukfall_manad <- sjukfall_diagnos_df$månad_namn %>% unique()
