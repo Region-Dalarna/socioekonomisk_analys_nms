@@ -1,6 +1,6 @@
 skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
-                               diag_fargvekt = NA, # För diagrammet som inte är könsuppdelat
-                               returnera_dataframe_global_environment = TRUE
+                                 diag_fargvekt = NA, # För diagrammet som inte är könsuppdelat
+                                 returnera_dataframe_global_environment = TRUE
 ){
   
   # Skript som skapar överrepresentation av chefer. Data har hämtats av Kristoffer Sehlberg (region Gävleborg) i SCB/MONA.
@@ -32,11 +32,9 @@ skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
   ta_med_logga <- FALSE   # FALSE
   
   gg_list <- list()
-  gg_list_map <- list()
   
   # ============================= diagram 14 ====================================
-  overrep_df <- read.xlsx(overrep_full, sheet= 1) %>% 
-    mutate(overrep = overrep) 
+  overrep_df <- read.xlsx(overrep_full) 
   
   if(returnera_dataframe_global_environment == TRUE){
     assign("overrep_df", overrep_df, envir = .GlobalEnv)
@@ -65,9 +63,6 @@ skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
   
   gg_list <- c(gg_list, list(gg_obj))
 
-  
-  gg_list <- c(gg_list, diag)
-  
   names(gg_list) <- c("overrep")
   
   return(gg_list)
