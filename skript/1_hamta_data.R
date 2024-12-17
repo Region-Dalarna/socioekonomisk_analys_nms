@@ -384,6 +384,11 @@ arblos_arblosa_over_tid <- af_lista_diagram$linjediagram_andel_arblosa_over_tid
 arblos_totalt_over_tid_min_ar <- arblosa_over_tid$Månad_år %>% first()
 arblos_totalt_over_tid_max_ar <- arblosa_over_tid$Månad_år %>% last()
 
+arblosa_over_tid_gavleborg <- round(arblos_arblosa_over_tid$data %>% filter(Region == "Gävleborg",Månad_år==last(Månad_år)) %>% .$total,1) 
+arblosa_over_tid_varmland <- round(arblos_arblosa_over_tid$data %>% filter(Region == "Värmland",Månad_år==last(Månad_år)) %>% .$total,1) 
+arblosa_over_tid_dalarna <- round(arblos_arblosa_over_tid$data %>% filter(Region == "Dalarna",Månad_år==last(Månad_år)) %>% .$total,1) 
+arblosa_over_tid_riket <- round(arblos_arblosa_over_tid$data %>% filter(Region == "Riket",Månad_år==last(Månad_år)) %>% .$total,1)
+
 # diagram över andel arbetslösa utifrån tid i arbetslöshet, för senaste tillgängliga månad
 arblos_arbloshetstid_diagram <- af_lista_diagram$andel_arblosa_arbloshetstid
 arblos_arbloshetstid_ar <- arblosa_kon_arbloshetstid$Månad_år %>% unique()
@@ -392,6 +397,11 @@ arblos_arbloshetstid_ar <- arblosa_kon_arbloshetstid$Månad_år %>% unique()
 arblos_arblosa_unga_over_tid <- af_lista_diagram$linjediagram_andel_unga_arblosa_over_tid
 arblos_unga_min_ar <- arblosa_unga_over_tid$Månad_år %>% first()
 arblos_unga_max_ar <- arblosa_unga_over_tid$Månad_år %>% last()
+
+arblosa_unga_gavleborg <- round(arblos_arblosa_unga_over_tid$data %>% filter(Region == "Gävleborg",Månad_år==last(Månad_år)) %>% .$total,1) 
+arblosa_unga_varmland <- round(arblos_arblosa_unga_over_tid$data %>% filter(Region == "Värmland",Månad_år==last(Månad_år)) %>% .$total,1) 
+arblosa_unga_dalarna <- round(arblos_arblosa_unga_over_tid$data %>% filter(Region == "Dalarna",Månad_år==last(Månad_år)) %>% .$total,1) 
+arblosa_unga_riket <- round(arblos_arblosa_unga_over_tid$data %>% filter(Region == "Riket",Månad_år==last(Månad_år)) %>% .$total,1)
 
 # diagram över andel arbetslösa utrikes födda över tid
 arblos_arblosa_utrikes_over_tid <- af_lista_diagram$linjediagram_andel_utr_arblosa_over_tid
