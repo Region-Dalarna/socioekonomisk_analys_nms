@@ -209,6 +209,9 @@ forvarvsarb_kon_fodelseregion <- funktion_upprepa_forsok_om_fel( function() {
   skapa_forvarsarb_kon_fodelseregion(region_vekt = c( "17", "20","21"))
 }, hoppa_over = hoppa_over_felhantering)
 forvarvsarbetande_kon_fodelseregion_ar <- forvarvsarbetande_kon_fodelseregion_df$år %>% max()
+forvarvsarbetande_kon_fodelseregion_skillnad_gavleborg <- gsub("\\.",",",round(forvarvsarbetande_kon_fodelseregion_df %>% filter(region == "Gävleborgs län", kön == "män",bakgrundsvariabel == "övriga världen") %>% .$andel - forvarvsarbetande_kon_fodelseregion_df %>% filter(region == "Gävleborgs län", kön == "kvinnor",bakgrundsvariabel == "övriga världen") %>% .$andel,1))
+forvarvsarbetande_kon_fodelseregion_skillnad_varmland <- gsub("\\.",",",round(forvarvsarbetande_kon_fodelseregion_df %>% filter(region == "Värmlands län", kön == "män",bakgrundsvariabel == "övriga världen") %>% .$andel - forvarvsarbetande_kon_fodelseregion_df %>% filter(region == "Värmlands län", kön == "kvinnor",bakgrundsvariabel == "övriga världen") %>% .$andel,1))
+forvarvsarbetande_kon_fodelseregion_skillnad_dalarna <- gsub("\\.",",",round(forvarvsarbetande_kon_fodelseregion_df %>% filter(region == "Dalarnas län", kön == "män",bakgrundsvariabel == "övriga världen") %>% .$andel - forvarvsarbetande_kon_fodelseregion_df %>% filter(region == "Dalarnas län", kön == "kvinnor",bakgrundsvariabel == "övriga världen") %>% .$andel,1))
 
 # ============= Andel förvärvsarbetande uppdelat på vistelsetid och utbildning - motsvarar diagram 24 (sidan 29) i den tidigare rapporten
 source(here("skript","socioek_vistelsetid_utb_diagram.R"), encoding="UTF-8")
@@ -384,10 +387,10 @@ arblos_arblosa_over_tid <- af_lista_diagram$linjediagram_andel_arblosa_over_tid
 arblos_totalt_over_tid_min_ar <- arblosa_over_tid$Månad_år %>% first()
 arblos_totalt_over_tid_max_ar <- arblosa_over_tid$Månad_år %>% last()
 
-arblosa_over_tid_gavleborg <- round(arblos_arblosa_over_tid$data %>% filter(Region == "Gävleborg",Månad_år==last(Månad_år)) %>% .$total,1) 
-arblosa_over_tid_varmland <- round(arblos_arblosa_over_tid$data %>% filter(Region == "Värmland",Månad_år==last(Månad_år)) %>% .$total,1) 
-arblosa_over_tid_dalarna <- round(arblos_arblosa_over_tid$data %>% filter(Region == "Dalarna",Månad_år==last(Månad_år)) %>% .$total,1) 
-arblosa_over_tid_riket <- round(arblos_arblosa_over_tid$data %>% filter(Region == "Riket",Månad_år==last(Månad_år)) %>% .$total,1)
+arblosa_over_tid_gavleborg <- gsub("\\.",",",round(arblos_arblosa_over_tid$data %>% filter(Region == "Gävleborg",Månad_år==last(Månad_år)) %>% .$total,1)) 
+arblosa_over_tid_varmland <- gsub("\\.",",",round(arblos_arblosa_over_tid$data %>% filter(Region == "Värmland",Månad_år==last(Månad_år)) %>% .$total,1)) 
+arblosa_over_tid_dalarna <- gsub("\\.",",",round(arblos_arblosa_over_tid$data %>% filter(Region == "Dalarna",Månad_år==last(Månad_år)) %>% .$total,1)) 
+arblosa_over_tid_riket <- gsub("\\.",",",round(arblos_arblosa_over_tid$data %>% filter(Region == "Riket",Månad_år==last(Månad_år)) %>% .$total,1))
 
 # diagram över andel arbetslösa utifrån tid i arbetslöshet, för senaste tillgängliga månad
 arblos_arbloshetstid_diagram <- af_lista_diagram$andel_arblosa_arbloshetstid
@@ -398,15 +401,21 @@ arblos_arblosa_unga_over_tid <- af_lista_diagram$linjediagram_andel_unga_arblosa
 arblos_unga_min_ar <- arblosa_unga_over_tid$Månad_år %>% first()
 arblos_unga_max_ar <- arblosa_unga_over_tid$Månad_år %>% last()
 
-arblosa_unga_gavleborg <- round(arblos_arblosa_unga_over_tid$data %>% filter(Region == "Gävleborg",Månad_år==last(Månad_år)) %>% .$total,1) 
-arblosa_unga_varmland <- round(arblos_arblosa_unga_over_tid$data %>% filter(Region == "Värmland",Månad_år==last(Månad_år)) %>% .$total,1) 
-arblosa_unga_dalarna <- round(arblos_arblosa_unga_over_tid$data %>% filter(Region == "Dalarna",Månad_år==last(Månad_år)) %>% .$total,1) 
-arblosa_unga_riket <- round(arblos_arblosa_unga_over_tid$data %>% filter(Region == "Riket",Månad_år==last(Månad_år)) %>% .$total,1)
+arblosa_unga_gavleborg <- gsub("\\.",",",round(arblos_arblosa_unga_over_tid$data %>% filter(Region == "Gävleborg",Månad_år==last(Månad_år)) %>% .$total,1)) 
+arblosa_unga_varmland <- gsub("\\.",",",round(arblos_arblosa_unga_over_tid$data %>% filter(Region == "Värmland",Månad_år==last(Månad_år)) %>% .$total,1)) 
+arblosa_unga_dalarna <- gsub("\\.",",",round(arblos_arblosa_unga_over_tid$data %>% filter(Region == "Dalarna",Månad_år==last(Månad_år)) %>% .$total,1)) 
+arblosa_unga_riket <- gsub("\\.",",",round(arblos_arblosa_unga_over_tid$data %>% filter(Region == "Riket",Månad_år==last(Månad_år)) %>% .$total,1))
 
 # diagram över andel arbetslösa utrikes födda över tid
 arblos_arblosa_utrikes_over_tid <- af_lista_diagram$linjediagram_andel_utr_arblosa_over_tid
 arblos_utr_min_ar <- arblosa_utr_over_tid$Månad_år %>% first()
 arblos_utr_max_ar <- arblosa_utr_over_tid$Månad_år %>% last()
+
+arblosa_utr_gavleborg <- gsub("\\.",",",round(arblos_arblosa_utrikes_over_tid$data %>% filter(Region == "Gävleborg",Månad_år==last(Månad_år)) %>% .$total,1)) 
+arblosa_utr_varmland <- gsub("\\.",",",round(arblos_arblosa_utrikes_over_tid$data %>% filter(Region == "Värmland",Månad_år==last(Månad_år)) %>% .$total,1)) 
+arblosa_utr_dalarna <- gsub("\\.",",",round(arblos_arblosa_utrikes_over_tid$data %>% filter(Region == "Dalarna",Månad_år==last(Månad_år)) %>% .$total,1)) 
+arblosa_utr_riket <- gsub("\\.",",",round(arblos_arblosa_utrikes_over_tid$data %>% filter(Region == "Riket",Månad_år==last(Månad_år)) %>% .$total,1))
+
 
 # ================== Diagram över matchad utbildningsnivå och bakgrund ============
 source(here("skript","socioek_matchning_bakgr_utbniva.R"), encoding="UTF-8")
@@ -415,6 +424,16 @@ matchning_utbildningsniva_diagram <- funktion_upprepa_forsok_om_fel( function() 
 }, hoppa_over = hoppa_over_felhantering) %>% .[[1]]
 matchning_utbniva_min_ar <- matchning_utbildningsniva_diagram$data$Ar %>% min()
 matchning_utbniva_max_ar <- matchning_utbildningsniva_diagram$data$Ar %>% max()
+
+matchning_utbniva_inrikes_ratt <- gsub("\\.",",",round(matchning_utbildningsniva_diagram$data %>% filter(UtbNiva_match_txt == "Rätt utbildningsnivå",inr_utr_fodd == "Inrikes född",Ar == max(Ar)) %>% .$total,0))
+matchning_utbniva_utrikes_ratt <- gsub("\\.",",",round(matchning_utbildningsniva_diagram$data %>% filter(UtbNiva_match_txt == "Rätt utbildningsnivå",inr_utr_fodd == "Utrikes född",Ar == max(Ar)) %>% .$total,))
+
+matchning_utbniva_inrikes_hog <- gsub("\\.",",",round(matchning_utbildningsniva_diagram$data %>% filter(UtbNiva_match_txt == "För hög utbildningsnivå",inr_utr_fodd == "Inrikes född",Ar == max(Ar)) %>% .$total,0))
+matchning_utbniva_utrikes_hog <- gsub("\\.",",",round(matchning_utbildningsniva_diagram$data %>% filter(UtbNiva_match_txt == "För hög utbildningsnivå",inr_utr_fodd == "Utrikes född",Ar == max(Ar)) %>% .$total,))
+
+matchning_utbniva_inrikes_lag <- gsub("\\.",",",round(matchning_utbildningsniva_diagram$data %>% filter(UtbNiva_match_txt == "För låg utbildningsnivå",inr_utr_fodd == "Inrikes född",Ar == max(Ar)) %>% .$total,0))
+matchning_utbniva_utrikes_lag <- gsub("\\.",",",round(matchning_utbildningsniva_diagram$data %>% filter(UtbNiva_match_txt == "För låg utbildningsnivå",inr_utr_fodd == "Utrikes född",Ar == max(Ar)) %>% .$total,))
+
 
 # 2. om man vill knitta rapporten
 #source(paste0(here("skript","/"), "2_knitta_rapport.R"))
