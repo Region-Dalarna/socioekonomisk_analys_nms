@@ -78,7 +78,6 @@ befutv_linjediagram
 Befolkningsutvecklingen i Norra Mellansverige var negativ eller svagt positiv efter millennieskiftet, men sedan 2011 har samtliga tre län haft en positiv befolkningsutveckling. Överlag ligger det utrikes flyttnettot bakom den befolkningsökning som syns. Det märks inte minst av att befolkningskurvan skjuter uppåt i samtliga tre län under 2015-2016 när invandringen var hög.
 
 Mellan 2022 och 2023 har dock befolkningen minskat i Norra Mellansverige. Den största minskningen observeras i Gävleborg med cirka 1 400 personer. 
-
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Befolkningsförändringar i Norra Mellansverige {beffor_ar} efter kategori (Källa: SCB)")}
 befforandringar_diagram
 
@@ -203,26 +202,17 @@ gymn_behorighet_kon_diagram
 
 I riket som helhet är andelen elever som avslutat grundskolan på våren 2023 och som fortsätter till gymnasiet samma höst 97,7 procent.
 
-<br>
-*Oredigerat nedan - hittar inte källor med länsindelad information*
-<br>
-
-I Dalarna (2021) är det 97,1 procent som fortsätter till gymnasiet samma höst. I Gävleborg är det 97,3 procent som går direkt vidare till gymnasiet och i Värmland 97,8 procent. 
+I Dalarna (2023) är det 96,6 procent som fortsätter till gymnasiet samma höst. I Gävleborg är det 97 procent som går direkt vidare till gymnasiet och i Värmland 97,4 procent. 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Könsbalans per gymnasieprogram alla årskurser läsåret {gymnasieprogram_konsbalans_ar} (Källa: Skolverket)")}
 gymnasieprogram_konsbalans_diagram
 
 ```
 
-Antal elever som går till högskoleförberedande program, yrkesprogram och introduktionsprogram varierar mellan olika delar av landet. I Norra Mellansverige är det en mindre andel än riket som går till högskoleförberedande program och en större andel som går till yrkesprogram. Ser man till Sverige som helhet så går drygt 66 procent av flickorna och knappt 55 procent av pojkarna till högskoleförberedande program, vilket är det överlägsna förstahandsvalet för båda könen. Knappt en fjärdedel av flickorna och en tredjedel av pojkarna på riksnivå går till yrkesprogram. 
+Antal elever som går till högskoleförberedande program, yrkesprogram och introduktionsprogram varierar mellan olika delar av landet. I Norra Mellansverige är det en mindre andel än riket som går till högskoleförberedande program och en större andel som går till yrkesprogram. Ser man till Sverige som helhet så går knappt 66 procent av flickorna och 56 procent av pojkarna till högskoleförberedande program, vilket är det överlägsna förstahandsvalet för båda könen. Knappt en fjärdedel av flickorna och drygt en tredjedel av pojkarna på riksnivå går till yrkesprogram. 
 
-I Gävleborg, där skillnaderna mot rikssnittet är tydligast, går drygt 56 procent av flickorna och knappt 42 procent av pojkarna till högskoleförberedande program. Däremot går 33,1 procent av flickorna och 46 procent av pojkarna till olika yrkesprogram. Det är också en något större andel av flickorna i Gävleborg som går till ett introduktionsprogram jämfört med riket och övriga regioner i Norra Mellansverige.
-
-<br>
-*Oredigerat ovan*
-<br>
-
-*Inkludera stycke om introduktionsprogrammets storlek och utveckling över tid? Var finns data för Riket respektive NMS som helhet och per län?*
+I Gävleborg, där skillnaderna mot rikssnittet är tydligast, går drygt 54 procent av flickorna och 43,5 procent av pojkarna till högskoleförberedande program. Däremot går 35,1 procent av flickorna och 46,2 procent av pojkarna till olika yrkesprogram. 
+När det gäller antagningen till introduktionsprogram under 2023 har både Dalarna och Gävleborg högre andelar än riket som helhet för flickor. Värmland är i nivå med riksgenomsnittet för flickor. För pojkar är situationen annorlunda, där Värmland har en högre andel än riksgenomsnittet. Det gäller även för Dalarna, men i Gävleborg är andelen under riksgenomsnittet. 
 
 Grunden till den könsuppdelade arbetsmarknad vi ser idag läggs tidigt. Redan mycket unga barn lär sig vad som anses vara lämpliga jobb för flickor respektive pojkar, och när detta manifesteras i gymnasieval så cementeras även de traditionella könsrollerna på arbetsmarknaden. Eftersom flickor i större utsträckning väljer högskoleförberedande program på gymnasiet är det också logiskt att en större andel kvinnor än män har en eftergymnasial utbildning. För att bättre nyttja hela befolkningens utvecklingspotential så krävs att man tidigt lär barn att alla yrken kan utföras av alla människor.
 
@@ -243,7 +233,7 @@ På riksnivå är det drygt 62 procent av kvinnorna och knappt 48 procent av mä
 socioek_overgang_eftergymn_studier
 ```
 
-Andelen av befolkningen som inom tre år efter avslutad gymnasieutbildning börjar studera på eftergymnasial nivå har ökat bland kvinnorna, men minskat bland männen i alla tre länen från gymnaisieexamensår 2014 till 2021 (påbörjat påbörjat eftergymnasiala studier senast hösten 2024). Den största ökningen bland kvinnorna syns i Dalarna, där andelen kvinnor som studerar vidare inom tre år efter gymnasiet ökat med drygt sex procentenheter. I Gävleborg och Värmland är ökningen cirka tre procentenheter. Minskningen bland männen är också störst i Gävleborg, där det är nästan fem procentenheter färre män som inom tre år efter gymnasiet påbörjat eftergymnasiala studier. I Värmland är minskningen nästan fyra procentenheter och i Dalarna en procentenhet.
+Andelen av befolkningen som inom tre år efter avslutad gymnasieutbildning börjar studera på eftergymnasial nivå har ökat bland kvinnorna, men minskat bland männen i alla tre länen från gymnaisieexamensår 2014 till 2021 (påbörjat eftergymnasiala studier senast hösten 2024). Den största ökningen bland kvinnorna syns i Dalarna, där andelen kvinnor som studerar vidare inom tre år efter gymnasiet ökat med drygt sex procentenheter. I Gävleborg och Värmland är ökningen cirka tre procentenheter. Minskningen bland männen är också störst i Gävleborg, där det är nästan fem procentenheter färre män som inom tre år efter gymnasiet påbörjat eftergymnasiala studier. I Värmland är minskningen nästan fyra procentenheter och i Dalarna en procentenhet.
 
 Även på riksnivå har andelen kvinnor som studerar vidare på eftergymnasialnivå inom tre år ökat under samma period, medan männens andel i stort sett är oförändrad. Andelen kvinnor ökar med cirka sex procentenheter. Noterbart är att både NMS-länen och riket har lägre andelar 2024 än 2023 för både kvinnor och män. Sannolikt är det en effekt av en försämrad arbetsmarknad i samband med Covid-19-pandemin som höjde övergången till högre studier för avgångsåret 2020.
 
@@ -272,11 +262,7 @@ Ovanstående ger en fingervisning om förändringar som noteras sedan 2016, men 
 ## Unga som varken arbetar eller studerar (UVAS) 
 Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF tar fram statistik om unga som varken arbetar eller studerar (UVAS) för att öka kunskapen om gruppen och ge underlag till de som arbetar för att stötta unga till jobb eller studier. Statistiken är unik i det att den bygger på registerdata över hela befolkningen i åldern 16-29 år. Statistiken är hämtad från olika register hos till exempel Statistiska centralbyrån (SCB) och Försäkringskassan.
 
-<br>
-*Kontrollera felkälla för UVAS i Värmland - stämmer detta fortfarande?*
-<br>
-
-Fram till och med 2014 var de svenska invånare som arbetspendlade över landgräns borträknade, men på grund av att Norge inte längre lämnar ut dessa uppgifter kan inte dessa gränspendlare identifieras och lyftas ur statistiken. Det påverkar inte Gävleborg i någon stor utsträckning, men har viss påverkan på statistiken för Dalarna och framför allt för Värmland som har störst andel invånare som pendlar till arbete i Norge av samtliga 21 regioner. Andelen UVAS kan alltså anses något överskattade i Dalarna och Värmland. För att kunna göra en bedömning av hur stor överskattningen blir har MUCF undersökt andelen gränspendlare i tidigare års siffror, och såg att Värmland hade den största påverkan med en överskattning 2014 på tre procent. Även på kommunnivå var det värmländskt i topp, med störst påverkan i Årjäng (+11 procent) och Eda (+9 procent). Den senaste gränspendlingsstatistiken som finns tillgänglig är från 2017, och då såg vi en minskning av andelen invånare i Värmland som arbetspendlade över gränsen. Därefter var gränsen mellan Norge och Sverige stängd under större delen av Coronapandemin för att återigen öppna. Som helhet innebär det att det är svårt att i nuläget säga exakt hur stor överskattningen av andelen UVAS i Värmland är.
+Fram till och med 2014 var de svenska invånare som arbetspendlade över landgräns borträknade, men på grund av att Norge inte längre lämnar ut dessa uppgifter kan inte dessa gränspendlare identifieras och lyftas ur statistiken. Det påverkar inte Gävleborg i någon stor utsträckning, men har viss påverkan på statistiken för Dalarna och framför allt för Värmland som har störst andel invånare som pendlar till arbete i Norge av samtliga 21 regioner. Andelen UVAS kan alltså anses något överskattade i Dalarna och Värmland. För att kunna göra en bedömning av hur stor överskattningen blir har MUCF undersökt andelen gränspendlare i tidigare års siffror, och såg att Värmland hade den största påverkan med en överskattning 2014 på tre procent. I gränspendlingsstatistiken från 2017 syntes en minskning av andelen invånare i Värmland som arbetspendlade över gränsen. Därefter var gränsen mellan Norge och Sverige stängd under större delen av Coronapandemin för att återigen öppna. Som helhet innebär det att det är svårt att i nuläget säga exakt hur stor överskattningen av andelen UVAS i Värmland är.
 
 ```{r diagram15, echo=FALSE,fig.cap = glue("Andel unga som varken arbetar eller studerar, {UVAS_ar} (Källa: Myndigheten för ungdoms- och civilsamhällesfrågor, MUCF)")}
 UVAS$UVAS_alder
@@ -535,20 +521,6 @@ Tillverkningsindustrin är fortfarande viktig i Norra Mellansverige, och förvä
 Vi kommer i framtiden ha svårt att organisera samhället på det sätt vi hittills gjort, vilket kommer att påverka såväl individer som näringsliv. Två orsaker är klimatförändringarna och den demografiska strukturen. Båda dessa kräver var och en för sig att en omställning sker men kommer tillsammans att förstärka detta omvandlingstryck. Även digitalisering och AI kommer sannolikt leda till omfattande förändringar, med både utmaningar och möjligheter för företag såväl som samhället i stort.
 
 ### Klimatförändringar och omställning
-
-*Nedanstående föreslås tas bort och ersättas med nya avsnitt från Emma*
-
-Det står bortom allt rimligt tvivel att den globala uppvärmningen är en följd av mänskliga aktiviteter. Klimatet är ett komplext system och det är svårt att göra exakta förutsägelser av framtida effekter av den globala uppvärmningen, men decennier av klimatforskning har ändå resulterat i klimatmodeller som visar stor precision. Det står därmed klart att om inget görs för att minska utsläppen av koldioxid, och andra gaser som driver den globala uppvärmningen, kommer konsekvenserna att bli stora och i förlängningen kunna göra jorden obeboelig för människan. Redan vid 1,5 graders global uppvärmning blir konsekvenserna stora och vid 2 graders uppvärmning än större. Vid 2 graders global uppvärmning istället för 1,5 grad förväntas 100-tals miljoner fler människor drabbas genom ökad fattigdom, värmeböljor och vattenbrist . För att uppnå 1,5- eller ens 2-gradersmålet krävs en dramatisk omställning då vi ännu inte påbörjat minskningen av CO2-utsläppen och inte heller uppfyller Parisavtalet. Samtidigt har pandemin visat att stora förändringar ger relativt snabba resultat. Enligt Forskning och framsteg  föll de globala koldioxidutsläppen med 17 procent tidigt i april 2020, och skulle kunna minska med omkring 7 procent för helåret. Även om denna minskning är tillfällig och koldioxidutsläppen kommer öka i takt med att det globala resandet återupptas så visar det på att en förändring är möjlig.
-
-```{r diagram44, echo=FALSE,fig.cap="CO2 utsläppskurvor för att uppnå 2⁰C-målet (Källa: Robbie Andrew, Center for International Climate Research, egen bearbetning)"}
-#"Diagram 44. CO2 utsläppskurvor för att uppnå 2⁰C-målet (Källa: Robbie Andrew, Center for International Climate Research, egen bearbetning)"
-knitr::include_graphics(here("Indata","utslapp.png"))
-```
-
-Tillverkningsindustrin står för en stor andel av utsläppen och för att klara klimatomställningen krävs att de i snabb takt ställer om till en fossilfri produktion. Livsmedel och transporter är två andra områden som kommer att behöva ställas om för att uppnå målet om ett fossilfritt Sverige.
-
-*Nytt avsnitt från Emma*
-
 Klimatet är ett komplext system och det är svårt att göra exakta förutsägelser av framtida effekter av den globala uppvärmningen, men decennier av klimatforskning har ändå resulterat i klimatmodeller som visar stor precision. Det står därmed klart att om inget görs för att kraftigt minska utsläppen av koldioxid, och andra gaser som driver den globala uppvärmningen, kommer konsekvenserna att bli stora. 
 Den så kallade gröna omställningen – en omställning av klimat- och miljöskäl – kan sägas ha framförallt två syften (vad gäller klimatpåverkan):
 
