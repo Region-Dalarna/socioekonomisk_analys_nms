@@ -1,3 +1,4 @@
+test <- skapa_forvarsarb_kon_fodelseregion()
 skapa_forvarsarb_kon_fodelseregion <- function(region_vekt = c("17", "20", "21"),
                                                       spara_diagrambildfil = FALSE,
                                                       diag_fargvekt = NA,
@@ -33,8 +34,12 @@ skapa_forvarsarb_kon_fodelseregion <- function(region_vekt = c("17", "20", "21")
   
   # =================================== inställningar för API-uttag ==========================================
   
-  url_list <- c("https://api.scb.se/OV0104/v1/doris/sv/ssd/AA/AA0003/AA0003B/IntGr1LanKonUtb",
-                "https://api.scb.se/OV0104/v1/doris/sv/ssd/AA/AA0003/AA0003B/IntGr1RikKonUtb")
+  # Tidigare
+  # url_list <- c("https://api.scb.se/OV0104/v1/doris/sv/ssd/AA/AA0003/AA0003B/IntGr1LanKonUtb",
+  #               "https://api.scb.se/OV0104/v1/doris/sv/ssd/AA/AA0003/AA0003B/IntGr1RikKonUtb")
+  
+  url_list <- c("https://api.scb.se/OV0104/v1/doris/sv/ssd/START/AA/AA0003/AA0003B/IntGr1LanUtbBAS",
+                "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/AA/AA0003/AA0003B/IntGr1RikUtbBAS")
   
   px_alla <- NULL          # initiera px_alla som tom
   
@@ -43,7 +48,8 @@ skapa_forvarsarb_kon_fodelseregion <- function(region_vekt = c("17", "20", "21")
     Kon = "1+2",
     UtbNiv = "000",
     BakgrVar = c("SE"),
-    ContentsCode = "0000001X",
+    #ContentsCode = "0000001X",
+    ContentsCode = "000007KE",
     Tid = "*"
   )
   
@@ -55,7 +61,8 @@ skapa_forvarsarb_kon_fodelseregion <- function(region_vekt = c("17", "20", "21")
     Kon = c("1", "2"),
     UtbNiv = c("000"),
     BakgrVar = c("SE","NEXS","EUEESXN","VXEUEES"),
-    ContentsCode = "0000001X",
+    #ContentsCode = "0000001X",
+    ContentsCode = "000007KE",
     Tid = uttag_ar
   )
   
@@ -66,7 +73,7 @@ skapa_forvarsarb_kon_fodelseregion <- function(region_vekt = c("17", "20", "21")
     
     # byt ut vissa värdlen i varlista när vi tar ut ur riks-tabellen
     if (tab == 2) {
-      varlista$ContentsCode <- "000001R8"
+      varlista$ContentsCode <- "000007JE"
       varlista$Region <- "00"
     }
     
@@ -98,7 +105,7 @@ skapa_forvarsarb_kon_fodelseregion <- function(region_vekt = c("17", "20", "21")
   
   df_af <- df_af %>% 
     mutate(bakgrundsvariabel = str_remove(bakgrundsvariabel, "födelseregion: ")) %>% 
-    rename(andel = `Andel förvärvsarbetande (ny definition från och med 2019)`)
+    rename(andel = `Andel sysselsatta`)
   
   if(returnera_dataframe_global_environment == TRUE){
     assign("forvarvsarbetande_kon_fodelseregion_df", df_af, envir = .GlobalEnv)
