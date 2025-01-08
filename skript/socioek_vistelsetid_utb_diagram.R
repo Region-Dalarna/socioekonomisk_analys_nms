@@ -14,7 +14,9 @@ skapa_vistelsetid_utbildning_lan <- function(region_vekt = c("17", "20", "21"),
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R", encoding = "utf-8", echo = FALSE)
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R", encoding = "utf-8", echo = FALSE)
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_filer.R", encoding = "utf-8", echo = FALSE)
-  source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_etableringstid_mm_region_kon_utbniv_bakgrvar_tid_IntGr1LanKonUtb_scb.R")
+  #source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_etableringstid_mm_region_kon_utbniv_bakgrvar_tid_IntGr1LanKonUtb_scb.R")
+  source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_etableringstid_mm_region_kon_utbniv_bakgrvar_tid_IntGr1KomKonUtb_ny_BAS_scb.R")
+  
   
   options(dplyr.summarise.inform = FALSE)
   
@@ -33,18 +35,18 @@ skapa_vistelsetid_utbildning_lan <- function(region_vekt = c("17", "20", "21"),
   
   mapp <- here("figurer/") %>% paste0(., "/")
   
-  px_df <- hamta_etableringstid_mm_region_kon_utbniv_bakgrvar_tid_scb(region_vekt = region_vekt,
-                                                                      kon_klartext = "män och kvinnor",
-                                                                      utbniv_klartext = "*",
-                                                                      bakgrvar_klartext = c("vistelsetid 0-1 år", "vistelsetid 2-3 år", "vistelsetid 4-9 år", "vistelsetid 10- år"),
-                                                                      cont_klartext = "Andel förvärvsarbetande (ny definition från och med 2019)",
-                                                                      tid_koder = "9999") %>% 
+  px_df <- hamta_etableringstid_mm_region_kon_utbniv_bakgrvar_tid_scb_ny(region_vekt = region_vekt,
+                                                                        kon_klartext = "män och kvinnor",
+                                                                        utbniv_klartext = "*",
+                                                                        bakgrvar_klartext = c("vistelsetid 0-1 år", "vistelsetid 2-3 år", "vistelsetid 4-9 år", "vistelsetid 10- år"),
+                                                                        cont_klartext = "Andel sysselsatta",
+                                                                        tid_koder = "9999") %>% 
     filter(!(utbildningsnivå %in% c("samtliga utbildningsnivåer","utbildningsnivå: uppgift saknas"))) %>% 
       separate(utbildningsnivå, into = c("bort", "utbildningsnivå","bort_2"), sep = " ", remove = FALSE) %>% 
         select(-bort,-bort_2) %>% 
           mutate(utbildningsnivå = paste0(toupper(substr(utbildningsnivå,1,1)),substr(utbildningsnivå,2,nchar(utbildningsnivå))),
                  region = skapa_kortnamn_lan(region)) %>% 
-            rename(andel_forvarvsarbetande = `Andel förvärvsarbetande (ny definition från och med 2019)`)
+            rename(andel_forvarvsarbetande = `Andel sysselsatta`)
     
   if(returnera_dataframe_global_environment == TRUE){
     assign("vistelsetid_utb_df", px_df, envir = .GlobalEnv)
