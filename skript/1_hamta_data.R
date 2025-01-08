@@ -213,6 +213,15 @@ forvarvsarbetande_kon_fodelseregion_skillnad_gavleborg <- gsub("\\.",",",round(f
 forvarvsarbetande_kon_fodelseregion_skillnad_varmland <- gsub("\\.",",",round(forvarvsarbetande_kon_fodelseregion_df %>% filter(region == "Värmlands län", kön == "män",bakgrundsvariabel == "övriga världen") %>% .$andel - forvarvsarbetande_kon_fodelseregion_df %>% filter(region == "Värmlands län", kön == "kvinnor",bakgrundsvariabel == "övriga världen") %>% .$andel,1))
 forvarvsarbetande_kon_fodelseregion_skillnad_dalarna <- gsub("\\.",",",round(forvarvsarbetande_kon_fodelseregion_df %>% filter(region == "Dalarnas län", kön == "män",bakgrundsvariabel == "övriga världen") %>% .$andel - forvarvsarbetande_kon_fodelseregion_df %>% filter(region == "Dalarnas län", kön == "kvinnor",bakgrundsvariabel == "övriga världen") %>% .$andel,1))
 
+# Nedan hämtas data för sysselsättningsgrad för utrikes födda. Detta för att ersätta hårdkodad data under diagram 23 i den rapporten.
+source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_etableringstid_mm_region_kon_utbniv_bakgrvar_tid_IntGr1KomKonUtb_ny_BAS_scb.R")
+forvarvsarbetande_utrikes_andel <- hamta_etableringstid_mm_region_kon_utbniv_bakgrvar_tid_scb_ny(region_vekt = c("17", "20", "21"),
+                                                                                                 kon_klartext = "män och kvinnor",
+                                                                                                 utbniv_klartext = "utbildningsnivå: eftergymnasial utbildning",
+                                                                                                 bakgrvar_klartext = c("födelseregion: Sverige","samtliga utrikes födda"),
+                                                                                                 cont_klartext = "Andel sysselsatta",
+                                                                                                 tid_koder = "9999")
+
 # ============= Andel förvärvsarbetande uppdelat på vistelsetid och utbildning - motsvarar diagram 24 (sidan 29) i den tidigare rapporten
 source(here("skript","socioek_vistelsetid_utb_diagram.R"), encoding="UTF-8")
 vistelsetid_utbildning_lan <- funktion_upprepa_forsok_om_fel( function() {

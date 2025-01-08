@@ -184,6 +184,8 @@ Det innebär att trots att andelen högutbildade män ökar i Norra Mellansverig
 
 Om vi tittar på förhållandet mellan utbildningsnivå och födelseland ser vi att det är en större andel av de som är födda i Sverige som har minst treårig eftergymnasial utbildning än de som är födda i ett annat nordiskt land. Det är överlag en större andel högutbildade bland de utrikes födda än de som är födda i Sverige, och allra störst andel är det bland de som är födda inom EU men utanför Norden. Även bland de utrikes födda är det stor skillnad mellan könen, med en avsevärt större andel högutbildade kvinnor. I kategorin ”Övriga” är det främst Nordamerika och Australien som sticker ut, medan Afrika har låga utbildningsnivåer och drar ner medelvärdet.
 
+*Diagram nedan, uppdaterat från 2022 till 2023*
+
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel av befolkningen med minst treårig eftergymnasial utbildning, efter födelseland, år {utbniva_eftergymn_bakgr_ar}. (Källa: SCB)")}
 utb_niva_eftergymn_bakgr_diagram
 
@@ -195,6 +197,8 @@ De låga utbildningsnivåerna i Värmland, Dalarna och Gävleborg kan delvis spe
 I Norra Mellansverige som helhet är det färre elever som går ur årskurs 9 med gymnasiebehörighet jämfört med riket, men det skiljer sig något åt mellan regionerna. Värmland har en högre andel elever som går ur grundskolan med behörighet till gymnasiet än riksgenomsnittet. I Dalarna är gymnasiebehörigheten lägre för inrikes födda än i riket som helhet, men högre för utrikes födda. I Gävleborg är det en högre gymnasiebehörighet för utrikes födda män, men lägre behörighet för övriga grupper jämfört med riksgenomsnittet.
 
 Om vi ser till hela den grupp som saknar gymnasiebehörighet, dit de som inte gått klart grundskolan hör, har gruppen det sämre inom en rad olika områden. När det kommer till ersättningar från trygghetssystemen kan vi se att den stora skiljelinjen går mellan de som har förgymnasial utbildning och de med gymnasial utbildning. De med eftergymnasial utbildning har i minst utsträckning ersättning från de sociala trygghetssystemen, men skillnaden är inte lika stor mellan de som har eftergymnasial mot de som har gymnasial utbildning jämfört med skillnaden mellan de med gymnasial och de med förgymnasial utbildning. En del av arbetskraftsreserven finns i gruppen med endast förgymnasial utbildning, men även om det är en del som uppbär arbetslöshetsersättning, försörjningsstöd eller etableringsersättning har majoriteten i denna grupp någon form av sjukersättning. Ett förebyggande arbete för att förhindra att individer i denna grupp hamnar i sjukskrivning/sjukpension har stor potential för att öka antalet individer i arbetskraften.
+
+*Diagram nedan, uppdaterat från 2022 till 2023*
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel avgångselever i grundskolan med gymnasiebehörighet, efter kön och födelseland, år {gymn_behorighet_ar}. (Källa: SCB)")}
 gymn_behorighet_kon_diagram
@@ -340,6 +344,8 @@ arblos_arblosa_unga_over_tid
 
 Ungdomsarbetslösheten är högre bland män än bland kvinnor. Det behöver dock inte betyda att kvinnor har lättare att hitta arbete utan kan förklaras av att unga kvinnor vidareutbildar sig i högre grad än unga män. Just utbildningsnivån är en bidragande orsak till den höga ungdomsarbetslösheten i Norra Mellansverige, och i Gävleborg i synnerhet. En lägre andel av ungdomarna i Norra Mellansverige väljer att läsa vidare efter gymnasiet vilket påverkar deras möjligheter att få jobb. Ungdomar med eftergymnasial utbildning eller med examen från gymnasieskolans yrkesprogram har betydligt bättre framtidsutsikter än ungdomar som saknar gymnasieexamen. De är även mer sällan inskriven på arbetsförmedlingen. SCB:s arbetsmarknadsprognoser tyder på att efterfrågan på personer utan gymnasieutbildning kommer att sjunka ytterligare i framtiden. Antalet jobb för personer som saknar utbildning minskar när yrken försvinner, arbetsuppgifter förändras och utbildningskraven till många yrken skärps.
 
+*Diagram nedan, uppdaterat från 2021 till 2023*
+
 ```{r diagram21, echo=FALSE, fig.cap = glue("Andel som varit inskrivna hos Arbetsförmedlingen någon gång under året efter kön, ålder och utbildningsnivå, {inskr_arb_kon_alder_utbniva_ar} (Källa: SCB)")}
 inskr_af_kon_alder_utbniva
 ```
@@ -355,6 +361,8 @@ arblos_arblosa_utrikes_over_tid
 
 Arbetslöshets- och sysselsättningsnivåerna bland utrikes födda varierar dock stort mellan olika grupper. Kön och födelseland är två faktorer som har stor betydelse. Personer från länder utanför EU/EFTA har det betydligt svårare på arbetsmarknaden än personer från Norden eller övriga EU/EFTA. Undantaget är Värmland som har en låg sysselsättningsgrad bland personer (framför allt män) från Norden. Förklaringen är troligtvis att en stor del av dessa personer är födda i och arbetar i Norge och därför inte registreras som sysselsatta i statistiken. Kvinnor har överlag en något lägre sysselsättningsgrad än män men könsskillnaderna gäller framför allt gruppen personer födda utanför EU/EFTA. Inom den gruppen uppgick könsskillnaderna i sysselsättning till `r forvarvsarbetande_kon_fodelseregion_skillnad_varmland` i Värmland ,till `r forvarvsarbetande_kon_fodelseregion_skillnad_gavleborg` procentenheter i Gävleborg, och till `r forvarvsarbetande_kon_fodelseregion_skillnad_dalarna` procentenheter i Dalarna år `r forvarvsarbetande_kon_fodelseregion_ar`.
 
+*Diagram nedan, uppdaterat från 2021 till 2023*
+
 ```{r diagram23, echo=FALSE, fig.cap = glue("Andel förvärvsarbetande efter kön och födelseregion år {forvarvsarbetande_kon_fodelseregion_ar} (Källa: SCB)")}
 # Diagram 23. Andel förvärvsarbetande efter kön och födelseregion år 2020 (Källa: SCB)
 forvarvsarb_kon_fodelseregion
@@ -367,6 +375,8 @@ Utbildningsnivån är en annan faktor som har stor betydelse för hur utrikes f�
 *Text nedan är svår att uppdatera automatiskt då könsuppdelning saknas i diagram. Risk att data uppdateras i slutet av året (2021 just nu)*
 
 Även vistelsetiden i Sverige har stor betydelse. Personer med minst gymnasieexamen som har varit i Sverige länge (10 år eller mer) har en sysselsättningsnivå som närmar sig snittet för svenskfödda medan sysselsättningen är betydligt lägre bland nyanlända. Andelen förvärvsarbetande bland nyanlända (vistelsetid 0-1 år) som saknar gymnasieexamen är väldigt låg. För kvinnor uppgick andelen till 12-14 procent i Norra Mellansverige och för män uppgick den till 19-29 procent. Könsskillnaderna är särskilt stora bland nyanlända, med betydligt högre sysselsättningsgrad bland män jämfört med bland kvinnor. Könsskillnaderna bland nyanlända finns oavsett utbildningsnivå, även om andelen förvärvsarbetande är högre för både kvinnor och män bland personer med eftergymnasial utbildning.
+
+*Diagram nedan, uppdaterat från 2021 till 2023*
 
 ```{r diagram24, echo=FALSE,fig.cap = glue("Andel förvärvsarbetande bland utrikes födda efter utbildningsnivå och vistelsetid, {vistelsetid_utb_ar} (Källa: SCB)")}
 #"Diagram 24. Andel förvärvsarbetande bland utrikes födda efter utbildningsnivå och vistelsetid, 2020 (Källa: SCB)")
