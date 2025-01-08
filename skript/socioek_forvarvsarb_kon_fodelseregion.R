@@ -1,4 +1,3 @@
-test <- skapa_forvarsarb_kon_fodelseregion()
 skapa_forvarsarb_kon_fodelseregion <- function(region_vekt = c("17", "20", "21"),
                                                       spara_diagrambildfil = FALSE,
                                                       diag_fargvekt = NA,

@@ -31,7 +31,11 @@ skapa_utb_eftergymn_kon_diagram <- function(region_vekt = c("00", "17", "20", "2
     utbniva <- px_df %>% 
       mutate(region = region %>% skapa_kortnamn_lan(),
              utbildningsnivå = ifelse(utbildningsnivå == "forskarutbildning", "eftergymnasial utbildning, 3 år eller mer", utbildningsnivå))
-  
+    
+    # Av någon anledning så har SCB ändrat namnet på variabeln Befolkning till Antal. Jag byter tillbaka namn här för att slippa ändra längre ned i koden. /Jon 2025-01-08
+    utbniva <- utbniva %>% 
+      rename(Befolkning = Antal)
+    
   # lägg ihop till Norra Mellansverige i egen df
   utbniva_nms <- utbniva %>% 
     filter(regionkod != "00") %>% 

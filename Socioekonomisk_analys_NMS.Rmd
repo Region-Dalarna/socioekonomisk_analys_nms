@@ -511,9 +511,9 @@ Entreprenörskapet är lägre på platser med ett eller få dominerande företag
 
 Diagrammet nedan visar antalet företag inom respektive arbetsmarknad i Norra Mellansverige som krävs för att uppnå 50 procent av lönesumman i varje arbetsmarknad. Ju lägre antal, desto högre beroende och sårbarhet. Diagrammet visar tydligt hur Gävleborg är en mer integrerad region med en jämnare fördelning bland sina arbetsmarknader medan Värmland och Dalarna har ett par utstickare med ett högt beroende av enskilt stora företag, framför allt inom tillverkningsindustrin.
 
-*Lägg till Samuels diagram 35* 
-
-print("*Diagram 35 Antalet företag som krävs inom respektive arbetsmarknad inom Norra Mellansverige för att uppnå 50 procent av lönesumman inom det privata näringslivet. 2021 (Källa: SCB)*").
+```{r diagram44, echo=FALSE, fig.cap = glue("Diagram 35 Antalet företag som krävs inom respektive arbetsmarknad inom Norra Mellansverige för att uppnå 50 procent av lönesumman inom det privata näringslivet, {sarbarhet_ftg_ar} (Källa: SCB)")}
+sarbarhet_ftg_diagram$sarbarhet_ftg
+```
 
 Tillverkningsindustrin är fortfarande viktig i Norra Mellansverige, och förväntas vara viktig även i framtiden, men sysselsätter allt färre personer. I takt med att sysselsättningen inom industrin har minskat har den ökat inom andra branscher, främst inom tjänstesektorn men också inom besöksnäring (främst i Dalarna) och handel (där gränshandeln vuxit stort i Värmland).
 

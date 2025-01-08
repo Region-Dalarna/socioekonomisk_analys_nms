@@ -31,8 +31,9 @@ skapa_inskr_af_kon_alder_utbniva <- function(region_vekt = c("17", "20", "21"),
   # =============================================== API-uttag ===============================================
   
   # =================================== inställningar för API-uttag ==========================================
-  
-  url2 <- "/OV0104/v1/doris/sv/ssd/AA/AA0003/AA0003B/IntGr1LanKonUtb"
+  # SCB har bytt tabell. Uppdateras här. /Jon 2025-01-08
+  #url2 <- "/OV0104/v1/doris/sv/ssd/AA/AA0003/AA0003B/IntGr1LanKonUtb"
+  url2 <- "/OV0104/v1/doris/sv/ssd/START/AA/AA0003/AA0003B/IntGr1LanUtbBAS"
   url1 <- "https://api.scb.se"
   url3 <- paste0(url1, url2)
   
@@ -41,7 +42,8 @@ skapa_inskr_af_kon_alder_utbniva <- function(region_vekt = c("17", "20", "21"),
     Kon = "1+2",
     UtbNiv = "000",
     BakgrVar = "tot20-64",
-    ContentsCode = "000000LS",
+    #ContentsCode = "000000LS",
+    ContentsCode = "000007KJ",
     Tid = "*"
   )
   if (is.na(valt_ar)) uttag_ar <- as.character(max(hamta_giltiga_varden_fran_tabell(url3, "tid"))) else uttag_ar <- as.character(valt_ar)
@@ -51,7 +53,8 @@ skapa_inskr_af_kon_alder_utbniva <- function(region_vekt = c("17", "20", "21"),
     Kon = c("1", "2"),
     UtbNiv = c("000", "F"),
     BakgrVar = c("20-24","25-34"),
-    ContentsCode = "000000LS",
+    #ContentsCode = "000000LS",
+    ContentsCode = "000007KJ",
     Tid = uttag_ar
   )
   
@@ -84,7 +87,7 @@ skapa_inskr_af_kon_alder_utbniva <- function(region_vekt = c("17", "20", "21"),
     mutate(bakgrundsvariabel = str_remove(bakgrundsvariabel, "ålder: "),
            utbildningsnivå = str_remove(utbildningsnivå, "utbildningsnivå: "),
            utb_grp = paste(bakgrundsvariabel, utbildningsnivå)) %>% 
-    rename(andel = `Andel inskrivna arbetslösa, procent`)
+    rename(andel = `Andel inskrivna arbetslösa`)
   
   if(returnera_dataframe_global_environment == TRUE){
     assign("inskr_af_kon_alder_utbniva_df", df_af_183, envir = .GlobalEnv)

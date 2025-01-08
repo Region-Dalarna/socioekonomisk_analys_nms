@@ -81,7 +81,7 @@ if (length(befprogn_startar) == 1) {
   befprogn_arsintervall <- paste(paste(intervaller[-length(intervaller)], collapse = ", "), "respektive", intervaller[length(intervaller)])
 }
 
-# ============= diagram utbildningsnivåer eftergymnasialt
+# ============= diagram utbildningsnivåer eftergymnasialt - Justerat felaktighet (döpt om Antal till Befolkning)
 source(here("skript","socioek_andel_eftergymn_utb_diagram.R"), encoding="UTF-8")
 utbniva_eftergymn_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_utb_eftergymn_kon_diagram(region_vekt = c("00", "17", "20", "21"))
@@ -89,7 +89,7 @@ utbniva_eftergymn_diagram <- funktion_upprepa_forsok_om_fel( function() {
 utb_niva_eftergymn_ar <- utb_niva_eftergymn_kon_df$år %>% max()
 
 
-# ============= diagram utbildningsnivåer högutbildade
+# ============= diagram utbildningsnivåer högutbildade - - Justerat felaktighet (döpt om Antal till Befolkning)
 source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diag_utbniva_flera_diagram_scb.R")
 
 utb_niva_hogutb_diagram <- funktion_upprepa_forsok_om_fel( function() {
@@ -196,7 +196,7 @@ sysselsattningsgrad_kvinnor_max_region <- gsub("\\.",",",arbetsmarknadsstatus %>
 sysselsattningsgrad_man_riket <- gsub("\\.",",",arbetsmarknadsstatus %>% filter(region == "Sverige",kön == "män") %>% .$varde)
 sysselsattningsgrad_kvinnor_riket <- gsub("\\.",",",arbetsmarknadsstatus %>% filter(region == "Sverige",kön == "kvinnor") %>% .$varde)
 
-# ============= Andel inskrivna arbetslösa baserat på kön och ålder och utbildningsnivå - motsvarar diagram 21 (sidan 26) i den tidigare rapporten
+# ============= Andel inskrivna arbetslösa baserat på kön och ålder och utbildningsnivå - motsvarar diagram 21 (sidan 26) i den tidigare rapporten - Har ändrat med ny länk för SCB-data
 source(here("skript","socioek_inskr_af_kon_alder_utbniva.R"), encoding="UTF-8")
 inskr_af_kon_alder_utbniva <- funktion_upprepa_forsok_om_fel( function() {
   skapa_inskr_af_kon_alder_utbniva(region_vekt = c( "17", "20","21"))
@@ -384,7 +384,7 @@ genomstromning_startlasar <- gymn_genomstromning_4ar_prg_df$läsår %>% unique()
 
 
 
-# ============= Diagram från arbetsförmdelingen - lista med alla diagram som ska skapas =============
+# ============= Diagram från arbetsförmdelingen - lista med alla diagram som ska skapas ============= Funkar inte
 source(here("skript","socioek_af_diagram.R"), encoding="UTF-8")
 af_lista_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_af_diagram_lista(region_vekt = c("17", "20", "21"))
@@ -425,7 +425,7 @@ arblosa_utr_dalarna <- gsub("\\.",",",round(arblos_arblosa_utrikes_over_tid$data
 arblosa_utr_riket <- gsub("\\.",",",round(arblos_arblosa_utrikes_over_tid$data %>% filter(Region == "Riket",Månad_år==last(Månad_år)) %>% .$total,1))
 
 
-# ================== Diagram över matchad utbildningsnivå och bakgrund ============
+# ================== Diagram över matchad utbildningsnivå och bakgrund ============ Funkar inte
 source(here("skript","socioek_matchning_bakgr_utbniva.R"), encoding="UTF-8")
 matchning_utbildningsniva_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_matcning_utbniva_bakgrund_diagram()
