@@ -330,6 +330,14 @@ helarsekvivalenter_varmland <- gsub("\\.",",",round(ersattning_helarsakvivalente
 helarsekvivalenter_dalarna <- gsub("\\.",",",round(ersattning_helarsakvivalenter_df %>% filter(region == "Dalarna") %>% .$Andel_ersattning,1))
 helarsekvivalenter_riket <- gsub("\\.",",",round(ersattning_helarsakvivalenter_df %>% filter(region == "Riket") %>% .$Andel_ersattning,1))
 
+# ============= Sårbarhet (kommunnivå) - nytt diagram, det första under rubrik 6 Näringsliv
+# Uppdateras ej automatiskt, kräver hämtning av data från NMS
+source(here("skript","socioek_sarbarhet_ftg_NMS.R"), encoding="UTF-8")
+sarbarhet_ftg_diagram <- funktion_upprepa_forsok_om_fel( function() {
+  skapa_sarbarhet_ftg_diagram()
+}, hoppa_over = hoppa_over_felhantering)
+sarbarhet_ftg_ar <- sarbarhet_df$Ar %>% max()
+
 # ============= Innovationsindex på region - motsvarar diagram 46 (sidan 52) i den tidigare rapporten
 # Uppdateras ej automatiskt utan kräver nedladdning av Excel-fil
 source(here("skript","socioek_innovationsindex_diagram.R"), encoding="UTF-8")
