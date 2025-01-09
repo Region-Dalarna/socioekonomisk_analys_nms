@@ -417,7 +417,7 @@ genomstromning_startlasar <- gymn_genomstromning_4ar_prg_df$läsår %>% unique()
 
 
 
-# ============= Diagram från arbetsförmdelingen - lista med alla diagram som ska skapas ============= Funkar inte
+# ============= Diagram från arbetsförmdelingen - lista med alla diagram som ska skapas ============= 
 source(here("skript","socioek_af_diagram.R"), encoding="UTF-8")
 af_lista_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_af_diagram_lista(region_vekt = c("17", "20", "21"))
@@ -458,7 +458,7 @@ arblosa_utr_dalarna <- gsub("\\.",",",round(arblos_arblosa_utrikes_over_tid$data
 arblosa_utr_riket <- gsub("\\.",",",round(arblos_arblosa_utrikes_over_tid$data %>% filter(Region == "Riket",Månad_år==last(Månad_år)) %>% .$total,1))
 
 
-# ================== Diagram över matchad utbildningsnivå och bakgrund ============ Funkar inte
+# ================== Diagram över matchad utbildningsnivå och bakgrund ============ 
 source(here("skript","socioek_matchning_bakgr_utbniva.R"), encoding="UTF-8")
 matchning_utbildningsniva_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_matcning_utbniva_bakgrund_diagram()

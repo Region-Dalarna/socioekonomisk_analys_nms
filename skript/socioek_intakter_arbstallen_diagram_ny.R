@@ -1,7 +1,7 @@
 skapa_intakter_arbstallen_bransch_diagram <- function(region_vekt = c("17", "20", "21"),
-                                                  spara_diagrambildfil = FALSE,
-                                                  diag_fargvekt = NA,
-                                                  returnera_dataframe_global_environment = TRUE
+                                                      spara_diagrambildfil = FALSE,
+                                                      diag_fargvekt = NA,
+                                                      returnera_dataframe_global_environment = TRUE
 ){
   
   # Skript som skapar diagram för andel per branch (aggregerat). Enbart senaste år. BAS
@@ -38,9 +38,9 @@ skapa_intakter_arbstallen_bransch_diagram <- function(region_vekt = c("17", "20"
   nyckel_df <- readxl::read_xlsx(nyckel_fil)
   
   px_df <- NULL
-  url_uttag <- "https://api.scb.se/OV0104/v1/doris/sv/ssd/NV/NV0109/NV0109L/RegionalBasf07"
+  #url_uttag <- "https://api.scb.se/OV0104/v1/doris/sv/ssd/NV/NV0109/NV0109L/RegionalBasf07"
   
-  #url_uttag <- "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/NV/NV0109/NV0109P/NSEBasfaktaLVEngs07"
+  url_uttag <- "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/NV/NV0109/NV0109P/NSEBasfaktaLVEngs07"
   
   # hämta senaste år
   sen_ar <- max(hamta_giltiga_varden_fran_tabell(url_uttag, "tid"))
@@ -60,17 +60,19 @@ skapa_intakter_arbstallen_bransch_diagram <- function(region_vekt = c("17", "20"
   # välj ut bara regionkolumnen i det andra uttaget, döp om den till regionkod och lägg den först av kolumnerna
   px_df <- as.data.frame(px_uttag) %>% 
     cbind(as.data.frame(px_uttag, column.name.type = "code", variable.value.type = "code") %>% 
-            select(Region, SNI2007))  
+            select(Region, SNI2007)) %>% 
+      filter(`näringsgren SNI 2007` != "A-SexklK-O samtliga näringsgrenar (exkl. K+O+T+U)") %>% 
+        mutate(Avdelning = substr(`näringsgren SNI 2007`, 1, 1)) 
   
   px_df <- px_df %>% 
     rename(regionkod = Region, branschkod = SNI2007) %>% 
     relocate(regionkod, .before = region) %>% 
     relocate(branschkod, .before = `näringsgren SNI 2007`) %>% 
-    left_join(nyckel_df %>% select(Kod, Branschgrupp), by = c("branschkod" = "Kod"))
+    left_join(test <- nyckel_df %>% select(Avdelning, Branschgrupp) %>% unique(), by = c("Avdelning"))
   
   varde_df <- px_df %>% 
     group_by(år,Branschgrupp) %>% 
-    summarise(intakter = sum(`Totala Intäkter, mnkr`, na.rm = TRUE)) %>% 
+    summarise(intakter = sum(`Totala intäkter, mnkr`, na.rm = TRUE)) %>% 
     ungroup() %>% 
     filter(intakter > 0)
   
@@ -101,7 +103,7 @@ skapa_intakter_arbstallen_bransch_diagram <- function(region_vekt = c("17", "20"
   
   arbst_df <- px_df %>% 
     group_by(år,Branschgrupp) %>% 
-    summarise(arbst = sum(`Antal arbetsställen`, na.rm = TRUE)) %>% 
+    summarise(arbst = sum(`Antal arbetsställen (lokala verksamheter)`, na.rm = TRUE)) %>% 
     ungroup() %>% 
     filter(arbst > 0)
   

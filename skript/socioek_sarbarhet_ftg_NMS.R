@@ -36,18 +36,17 @@ skapa_sarbarhet_ftg_diagram <- function(spara_diagrambildfil = FALSE,
   gg_list <- list()
   
   # ============================= diagram 14 ====================================
-  dalarna_df <- read.xlsx(fil_dalarna, sheet = 2) %>% 
+  dalarna_df <- read.xlsx(fil_dalarna, sheet = 1) %>% 
     mutate(Län = "Dalarna")
   
-  varmland_df <- read.xlsx(fil_varmland, sheet = 2) %>%
+  varmland_df <- read.xlsx(fil_varmland, sheet = 1) %>%
     mutate(Län = "Värmland")
   
-  gavleborg_df <- read.xlsx(fil_gavleborg, sheet = 2) %>%
+  gavleborg_df <- read.xlsx(fil_gavleborg, sheet = 1) %>%
     mutate(Län = "Gävleborg")
   
   sarbarhet_df <- rbind(dalarna_df, varmland_df, gavleborg_df) %>% 
-    rename(Antal = cnum,
-           Kommun = LAKommun_namn)
+    rename(Antal = cnum)
   
   if(returnera_dataframe_global_environment == TRUE){
     assign("sarbarhet_df", sarbarhet_df, envir = .GlobalEnv)
@@ -61,7 +60,7 @@ skapa_sarbarhet_ftg_diagram <- function(spara_diagrambildfil = FALSE,
   
   # Uppdelat på overrep_df
   gg_obj <- SkapaStapelDiagram(skickad_df = sarbarhet_df,
-                               skickad_x_var = "Kommun",
+                               skickad_x_var = "LA_namn",
                                skickad_y_var = "Antal",
                                #skickad_x_grupp = "Län",
                                output_mapp = mapp,
