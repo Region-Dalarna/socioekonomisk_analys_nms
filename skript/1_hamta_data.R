@@ -213,14 +213,22 @@ forvarvsarbetande_kon_fodelseregion_skillnad_gavleborg <- gsub("\\.",",",round(f
 forvarvsarbetande_kon_fodelseregion_skillnad_varmland <- gsub("\\.",",",round(forvarvsarbetande_kon_fodelseregion_df %>% filter(region == "Värmlands län", kön == "män",bakgrundsvariabel == "övriga världen") %>% .$andel - forvarvsarbetande_kon_fodelseregion_df %>% filter(region == "Värmlands län", kön == "kvinnor",bakgrundsvariabel == "övriga världen") %>% .$andel,1))
 forvarvsarbetande_kon_fodelseregion_skillnad_dalarna <- gsub("\\.",",",round(forvarvsarbetande_kon_fodelseregion_df %>% filter(region == "Dalarnas län", kön == "män",bakgrundsvariabel == "övriga världen") %>% .$andel - forvarvsarbetande_kon_fodelseregion_df %>% filter(region == "Dalarnas län", kön == "kvinnor",bakgrundsvariabel == "övriga världen") %>% .$andel,1))
 
-# Nedan hämtas data för sysselsättningsgrad för utrikes födda. Detta för att ersätta hårdkodad data under diagram 23 i den rapporten.
+# Nedan hämtas data för sysselsättningsgrad för utrikes födda. Detta för att ersätta hårdkodad data under diagram 23 i den nya rapporten.
 source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_etableringstid_mm_region_kon_utbniv_bakgrvar_tid_IntGr1KomKonUtb_ny_BAS_scb.R")
-forvarvsarbetande_utrikes_andel <- hamta_etableringstid_mm_region_kon_utbniv_bakgrvar_tid_scb_ny(region_vekt = c("17", "20", "21"),
-                                                                                                 kon_klartext = "män och kvinnor",
-                                                                                                 utbniv_klartext = "utbildningsnivå: eftergymnasial utbildning",
-                                                                                                 bakgrvar_klartext = c("födelseregion: Sverige","samtliga utrikes födda"),
-                                                                                                 cont_klartext = "Andel sysselsatta",
-                                                                                                 tid_koder = "9999")
+sysselsatta_utrikes_andel <- hamta_etableringstid_mm_region_kon_utbniv_bakgrvar_tid_scb_ny(region_vekt = c("17", "20", "21"),
+                                                                                                    kon_klartext = "män och kvinnor",
+                                                                                                    utbniv_klartext = "*",
+                                                                                                    bakgrvar_klartext = c("födelseregion: Sverige","samtliga utrikes födda"),
+                                                                                                    cont_klartext = "Andel sysselsatta",
+                                                                                                    tid_koder = "9999")
+
+syss_ar <- sysselsatta_utrikes_andel$år %>% max()
+
+syss_utrikes_andel_eftergym_min <- round(sysselsatta_utrikes_andel %>% filter(utbildningsnivå == "utbildningsnivå: eftergymnasial utbildning",bakgrundsvariabel == "samtliga utrikes födda") %>% .$`Andel sysselsatta` %>% min(),0)
+syss_utrikes_andel_eftergym_max <- round(sysselsatta_utrikes_andel %>% filter(utbildningsnivå == "utbildningsnivå: eftergymnasial utbildning",bakgrundsvariabel == "samtliga utrikes födda") %>% .$`Andel sysselsatta` %>% max(),0)
+
+syss_inrikes_andel_eftergym_min <- round(sysselsatta_utrikes_andel %>% filter(utbildningsnivå == "utbildningsnivå: eftergymnasial utbildning",bakgrundsvariabel == "födelseregion: Sverige") %>% .$`Andel sysselsatta` %>% min(),0)
+syss_inrikes_andel_eftergym_max <- round(sysselsatta_utrikes_andel %>% filter(utbildningsnivå == "utbildningsnivå: eftergymnasial utbildning",bakgrundsvariabel == "födelseregion: Sverige") %>% .$`Andel sysselsatta` %>% max(),0)
 
 # ============= Andel förvärvsarbetande uppdelat på vistelsetid och utbildning - motsvarar diagram 24 (sidan 29) i den tidigare rapporten
 source(here("skript","socioek_vistelsetid_utb_diagram.R"), encoding="UTF-8")
@@ -228,6 +236,22 @@ vistelsetid_utbildning_lan <- funktion_upprepa_forsok_om_fel( function() {
   skapa_vistelsetid_utbildning_lan(region_vekt = c( "17", "20","21"))
 }, hoppa_over = hoppa_over_felhantering)
 vistelsetid_utb_ar <- vistelsetid_utb_df$år %>% max()
+
+# Nedan hämtas data för sysselsättningsgrad uppdelat vistelsetid. Detta för att ersätta hårdkodad data under diagram 23 i den nya rapporten.
+source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_etableringstid_mm_region_kon_utbniv_bakgrvar_tid_IntGr1KomKonUtb_ny_BAS_scb.R")
+sysselsatta_vistelsetid_andel <- hamta_etableringstid_mm_region_kon_utbniv_bakgrvar_tid_scb_ny(region_vekt = c("17", "20", "21"),
+                                                                                           kon_klartext = c("män","kvinnor"),
+                                                                                           utbniv_klartext = "*",
+                                                                                           bakgrvar_klartext = c("vistelsetid 0-1 år", "vistelsetid 2-3 år", "vistelsetid 4-9 år", "vistelsetid 10- år"),
+                                                                                           cont_klartext = "Andel sysselsatta",			 #  Finns: "Andel sysselsatta", "Andel företagare av de sysselsatta", "Andel inskrivna arbetslösa", "Andel öppet arbetslösa", "Andel sökande i program med aktivitetsstöd", "Andel långtidsarbetslösa", "Andel fortfarande sysselsatta efter ett år", "Andel fortfarande företagare efter ett år", "Andel i chefsposition", "Andel ,
+                                                                                           tid_koder = "9999")
+
+
+syss_0_1_kvinnor_ar_forgym_min <- round(sysselsatta_vistelsetid_andel %>% filter(kön == "kvinnor",bakgrundsvariabel == "vistelsetid 0-1 år",utbildningsnivå == "utbildningsnivå: förgymnasial utbildning") %>% .$`Andel sysselsatta` %>% min(),0)
+syss_0_1_kvinnor_ar_forgym_max <- round(sysselsatta_vistelsetid_andel %>% filter(kön == "kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",utbildningsnivå == "utbildningsnivå: förgymnasial utbildning") %>% .$`Andel sysselsatta` %>% max(),0)
+
+syss_0_1_man_ar_forgym_min <- round(sysselsatta_vistelsetid_andel %>% filter(kön == "män",bakgrundsvariabel == "vistelsetid 0-1 år",utbildningsnivå == "utbildningsnivå: förgymnasial utbildning") %>% .$`Andel sysselsatta` %>% min(),0)
+syss_0_1_man_ar_forgym_max <- round(sysselsatta_vistelsetid_andel %>% filter(kön == "män", bakgrundsvariabel == "vistelsetid 0-1 år",utbildningsnivå == "utbildningsnivå: förgymnasial utbildning") %>% .$`Andel sysselsatta` %>% max(),0)
 
 # ============= Andel anställda i olika branscher uppdelat på kön (aggregerat över NMS) - motsvarar diagram 31 (sidan 36) i den tidigare rapporten
 source(here("skript","socioek_andel_syss_bransch_diagram.R"), encoding="UTF-8")
