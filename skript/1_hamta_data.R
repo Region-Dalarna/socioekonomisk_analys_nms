@@ -284,7 +284,7 @@ overrep_ar_max <- overrep_df$Ar %>% max()
 # ============= Ohälsotal uppdelat på region och kön - motsvarar diagram 33 (sidan 39) i den tidigare rapporten
 source(here("skript","socioek_ohalsa_diagram_korrekt.R"), encoding="UTF-8")
 ohalsa_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_ohalsotal_lan(uppdatera_data = TRUE)
+  skapa_ohalsotal_lan(uppdatera_data = FALSE)
 }, hoppa_over = hoppa_over_felhantering)
 ohalsa_ar <- ohalsotal_df$År %>% max()
 ohalsa_manad <- ohalsotal_df$månad_namn %>% unique()
@@ -299,7 +299,7 @@ ohalsotal_diff_kvinnor_min <- gsub("\\.",",",round(ohalsotal_df %>% filter(regio
 # ============= Sjukpenningtal uppdelat på region och kön och ålder (2 diagram) motsvarar diagram 34 och 35 (sidan 39-40) i den tidigare rapporten
 source(here("skript","socioek_sjukpenningtal_diagram.R"), encoding="UTF-8")
 sjukpenningtal_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_sjukpenningtal_lan(uppdatera_data = TRUE)
+  skapa_sjukpenningtal_lan(uppdatera_data = FALSE)
 }, hoppa_over = hoppa_over_felhantering)
 sjukpenningtal_ar <- sjukpenningtal_totalt_df$År %>% max()
 sjukpenningtal_manad <- sjukpenningtal_totalt_df$månad_namn %>% unique()
@@ -310,7 +310,7 @@ sjukpenningtal_varmland_kvinnor <- gsub("\\.",",",sjukpenningtal_totalt_df %>% f
 # =============  Pågående sjukfall uppdelat på diagnoskapitel motsvarar diagram 36 (sidan 40) i den tidigare rapporten
 source(here("skript","socioek_pagaende_sjukfall_diagnos_diagram.R"), encoding="UTF-8")
 pagaende_sjukfall_diagnos_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_pagaende_diagnos_lan(uppdatera_data = TRUE)
+  skapa_pagaende_diagnos_lan(uppdatera_data = FALSE)
 }, hoppa_over = hoppa_over_felhantering)
 pagaende_sjukfall_ar <- sjukfall_diagnos_df$År %>% max()
 pagaende_sjukfall_manad <- sjukfall_diagnos_df$månad_namn %>% unique()
@@ -380,12 +380,33 @@ innovationsindex_diagram <- funktion_upprepa_forsok_om_fel( function() {
 innovationsindex_ar <- innovationsindex_df$År %>% max()
 
 # ============= Omsättning och antal arbetsställen (grupperat på NMS) - motsvarar diagram 47 och 48 (sidor 54-55) i den tidigare rapporten
-source(here("skript","socioek_intakter_arbstallen_diagram.R"), encoding="UTF-8")
+source(here("skript","socioek_intakter_arbstallen_diagram_ny.R"), encoding="UTF-8")
 intakter_arbstallen_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_intakter_arbstallen_bransch_diagram(region_vekt = c("17", "20", "21"))
 }, hoppa_over = hoppa_over_felhantering)
-intakter_bransch_ar <- intakter_bransch$år %>% max()
-arbstallen_bransch_ar <- arbetsstallen_bransch$år %>% max()
+fek_ar <- fek_df$år %>% max()
+
+oms_totalt <- (fek_df %>% filter(variabel ==  "Totala intäkter, mnkr") %>% group_by(år) %>% summarise(varde = sum(varde,na.rm=TRUE)) %>% .$varde)
+andel_oms_industri <- round((fek_df %>% filter(variabel ==  "Totala intäkter, mnkr",Branschgrupp == "Tillverkning och utvinning") %>% .$varde/oms_totalt)*100,0)
+andel_oms_jordbruk <- round((fek_df %>% filter(variabel ==  "Totala intäkter, mnkr",Branschgrupp == "Jordbruk och skogsbruk") %>% .$varde/oms_totalt)*100,0)
+
+arb_totalt <- (fek_df %>% filter(variabel ==  "Antal arbetsställen (lokala verksamheter)") %>% group_by(år) %>% summarise(varde = sum(varde,na.rm=TRUE)) %>% .$varde)
+andel_arbst_indstri <- round((fek_df %>% filter(variabel ==  "Antal arbetsställen (lokala verksamheter)",Branschgrupp == "Tillverkning och utvinning") %>% .$varde/arb_totalt)*100,0)
+andel_arbst_jordbruk <- round((fek_df %>% filter(variabel ==  "Antal arbetsställen (lokala verksamheter)",Branschgrupp == "Jordbruk och skogsbruk") %>% .$varde/arb_totalt)*100,0)
+
+# Tar hem data för sysselsatta för ovanstående branscher. Används på samma ställa i texten
+source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_sysselsatta_bas_region_kon_sni2007_utbildningsniva_tid_ArRegUtb_AM0210F_scb.R")
+syss <- hamta_sysselsatta_region_kon_sni2007_utbildningsniva_tid_scb(region_vekt = c("17", "20", "21"),
+                                                                     kon_klartext = "totalt",
+                                                                     sni2007_klartext = c("företag inom jordbruk, skogsbruk och fiske","tillverkningsindustri; gruvor och mineralutvinningsindustri"),
+                                                                     cont_klartext = "sysselsatta efter arbetsställets belägenhet",
+                                                                     tid_koder = fek_ar) %>% 
+  group_by(år,`näringsgren SNI 2007`) %>% 
+    summarise(antal = sum(`sysselsatta efter arbetsställets belägenhet`,na.rm=TRUE))
+                                                                     
+syss_jordbruk <- format(plyr::round_any(syss %>% filter(`näringsgren SNI 2007` == "företag inom jordbruk, skogsbruk och fiske") %>% .$antal,100),big.mark = " ")
+syss_tillverkning <- format(plyr::round_any(syss %>% filter(`näringsgren SNI 2007` == "tillverkningsindustri; gruvor och mineralutvinningsindustri") %>% .$antal,100),big.mark = " ")
+syss_ar <- syss$år %>% max()
 
 # ============= Könsbalans per gymnasieprogram och län ===========================
 source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diag_gymn_elever_kon_prg_alla_arskurser_skolverket.R")

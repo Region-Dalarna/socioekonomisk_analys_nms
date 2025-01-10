@@ -593,19 +593,19 @@ Det största glappet mellan den stad i länet som har störst branschbredd och d
 ## Omsättning och antal arbetsställen
 Vissa branscher är viktiga för Norra Mellansverige tack vare sin ekonomiska betydelse, medan andra är viktiga för att de sysselsätter en stor del av befolkningen. Andra branscher har helt andra värden, som till exempel kulturen som både har en låg omsättning och ett relativt litet antal arbetsställen men bidrar till städernas attraktivitet och invånarnas livskvalitet.
 
-```{r diagram47, echo=FALSE,fig.cap = glue("Branschernas totala intäkter i mnkr, {intakter_bransch_ar}, Norra Mellansverige (Källa: SCB)")}
+```{r diagram47, echo=FALSE,fig.cap = glue("Branschernas totala intäkter i mnkr, {fek_ar}, Norra Mellansverige (Källa: SCB)")}
 # Diagram 47. Branschernas totala intäkter i mnkr, 2019, Norra Mellansverige (Källa: SCB)
 intakter_arbstallen_diagram$intakter
 ```
 
-Tillverkning och utvinning är den bransch som i alla tre länen omsätter mest och sysselsätter flest. I Norra Mellansverige var ca 56 000 personer anställda inom tillverkning och utvinning 2022, men dessa arbetar vid några få – men stora – arbetsställen. Tillverkning och utvinning stod för över en tredjedel av den totala omsättningen i Norra Mellansverige 2022, men enbart 5 procent av antalet arbetsställen.
+Tillverkning och utvinning är den bransch som i alla tre länen omsätter mest och sysselsätter flest. I Norra Mellansverige var ca `r syss_tillverkning` personer anställda inom tillverkning och utvinning `r syss_ar`, men dessa arbetar vid några få – men stora – arbetsställen. Tillverkning och utvinning stod för ungefär `r andel_oms_industri` av den totala omsättningen i Norra Mellansverige `r fek_ar`, men enbart ca `r andel_arbst_indstri` procent av antalet arbetsställen.
 
-```{r diagram48, echo=FALSE,fig.cap = glue("Antal arbetsställen {arbstallen_bransch_ar}, Norra Mellansverige (Källa: SCB)")}
+```{r diagram48, echo=FALSE,fig.cap = glue("Antal arbetsställen {fek_ar}, Norra Mellansverige (Källa: SCB)")}
 # Diagram 48. Antal arbetsställen 2019, Norra Mellansverige (Källa: SCB)
 intakter_arbstallen_diagram$arbetsstallen
 ```
 
-I Norra Mellansverige var nästan 16 400 personer sysselsatta inom jordbruk, skogsbruk och fiske år 2022. Många av dessa är skogsägare i form av egenföretagare och för många är skogs- och jordbruk inte den huvudsakliga sysselsättningen. Omsättningen inom branschen är liten. Trots att branschen har 35 procent av antalet arbetsställen står den bara för knappt tre procent av den totala omsättningen.
+I Norra Mellansverige var nästan `r syss_jordbruk` personer sysselsatta inom jordbruk, skogsbruk och fiske år `r syss_ar`. Många av dessa är skogsägare i form av egenföretagare och för många är skogs- och jordbruk inte den huvudsakliga sysselsättningen. Omsättningen inom branschen är liten. Trots att branschen har ungefär `r andel_arbst_jordbruk` procent av antalet arbetsställen står den bara för ca `r andel_oms_jordbruk` procent av den totala omsättningen.
 
 #	Diskussion och sammanfattning
 De tre länen i Norra Mellansverige står inför en rad olika utmaningar. Liksom stora delar av övriga riket är en förändrad demografisk struktur en stor utmaning, med en allt högre andel äldre och färre unga som ska bidra till välfärd. Det här är ett mönster som ses även globalt och det är en knäckfråga för många av världens regioner och länder. Att vända den demografiska trenden i närtid kan ses som mindre realistiskt. Beslutsfattare på olika nivåer i samhället kommer att behöva beakta detta faktum vid planering av och beslut kring både samhällsbyggnad och välfärdssystem.
