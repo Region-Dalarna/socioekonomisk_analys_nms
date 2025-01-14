@@ -25,9 +25,9 @@ skapa_sarbarhet_ftg_diagram <- function(spara_diagrambildfil = FALSE,
   
   #input_mapp <- "G:/Samhällsanalys/Projekt och uppdrag/EU/ESF/Socioekonomisk analys/data_mars2022/"
   input_mapp <- here("Indata/") %>% paste0(., "/")
-  fil_dalarna <- paste0(input_mapp,"sarbarhet_dalarna_2021.xlsx")
-  fil_varmland <- paste0(input_mapp,"sarbarhet_varmland_2021.xlsx")
-  fil_gavleborg <- paste0(input_mapp,"sarbarhet_gavleborg_2021.xlsx")
+  fil_dalarna <- paste0(input_mapp,"sarbarhet_dalarna_2022.xlsx")
+  fil_varmland <- paste0(input_mapp,"sarbarhet_varmland_2022.xlsx")
+  fil_gavleborg <- paste0(input_mapp,"sarbarhet_gavleborg_2022.xlsx")
   
   mapp <- here("figurer/") %>% paste0(., "/")
   
@@ -36,13 +36,13 @@ skapa_sarbarhet_ftg_diagram <- function(spara_diagrambildfil = FALSE,
   gg_list <- list()
   
   # ============================= diagram 14 ====================================
-  dalarna_df <- read.xlsx(fil_dalarna, sheet = 1) %>% 
+  dalarna_df <- read.xlsx(fil_dalarna, sheet = 2) %>% 
     mutate(Län = "Dalarna")
   
-  varmland_df <- read.xlsx(fil_varmland, sheet = 1) %>%
+  varmland_df <- read.xlsx(fil_varmland, sheet = 2) %>%
     mutate(Län = "Värmland")
   
-  gavleborg_df <- read.xlsx(fil_gavleborg, sheet = 1) %>%
+  gavleborg_df <- read.xlsx(fil_gavleborg, sheet = 2) %>%
     mutate(Län = "Gävleborg")
   
   sarbarhet_df <- rbind(dalarna_df, varmland_df, gavleborg_df) %>% 
