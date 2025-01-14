@@ -184,7 +184,7 @@ Det innebär att trots att andelen högutbildade män ökar i Norra Mellansverig
 
 Om vi tittar på förhållandet mellan utbildningsnivå och födelseland ser vi att det är en större andel av de som är födda i Sverige som har minst treårig eftergymnasial utbildning än de som är födda i ett annat nordiskt land. Det är överlag en större andel högutbildade bland de utrikes födda än de som är födda i Sverige, och allra störst andel är det bland de som är födda inom EU men utanför Norden. Även bland de utrikes födda är det stor skillnad mellan könen, med en avsevärt större andel högutbildade kvinnor. I kategorin ”Övriga” är det främst Nordamerika och Australien som sticker ut, medan Afrika har låga utbildningsnivåer och drar ner medelvärdet.
 
-*Diagram nedan, uppdaterat från 2022 till 2023*
+*Diagram nedan, uppdaterat från 2022 till 2023 - Jag har inte justerat text/Jon*
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel av befolkningen med minst treårig eftergymnasial utbildning, efter födelseland, år {utbniva_eftergymn_bakgr_ar}. (Källa: SCB)")}
 utb_niva_eftergymn_bakgr_diagram
@@ -198,7 +198,7 @@ I Norra Mellansverige som helhet är det färre elever som går ur årskurs 9 me
 
 Om vi ser till hela den grupp som saknar gymnasiebehörighet, dit de som inte gått klart grundskolan hör, har gruppen det sämre inom en rad olika områden. När det kommer till ersättningar från trygghetssystemen kan vi se att den stora skiljelinjen går mellan de som har förgymnasial utbildning och de med gymnasial utbildning. De med eftergymnasial utbildning har i minst utsträckning ersättning från de sociala trygghetssystemen, men skillnaden är inte lika stor mellan de som har eftergymnasial mot de som har gymnasial utbildning jämfört med skillnaden mellan de med gymnasial och de med förgymnasial utbildning. En del av arbetskraftsreserven finns i gruppen med endast förgymnasial utbildning, men även om det är en del som uppbär arbetslöshetsersättning, försörjningsstöd eller etableringsersättning har majoriteten i denna grupp någon form av sjukersättning. Ett förebyggande arbete för att förhindra att individer i denna grupp hamnar i sjukskrivning/sjukpension har stor potential för att öka antalet individer i arbetskraften.
 
-*Diagram nedan, uppdaterat från 2022 till 2023*
+*Diagram nedan, uppdaterat från 2022 till 2023 - Jag har inte justerat text /Jon*
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel avgångselever i grundskolan med gymnasiebehörighet, efter kön och födelseland, år {gymn_behorighet_ar}. (Källa: SCB)")}
 gymn_behorighet_kon_diagram
