@@ -24,8 +24,12 @@ skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
   
   #input_mapp <- "G:/Samhällsanalys/Projekt och uppdrag/EU/ESF/Socioekonomisk analys/data_mars2022/"
   input_mapp <- here("Indata/") %>% paste0(., "/")
-  overrep_fil <- "overrep.xlsx"
-  overrep_full <- paste0(input_mapp, overrep_fil)
+  # overrep_fil <- "overrep.xlsx"
+  # overrep_full <- paste0(input_mapp, overrep_fil)
+  
+  files <- list.files(input_mapp, pattern = "*overrep", full.names = TRUE)
+  file_info <- file.info(files)
+  latest_file <- rownames(file_info)[which.max(file_info$mtime)]
   
   mapp <- here("figurer/") %>% paste0(., "/")
   
@@ -34,7 +38,7 @@ skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
   gg_list <- list()
   
   # ============================= diagram 14 ====================================
-  overrep_df <- read.xlsx(overrep_full) 
+  overrep_df <- read.xlsx(latest_file) 
   
   if(returnera_dataframe_global_environment == TRUE){
     assign("overrep_df", overrep_df, envir = .GlobalEnv)
