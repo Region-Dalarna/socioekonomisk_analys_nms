@@ -319,6 +319,7 @@ pagaende_sjukfall_diagnos_kvinnor_riket <- round(sjukfall_diagnos_df %>% filter(
 pagaende_sjukfall_diagnos_man_riket <- round(sjukfall_diagnos_df %>% filter(region == "Riket", Kön == "Män",Diagnoskapitel == "Psykisk ohälsa") %>% .$`Andel`,0)
 
 # ============= Låg ekonomisk standard uppdelat på sysselsatta, ålder och bakgrund - 3 diagram motsvarar diagram 40, 42 och 43 (sidor 45 - 48) i den tidigare rapporten
+# Källa hårdkodad data innan diagram 32: https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__HE__HE0110__HE0110I/TabVX4InkDesoN1/
 source(here("skript","socioek_lag_ek_standard_diagram.R"), encoding="UTF-8")
 lag_ek_standard_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_ekonomiskstandard_lan()
