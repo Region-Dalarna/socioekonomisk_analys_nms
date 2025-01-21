@@ -577,7 +577,7 @@ Vissa branscher är viktiga för Norra Mellansverige tack vare sin ekonomiska be
 intakter_arbstallen_diagram$intakter
 ```
 
-Tillverkning och utvinning är den bransch som i alla tre länen omsätter mest och sysselsätter näst flest (efter vård och omsorg). I Norra Mellansverige var cirka `r syss_tillverkning` personer *anställda inom tillverkning och utvinning* `r syss_ar`, men dessa arbetar vid några få – men stora – arbetsställen. Tillverkning och utvinning stod för ungefär `r andel_oms_industri` av den totala omsättningen i Norra Mellansverige `r fek_ar`, men enbart cirka `r andel_arbst_indstri` procent av antalet arbetsställen.
+Tillverkning och utvinning är den bransch som i alla tre länen omsätter mest och sysselsätter näst flest (efter vård och omsorg med cirka 82 000 sysselsatta `r syss_ar`). I Norra Mellansverige var cirka `r syss_tillverkning` personer anställda inom tillverkning och utvinning `r syss_ar`, men dessa arbetar vid några få – men stora – arbetsställen. Tillverkning och utvinning stod för ungefär `r andel_oms_industri` av den totala omsättningen i Norra Mellansverige `r fek_ar`, men enbart cirka `r andel_arbst_indstri` procent av antalet arbetsställen. Totalt antal sysselsatta i Norra Mellansverige var knappt 388 000 `r syss_ar`. 
 
 ```{r diagram48, echo=FALSE,fig.cap = glue("Antal arbetsställen {fek_ar}, Norra Mellansverige (Källa: SCB)")}
 # Diagram 48. Antal arbetsställen 2019, Norra Mellansverige (Källa: SCB)
