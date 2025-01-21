@@ -367,8 +367,6 @@ För att klara den framtida kompetensförsörjningen, med en demografisk struktu
 
 ### Personer med funktionsnedsättning
 
-*Oklart var siffror nedan kommer ifrån. Borde nog framgå om det är SCB eller Arbetsförmedlingen i alla fall*
-
 Personer med funktionsnedsättning är en annan grupp som möter särskilda utmaningar på arbetsmarknaden. Gruppen har överlag en betydligt lägre sysselsättningsgrad jämfört med personer utan funktionsnedsättning. Det beror framför allt på ett lägre arbetskraftsdeltagande. 62,4 procent av individer med funktionsnedsättning var i arbetskraften 2023, jämfört med 88,0 procent för de utan funktionsnedsättning.
 
 Gruppen är dock väldigt heterogen, utifrån både funktionsnedsättning och möjlighet på arbetsmarknaden. Vissa personer är väl etablerade och har liknande förutsättningar som kollegor utan funktionsnedsättning, även om de kanske är i behov av vissa hjälpmedel. Andra har betydligt svårare att ta sig in på arbetsmarknaden. En viktig skiljelinje är om funktionsnedsättningen påverkar arbetsförmågan eller inte. Arbetslösheten bland personer med nedsatt arbetsförmåga är betydligt högre jämfört med personer utan nedsatt arbetsförmåga, oavsett om de har en funktionsnedsättning eller inte. År 2023 var arbetslösheten 18,8 procent för individer med funktionsnedsättning och nedsatt arbetsförmåga, vilket kan jämföras med arbetslösheten för individer med funktionsnedsättning utan nedsatt arbetsförmåga på 10,8 procent, och den totala arbetslösheten på 8,2 procent. Cirka 11 procent av befolkningen 16-65 år har en funktionsnedsättning. Cirka 70 procent av dessa har nedsatt arbetsförmåga.  
@@ -383,7 +381,7 @@ andel_sysselsatta_kon_bransch
 
 Könsstrukturer på arbetsmarknaden är relativt trögföränderliga. Samtidigt finns förändringar mot en mer jämn könsfördelning, åtminstone inom vissa branscher. Andelen kvinnor har ökat mest inom byggverksamhet, jordbruk, skogsbruk och fiske samt energiförsörjning och miljöverksamhet, som alla är branscher med en hög andel män. Samtidigt har andelen män ökat inom den kvinnodominerade vårdsektorn. Inom teknik och utvinning, den största branschen för män, var dock könsfördelningen identisk 2008 och 2023, och inom den mansdominerade informations- och kommunikationsbranschen har könsfördelningen blivit mer ojämn över tid.
 
-*Stycket nedan inte uppdaterat. Oklart om det har kommit nyare data*
+*Stycket nedan inte uppdaterat. Vet inte om det har kommit nyare data*
 
 På yrkesnivå är kvinnorna överrepresenterade inom yrken som kräver en längre högskoleutbildning, vilket är förväntat givet kvinnors högre utbildningsnivå. Män arbetar i högre grad inom yrken som endast kräver kortare eftergymnasial utbildning eller enbart gymnasiekompetens/utan utbildningskrav. Männen är också överrepresenterade inom ledningsarbete. Andelen män som arbetar i chefsposition är betydligt högre än andelen kvinnor, 6,6-6,9 procent för män jämfört med 4,5-5,1 procent för kvinnor i Norra Mellansverige. En högre andel kvinnor än män inom högkvalificerade respektive chefsyrken har eftergymnasial utbildning. Kvinnor behöver alltså i högre utsträckning än män utbilda sig mer för att bli chefer eller få högkvalificerade jobb.
 
@@ -451,8 +449,6 @@ print("Diagram 37. Andel med bra eller mycket bra självskattad hälsa i de tre 
 
 ## Ekonomiskt utanförskap
 Ohälsa och sjukfrånvaro är inte bara negativt ur en hälsomässig synvinkel utan också ur en ekonomisk. Ekonomi har i sin tur betydelse för hälsa och livskvalitet då en god ekonomi innebär bättre möjlighet att delta i samhället och olika sociala aktiviteter på samma nivå som alla andra och dessutom minskar risken för ekonomisk stress.
-
-*Siffror i det första stycket nedan hittar jag inte. I statistikdatabasen finns inte NMS sammanslaget, så vitt jag kan se.*
 
 Det finns ett tydligt samband mellan ekonomi och position på arbetsmarknaden. En mycket liten andel av de som är förvärvsarbetande har en låg ekonomisk standard. Låg ekonomisk standard är ett av de vanligaste måtten på ekonomiskt utanförskap och innebär en inkomst som understiger 60 procent av den nationella medianen. Andelen som har en låg ekonomisk standard är betydligt högre bland de som står utanför arbetsmarknaden och andelen har också ökat över tid. År 2011 hade 38 procent av de i Norra Mellansverige som inte förvärvsarbetade låg ekonomisk standard. 2020 hade siffran ökat till 45 procent. 2022 var dock siffran cirka 44 procent vilket tyder på en marginell minskning sedan pandemiåret 2020. Med andra ord har skillnaden mellan de som arbetar och de som inte arbetar ökat, och att arbeta har blivit allt viktigare för en god ekonomi.
 
