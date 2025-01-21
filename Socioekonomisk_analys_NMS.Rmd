@@ -76,7 +76,8 @@ befutv_linjediagram
 Befolkningsutvecklingen i Norra Mellansverige var negativ eller svagt positiv efter millennieskiftet, men sedan 2011 har samtliga tre län haft en positiv befolkningsutveckling. Överlag ligger det utrikes flyttnettot bakom den befolkningsökning som syns. Det märks inte minst av att befolkningskurvan skjuter uppåt i samtliga tre län under 2015-2016 när invandringen var hög. Mellan 2022 och 2023 har dock befolkningen minskat i Norra Mellansverige. Den största minskningen observeras i Gävleborg med cirka 1 400 personer.
 
 <br>
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Befolkningsförändringar i Norra Mellansverige {beffor_ar} efter kategori (Källa: SCB)")}
+
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.cap = glue("Befolkningsförändringar i Norra Mellansverige år {beffor_ar} efter kategori (Källa: SCB)")}
 befforandringar_diagram
 
 ```
