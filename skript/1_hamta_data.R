@@ -319,17 +319,20 @@ pagaende_sjukfall_diagnos_kvinnor_riket <- round(sjukfall_diagnos_df %>% filter(
 pagaende_sjukfall_diagnos_man_riket <- round(sjukfall_diagnos_df %>% filter(region == "Riket", Kön == "Män",Diagnoskapitel == "Psykisk ohälsa") %>% .$`Andel`,0)
 
 # # =============  Självskattad hälsa, motsvarar diagram 37
-# source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diag_sjalvskattad_halsa_kon_lan_fohm.R")
-# sjalvskattad_halsa_diagram <- funktion_upprepa_forsok_om_fel( function() {
-#   diag_sjalvskattad_halsa_kon_lan(
-#     region_vekt = c("20","21", "17", "00"),
-#     region_sort = TRUE,
-#     ta_bort_diagramtitel = TRUE,
-#     logga_path = NULL,
-#     tid_koder = "9999",
-#     diagram_capt = NULL
-#   )
-# }, hoppa_over = hoppa_over_felhantering)
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diag_sjalvskattad_halsa_kon_lan_fohm.R")
+sjalvskattad_halsa_diagram <- funktion_upprepa_forsok_om_fel( function() {
+  diag_sjalvskattad_halsa_kon_lan(
+    region_vekt = c("20","21", "17", "00"),
+    region_sort = TRUE,
+    ta_bort_diagramtitel = TRUE,
+    returnera_dataframe_global_environment = TRUE,
+    logga_path = NULL,
+    tid_koder = "9999",
+    diagram_capt = NULL
+  )
+}, hoppa_over = hoppa_over_felhantering)
+
+sjalvskattad_halsa_ar <- sjalvskattad_halsa_df$År %>% max()
 
 # ============= Låg ekonomisk standard uppdelat på sysselsatta, ålder och bakgrund - 3 diagram motsvarar diagram 40, 42 och 43 (sidor 45 - 48) i den tidigare rapporten
 # Källa hårdkodad data innan diagram 32: https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__HE__HE0110__HE0110I/TabVX4InkDesoN1/
@@ -391,7 +394,8 @@ forandring_syss_branscher_diagram <- funktion_upprepa_forsok_om_fel( function() 
   diag_forandr_branscher_bubblor(vald_geografi = c("17","20","21"),
                                  diagramtitel_tabort = TRUE,
                                  returnera_dataframe_global_environment = TRUE,
-                                 till_word = TRUE)
+                                 till_word = TRUE,
+                                 diagram_capt = NULL)
 }, hoppa_over = hoppa_over_felhantering)
 forandring_syss_branscher_ar <- forandring_syss_branscher_df$år %>% max()
 

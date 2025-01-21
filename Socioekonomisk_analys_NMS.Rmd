@@ -438,10 +438,13 @@ pagaende_sjukfall_diagnos_diagram
 
 ## Självskattad hälsa
 
+*Text inte uppdaterad*
+
 Som komplement till ohälsotal och sjukpenningtal, som mäter ohälsa bland den del av befolkningen med anknytning till arbetsmarknaden, finns enkätuppgifter som mäter subjektiv hälsa utifrån hela befolkningen. En vanlig källa är den Nationella Folkhälsoenkäten som genomförs av Folkhälsomyndigheten. Självskattad hälsa är ett vanligt och sammanfattande mått på subjektiv hälsa. Till skillnad från ohälso- och sjukpenningtalen, där Norra Mellansverige sticker ut negativt, finns det ingen signifikant skillnad mot vare sig riket eller mellan de tre länen (de skillnader som finns är inom ramen för konfidensintervallen). 66-69 procent av kvinnorna och 69-72 procent bland männen uppger att de har en bra eller mycket bra hälsa. Cirka fem till sex procent av såväl kvinnor som män uppger att de har en dålig eller mycket dålig hälsa.
 
-```{r diagram37, echo=FALSE}
-print("Diagram 37. Andel med bra eller mycket bra självskattad hälsa i de tre länen samt riket, 2018-2021 (Källa: Nationella Folkhälsoenkäten/Folkhälsomyndigheten)")
+```{r diagram37, echo=FALSE, fig.cap = glue("Andel med bra eller mycket bra självskattad hälsa i de tre länen samt riket, {sjalvskattad_halsa_ar} (Källa: Nationella Folkhälsoenkäten/Folkhälsomyndigheten)")}
+sjalvskattad_halsa_diagram$`sjalvskattad_halsa_fohm_Riket, Värmland, Dalarna och Gävleborg_ar2021-2024`
+# print("Diagram 37. Andel med bra eller mycket bra självskattad hälsa i de tre länen samt riket, 2018-2021 (Källa: Nationella Folkhälsoenkäten/Folkhälsomyndigheten)")
 ```
 
 ## Ekonomiskt utanförskap
