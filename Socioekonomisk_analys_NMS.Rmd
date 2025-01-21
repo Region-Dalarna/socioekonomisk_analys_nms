@@ -1,6 +1,6 @@
 ---
 title: "Socioekonomisk analys 2024 Norra Mellansverige"
-author: "Mats Andersson, Samuel Gök, Emma Schütt och Kristoffer Sehlberg"
+author: "Mats Andersson, Samuel Gök, Emma Schütt, Kristoffer Sehlberg, Jon Frank och Peter Möller"
 date: "`r Sys.Date()`"
 output:
   bookdown::word_document2:
@@ -43,7 +43,7 @@ Analysen bygger på befintliga data. Tillgången till data släpar ofta efter n�
 
 2022 års analys innehöll flera avsnitt kopplade till effekter av Covid-19-pandemin. Dessa inslag har i nuvarande analys tonats ner då pandemins påverkan inte längre är en central del i samhällsutvecklingen. Det kan dock finnas långsiktiga effekter som inte helt kan överblickas. Ett exempel är att fler är långtidsarbetslösa nu jämfört med innan pandemin, och med de digitala förflyttningar som många branscher tagit under de senaste åren kan det nu finnas ytterligare kompetenser som behövs för att komma in på arbetsmarknaden. Lärdomen från tidigare ekonomiska kriser är att de som drabbas hårdast av en kris är personer som redan tidigare var utsatta och stod långt från arbetsmarknaden. För dessa individer riskerar tröskeln in på arbetsmarknaden att bli ännu högre när konkurrensen om jobb ökar till följd av ökad arbetslöshet.
 
-Samtidigt har de senaste två åren innehållit annan extern påverkan i form av Rysslands anfallskrig mot Ukraina, konflikten mellan Israel och Hamas, hög inflation och kraftigt höjda räntor. Det finns en tydligare restriktivitet inom EU och Sverige kring migration och nyligen har valet i USA avgjorts med seger för Republikanerna, vilket innebär ett maktskifte i amerikansk politik 2025. Vad detta innebär för utvecklingen i Europa, Sverige och Norra Mellansverige återstår att se. Det är möjligt att utvecklingen kommer att variera inom regionen, beroende på det lokala näringslivets struktur och andra förutsättningar. 
+Samtidigt har de senaste två åren innehållit annan extern påverkan i form av Rysslands anfallskrig mot Ukraina, konflikten mellan Israel och Hamas, hög inflation och kraftigt höjda räntor. Det finns en tydligare restriktivitet inom EU och Sverige kring migration och nyligen har det skett ett maktskifte i amerikansk politik med republikanskt styre de kommande fyra åren. Vad detta innebär för utvecklingen i Europa, Sverige och Norra Mellansverige återstår att se. Det är möjligt att utvecklingen kommer att variera inom regionen, beroende på det lokala näringslivets struktur och andra förutsättningar. 
 
 Analysen är framtagen och sammanställd av Mats Andersson (Region Dalarna), Samuel Gök (Region Värmland), Emma Schütt (Region Värmland) och Kristoffer Sehlberg (Region Gävleborg). Jon Frank och Peter Möller (båda Region Dalarna) har bistått med data- och diagrambearbetningar. 
 
@@ -74,18 +74,20 @@ befutv_linjediagram
 ```
 
 Befolkningsutvecklingen i Norra Mellansverige var negativ eller svagt positiv efter millennieskiftet, men sedan 2011 har samtliga tre län haft en positiv befolkningsutveckling. Överlag ligger det utrikes flyttnettot bakom den befolkningsökning som syns. Det märks inte minst av att befolkningskurvan skjuter uppåt i samtliga tre län under 2015-2016 när invandringen var hög. Mellan 2022 och 2023 har dock befolkningen minskat i Norra Mellansverige. Den största minskningen observeras i Gävleborg med cirka 1 400 personer.
-
 <br>
+
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Befolkningsförändringar i Norra Mellansverige {beffor_ar} efter kategori (Källa: SCB)")}
 befforandringar_diagram
 
 ```
-
-Det utrikes flyttnettot är särskilt intressant för analysen, inte bara för att det ensamt står för den största delen av befolkningsökningen utan också för att nyanlända personer utgör en viktig målgrupp för de insatser som initieras utifrån ESF+. Volymen på direktinvandringen till de tre länen i Norra Mellansverige är relativt likartad. Under perioden 2015–2016 var invandringen betydligt högre vilket berodde på den då stora flyktinginvandringen. SCB betraktar dock denna period som ett undantag i sitt arbete med att ta fram regionala (och nationella) befolkningsprognoser.
-
-Invandringen till Norra Mellansverige har under 2010-talet dominerats av män. De största överskotten av män såg alla tre regionerna 2016, då det var 748 fler män än kvinnor som invandrade till Värmland, 623 fler män som invandrade till Dalarna och 615 fler män som invandrade till Gävleborg. Den här trenden har avtagit under efterföljande år. 
+<br>
+Det utrikes flyttnettot är särskilt intressant för analysen, inte bara för att det ensamt står för den största delen av befolkningsökningen utan också för att nyanlända personer utgör en viktig målgrupp för de insatser som initieras utifrån ESF+. 
 
 Värmland har under 2023 det högsta utrikes flyttnettot av de tre länen i Norra Mellansverige följt av Dalarna. I båda dessa fall är fördelningen mellan kvinnor och män relativt jämn. I Gävleborg var det utrikes flyttnettot lågt, med knappt 80 kvinnor och färre än 10 män.
+
+Volymen på direktinvandringen till de tre länen i Norra Mellansverige är relativt likartad. Under perioden 2015–2016 var invandringen betydligt högre vilket berodde på den då stora flyktinginvandringen. SCB betraktar dock denna period som ett undantag i sitt arbete med att ta fram regionala (och nationella) befolkningsprognoser.
+
+Invandringen till Norra Mellansverige har under 2010-talet dominerats av män. De största överskotten av män såg alla tre regionerna 2016, då det var 748 fler män än kvinnor som invandrade till Värmland, 623 fler män som invandrade till Dalarna och 615 fler män som invandrade till Gävleborg. Den här trenden har avtagit under efterföljande år. 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Invandring till Norra Mellansverige 2000–{inv_ar} (Källa: SCB)")}
 inv_nms_linjediagram
@@ -98,9 +100,9 @@ Pandemin påverkade flyttmönstren i stor utsträckning under 2020 och 2021, då
 
 Åldersspridningen för den inrikes inflyttningen är större jämfört med invandringen, där en något lägre andel är i arbetsför ålder och större andelar yngre och äldre. Det totala antalet inflyttningar till Norra Mellansverige har minskat med 9 procent mellan 2021 och 2023. 
 
+## En kraftigt förändrad befolkningsstruktur i Norra Mellansverige i framtiden 
 Minskad invandring och antagandet om att invandringen kommer att ligga på en lägre nivå än tidigare har påverkat befolkningsframskrivningarna väsentligt de senaste åren. Därutöver har även födelsetalen minskat, vilket också får genomslag i befolkningsframskrivningarna framöver. Större förändringar i framskrivningarna från år till år kan observeras, där de tre länen i Norra Mellansverige enligt de senaste framskrivningarna förväntas minska sin folkmängd till 2040 som en följd av både minskad invandring och lägre födelsetal. Detta får stora konsekvenser för den demografiska strukturen redan de kommande tio åren.
 
-## En kraftigt förändrad befolkningsstruktur i Norra Mellansverige i framtiden 
 Den utveckling som nu syns i Norra Mellansverige, med en ökad andel äldre i befolkningen, delas med övriga Sverige och med samtliga utvecklade länder i världen. När välståndet och utbildningsnivån i ett land ökar och dödstalen sjunker skaffar invånarna färre barn. Detta är en utveckling som setts i alla länder med ett växande välstånd, och när det föds färre antal barn per kvinna och när god hälso- och sjukvård förlänger medellivslängden i ett land, blir konsekvensen en ökad andel äldre. I grunden är detta någonting positivt, men det leder till påfrestningar på välfärdssystem som är utformade för en demografisk struktur med en större andel av befolkningen i arbetsför ålder.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Befolkningsförändring i Norra Mellansverige år {befprogn_arsintervall} i absoluta tal (Källa: SCB)")}
@@ -161,9 +163,7 @@ Det innebär att trots att andelen högutbildade män ökar i Norra Mellansverig
 
 Den generella ökningen av högutbildade speglar en strukturell förändring på arbetsmarknaden som idag i större utsträckning efterfrågar högutbildad kompetens. Eftersom kompetenskraven höjts inom de flesta branscher är det idag svårare att både få ett arbete och göra karriär utan utbildning än det var för bara 20–30 år sedan.
 
-Förhållandet mellan utbildningsnivå och födelseland visar att det är en större andel av de som är födda i Sverige som har minst treårig eftergymnasial utbildning än de som är födda i ett annat nordiskt land. Det är överlag en större andel högutbildade bland de utrikes födda än de som är födda i Sverige, och allra störst andel är det bland de som är födda inom EU men utanför Norden. Även bland de utrikes födda är det stor skillnad mellan könen, med en avsevärt större andel högutbildade kvinnor. I kategorin ”Övriga” är det främst Nordamerika och Australien som sticker ut, medan Afrika har låga utbildningsnivåer och drar ner medelvärdet.
-
-*Diagram nedan, uppdaterat från 2022 till 2023 - Jag har inte justerat text/Jon*
+Förhållandet mellan utbildningsnivå och födelseland visar att det är en större andel av de som är födda i Sverige som har minst treårig eftergymnasial utbildning än de som är födda i ett annat nordiskt land. Det är överlag en större andel högutbildade bland de utrikes födda än de som är födda i Sverige, och allra störst andel är det bland de som är födda inom EU men utanför Norden. Även bland de utrikes födda är det stor skillnad mellan könen, med en avsevärt större andel högutbildade kvinnor. I kategorin ”Övriga världen” är det främst Nordamerika och Australien som sticker ut, medan Afrika har låga utbildningsnivåer och drar ner medelvärdet.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel av befolkningen med minst treårig eftergymnasial utbildning, efter födelseland, år {utbniva_eftergymn_bakgr_ar}. (Källa: SCB)")}
 utb_niva_eftergymn_bakgr_diagram
@@ -173,11 +173,10 @@ utb_niva_eftergymn_bakgr_diagram
 De låga utbildningsnivåerna i Värmland, Dalarna och Gävleborg kan delvis spegla de dominerande branscherna i länen, som byggverksamhet, skogs-, stål- och verkstadsindustri. För många av de här jobben räcker det med en yrkesutbildning på gymnasienivå, men de är viktiga för tillväxten i Norra Mellansverige. Det är viktigt att fler i Värmland, Dalarna och Gävleborg går längre i utbildningskedjan, men behovet av högutbildad kompetens behöver kopplas ihop med arbetsmarknaden i länen och matcha kompetensbehoven hos näringsliv och offentlig sektor. Om fler invånare i Norra Mellansverige når en högre utbildningsnivå och det samtidigt inte finns ett matchande behov riskerar dessa människor att antingen behöva lämna regionen i jakt på ett passande jobb eller stanna kvar och riskera att vara överkvalificerade för de jobb som erbjuds.
 
 ## Övergång från grundskolan till gymnasiet
-I Norra Mellansverige som helhet är det färre elever som går ur årskurs 9 med gymnasiebehörighet jämfört med riket, men det skiljer sig något mellan länen. Värmland har en högre andel elever som går ur grundskolan med behörighet till gymnasiet än riksgenomsnittet. I Dalarna är gymnasiebehörigheten lägre för inrikes födda än i riket som helhet, men högre för utrikes födda. I Gävleborg är det en högre gymnasiebehörighet för utrikes födda män, men lägre behörighet för övriga grupper jämfört med riksgenomsnittet.
+I Norra Mellansverige som helhet är det färre elever som går ur årskurs 9 med gymnasiebehörighet jämfört med riket, men det skiljer sig något mellan länen. Samtliga län i Norra Mellansverige har lägre andelar behöriga till gymnasiet för inrikes födda, såväl kvinnor som män. Värmland har en högre andel utrikes födda elever, både kvinnor och män, som går ur grundskolan med behörighet till gymnasiet än riksgenomsnittet. I Dalarna och Gävleborg är gymnasiebehörigheten högre för utrikes födda män i riket som helhet, men lägre för utrikes födda kvinnor.
 
 Sett till hela den grupp som saknar gymnasiebehörighet, dit de som inte gått klart grundskolan hör, har gruppen det sämre inom en rad olika områden. När det kommer till ersättningar från trygghetssystemen går den stora skiljelinjen mellan de som har förgymnasial utbildning och de med gymnasial utbildning. De med eftergymnasial utbildning har i minst utsträckning ersättning från de sociala trygghetssystemen, men skillnaden är inte lika stor mellan de som har eftergymnasial mot de som har gymnasial utbildning jämfört med skillnaden mellan de med gymnasial och de med förgymnasial utbildning. En del av arbetskraftsreserven finns i gruppen med endast förgymnasial utbildning, men även om det är en del som uppbär arbetslöshetsersättning, försörjningsstöd eller etableringsersättning har majoriteten i denna grupp någon form av sjukersättning. Ett förebyggande arbete för att förhindra att individer i denna grupp hamnar i sjukskrivning/sjukpension har stor potential för att öka antalet individer i arbetskraften.
 
-*Diagram nedan, uppdaterat från 2022 till 2023 - Jag har inte justerat text /Jon*
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel avgångselever i grundskolan med gymnasiebehörighet, efter kön och födelseland, år {gymn_behorighet_ar}. (Källa: SCB)")}
 gymn_behorighet_kon_diagram
@@ -322,7 +321,6 @@ arblos_arblosa_unga_over_tid
 
 Ungdomsarbetslösheten är högre bland män än bland kvinnor. Det behöver dock inte betyda att kvinnor har lättare att hitta arbete utan kan förklaras av att unga kvinnor vidareutbildar sig i högre grad än unga män. Just utbildningsnivån är en bidragande orsak till den höga ungdomsarbetslösheten i Norra Mellansverige, och Gävleborg i synnerhet. En lägre andel av ungdomarna i Norra Mellansverige väljer att läsa vidare efter gymnasiet vilket påverkar deras möjligheter att få jobb. Ungdomar med eftergymnasial utbildning eller med examen från gymnasieskolans yrkesprogram har betydligt bättre framtidsutsikter än ungdomar som saknar gymnasieexamen. De är även mer sällan inskrivna som arbetssökande. SCB:s arbetsmarknadsprognoser tyder på att efterfrågan på personer utan gymnasieutbildning kommer att sjunka ytterligare i framtiden. Antalet jobb för personer som saknar utbildning minskar när yrken försvinner, arbetsuppgifter förändras och utbildningskraven till många yrken skärps.
 
-*Diagram nedan, uppdaterat från 2021 till 2023*
 
 ```{r diagram21, echo=FALSE, fig.cap = glue("Andel som varit inskrivna hos Arbetsförmedlingen någon gång under året efter kön, ålder och utbildningsnivå, {inskr_arb_kon_alder_utbniva_ar} (Källa: SCB)")}
 inskr_af_kon_alder_utbniva
@@ -331,13 +329,13 @@ inskr_af_kon_alder_utbniva
 Skillnaderna mellan länen och könen vad gäller ungdomsarbetslöshet generellt gäller också långtidsarbetslöshet. Långtidsarbetslösheten bland unga är betydligt högre i Gävleborg jämfört med övriga län i Norra Mellansverige samt riket. Värmland är i nivå med riket medan Dalarna befinner sig något under. Långtidsarbetslöshet bland ungdomar är särskilt problematiskt eftersom det kan få stora konsekvenser för individens framtidsmöjligheter. Längre perioder av arbetslöshet i unga år gör det betydligt svårare att etablera sig på arbetsmarknaden och har också negativa effekter på den framtida löneutvecklingen.
 
 ### Utrikes födda
-En annan grupp med en svag ställning på arbetsmarknaden är utrikes födda. Sysselsättningen bland utrikes födda är generellt lägre än bland svenskfödda personer och arbetslösheten, inklusive långtidsarbetslösheten, är högre. Arbetslösheten bland utrikes födda uppgick i `r arblos_utr_max_ar` till `r arblosa_utr_varmland` procent i Värmland, `r arblosa_utr_dalarna` procent i Dalarna och `r arblosa_utr_gavleborg` procent i Gävleborg. Riksgenomsnittet var under samma period `r arblosa_utr_riket` procent, vilket innebär att samtliga läns arbetslöshet för utrikes födda översteg riket. Arbetslösheten bland utrikes födda i Norra Mellansverige har legat över riksgenomsnittet över lång tid och är alltså inte ett utslag av pandemin. Det är först nu vid slutet på 2024 som Dalarna och Värmland lyckats uppnå nivåer som liknar rikets. Gävleborg har fortsatt lång väg kvar.
+En annan grupp med en svag ställning på arbetsmarknaden är utrikes födda. Sysselsättningen bland utrikes födda är generellt lägre än bland svenskfödda personer och arbetslösheten, inklusive långtidsarbetslösheten, är högre. Arbetslösheten bland utrikes födda uppgick i `r arblos_utr_max_ar` till `r arblosa_utr_varmland` procent i Värmland, `r arblosa_utr_dalarna` procent i Dalarna och `r arblosa_utr_gavleborg` procent i Gävleborg. Riksgenomsnittet var under samma period `r arblosa_utr_riket` procent, vilket innebär att samtliga läns arbetslöshet för utrikes födda översteg riket. Arbetslösheten bland utrikes födda i Norra Mellansverige har legat över riksgenomsnittet över lång tid och är alltså inte ett utslag av pandemin. Det är först vid slutet av 2024 som Dalarna och Värmland lyckats uppnå nivåer som liknar rikets. Gävleborg har fortsatt lång väg kvar.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Andel öppet arbetslösa samt sökande i program med aktivitetsstöd, utrikes födda. {arblos_utr_min_ar} – {arblos_utr_max_ar} (Källa: Arbetsförmedlingen)")}
 arblos_arblosa_utrikes_over_tid
 ```
 
-Arbetslöshets- och sysselsättningsnivåerna bland utrikes födda varierar dock stort mellan olika grupper. Kön och födelseland är två faktorer som har stor betydelse. Personer från länder utanför EU/EFTA har det betydligt svårare på arbetsmarknaden än personer från Norden eller övriga EU/EFTA. Undantaget är Värmland som har en låg sysselsättningsgrad bland personer (framför allt män) från Norden. Förklaringen är troligtvis att en stor del av dessa personer är födda i och arbetar i Norge och därför inte registreras som sysselsatta i statistiken. Kvinnor har överlag en något lägre sysselsättningsgrad än män men könsskillnaderna gäller framför allt gruppen personer födda utanför EU/EFTA. Inom den gruppen uppgick könsskillnaderna i sysselsättning till `r forvarvsarbetande_kon_fodelseregion_skillnad_varmland` procentenheter i Värmland , till `r forvarvsarbetande_kon_fodelseregion_skillnad_gavleborg` procentenheter i Gävleborg, och till `r forvarvsarbetande_kon_fodelseregion_skillnad_dalarna` procentenheter i Dalarna år `r forvarvsarbetande_kon_fodelseregion_ar`.
+Arbetslöshets- och sysselsättningsnivåerna bland utrikes födda varierar dock stort mellan olika grupper. Kön och födelseland är två faktorer som har stor betydelse. Personer från länder utanför EU/EFTA har det betydligt svårare på arbetsmarknaden än personer från Norden eller övriga EU/EFTA. Undantaget är Värmland som har en låg sysselsättningsgrad bland personer (framför allt män) från Norden. Förklaringen är troligtvis att en stor del av dessa personer är födda i och arbetar i Norge och därför inte registreras som sysselsatta i statistiken. Kvinnor har överlag en något lägre sysselsättningsgrad än män, men könsskillnaderna gäller framför allt gruppen personer födda utanför EU/EFTA. Inom den gruppen uppgick könsskillnaderna i sysselsättning till `r forvarvsarbetande_kon_fodelseregion_skillnad_varmland` procentenheter i Värmland , till `r forvarvsarbetande_kon_fodelseregion_skillnad_gavleborg` procentenheter i Gävleborg, och till `r forvarvsarbetande_kon_fodelseregion_skillnad_dalarna` procentenheter i Dalarna år `r forvarvsarbetande_kon_fodelseregion_ar`.
 
 *Diagram nedan, uppdaterat från 2021 till 2023*
 
@@ -350,7 +348,6 @@ Utbildningsnivån är en annan faktor som har stor betydelse för hur utrikes f�
 
 Även vistelsetiden i Sverige har stor betydelse. Personer med minst gymnasieexamen som har varit i Sverige länge (10 år eller mer) har en sysselsättningsnivå som närmar sig snittet för svenskfödda medan sysselsättningen är betydligt lägre bland nyanlända. Andelen förvärvsarbetande bland nyanlända (vistelsetid 0-1 år) som saknar gymnasieexamen är väldigt låg. För kvinnor uppgick andelen till `r syss_0_1_kvinnor_ar_forgym_min`-`r syss_0_1_kvinnor_ar_forgym_max` procent i Norra Mellansverige och för män uppgick den till `r syss_0_1_man_ar_forgym_min`-`r syss_0_1_man_ar_forgym_max` procent. Könsskillnaderna är särskilt stora bland nyanlända, med betydligt högre sysselsättningsgrad bland män jämfört med bland kvinnor. Könsskillnaderna bland nyanlända finns oavsett utbildningsnivå, även om andelen förvärvsarbetande är högre för både kvinnor och män bland personer med eftergymnasial utbildning.
 
-*Diagram nedan, uppdaterat från 2021 till 2023*
 
 ```{r diagram24, echo=FALSE,fig.cap = glue("Andel förvärvsarbetande bland utrikes födda efter utbildningsnivå och vistelsetid, {vistelsetid_utb_ar} (Källa: SCB)")}
 #"Diagram 24. Andel förvärvsarbetande bland utrikes födda efter utbildningsnivå och vistelsetid, 2020 (Källa: SCB)")
@@ -367,7 +364,7 @@ För att klara den framtida kompetensförsörjningen, med en demografisk struktu
 
 ### Personer med funktionsnedsättning
 
-Personer med funktionsnedsättning är en annan grupp som möter särskilda utmaningar på arbetsmarknaden. Gruppen har överlag en betydligt lägre sysselsättningsgrad jämfört med personer utan funktionsnedsättning. Det beror framför allt på ett lägre arbetskraftsdeltagande. 62,4 procent av individer med funktionsnedsättning var i arbetskraften 2023, jämfört med 88,0 procent för de utan funktionsnedsättning.
+Personer med funktionsnedsättning är en annan grupp som möter särskilda utmaningar på arbetsmarknaden. Gruppen har överlag en betydligt lägre sysselsättningsgrad jämfört med personer utan funktionsnedsättning enligt statistik från SCB. Det beror framför allt på ett lägre arbetskraftsdeltagande. 62,4 procent av individer med funktionsnedsättning var i arbetskraften 2023, jämfört med 88,0 procent för de utan funktionsnedsättning.
 
 Gruppen är dock väldigt heterogen, utifrån både funktionsnedsättning och möjlighet på arbetsmarknaden. Vissa personer är väl etablerade och har liknande förutsättningar som kollegor utan funktionsnedsättning, även om de kanske är i behov av vissa hjälpmedel. Andra har betydligt svårare att ta sig in på arbetsmarknaden. En viktig skiljelinje är om funktionsnedsättningen påverkar arbetsförmågan eller inte. Arbetslösheten bland personer med nedsatt arbetsförmåga är betydligt högre jämfört med personer utan nedsatt arbetsförmåga, oavsett om de har en funktionsnedsättning eller inte. År 2023 var arbetslösheten 18,8 procent för individer med funktionsnedsättning och nedsatt arbetsförmåga, vilket kan jämföras med arbetslösheten för individer med funktionsnedsättning utan nedsatt arbetsförmåga på 10,8 procent, och den totala arbetslösheten på 8,2 procent. Cirka 11 procent av befolkningen 16-65 år har en funktionsnedsättning. Cirka 70 procent av dessa har nedsatt arbetsförmåga.  
 
