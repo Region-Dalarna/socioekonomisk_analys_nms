@@ -98,6 +98,7 @@ utb_niva_hogutb_diagram <- funktion_upprepa_forsok_om_fel( function() {
                                      sverige_istallet_for_riket = FALSE,
                                      diag_hogutb_over_tid = TRUE,
                                      facet_x_axis_stlk = 6,
+                                     visa_var_xe_etikett = 2,
                                      diagramtitel_tabort = TRUE,
                                      diag_lagutb_over_tid = FALSE,
                                      diag_andel_alla_utbnivaer = FALSE,
@@ -470,7 +471,8 @@ genomstromning_startlasar <- gymn_genomstromning_4ar_prg_df$läsår %>% unique()
 # ============= Diagram från arbetsförmdelingen - lista med alla diagram som ska skapas ============= 
 source(here("skript","socioek_af_diagram.R"), encoding="UTF-8")
 af_lista_diagram <- funktion_upprepa_forsok_om_fel( function() {
-  skapa_af_diagram_lista(region_vekt = c("17", "20", "21"))
+  skapa_af_diagram_lista(region_vekt = c("17", "20", "21"),
+                         visa_var_xe_etikett = 2)
 }, hoppa_over = hoppa_over_felhantering)
 
 # diagram över total andel arbetslösa över tid
