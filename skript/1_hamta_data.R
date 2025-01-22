@@ -335,7 +335,7 @@ sjalvskattad_halsa_diagram <- funktion_upprepa_forsok_om_fel( function() {
 sjalvskattad_halsa_ar <- sjalvskattad_halsa_df$År %>% max()
 
 # ============= Låg ekonomisk standard uppdelat på sysselsatta, ålder och bakgrund - 3 diagram motsvarar diagram 40, 42 och 43 (sidor 45 - 48) i den tidigare rapporten
-# Källa hårdkodad data innan diagram 32: https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__HE__HE0110__HE0110I/TabVX4InkDesoN1/
+# Källa hårdkodad data innan diagram 33: https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__HE__HE0110__HE0110I/TabVX4InkDesoN2/table/tableViewLayout1/
 source(here("skript","socioek_lag_ek_standard_diagram.R"), encoding="UTF-8")
 lag_ek_standard_diagram <- funktion_upprepa_forsok_om_fel( function() {
   skapa_ekonomiskstandard_lan()
