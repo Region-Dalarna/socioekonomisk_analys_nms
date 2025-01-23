@@ -202,7 +202,7 @@ Grunden till dagens könsuppdelade arbetsmarknad läggs tidigt. Redan mycket ung
 När fler elever väljer yrkesprogram minskar sannolikheten för en övergång till högskola eller universitet senare i livet. Om en högre utbildningsnivå är målet bör man fokusera på att inspirera fler – framför allt fler unga män – att välja högskoleförberedande program. Om däremot yrkesprogrammen i Norra Mellansverige spelar en viktig roll i regionens kompetensförsörjning bör också dessa utbildningar utvecklas så att de elever som kommer ut från yrkesprogrammen har den kompetens som arbetsgivarna efterfrågar samt möjlighet att läsa vidare på högskola eller universitet. Det finns redan idag möjlighet för de som valt ett yrkesprogram att välja till kurser och därigenom få högskolebehörighet.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = glue("Genomströmning; examen inom 4 år, startläsår {genomstromning_startlasar} (Källa: Skolverket)")}
-gymnasieprogram_genomstromning_diagram
+gymnasieprogram_genomstromning_diagram$gymn_genomstr_4ar_prg_00_00_20_21_17_20_21_17_lasar2019_20
 ```
 
 När det gäller genomströmningen på gymnasiet, och andelen elever som avslutar studierna med examen inom fyra år, ligger riksgenomsnittet på knappt 80 procent för yrkesprogram och knappt 85 procent för högskoleförberedande program. Dalarna och Värmland ligger över riket när det gäller yrkesprogram, medan Gävleborg ligger strax under. För högskoleförberedande program ligger Dalarna över även där, Värmland i paritet med och Gävleborg under riksgenomsnittet.

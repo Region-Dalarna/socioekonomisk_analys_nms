@@ -96,6 +96,7 @@ utb_niva_hogutb_diagram <- funktion_upprepa_forsok_om_fel( function() {
   diag_utbniva_tidserie_och_lansjmfr(region_vekt = c("00", "20", "17", "21"),
                                      region_lagg_forst = c("20", "21", "17"),
                                      sverige_istallet_for_riket = FALSE,
+                                     diagram_capt_tabort = TRUE,
                                      diag_hogutb_over_tid = TRUE,
                                      facet_x_axis_stlk = 6,
                                      visa_var_xe_etikett = 2,
@@ -444,6 +445,7 @@ gymnasieprogram_konsbalans_diagram <- funktion_upprepa_forsok_om_fel( function()
   diag_gymn_elever_kon_prg_skolverket(region_vekt = c("17", "20", "21", "00"),
                                       gymnasieprogram = c("Högskoleförberedande program", "Yrkesprogram", "Introduktionsprogrammen"),
                                       ta_med_logga = FALSE,
+                                      diagram_capt = NULL,
                                       diagramrubrik_tabort = TRUE,
                                       returnera_data_rmarkdown = TRUE,
                                       skriv_diagramfil = FALSE)
@@ -458,6 +460,7 @@ gymnasieprogram_genomstromning_diagram <- funktion_upprepa_forsok_om_fel( functi
                                       tid_koder = "9999",
                                       x_variabel = "region",
                                       y_variabel = "andel",
+                                      diagram_capt = NULL,
                                       x_grupp = "Gymnasieprogram",
                                       ta_med_logga = FALSE,
                                       diagramrubrik_tabort = TRUE,
