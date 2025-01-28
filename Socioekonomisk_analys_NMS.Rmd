@@ -486,7 +486,7 @@ Norra Mellansverige har ett näringsliv som präglats av större industriföreta
 
 Entreprenörskapet är lägre på platser med ett eller få dominerande företag än på platser med många små och medelstora företag. Tillväxtverket publicerar med jämna mellanrum en rapport om sårbarheten i Sveriges kommuner där man bland annat tittar på beroendet av enskilda företag, det vill säga hur många företag som krävs inom det privata näringslivet för att uppnå 50 procent av lönesumman inom kommunens privata näringsliv. Bergslagsregionen lyfts upp som ett område med många sårbara kommuner utifrån just detta mått. Viktigt att betona däremot är att flera av dessa sårbara kommuner är integrerade i större arbetsmarknader där den höga utpendlingen till regionernas större städer (Karlstad, Falun, Borlänge, Gävle, samt Örebro och Uppsala) kompenserar för beroendet av bostadskommunens enskilt stora företag. Det ger alltså en rättvisare bild av kommunernas sårbarhet att mäta utifrån arbetsmarknader eftersom effekterna vid en eventuell nedläggning av ett stort företag tunnas ut genom hela arbetsmarknaden i stället för att bäras upp av en enskild kommun. 
 
-Diagrammet nedan visar antalet företag inom respektive arbetsmarknad i Norra Mellansverige som krävs för att uppnå 50 procent av lönesumman i varje arbetsmarknad. Ju lägre antal, desto högre beroende och sårbarhet. Diagrammet visar tydligt hur Gävleborg är en mer integrerad region med en jämnare fördelning bland sina arbetsmarknader medan Värmland och Dalarna har ett par utstickare med ett högt beroende av enskilt stora företag, framför allt inom tillverkningsindustrin.
+Diagrammet nedan visar antalet företag inom respektive arbetsmarknad i Norra Mellansverige som krävs för att uppnå 50 procent av lönesumman i varje arbetsmarknad. Ju lägre antal, desto högre beroende och sårbarhet. Diagrammet visar tydligt hur Gävleborg är en mer integrerad region med en jämnare fördelning bland sina arbetsmarknader medan Värmland och Dalarna har ett par utstickare med ett högt beroende av enskilt stora företag, framför allt inom tillverkningsindustrin (observera skillnaden i skala för y-axeln för respektive län).
 
 ```{r diagram44, echo=FALSE, fig.cap = glue("Antalet företag som krävs inom respektive arbetsmarknad inom Norra Mellansverige för att uppnå 50 procent av lönesumman inom det privata näringslivet, {sarbarhet_ftg_ar} (Källa: SCB)")}
 sarbarhet_ftg_diagram$sarbarhet_ftg
@@ -600,3 +600,20 @@ Det går inte heller att säga hur omfattande eller långsiktiga effekterna av e
 De trender som diskuterats i analysen styrs inte enbart av externa förutsättningar, så som tillgång till jobb. Utbildningsnivåer, könssegregation på arbetsmarknaden, diskriminering och innovationsförmåga påverkas också av bland annat traditioner och normer. Sådana kan vara trögrörliga och det är troligt att de grundläggande mönster som analysen redogör för består i åtminstone en överblickbar tidshorisont. 
 
 # Referenser
+Arbetsförmedlingen (2024). *Arbetsmarknadsutsikterna. Utvecklingen på arbetsmarknaden 2024–2025.*
+
+Skandia (2023). *Samhällskostnaden för längre sjukskrivningar: 71 miljarder kronor.*
+
+Statistiska centralbyrån (2022). *En fråga om tid: Tidsanvändningsundersökningen 2021/22.* 
+
+Statistiska centralbyrån (2024). *Trender och prognoser 2023.* 
+
+Statistiska centralbyrån (2020). *Sveriges framtida befolkning 2020–2030 ‒ Län och kommungrupper. BE 18 SM 2002.*
+
+Statistiska centralbyrån (2024). *Den framtida befolkningen i Sveriges län och kommuner 2024–2040.*
+
+https://www.folkhalsomyndigheten.se/folkhalsorapportering-statistik/om-vara-datainsamlingar/nationella-folkhalsoenkaten/  
+
+https://www.scb.se/pressmeddelande/historiskt-lagt-barnafodande-och-lagsta-folkokningen-pa-22-ar/
+
+
