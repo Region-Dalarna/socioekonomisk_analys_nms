@@ -46,6 +46,7 @@ source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diag_befol
 befprogn_diagram_nms <- funktion_upprepa_forsok_om_fel( function() {
   SkapaBefPrognosDiagram(region_vekt = c("17", "20", "21"),
                          gruppera_namn = "Norra Mellansverige",
+                         diagram_capt = NULL,
                          utan_diagramtitel = TRUE,
                          ta_med_logga = FALSE,
                          spara_dataframe_till_global_environment = TRUE,
@@ -60,6 +61,7 @@ befprogn_diagram_lan <- funktion_upprepa_forsok_om_fel( function() {
   SkapaBefPrognosDiagram(region_vekt = c("17", "20", "21"),
                          utan_diagramtitel = TRUE,
                          ta_med_logga = FALSE,
+                         diagram_capt = NULL,
                          tabeller_url = c("https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0401/BE0401A/BefProgOsiktRegN",
                                           "https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0401/BE0401B/BefProgOsiktRegN20"),
                          facet_variabel = "region",
