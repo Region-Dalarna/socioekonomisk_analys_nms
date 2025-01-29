@@ -596,22 +596,40 @@ Det går inte heller att säga hur omfattande eller långsiktiga effekterna av e
 De trender som diskuterats i analysen styrs inte enbart av externa förutsättningar, så som tillgång till jobb. Utbildningsnivåer, könssegregation på arbetsmarknaden, diskriminering och innovationsförmåga påverkas också av bland annat traditioner och normer. Sådana kan vara trögrörliga och det är troligt att de grundläggande mönster som analysen redogör för består i åtminstone en överblickbar tidshorisont. 
 
 # Referenser
+<br>
+
+**Rapporter**
+
 Arbetsförmedlingen (2024). *Arbetsmarknadsutsikterna. Utvecklingen på arbetsmarknaden 2024–2025.*
+
+Myndigheten för ungdoms- och civilsamhällesfrågor (2019). *Förändringar av uvas-siffror från och med år 2015.*
 
 Skandia (2023). *Samhällskostnaden för längre sjukskrivningar: 71 miljarder kronor.*
 
+Statistiska centralbyrån (2020). *Sveriges framtida befolkning 2020–2030 ‒ Län och kommungrupper. BE 18 SM 2002.*
+
 Statistiska centralbyrån (2022). *En fråga om tid: Tidsanvändningsundersökningen 2021/22.* 
+
+Statistiska centralbyrån (2023). *Situationen på arbetsmarknaden för personer med funktionsnedsättning 2022.*
 
 Statistiska centralbyrån (2024). *Trender och prognoser 2023.* 
 
-Statistiska centralbyrån (2020). *Sveriges framtida befolkning 2020–2030 ‒ Län och kommungrupper. BE 18 SM 2002.*
-
 Statistiska centralbyrån (2024). *Den framtida befolkningen i Sveriges län och kommuner 2024–2040.*
+
+Svenska ESF-rådet (2019). *Bakgrund till framtiden. En omvärldsanalys för ESF+, Perioden 2021–2027. Diarienummer 2019/00190.*
+
+<br>
+
+**Webbplatser**
 
 https://www.folkhalsomyndigheten.se/folkhalsorapportering-statistik/om-vara-datainsamlingar/nationella-folkhalsoenkaten/
 
 https://jamstalldhetsmyndigheten.se/jamstalldhet-i-sverige/delmal-4-jamn-fordelning-av-det-obetalda-hem-och-omsorgsarbetet/
 
+https://www.mucf.se/verktyg/statistik-om-unga-som-varken-arbetar-eller-studerar 
+
 https://www.scb.se/pressmeddelande/historiskt-lagt-barnafodande-och-lagsta-folkokningen-pa-22-ar/
+
+https://www.smhi.se/forskning/forskningsenheter/klimatforskning 
 
 
