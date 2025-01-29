@@ -40,7 +40,8 @@ skapa_sarbarhet_ftg_diagram <- function(spara_diagrambildfil = FALSE,
     mutate(Län = "Dalarna")
   
   varmland_df <- read.xlsx(fil_varmland, sheet = 2) %>%
-    mutate(Län = "Värmland")
+    mutate(Län = "Värmland") %>% 
+      filter(LA_namn != "Örebro")
   
   gavleborg_df <- read.xlsx(fil_gavleborg, sheet = 2) %>%
     mutate(Län = "Gävleborg")
