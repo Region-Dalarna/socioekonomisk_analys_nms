@@ -505,11 +505,11 @@ Ur klimatsynpunkt kan den så kallade gröna omställningen sägas ha framföral
 
 För näringslivets och industrins del ses energiomställningen och elektrifieringen som en av de viktigaste frågorna. Detta gäller inte minst för industrierna i Norra Mellansverige, som är stora energikonsumenter. Inom tillverkningsindustrin i Sverige förväntas dessutom energibehovet öka markant (medan förändringen väntas bli mindre för bostad- och servicesektorn). Samtidigt väntas också transportsektorn öka sitt elbehov med drygt tio gånger, från 2,9 TWh till 30 – 41 TWh år 2050. Industrisektorns elanvändning bedöms öka till 132 - 187 TWh år 2050. Den bedömningen ska ställas i relation till den totala elanvändningen i Sverige 2024 på knappt 135 TWh. Att arbeta med elektrifiering och samtidigt energieffektivisering kommer vara en avgörande förutsättning för näringslivet.
 
-Vad kan då detta få för konsekvenser för näringslivet i Norra Mellansverige? När prognoser görs över effekter av ett förändrat klimat utgår man ifrån olika representativa scenarier för samhällets klimatpåverkan i framtiden (så kallade RCP-scenarier). Scenarierna bygger på antaganden om hur mycket växthusgaser som kommer att släppas ut globalt och visar också på vilka följder de olika scenarierna kan få. I samtliga scenerier – även de mer optimistiska - blir de faktiska förändringarna märkbara med ökade temperaturer, ökad nederbörd, längre perioder med värmeböljor och torka men också med kortare vintrar. För de tre länen i Norra Mellansverige kommer exempelvis medeltemperaturen ha ökat med 3-5 grader vid seklets slut, enligt scenarierna. 
+Vad kan då detta få för konsekvenser för näringslivet i Norra Mellansverige? När prognoser görs över effekter av ett förändrat klimat utgår man ifrån olika representativa scenarier för samhällets klimatpåverkan i framtiden (så kallade RCP-scenarier). Scenarierna bygger på antaganden om hur mycket växthusgaser som kommer att släppas ut globalt och visar också på vilka följder de olika scenarierna kan få. I samtliga scenerier – även de mer optimistiska - blir de faktiska förändringarna märkbara med ökade temperaturer, ökad nederbörd, längre perioder med värmeböljor och torka men också med kortare vintrar. För de tre länen i Norra Mellansverige kommer exempelvis medeltemperaturen ha ökat med 3-5 grader vid seklets slut, enligt scenarierna (RCP 4,5 respektive RCP 8,5). 
 
 Några graders skillnad kan låta lite, men får stora effekter för människor, natur och samhälle. Utöver att sannolikheten för extremväder ökar, med påverkan på service, infrastruktur med mera, förändras också förutsättningar för olika verksamheter. Vintern är redan kortare och kommer att bli avsevärt kortare framöver och snötäcket fortsätter att minska generellt i länen. I Dalarna kan de södra delarna av länet få upp till 100 färre dagar med snötäcke per år, vid seklets slut. De allt kortare vintrarna kommer påverka vinterturismen i hög grad, vilken är betydelsefull för inte minst Dalarna men även Värmland.
 
-Enligt SMHI:s beräkningar av scenarierna förlängs också den så kallade vegetationsperioden med 1–2 månader i Dalarna och 1–2,5 månad i Värmland och Gävleborg, något som sannolikt får effekter, både positiva och negativa och en del redan i närtid. En längre växtsäsong ger ökad avkastningspotential för de areella näringarna, nya grödor kan odlas och sommarturismen ökar. Fler europeiska turister kan också väntas, när sommartemperaturen på kontinenten stiger och fler väljer att lämna Europa på sommaren på grund av hettan. (Under sommaren 2024 kom detta fenomen att kallas för coolcation). Men en längre växtperiod gynnar också fler skadeinsekter och svampsjukdomar och påverkar grundvattennivån negativt. Här finns stor risk att både jord- och skogsbruk påverkas negativt.
+Enligt SMHI:s beräkningar av scenarierna förlängs också den så kallade vegetationsperioden med 1–2 månader i Dalarna och 1–2,5 månad i Värmland och Gävleborg, något som sannolikt får effekter, både positiva och negativa och en del redan i närtid. En längre växtsäsong ger ökad avkastningspotential för de areella näringarna, nya grödor kan odlas och sommarturismen ökar. Fler europeiska turister kan också väntas, när sommartemperaturen på kontinenten stiger och fler väljer att lämna Europa på sommaren på grund av hettan (under sommaren 2024 kom detta fenomen att kallas för *coolcation*), men en längre växtperiod gynnar också fler skadeinsekter och svampsjukdomar och påverkar grundvattennivån negativt. Här finns stor risk att både jord- och skogsbruk påverkas negativt.
 
 Statens geotekniska institut (SGI) och Myndigheten för samhällsskydd och beredskap (MSB) har identifierat tio nationella riskområden för ras, skred, erosion och översvämning som är klimatrelaterade (2021). Av de tio nationella riskområdena återfinns två i Norra Mellansverige: Norra Vänerområdet och Mellersta Dalälven. Utöver dessa nationella riskområden har specifika risker identifierats på ett flertal platser i Norra Mellansverige. Exempelvis har Värmland (tillsammans med Västra Götalands län) högst andel verksamheter inom områden med förutsättningar för skred. För kommuner med flest antal anställda, boende och byggnader per kommun med förutsättningar för skred ligger Karlstad på plats 5, Borlänge på plats 6 och Gävle på plats 9, av alla Sveriges kommuner.  Även vad gäller risk för översvämning ligger Karlstad i topp. För antal förorenade områden per kommun med risk för skred ligger Gävle på plats 4 av Sveriges kommuner.   
 
@@ -602,21 +602,35 @@ De trender som diskuterats i analysen styrs inte enbart av externa förutsättni
 
 Arbetsförmedlingen (2024). *Arbetsmarknadsutsikterna. Utvecklingen på arbetsmarknaden 2024–2025.*
 
-Myndigheten för ungdoms- och civilsamhällesfrågor (2019). *Förändringar av uvas-siffror från och med år 2015.*
+Folkhälsomyndigheten (2024). *Hälsokonsekvenser av klimatförändring i Sverige - En risk- och sårbarhetsanalys.*
+
+Holmberg, Sören och Rothstein, Bo (2022). *Den svenska tilliten fortsatt hög – men sjunker i utsatta grupper.* I Ulrika Andersson, Henrik Oscarsson, Björn Rönnerstrand och Nora Theorin (red) *Du sköra nya värld. SOM-antologi nr 81.*
+
+Länsstyrelsen i Dalarnas län (2021). *Regional plan för klimatanpassning i Dalarna, Rapport 2021:09*
+
+Myndigheten för ungdoms- och civilsamhällesfrågor (MUCF) (2019). *Förändringar av uvas-siffror från och med år 2015.*
 
 Skandia (2023). *Samhällskostnaden för längre sjukskrivningar: 71 miljarder kronor.*
 
-Statistiska centralbyrån (2020). *Sveriges framtida befolkning 2020–2030 ‒ Län och kommungrupper. BE 18 SM 2002.*
+Statens geotekniska institut (SGI) och Myndigheten för samhällsskydd och beredskap (MSB) (2021). *Riskområden för ras, skred, erosion och översvämning. Redovisning av regeringsuppdrag enligt regeringsbeslut M2019/0124/Kl.*
 
-Statistiska centralbyrån (2022). *En fråga om tid: Tidsanvändningsundersökningen 2021/22.* 
+Statistiska centralbyrån (SCB) (2020). *Sveriges framtida befolkning 2020–2030 ‒ Län och kommungrupper. BE 18 SM 2002.*
 
-Statistiska centralbyrån (2023). *Situationen på arbetsmarknaden för personer med funktionsnedsättning 2022.*
+Statistiska centralbyrån (SCB) (2022). *En fråga om tid: Tidsanvändningsundersökningen 2021/22.* 
 
-Statistiska centralbyrån (2024). *Trender och prognoser 2023.* 
+Statistiska centralbyrån (SCB) (2023). *Situationen på arbetsmarknaden för personer med funktionsnedsättning 2022.*
 
-Statistiska centralbyrån (2024). *Den framtida befolkningen i Sveriges län och kommuner 2024–2040.*
+Statistiska centralbyrån (SCB) (2024). *Trender och prognoser 2023.* 
+
+Statistiska centralbyrån (SCB) (2024). *Den framtida befolkningen i Sveriges län och kommuner 2024–2040.*
 
 Svenska ESF-rådet (2019). *Bakgrund till framtiden. En omvärldsanalys för ESF+, Perioden 2021–2027. Diarienummer 2019/00190.*
+
+Sveriges meteorologiska och hydrologiska institut (SMHI) (2015). *Framtidsklimat i Dalarnas/ Gävleborgs/ Värmlands län – enligt RCP-scenarier. Klimatologi 16.*
+
+Sveriges meteorologiska och hydrologiska institut (SMHI) (2022). *Observerad klimatförändring i Sverige 1860-2021, Klimatologi 69.*
+
+World Meteorological Organisation (2024). *State of the climate 2024 - Update for COP29.* 
 
 <br>
 
@@ -630,6 +644,8 @@ https://www.mucf.se/verktyg/statistik-om-unga-som-varken-arbetar-eller-studerar
 
 https://www.scb.se/pressmeddelande/historiskt-lagt-barnafodande-och-lagsta-folkokningen-pa-22-ar/
 
-https://www.smhi.se/forskning/forskningsenheter/klimatforskning 
+https://www.smhi.se/forskning/forskningsenheter/klimatforskning
+
+https://www.smhi.se/klimat/framtidens-klimat/fordjupade-klimatscenarier/met/dalarnas_lan/medeltemperatur/rcp26/2071-2100/year/anom
 
 
