@@ -2,7 +2,7 @@ skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
                                  diag_fargvekt = NA, # För diagrammet som inte är könsuppdelat
                                  returnera_dataframe_global_environment = TRUE,
                                  input_mapp = NA, # Vid NA, väljs mappen Indata i det projekt man arbetar med
-                                 mapp = NA, # Som ovan fast figurer
+                                 mapp = NA # Som ovan fast figurer
 ){
   
   # Skript som skapar överrepresentation av chefer. Data har hämtats av Kristoffer Sehlberg (region Gävleborg) i SCB/MONA.
