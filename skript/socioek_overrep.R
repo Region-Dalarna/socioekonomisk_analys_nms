@@ -1,6 +1,8 @@
 skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
                                  diag_fargvekt = NA, # För diagrammet som inte är könsuppdelat
-                                 returnera_dataframe_global_environment = TRUE
+                                 returnera_dataframe_global_environment = TRUE,
+                                 input_mapp = NA, # Vid NA, väljs mappen Indata i det projekt man arbetar med
+                                 mapp = NA, # Som ovan fast figurer
 ){
   
   # Skript som skapar överrepresentation av chefer. Data har hämtats av Kristoffer Sehlberg (region Gävleborg) i SCB/MONA.
@@ -23,7 +25,10 @@ skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
   
   
   #input_mapp <- "G:/Samhällsanalys/Projekt och uppdrag/EU/ESF/Socioekonomisk analys/data_mars2022/"
-  input_mapp <- here("Indata/") %>% paste0(., "/")
+  if(is.na(input_mapp)){
+    input_mapp <- here("Indata/") %>% paste0(., "/")} else{
+      input_mapp <- input_mapp
+    }
   # overrep_fil <- "overrep.xlsx"
   # overrep_full <- paste0(input_mapp, overrep_fil)
   
@@ -31,7 +36,12 @@ skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
   file_info <- file.info(files)
   latest_file <- rownames(file_info)[which.max(file_info$mtime)]
   
-  mapp <- here("figurer/") %>% paste0(., "/")
+  if(is.na(input_mapp)){
+    mapp <- here("figurer/") %>% paste0(., "/")} else{
+      mapp <- mapp
+    }
+  
+  #mapp <- here("figurer/") %>% paste0(., "/")
   
   ta_med_logga <- FALSE   # FALSE
   
