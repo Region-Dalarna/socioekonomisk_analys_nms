@@ -1,6 +1,9 @@
 skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
                                  diag_fargvekt = NA, # För diagrammet som inte är könsuppdelat
                                  returnera_dataframe_global_environment = TRUE,
+                                 ta_bort_titel = TRUE,
+                                 ta_bort_caption = TRUE,
+                                 diagramtitel = "Överrepresentation av manliga chefer",
                                  input_mapp = NA, # Vid NA, väljs mappen Indata i det projekt man arbetar med
                                  mapp = NA # Som ovan fast figurer
 ){
@@ -58,6 +61,11 @@ skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
   #                       levels = c("Dalarna", "Gävleborg", "Värmland"))
   
   diagramfilnamn <- "overrep.png"
+
+  diagram_capt <- "Källa: SCB, egna bearbetningar.\nBearbetning: Samhällsanalys, Region Dalarna.\nDiagramförklaring: Över-/underrepresentation för andel män i ledningsyrken i relation till andelen män inom branschen.\nEtt värde på 0 innebär att andelen manliga chefer är proportionerlig gentemot andelen manliga anställda.\nEtt värde över 0 innebär att män är överrepresenterade i ledande positioner medan ett värde under 0 innebär en underrepresentation."
+  
+  if(ta_bort_titel) diagramtitel <- NULL
+  if(ta_bort_caption) diagram_capt <- NULL
   
   
   # Uppdelat på overrep_df
@@ -71,6 +79,8 @@ skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
                                manual_x_axis_text_hjust = 1,
                                manual_y_axis_title = "Överrepresentation av manliga chefer",
                                x_axis_sort_value = FALSE,
+                               diagram_capt = diagram_capt,
+                               diagram_titel = diagramtitel,
                                manual_color = diag_fargvekt,
                                skriv_till_diagramfil = spara_diagrambildfil,
                                lagg_pa_logga = ta_med_logga)
