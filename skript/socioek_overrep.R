@@ -51,7 +51,10 @@ skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
   gg_list <- list()
   
   # ============================= diagram 14 ====================================
-  overrep_df <- read.xlsx(latest_file) 
+  overrep_df <- read.xlsx(latest_file) %>% 
+    filter(SNI2007_Grupp_namn != "Okänt")
+  
+  
   
   if(returnera_dataframe_global_environment == TRUE){
     assign("overrep_df", overrep_df, envir = .GlobalEnv)
