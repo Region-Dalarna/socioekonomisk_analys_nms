@@ -71,7 +71,7 @@ skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
   
   if(ta_bort_titel) diagramtitel <- NULL
   if(ta_bort_caption) diagram_capt <- NULL
-  if(ta_bort_y_axis_title) y_axis_title <- NULL
+  if(ta_bort_y_axis_title) y_axis_title <- ""
   
   
   # Uppdelat på overrep_df
