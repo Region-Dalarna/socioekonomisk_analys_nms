@@ -3,9 +3,13 @@ skapa_befutv_diagram <- function(region_vekt = c("17", "20", "21"),
                                  valt_ar = NA,            # om NA tas det senaste tillgängliga året
                                  dia_titel = NULL, 
                                  diagbild_bredd = 16,
+                                 diagram_capt = NULL,
                                  diagbild_hojd = 9,
                                  spara_diagrambild = FALSE
                                  ){
+  
+  # Ändrat så att det går att ställa in diagram_capt Jon 2025-10-22
+  
   if (!require("pacman")) install.packages("pacman")
   p_load(here,
          tidyverse,
@@ -53,7 +57,7 @@ skapa_befutv_diagram <- function(region_vekt = c("17", "20", "21"),
                     skickad_x_grupp = "region",
                     diagram_titel = dia_titel,
                     filnamn_diagram = dia_filnamn,
-                    diagram_capt = NULL,
+                    diagram_capt = diagram_capt,
                     output_mapp = mapp,
                     y_axis_borjar_pa_noll = FALSE,
                     manual_y_axis_title = "invånare",

@@ -2,6 +2,7 @@ skapa_gymn_behorighet_inr_utr_fodda_kon_diagram <- function(
     region_vekt = c( "20", "17", "21", "00"),
     valt_ar = "9999",                  # "9999" = senaste år
     dia_titel = NULL,
+    diag_capt = NULL,
     output_mapp = NA,
     spara_dataframe_till_global_environment = TRUE,
     spara_diagrambildfil = FALSE
@@ -46,11 +47,13 @@ skapa_gymn_behorighet_inr_utr_fodda_kon_diagram <- function(
                      skickad_x_grupp = "grupp",
                      output_mapp = output_mapp,
                      filnamn_diagram = diagramfilnamn,
+                     diagram_titel = dia_titel,
                      #manual_x_axis_text_vjust = 1,
                      #manual_x_axis_text_hjust = 1,
                      manual_y_axis_title = "procent",
                      facet_legend_bottom = TRUE,
                      x_axis_lutning = 0,
+                     diagram_capt = diag_capt,
                      # diagram_facet = FALSE,
                      # facet_x_axis_storlek = 10.5,
                      # facet_y_axis_storlek = 12,
