@@ -3,6 +3,7 @@ skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
                                  returnera_dataframe_global_environment = TRUE,
                                  ta_bort_titel = TRUE,
                                  ta_bort_caption = TRUE,
+                                 diagram_capt = "Källa: SCB, egna bearbetningar.\nBearbetning: Samhällsanalys, Region Dalarna.\nDiagramförklaring: Över-/underrepresentation för andel män i ledningsyrken i relation till andelen män inom branschen.\nEtt värde på 0 innebär att andelen manliga chefer är proportionerlig gentemot andelen manliga anställda.\nEtt värde över 0 innebär att män är överrepresenterade i ledande positioner medan ett värde under 0 innebär en underrepresentation.",
                                  ta_bort_y_axis_title = TRUE,
                                  diagramtitel = "Överrepresentation av manliga chefer",
                                  input_mapp = NA, # Vid NA, väljs mappen Indata i det projekt man arbetar med
@@ -66,7 +67,7 @@ skapa_overrep_diagram <- function(spara_diagrambildfil = FALSE,
   
   diagramfilnamn <- "overrep.png"
 
-  diagram_capt <- "Källa: SCB, egna bearbetningar.\nBearbetning: Samhällsanalys, Region Dalarna.\nDiagramförklaring: Över-/underrepresentation för andel män i ledningsyrken i relation till andelen män inom branschen.\nEtt värde på 0 innebär att andelen manliga chefer är proportionerlig gentemot andelen manliga anställda.\nEtt värde över 0 innebär att män är överrepresenterade i ledande positioner medan ett värde under 0 innebär en underrepresentation."
+  #diagram_capt <- "Källa: SCB, egna bearbetningar.\nBearbetning: Samhällsanalys, Region Dalarna.\nDiagramförklaring: Över-/underrepresentation för andel män i ledningsyrken i relation till andelen män inom branschen.\nEtt värde på 0 innebär att andelen manliga chefer är proportionerlig gentemot andelen manliga anställda.\nEtt värde över 0 innebär att män är överrepresenterade i ledande positioner medan ett värde under 0 innebär en underrepresentation."
   y_axis_title = "Överrepresentation av manliga chefer"
   
   if(ta_bort_titel) diagramtitel <- NULL
